@@ -1,0 +1,7 @@
+demo=natural-language-to-pantherlang
+ok=true
+intent_kind=function
+external_api_used=false
+deterministic=true
+contains=fn add
+contains=print add(2, 3)

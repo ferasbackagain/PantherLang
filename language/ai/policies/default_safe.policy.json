@@ -1,0 +1,11 @@
+{
+  "name": "default_safe",
+  "phase": "5.1",
+  "network": false,
+  "filesystem": "read_project_only",
+  "secrets": "deny",
+  "max_prompt_chars": 8000,
+  "max_output_chars": 4000,
+  "allow_tools": false,
+  "audit_required": true
+}

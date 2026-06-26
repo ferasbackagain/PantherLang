@@ -1,0 +1,19 @@
+# PantherLang Phase 5.3 Memory & Context practical language-facing example
+
+memory project remember "project.goal" =
+  "Build PantherLang into an AI-native programming language."
+  trust verified
+  tags ["pantherlang", "goal", "ai"]
+
+memory project remember "phase.5.3" =
+  "Memory and Context Engine provides deterministic context retrieval."
+  trust verified
+  tags ["phase5", "memory", "context"]
+
+let ctx: AIContext<String> = context.search {
+  query: "context"
+  scope: "project"
+  limit: 5
+}
+
+print ctx

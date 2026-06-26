@@ -1,0 +1,40 @@
+{
+  "phase": "5.2",
+  "rules": [
+    {
+      "id": "literal-int",
+      "pattern": "integer literal",
+      "infers": "Int"
+    },
+    {
+      "id": "literal-float",
+      "pattern": "floating literal",
+      "infers": "Float"
+    },
+    {
+      "id": "literal-string",
+      "pattern": "quoted string literal",
+      "infers": "String"
+    },
+    {
+      "id": "literal-bool",
+      "pattern": "true | false",
+      "infers": "Bool"
+    },
+    {
+      "id": "nullable-union",
+      "pattern": "T | Null",
+      "infers": "Nullable<T>"
+    },
+    {
+      "id": "result-success",
+      "pattern": "Ok<T>",
+      "infers": "Result<T,E>"
+    },
+    {
+      "id": "ai-generate",
+      "pattern": "ai.generate PromptContract<TInput,TOutput>",
+      "infers": "SafeAIResult<TOutput>"
+    }
+  ]
+}

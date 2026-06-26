@@ -1,0 +1,11 @@
+# PantherLang Phase 5.9 AI Package Ecosystem practical example
+
+package "panther-ai-helper" version "0.1.0" kind "agent" {
+  entry "package.panther"
+  sandbox_policy "default_secure_ai_sandbox"
+}
+
+publish package to local registry
+install package from local registry
+
+print "Panther package installed"

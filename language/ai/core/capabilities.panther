@@ -1,0 +1,20 @@
+# PantherLang AI Native Capability Declarations
+# Phase 5.1 foundation syntax draft
+
+capability ai.text.generate {
+  description: "Generate text from a prompt contract"
+  deterministic: false
+  policy: "default_safe"
+}
+
+capability ai.text.classify {
+  description: "Classify text using a declared schema"
+  deterministic: false
+  policy: "default_safe"
+}
+
+capability ai.code.explain {
+  description: "Explain source code with bounded context"
+  deterministic: false
+  policy: "code_safe"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "PantherLang Prompt Contract",
+  "phase": "5.1",
+  "type": "object",
+  "required": ["id", "capability", "input", "policy"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "input": {
+      "type": "string"
+    },
+    "policy": {
+      "type": "string"
+    },
+    "output_schema": {
+      "type": "object"
+    },
+    "deterministic_fallback": {
+      "type": "string"
+    }
+  }
+}

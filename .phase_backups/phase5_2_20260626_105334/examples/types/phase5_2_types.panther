@@ -1,0 +1,13 @@
+# PantherLang Phase 5.2 type system sample
+
+let name: String = "Feras"
+let age: Int = 44
+let active: Bool = true
+let score = 99.5
+
+let maybe_name: Nullable<String> = null
+let result: Result<String, AIError> = Ok("typed AI output")
+let optional_value: Option<Int> = Some(7)
+
+# AI typed syntax draft
+let contract: PromptContract<String, String> = "hello-ai-contract"

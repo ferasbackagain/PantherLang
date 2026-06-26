@@ -1,0 +1,6 @@
+{
+  "id": "phase5-5-demo-intent",
+  "text": "Create a function that adds two numbers and print the result.",
+  "policy": "default_nlp",
+  "expected_kind": "function"
+}

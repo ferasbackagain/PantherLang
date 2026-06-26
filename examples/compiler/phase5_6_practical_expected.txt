@@ -1,0 +1,7 @@
+demo=ai-optimizing-compiler
+ok=true
+external_api_used=false
+deterministic=true
+contains=let x = 14
+contains=print 14
+not_contains=print ""

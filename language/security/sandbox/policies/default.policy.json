@@ -1,0 +1,8 @@
+{
+  "phase":"5.8",
+  "network":false,
+  "filesystem":"isolated",
+  "shell":false,
+  "plugins":"allow-list",
+  "audit":true
+}

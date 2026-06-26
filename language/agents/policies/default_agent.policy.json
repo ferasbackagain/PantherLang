@@ -1,0 +1,19 @@
+{
+  "name": "default_agent",
+  "phase": "5.4",
+  "allow_network": false,
+  "allow_secret_access": false,
+  "allow_filesystem_write": false,
+  "require_registered_agent": true,
+  "max_agents": 50,
+  "max_messages": 1000,
+  "max_payload_chars": 12000,
+  "audit_required": true,
+  "allowed_permissions": [
+    "plan",
+    "code",
+    "review",
+    "message",
+    "observe"
+  ]
+}

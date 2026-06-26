@@ -1,0 +1,14 @@
+{
+  "name": "PantherLang AI Native Core",
+  "phase": "5.1",
+  "version": "0.5.1-ai-core",
+  "status": "experimental-foundation",
+  "external_api_required": false,
+  "capabilities": [
+    "prompt_contracts",
+    "capability_declarations",
+    "policy_guardrails",
+    "deterministic_mock_provider",
+    "runtime_entrypoint"
+  ]
+}

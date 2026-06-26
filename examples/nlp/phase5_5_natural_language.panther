@@ -1,0 +1,7 @@
+# PantherLang Phase 5.5 Natural Language Programming syntax draft
+
+intent "Create a function that adds two numbers and print the result."
+
+compile intent to panther source
+
+run generated source

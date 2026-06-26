@@ -1,0 +1,10 @@
+# PantherLang Phase 5.1 AI Native syntax draft
+
+ai use capability ai.text.generate with policy default_safe
+
+let message = ai.generate {
+  input: "Say hello from PantherLang AI Native Core."
+  fallback: "Hello from PantherLang Phase 5.1 AI Native Core."
+}
+
+print message

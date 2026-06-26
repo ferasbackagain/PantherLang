@@ -1,0 +1,13 @@
+# PantherLang Phase 5.7 Distributed Execution practical language-facing example
+
+node "node-a" capabilities ["text", "math"]
+node "node-b" capabilities ["text"]
+node "node-c" capabilities ["math"]
+
+distributed workflow local_cluster {
+  task "task-1" requires "text" payload "panther distributed execution"
+  task "task-2" requires "math" payload 21
+  task "task-3" requires "text" payload "ai native runtime"
+}
+
+run distributed workflow local_cluster

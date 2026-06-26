@@ -1,0 +1,5 @@
+demo=phase5.3-memory-context
+ok=true
+record_count>=1
+external_api_used=false
+contains=Memory and Context Engine

@@ -1,0 +1,16 @@
+{
+  "title": "PantherLang Package Manifest",
+  "phase": "5.9",
+  "type": "object",
+  "required": ["name", "version", "kind", "entry", "dependencies", "integrity", "signature", "sandbox_policy"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "kind": { "type": "string" },
+    "entry": { "type": "string" },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "integrity": { "type": "string" },
+    "signature": { "type": "string" },
+    "sandbox_policy": { "type": "string" }
+  }
+}

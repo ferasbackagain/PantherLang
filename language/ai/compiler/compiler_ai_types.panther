@@ -1,0 +1,14 @@
+# PantherLang AI Compiler Types
+# Phase 5.6 AI-aware compiler foundation
+
+type AIOptimizationHint {
+  kind: String
+  message: String
+  confidence: Float
+}
+
+type AICompilerAnalysis {
+  deterministic: Bool
+  external_api_used: Bool
+  hints: List<AIOptimizationHint>
+}

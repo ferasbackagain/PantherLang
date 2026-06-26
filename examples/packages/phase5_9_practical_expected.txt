@@ -1,0 +1,10 @@
+demo=ai-package-ecosystem
+ok=true
+published=true
+installed=true
+integrity_verified=true
+signature_verified=true
+sandbox_policy_attached=true
+external_api_used=false
+network_used=false
+deterministic=true

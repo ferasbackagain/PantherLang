@@ -1,0 +1,7 @@
+{
+  "id": "hello-ai-phase-5-1",
+  "capability": "ai.text.generate",
+  "input": "Say hello from PantherLang AI Native Core.",
+  "policy": "default_safe",
+  "deterministic_fallback": "Hello from PantherLang Phase 5.1 AI Native Core."
+}

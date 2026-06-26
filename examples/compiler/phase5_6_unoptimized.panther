@@ -1,0 +1,5 @@
+# PantherLang Phase 5.6 optimizer practical input
+
+let x = 2 + 3 * 4
+print x
+print ""

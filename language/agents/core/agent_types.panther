@@ -1,0 +1,29 @@
+# PantherLang Agent Types
+# Phase 5.4 syntax foundation
+
+type AgentId = String
+type AgentRole = "planner" | "coder" | "reviewer" | "operator" | "observer"
+type AgentStatus = "created" | "ready" | "running" | "blocked" | "completed" | "failed"
+
+type Agent {
+  id: AgentId
+  role: AgentRole
+  status: AgentStatus
+  permissions: List<String>
+}
+
+type AgentMessage<T> {
+  id: String
+  from: AgentId
+  to: AgentId
+  kind: String
+  payload: T
+  created_at: String
+}
+
+type AgentTask<T> {
+  id: String
+  assigned_to: AgentId
+  priority: Int
+  payload: T
+}

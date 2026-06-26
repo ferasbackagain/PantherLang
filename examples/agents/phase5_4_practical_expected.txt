@@ -1,0 +1,7 @@
+workflow=planner-coder-reviewer
+ok=true
+agents_executed=3
+messages_exchanged=3
+security_violations=0
+external_api_used=false
+contains=Reviewer approved PantherLang multi-agent workflow

@@ -1,0 +1,10 @@
+demo=distributed-execution
+ok=true
+scheduled_tasks=3
+completed_tasks=3
+failed_tasks=0
+external_api_used=false
+network_used=false
+deterministic=true
+contains=PANTHER DISTRIBUTED EXECUTION
+contains=42

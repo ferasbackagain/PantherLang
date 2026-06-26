@@ -1,0 +1,12 @@
+{
+  "title": "PantherLang Natural Intent",
+  "phase": "5.5",
+  "type": "object",
+  "required": ["id", "text", "policy"],
+  "properties": {
+    "id": { "type": "string" },
+    "text": { "type": "string" },
+    "policy": { "type": "string" },
+    "expected_kind": { "type": "string" }
+  }
+}

@@ -1,0 +1,13 @@
+# PantherLang Phase 5.4 Multi-Agent Runtime practical language-facing example
+
+agent planner role planner permissions ["plan", "message"]
+agent coder role coder permissions ["code", "message"]
+agent reviewer role reviewer permissions ["review", "message"]
+
+workflow build_feature {
+  planner -> coder: "Create a PantherLang memory-context demo function."
+  coder -> reviewer: "fn demo_context() { return \"Memory and agents connected\" }"
+  reviewer -> planner: "APPROVED: deterministic workflow completed."
+}
+
+run workflow build_feature
