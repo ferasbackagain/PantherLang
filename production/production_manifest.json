@@ -1,0 +1,22 @@
+{
+  "name": "PantherLang Developer Edition",
+  "phase": "6.20",
+  "version": "0.6.20-production-readiness",
+  "status": "phase-6-production-ready",
+  "external_api_required": false,
+  "network_required": false,
+  "capabilities": [
+    "compiler_pipeline",
+    "expressions",
+    "control_flow",
+    "loops",
+    "functions",
+    "structs",
+    "modules",
+    "standard_library_foundation",
+    "runtime_bridge",
+    "fast_regression",
+    "production_readiness"
+  ],
+  "engineering_rule": "No Feature Without Proof"
+}

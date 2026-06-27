@@ -1,0 +1,8 @@
+module panther.optimization
+
+let project = "PantherLang"
+let phase = "6.19"
+
+print "Fast regression demo"
+print project
+print phase

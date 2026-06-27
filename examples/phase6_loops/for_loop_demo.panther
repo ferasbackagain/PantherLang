@@ -1,0 +1,9 @@
+let start = 1
+let end = 3
+
+for i in start..end {
+    print "Loop iteration"
+    print i
+}
+
+print "Phase 6.13 loops"

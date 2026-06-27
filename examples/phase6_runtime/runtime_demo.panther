@@ -1,0 +1,18 @@
+module panther.runtime.demo
+
+let name = "PantherLang"
+let version = "0.6.18"
+let upper = std.text.upper(name)
+let sum = std.math.add(20, 22)
+
+print "Runtime Bridge test"
+print upper
+print version
+print sum
+
+fn greet(target) {
+    print "Hello from Panther run"
+    print target
+}
+
+greet("Phase 6.18")

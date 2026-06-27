@@ -1,0 +1,14 @@
+module panther.stdlib.demo
+
+let name = "panther"
+let upper_name = std.text.upper(name)
+let lower_name = std.text.lower("PANTHER")
+let sum = std.math.add(10, 5)
+let product = std.math.mul(3, 7)
+
+print "Standard Library test"
+print upper_name
+print lower_name
+print sum
+print product
+print std.io.echo("Phase 6.17 stdlib")

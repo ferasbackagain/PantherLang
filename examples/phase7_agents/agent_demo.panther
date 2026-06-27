@@ -1,0 +1,6 @@
+module panther.agents
+
+agent ResearchAgent role researcher permissions ["memory", "execute"]
+
+print "Phase 7.3 Agent Execution Engine"
+print "Agent demo source compiled"

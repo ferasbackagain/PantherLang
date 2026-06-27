@@ -1,0 +1,8 @@
+fn greet(name) {
+    print "Hello from function"
+    print name
+}
+
+greet("PantherLang")
+
+print "Phase 6.14 functions"

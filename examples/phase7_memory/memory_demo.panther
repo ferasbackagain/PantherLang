@@ -1,0 +1,4 @@
+module panther.memory
+
+print "Phase 7.2 Native Memory Model"
+print "Memory demo source compiled"

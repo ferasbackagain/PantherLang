@@ -1,0 +1,11 @@
+module panther.cli.demo
+
+fn announce(name) {
+    print "Panther CLI run works"
+    print name
+}
+
+let project = "PantherLang"
+announce(project)
+
+print "Phase 7.2 CLI run foundation"

@@ -3,4 +3,13 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 bash scripts/verify_phase6_10_final_compiler_integration.sh
 bash scripts/verify_phase6_11_expressions_engine.sh
-echo "✅ ALL PHASE 6 TESTS PASSED THROUGH 6.11 REV2"
+bash scripts/verify_phase6_12_control_flow.sh
+bash scripts/verify_phase6_13_loops.sh
+bash scripts/verify_phase6_14_functions.sh
+bash scripts/verify_phase6_15_structs.sh
+bash scripts/verify_phase6_16_modules.sh
+bash scripts/verify_phase6_18_runtime_bridge.sh
+bash scripts/verify_phase6_19_fast_regression.sh
+bash scripts/verify_phase6_20_production_readiness.sh
+echo "✅ ALL PHASE 6 TESTS PASSED"
+echo "✅ PantherLang Phase 6 is COMPLETE"

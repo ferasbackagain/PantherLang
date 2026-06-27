@@ -1,0 +1,12 @@
+struct User {
+    name
+    role
+}
+
+let user_name = "Feras"
+let user_role = "Founder"
+
+print "Struct declaration test"
+print user_name
+print user_role
+print "Phase 6.15 structs"

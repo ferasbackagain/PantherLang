@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BUILD_DIR="$ROOT/build"
+
+usage(){
+  echo "PantherLang CLI"
+  echo "Usage:"
+  echo "  ./panther doctor"
+  echo "  ./panther compile <source.panther> --out <artifact.sh>"
+  echo "  ./panther build <source.panther> [--out <artifact.sh>]"
+  echo "  ./panther run <source.panther>"
+  echo "  ./panther test <source.panther>"
+  echo "  ./panther compiler-demo"
+  echo "  ./panther phase5-verify"
+  echo "  ./panther phase6-verify"
+}
+
+cmd="${1:-}"
+case "$cmd" in
+  compile)
+    shift
+    python3 "$ROOT/compiler/pipeline/panther_compiler.py" compile "$@"
+    ;;
+  build)
+    shift
+    SRC="${1:-}"
+    if [ -z "$SRC" ]; then
+      echo "ERROR: build requires source file"
+      exit 2
+    fi
+    shift || true
+    mkdir -p "$BUILD_DIR"
+    OUT="$BUILD_DIR/$(basename "$SRC" .panther).sh"
+    if [ "${1:-}" = "--out" ]; then
+      shift
+      OUT="${1:-$OUT}"
+    fi
+    python3 "$ROOT/compiler/pipeline/panther_compiler.py" compile "$SRC" --out "$OUT"
+    ;;
+  run)
+    shift
+    SRC="${1:-}"
+    if [ -z "$SRC" ]; then
+      echo "ERROR: run requires source file"
+      exit 2
+    fi
+    mkdir -p "$BUILD_DIR"
+    OUT="$BUILD_DIR/$(basename "$SRC" .panther).run.sh"
+    python3 "$ROOT/compiler/pipeline/panther_compiler.py" compile "$SRC" --out "$OUT" >/tmp/panther_run_compile.json
+    python3 "$ROOT/compiler/runtime_bridge/runtime_runner.py" "$OUT"
+    ;;
+  test)
+    shift
+    SRC="${1:-}"
+    if [ -z "$SRC" ]; then
+      echo "ERROR: test requires source file"
+      exit 2
+    fi
+    mkdir -p "$BUILD_DIR"
+    OUT="$BUILD_DIR/$(basename "$SRC" .panther).test.sh"
+    python3 "$ROOT/compiler/pipeline/panther_compiler.py" compile "$SRC" --out "$OUT" >/tmp/panther_test_compile.json
+    python3 "$ROOT/compiler/runtime_bridge/runtime_runner.py" "$OUT" | grep -q '"ok": true'
+    echo "✅ Panther test passed: $SRC"
+    ;;
+  compiler-demo)
+    shift || true
+    python3 "$ROOT/compiler/pipeline/panther_compiler.py" demo "$@"
+    ;;
+  phase5-verify)
+    bash "$ROOT/scripts/verify_phase5_all.sh"
+    ;;
+  phase6-verify)
+    bash "$ROOT/scripts/verify_phase6_all.sh"
+    ;;
+  doctor)
+    echo "PantherLang doctor: OK"
+    echo "phase5: complete"
+    echo "phase6.18: runtime bridge installed"
+    echo "commands: compile build run test doctor"
+    echo "engineering_rule: No Feature Without Proof"
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+# PantherLang Phase 7.1 runtime command fallback
+if [ "${1:-}" = "runtime" ]; then
+  shift
+  python3 "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/runtime/ai_runtime/runtime_api.py" "$@"
+  exit $?
+fi

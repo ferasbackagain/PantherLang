@@ -1,0 +1,17 @@
+module panther.security
+
+import panther.ai
+import panther.core
+
+struct Service {
+    name
+    version
+}
+
+let service_name = "Panther Module System"
+let version = "0.6.16"
+
+print "Module declaration test"
+print service_name
+print version
+print "Phase 6.16 modules"

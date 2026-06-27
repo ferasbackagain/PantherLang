@@ -1,0 +1,19 @@
+{
+  "name": "PantherLang Runtime Bridge & Build Run Commands",
+  "phase": "6.18",
+  "version": "0.6.18-runtime-bridge",
+  "status": "compiler-runtime-feature",
+  "depends_on": ["5.10", "6.10", "6.11", "6.12", "6.13", "6.14", "6.15", "6.16", "6.17"],
+  "external_api_required": false,
+  "network_required": false,
+  "features": [
+    "runtime_bridge",
+    "panther_build",
+    "panther_run",
+    "panther_test",
+    "runtime_manifest",
+    "artifact_execution",
+    "negative_tests"
+  ],
+  "engineering_rule": "No Feature Without Proof"
+}

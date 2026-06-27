@@ -1,0 +1,22 @@
+module panther.production
+
+import panther.core
+import panther.runtime
+
+struct Release {
+    name
+    version
+}
+
+fn announce(name, version) {
+    print "Production readiness demo"
+    print name
+    print version
+}
+
+let project = "PantherLang"
+let version = "0.6.20"
+
+announce(project, version)
+
+print "Phase 6.20 production readiness"
