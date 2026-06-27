@@ -40,3 +40,13 @@
 - docs
 - examples
 - GitHub release
+- [x] Phase 6.2 — Incremental Compilation
+
+### Phase 6.3 — Module & Workspace System
+Status: Completed locally after verification.
+
+Provides the PantherLang workspace manifest, module graph, deterministic build order, and integration with the Phase 6.2 incremental compiler.
+
+### Phase 6.4 — Advanced Type Inference
+Status: Implemented locally. Must be verified on target Kali environment.
+Version: 0.6.4-advanced-type-inference

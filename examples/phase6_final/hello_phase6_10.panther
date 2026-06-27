@@ -1,0 +1,4 @@
+# PantherLang Phase 6.10 practical compiler input
+
+let project = "PantherLang"
+print "Phase 6.10 compiler integration works"

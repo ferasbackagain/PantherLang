@@ -1,0 +1,8 @@
+module examples.phase_6_8_lsp
+import std.io
+
+fn main() -> int {
+    let message = "PantherLang Phase 6.8 LSP is active"
+    println(message)
+    return 0
+}

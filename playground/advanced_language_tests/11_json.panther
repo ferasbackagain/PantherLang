@@ -1,0 +1,6 @@
+let data = json {
+    "name": "PantherLang",
+    "phase": "6.10"
+}
+
+print "JSON test passed"

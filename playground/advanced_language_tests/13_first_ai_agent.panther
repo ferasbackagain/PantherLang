@@ -1,0 +1,7 @@
+agent PantherSecurityAgent role reviewer permissions ["review", "message"]
+
+memory project remember "agent.goal" = "Analyze code security"
+
+intent "Review this PantherLang program for security issues"
+
+print "First AI Agent written in PantherLang"

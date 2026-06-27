@@ -1,0 +1,9 @@
+fn add(a: Int, b: Int) -> Int { return a + b }
+fn greet(name: String) -> String { return "Hello " + name }
+let x = 40
+let y = 2
+let answer = add(x, y)
+let title = "Panther" + "Lang"
+let ready: Bool = true
+let scores = [1, 2, 3]
+let labels = {"project": "PantherLang", "phase": "6.4"}

@@ -1,0 +1,17 @@
+{
+  "entry": "main",
+  "format": "panther-native-executable-v1",
+  "objects": [
+    {
+      "artifact_kind": "portable-native-object",
+      "artifact_path": "build/native/x86_64-unknown-linux-gnu/obj/adapter_demo.elf.pobj",
+      "bytes_written": 411,
+      "diagnostics": [
+        "object emission complete"
+      ],
+      "sha256": "31a86780c5682335de51eba160f530448fb396c48eaccbdf40ee6ccf5258f3b0",
+      "target": "x86_64-unknown-linux-gnu"
+    }
+  ],
+  "target": "x86_64-unknown-linux-gnu"
+}

@@ -1,0 +1,1 @@
+{"name":"phase6_4_demo_workspace","version":"0.1.0","entry":"app.main","modules":[{"name":"core","root":"core","sources":["*.panther"]},{"name":"app","root":"app","sources":["*.panther"]}]}

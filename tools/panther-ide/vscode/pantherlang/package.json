@@ -1,0 +1,38 @@
+{
+  "name": "pantherlang",
+  "displayName": "PantherLang",
+  "description": "IDE support for PantherLang with syntax highlighting and LSP integration.",
+  "version": "0.6.8",
+  "publisher": "pantherlang",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:pantherlang"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "pantherlang",
+        "aliases": ["PantherLang", "panther"],
+        "extensions": [".panther", ".pn"],
+        "configuration": "./language-configuration/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pantherlang",
+        "scopeName": "source.pantherlang",
+        "path": "./syntaxes/pantherlang.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "PantherLang",
+      "properties": {
+        "pantherlang.lsp.path": {
+          "type": "string",
+          "default": "panther-lsp",
+          "description": "Path to the PantherLang language server executable."
+        }
+      }
+    }
+  }
+}

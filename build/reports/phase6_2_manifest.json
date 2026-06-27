@@ -1,0 +1,9 @@
+{
+  "project": "PantherLang",
+  "phase": "6.2",
+  "name": "Incremental Compilation",
+  "version": "0.6.2-incremental-compilation",
+  "external_api_used": false,
+  "network_required": false,
+  "github_push_policy": "postponed_until_phase_6_10_full_regression"
+}

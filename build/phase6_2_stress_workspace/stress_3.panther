@@ -1,0 +1,1 @@
+model Stress3 { id: int required }

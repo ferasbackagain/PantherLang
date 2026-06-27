@@ -1,0 +1,9 @@
+{
+  "name": "example_workspace",
+  "version": "0.6.3",
+  "entry": "app.main",
+  "modules": [
+    {"name": "core", "root": "core", "sources": ["*.panther"]},
+    {"name": "app", "root": "app", "sources": ["*.panther"]}
+  ]
+}

@@ -1,0 +1,2 @@
+package "first-panther-package" version "0.1.0" kind "library"
+print "Package declaration test"

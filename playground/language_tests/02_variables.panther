@@ -1,0 +1,5 @@
+let language = "PantherLang"
+let version = "0.6.10"
+print "Variables test"
+print language
+print version

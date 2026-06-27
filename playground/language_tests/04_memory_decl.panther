@@ -1,0 +1,2 @@
+memory project remember "project.status" = "Phase 6.10 complete"
+print "Memory declaration test"

@@ -1,0 +1,2 @@
+agent SecurityAgent role reviewer permissions ["review", "message"]
+print "Agent declaration test"

@@ -1,0 +1,23 @@
+{
+  "format": "panther-native-object-v1",
+  "functions": [
+    {
+      "exports": true,
+      "instructions": [
+        {
+          "opcode": "lowered_statement",
+          "operands": [
+            1,
+            "print 1"
+          ]
+        }
+      ],
+      "name": "main"
+    }
+  ],
+  "metadata": {
+    "lowering": "phase6.6"
+  },
+  "module": "smoke",
+  "target": "x86_64-unknown-linux-gnu"
+}

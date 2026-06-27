@@ -1,0 +1,10 @@
+{
+  "name": "phase6_3_demo_workspace",
+  "version": "0.6.3",
+  "entry": "app.main",
+  "modules": [
+    {"name": "core", "root": "core", "sources": ["*.panther"]},
+    {"name": "security", "root": "security", "sources": ["*.panther"]},
+    {"name": "app", "root": "app", "sources": ["*.panther"]}
+  ]
+}

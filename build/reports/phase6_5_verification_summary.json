@@ -1,0 +1,9 @@
+{
+  "phase": "6.5",
+  "name": "Async Runtime",
+  "status": "PASS",
+  "reports": [
+    "build/reports/phase6_5_verification_summary.json",
+    "build/reports/phase6_5_last_async_report.json"
+  ]
+}

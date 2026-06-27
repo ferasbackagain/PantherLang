@@ -1,0 +1,15 @@
+test_builder_plan_contains_object_and_executable (test_cross_platform_toolchain.TestPantherCrossPlatformBuilder.test_builder_plan_contains_object_and_executable) ... ok
+test_manifest_covers_all_configured_targets (test_cross_platform_toolchain.TestPantherCrossPlatformBuilder.test_manifest_covers_all_configured_targets) ... ok
+test_manifest_has_cross_platform_linkers (test_cross_platform_toolchain.TestPantherCrossPlatformBuilder.test_manifest_has_cross_platform_linkers) ... ok
+test_linux_target_triple (test_cross_platform_toolchain.TestPantherCrossPlatformTargets.test_linux_target_triple) ... ok
+test_macos_shared_library_suffix (test_cross_platform_toolchain.TestPantherCrossPlatformTargets.test_macos_shared_library_suffix) ... ok
+test_unsupported_target_rejected (test_cross_platform_toolchain.TestPantherCrossPlatformTargets.test_unsupported_target_rejected) ... ok
+test_windows_suffixes (test_cross_platform_toolchain.TestPantherCrossPlatformTargets.test_windows_suffixes) ... ok
+test_artifact_name_windows (test_cross_platform_toolchain.TestPantherToolchainResolver.test_artifact_name_windows) ... ok
+test_linux_uses_lld (test_cross_platform_toolchain.TestPantherToolchainResolver.test_linux_uses_lld) ... ok
+test_windows_uses_lld_link (test_cross_platform_toolchain.TestPantherToolchainResolver.test_windows_uses_lld_link) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.038s
+
+OK

@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "alpha.panther": "build/phase6_2_demo_cache/artifacts/812297977250e86d.artifact.json",
+    "beta.panther": "build/phase6_2_demo_cache/artifacts/5e0953e899123c95.artifact.json"
+  },
+  "last_build_unix": 1782502965.510879,
+  "phase": "6.2",
+  "sources": {
+    "alpha.panther": {
+      "mtime_ns": 1782502965507329562,
+      "path": "alpha.panther",
+      "sha256": "8c504892214ff9296bed2689887b9d4da45f398ed0d51d2a99b254745ab7ab6e",
+      "size_bytes": 147
+    },
+    "beta.panther": {
+      "mtime_ns": 1782502965031163984,
+      "path": "beta.panther",
+      "sha256": "bc9e732a04bfc73db77e6437d017a0c1b60a24df7049c549c3107a4b80751919",
+      "size_bytes": 115
+    }
+  },
+  "version": "0.6.2-incremental-compilation",
+  "workspace": "build/phase6_2_demo_workspace"
+}

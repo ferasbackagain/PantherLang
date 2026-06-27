@@ -1,0 +1,120 @@
+{
+  "ok": true,
+  "phase": "6.4",
+  "version": "0.6.4-advanced-type-inference",
+  "workspace": "build/phase6_4_demo_workspace",
+  "manifest": {
+    "name": "phase6_4_demo_workspace",
+    "version": "0.1.0",
+    "entry": "app.main",
+    "panther_version": "0.6.3",
+    "modules": [
+      {
+        "name": "core",
+        "root": "core",
+        "sources": [
+          "*.panther"
+        ],
+        "imports": []
+      },
+      {
+        "name": "app",
+        "root": "app",
+        "sources": [
+          "*.panther"
+        ],
+        "imports": []
+      }
+    ]
+  },
+  "files_analyzed": 2,
+  "results": {
+    "build/phase6_4_demo_workspace/core/math.panther": {
+      "ok": true,
+      "phase": "6.4",
+      "version": "0.6.4-advanced-type-inference",
+      "source": "build/phase6_4_demo_workspace/core/math.panther",
+      "symbols": {
+        "base": "Int",
+        "scores": "List<Int>"
+      },
+      "functions": {
+        "add": {
+          "params": [
+            {
+              "name": "a",
+              "type": "Int"
+            },
+            {
+              "name": "b",
+              "type": "Int"
+            }
+          ],
+          "return_type": "Int",
+          "inferred_return_type": "Int"
+        },
+        "label": {
+          "params": [
+            {
+              "name": "name",
+              "type": "String"
+            }
+          ],
+          "return_type": "String",
+          "inferred_return_type": "String"
+        }
+      },
+      "diagnostics": [],
+      "expression_types": {
+        "\"Hello \"": "String",
+        "\"Hello \" + name": "String",
+        "1": "Int",
+        "2": "Int",
+        "3": "Int",
+        "40": "Int",
+        "[1, 2, 3]": "List<Int>",
+        "a": "Int",
+        "a + b": "Int",
+        "b": "Int",
+        "name": "String"
+      },
+      "duration_ms": 1.524,
+      "external_api_used": false,
+      "network_required": false
+    },
+    "build/phase6_4_demo_workspace/app/main.panther": {
+      "ok": true,
+      "phase": "6.4",
+      "version": "0.6.4-advanced-type-inference",
+      "source": "build/phase6_4_demo_workspace/app/main.panther",
+      "symbols": {
+        "answer": "Int",
+        "ready": "Bool",
+        "title": "String",
+        "x": "Int"
+      },
+      "functions": {
+        "main": {
+          "params": [],
+          "return_type": "Int",
+          "inferred_return_type": "Int"
+        }
+      },
+      "diagnostics": [],
+      "expression_types": {
+        "\"Lang\"": "String",
+        "\"Panther\"": "String",
+        "\"Panther\" + \"Lang\"": "String",
+        "2": "Int",
+        "42": "Int",
+        "true": "Bool"
+      },
+      "duration_ms": 0.433,
+      "external_api_used": false,
+      "network_required": false
+    }
+  },
+  "duration_ms": 6.205,
+  "external_api_used": false,
+  "network_required": false
+}

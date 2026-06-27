@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "PantherLang",
+  "scopeName": "source.pantherlang",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#functions" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.pantherlang", "match": "//.*$" },
+        { "name": "comment.block.pantherlang", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.pantherlang", "begin": "\"", "end": "\"", "patterns": [{ "name": "constant.character.escape.pantherlang", "match": "\\\\." }] }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        { "name": "keyword.control.pantherlang", "match": "\\b(if|else|while|for|return|async|await)\\b" },
+        { "name": "keyword.declaration.pantherlang", "match": "\\b(module|import|fn|let|mut|struct|enum|trait|impl|ai|agent|memory)\\b" },
+        { "name": "constant.language.pantherlang", "match": "\\b(true|false|null)\\b" }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        { "name": "entity.name.function.pantherlang", "match": "(?<=\\bfn\\s)[A-Za-z_][A-Za-z0-9_]*" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.pantherlang", "match": "\\b[0-9]+(?:\\.[0-9]+)?\\b" }
+      ]
+    }
+  }
+}

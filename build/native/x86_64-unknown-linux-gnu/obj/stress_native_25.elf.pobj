@@ -1,0 +1,30 @@
+{
+  "format": "panther-native-object-v1",
+  "functions": [
+    {
+      "exports": true,
+      "instructions": [
+        {
+          "opcode": "lowered_statement",
+          "operands": [
+            1,
+            "let x = 25"
+          ]
+        },
+        {
+          "opcode": "lowered_statement",
+          "operands": [
+            2,
+            "print x"
+          ]
+        }
+      ],
+      "name": "main"
+    }
+  ],
+  "metadata": {
+    "lowering": "phase6.6"
+  },
+  "module": "stress_native_25",
+  "target": "x86_64-unknown-linux-gnu"
+}

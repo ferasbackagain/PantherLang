@@ -1,0 +1,5 @@
+agent IncrementalAgent {
+  purpose "Compile only changed Panther sources"
+  memory local
+  tools compiler, cache
+}

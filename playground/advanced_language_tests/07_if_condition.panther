@@ -1,0 +1,5 @@
+let status = "ready"
+
+if status == "ready" {
+    print "Condition test passed"
+}

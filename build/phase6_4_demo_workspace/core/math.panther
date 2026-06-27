@@ -1,0 +1,4 @@
+fn add(a: Int, b: Int) -> Int { return a + b }
+fn label(name: String) -> String { return "Hello " + name }
+let base = 40
+let scores = [1, 2, 3]

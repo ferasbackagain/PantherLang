@@ -1,0 +1,5 @@
+import core
+import security
+fn main() {
+  return security.allow("analyst")
+}

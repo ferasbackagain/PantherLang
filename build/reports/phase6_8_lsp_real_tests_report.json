@@ -1,0 +1,8 @@
+{
+  "phase": "6.8",
+  "name": "IDE & Language Server Protocol",
+  "status": "PASS",
+  "test_count": 8,
+  "zero_test_guard": "ENABLED",
+  "report": "build/reports/phase6_8_lsp_real_tests_report.json"
+}

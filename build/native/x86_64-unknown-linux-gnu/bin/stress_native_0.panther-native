@@ -1,0 +1,17 @@
+{
+  "entry": "main",
+  "format": "panther-native-executable-v1",
+  "objects": [
+    {
+      "artifact_kind": "portable-native-object",
+      "artifact_path": "build/native/x86_64-unknown-linux-gnu/obj/stress_native_0.elf.pobj",
+      "bytes_written": 543,
+      "diagnostics": [
+        "object emission complete"
+      ],
+      "sha256": "ffdea34852e172e2a080ccd54b99c023ef190eed161518d33ce67548e6a07566",
+      "target": "x86_64-unknown-linux-gnu"
+    }
+  ],
+  "target": "x86_64-unknown-linux-gnu"
+}

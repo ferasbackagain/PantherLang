@@ -1,0 +1,13 @@
+[project]
+name = "panther-lsp"
+version = "0.6.8"
+description = "PantherLang Language Server Protocol implementation"
+requires-python = ">=3.10"
+authors = [{ name = "PantherLang Core Team" }]
+
+[project.scripts]
+panther-lsp = "panther_lsp.server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

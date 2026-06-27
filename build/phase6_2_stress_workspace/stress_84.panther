@@ -1,0 +1,1 @@
+model Stress84 { id: int required }

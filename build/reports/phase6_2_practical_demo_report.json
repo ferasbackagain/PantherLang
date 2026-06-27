@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "alpha.panther": "build/phase6_2_demo_cache/artifacts/812297977250e86d.artifact.json",
+    "beta.panther": "build/phase6_2_demo_cache/artifacts/5e0953e899123c95.artifact.json"
+  },
+  "cache_path": "build/phase6_2_demo_cache/phase6_2_state.json",
+  "compiled": [
+    "alpha.panther"
+  ],
+  "diagnostics": [],
+  "duration_ms": 4.636,
+  "external_api_used": false,
+  "network_required": false,
+  "ok": true,
+  "phase": "6.2",
+  "plan": {
+    "cache_hit_ratio": 0.5,
+    "changed": [
+      "alpha.panther"
+    ],
+    "removed": [],
+    "total_sources": 2,
+    "unchanged": [
+      "beta.panther"
+    ]
+  },
+  "removed": [],
+  "reused": [
+    "beta.panther"
+  ],
+  "version": "0.6.2-incremental-compilation",
+  "workspace": "build/phase6_2_demo_workspace"
+}

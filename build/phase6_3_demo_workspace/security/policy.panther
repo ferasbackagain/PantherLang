@@ -1,0 +1,4 @@
+import core
+fn allow(user) {
+  return core.normalize(user)
+}

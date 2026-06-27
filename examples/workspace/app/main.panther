@@ -1,0 +1,4 @@
+import core
+fn main() {
+  return core.identity("PantherLang")
+}

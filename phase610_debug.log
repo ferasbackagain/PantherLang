@@ -1,0 +1,10 @@
++ set -euo pipefail
+++ dirname scripts/verify_phase6_10_final_compiler_integration.sh
++ cd scripts/..
++ echo ============================================================
+============================================================
++ echo ' PantherLang Phase 6.10 PRO Final Compiler Verification'
+ PantherLang Phase 6.10 PRO Final Compiler Verification
++ echo ============================================================
+============================================================
++ bash scripts/verify_phase5_all.sh

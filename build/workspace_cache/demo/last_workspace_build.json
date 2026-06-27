@@ -1,0 +1,158 @@
+{
+  "artifacts": {
+    "manifest": {
+      "entry": "app.main",
+      "modules": [
+        {
+          "imports": [],
+          "name": "core",
+          "root": "core",
+          "sources": [
+            "*.panther"
+          ]
+        },
+        {
+          "imports": [],
+          "name": "security",
+          "root": "security",
+          "sources": [
+            "*.panther"
+          ]
+        },
+        {
+          "imports": [],
+          "name": "app",
+          "root": "app",
+          "sources": [
+            "*.panther"
+          ]
+        }
+      ],
+      "name": "phase6_3_demo_workspace",
+      "panther_version": "0.6.3",
+      "version": "0.6.3"
+    },
+    "modules": {
+      "app": {
+        "artifacts": {
+          "main.panther": "build/workspace_cache/demo/incremental/artifacts/0b859e45033eacea.artifact.json"
+        },
+        "cache_path": "build/workspace_cache/demo/incremental/phase6_2_state.json",
+        "compiled": [
+          "main.panther"
+        ],
+        "diagnostics": [
+          "removed:policy.panther"
+        ],
+        "duration_ms": 8.551,
+        "external_api_used": false,
+        "network_required": false,
+        "ok": true,
+        "phase": "6.2",
+        "plan": {
+          "cache_hit_ratio": 0.0,
+          "changed": [
+            "main.panther"
+          ],
+          "removed": [
+            "policy.panther"
+          ],
+          "total_sources": 1,
+          "unchanged": []
+        },
+        "removed": [
+          "policy.panther"
+        ],
+        "reused": [],
+        "version": "0.6.2-incremental-compilation",
+        "workspace": "build/phase6_3_demo_workspace/app"
+      },
+      "core": {
+        "artifacts": {
+          "core.panther": "build/workspace_cache/demo/incremental/artifacts/a2b9979a5192df30.artifact.json"
+        },
+        "cache_path": "build/workspace_cache/demo/incremental/phase6_2_state.json",
+        "compiled": [
+          "core.panther"
+        ],
+        "diagnostics": [],
+        "duration_ms": 19.634,
+        "external_api_used": false,
+        "network_required": false,
+        "ok": true,
+        "phase": "6.2",
+        "plan": {
+          "cache_hit_ratio": 0.0,
+          "changed": [
+            "core.panther"
+          ],
+          "removed": [],
+          "total_sources": 1,
+          "unchanged": []
+        },
+        "removed": [],
+        "reused": [],
+        "version": "0.6.2-incremental-compilation",
+        "workspace": "build/phase6_3_demo_workspace/core"
+      },
+      "security": {
+        "artifacts": {
+          "policy.panther": "build/workspace_cache/demo/incremental/artifacts/bc716372707b12a4.artifact.json"
+        },
+        "cache_path": "build/workspace_cache/demo/incremental/phase6_2_state.json",
+        "compiled": [
+          "policy.panther"
+        ],
+        "diagnostics": [
+          "removed:core.panther"
+        ],
+        "duration_ms": 11.567,
+        "external_api_used": false,
+        "network_required": false,
+        "ok": true,
+        "phase": "6.2",
+        "plan": {
+          "cache_hit_ratio": 0.0,
+          "changed": [
+            "policy.panther"
+          ],
+          "removed": [
+            "core.panther"
+          ],
+          "total_sources": 1,
+          "unchanged": []
+        },
+        "removed": [
+          "core.panther"
+        ],
+        "reused": [],
+        "version": "0.6.2-incremental-compilation",
+        "workspace": "build/phase6_3_demo_workspace/security"
+      }
+    }
+  },
+  "build_order": [
+    "core",
+    "security",
+    "app"
+  ],
+  "diagnostics": [
+    "built module core with 1 source(s)",
+    "built module security with 1 source(s)",
+    "built module app with 1 source(s)"
+  ],
+  "duration_ms": 41.939,
+  "external_api_used": false,
+  "module_count": 3,
+  "modules_built": [
+    "core",
+    "security",
+    "app"
+  ],
+  "network_required": false,
+  "ok": true,
+  "phase": "6.3",
+  "source_count": 3,
+  "version": "0.6.3-module-workspace-system",
+  "workspace": "build/phase6_3_demo_workspace"
+}
