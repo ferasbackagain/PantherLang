@@ -1,0 +1,77 @@
+{
+  "artifact": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/build/release/toolchain_demo.sh",
+  "compiler_report": {
+    "ast_nodes": [
+      {
+        "kind": "ModuleDecl",
+        "line": 1,
+        "name": "panther.phase9.toolchain"
+      },
+      {
+        "evaluated_value": "Phase 9.2 Production Toolchain",
+        "kind": "Print",
+        "line": 3,
+        "value": "\"Phase 9.2 Production Toolchain\""
+      },
+      {
+        "evaluated_value": "Debug and release builds",
+        "kind": "Print",
+        "line": 4,
+        "value": "\"Debug and release builds\""
+      }
+    ],
+    "deterministic": true,
+    "diagnostics": [],
+    "external_api_used": false,
+    "ir": [
+      {
+        "name": "panther.phase9.toolchain",
+        "op": "DECLARE_MODULE"
+      },
+      {
+        "op": "PRINT",
+        "value": "Phase 9.2 Production Toolchain"
+      },
+      {
+        "op": "PRINT",
+        "value": "Debug and release builds"
+      }
+    ],
+    "network_used": false,
+    "ok": true,
+    "output": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/build/release/toolchain_demo.sh",
+    "phase": "6.10",
+    "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/examples/phase9_toolchain/toolchain_demo.panther",
+    "stages": [
+      "lex",
+      "parse",
+      "semantic",
+      "ir",
+      "backend",
+      "emit"
+    ],
+    "tokens": [
+      "module",
+      "panther",
+      ".",
+      "phase9",
+      ".",
+      "toolchain",
+      "print",
+      "\"Phase 9.2 Production Toolchain\"",
+      "print",
+      "\"Debug and release builds\""
+    ]
+  },
+  "ok": true,
+  "phase": "9.2",
+  "profile": "release",
+  "project_local_build": true,
+  "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/examples/phase9_toolchain/toolchain_demo.panther",
+  "toolchain": {
+    "debug_symbols": false,
+    "name": "release",
+    "optimize": true,
+    "output_dir": "build/release"
+  }
+}

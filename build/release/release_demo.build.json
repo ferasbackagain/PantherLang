@@ -1,0 +1,50 @@
+{
+  "artifact": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/build/release/release_demo.sh",
+  "compiler_report": {
+    "ast_nodes": [
+      {
+        "evaluated_value": "Phase 9.9 Release Engineering",
+        "kind": "Print",
+        "line": 1,
+        "value": "\"Phase 9.9 Release Engineering\""
+      }
+    ],
+    "deterministic": true,
+    "diagnostics": [],
+    "external_api_used": false,
+    "ir": [
+      {
+        "op": "PRINT",
+        "value": "Phase 9.9 Release Engineering"
+      }
+    ],
+    "network_used": false,
+    "ok": true,
+    "output": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/build/release/release_demo.sh",
+    "phase": "6.10",
+    "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/examples/phase9_release/release_demo.panther",
+    "stages": [
+      "lex",
+      "parse",
+      "semantic",
+      "ir",
+      "backend",
+      "emit"
+    ],
+    "tokens": [
+      "print",
+      "\"Phase 9.9 Release Engineering\""
+    ]
+  },
+  "ok": true,
+  "phase": "9.2",
+  "profile": "release",
+  "project_local_build": true,
+  "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/examples/phase9_release/release_demo.panther",
+  "toolchain": {
+    "debug_symbols": false,
+    "name": "release",
+    "optimize": true,
+    "output_dir": "build/release"
+  }
+}

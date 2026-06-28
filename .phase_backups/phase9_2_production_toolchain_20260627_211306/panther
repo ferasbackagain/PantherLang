@@ -4,31 +4,6 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 case "${1:-}" in
-  release)
-    shift
-    python3 "$ROOT/release_engineering/release_engine.py" "$@"
-    ;;
-
-  xbuild)
-    shift
-    python3 "$ROOT/toolchain/cross_platform/cross_platform_toolchain.py" "$@"
-    ;;
-
-  pack)
-    shift
-    python3 "$ROOT/toolchain/packager/artifact_packager.py" "$@"
-    ;;
-
-  cache)
-    shift
-    python3 "$ROOT/toolchain/cache/cache_cli.py" "$@"
-    ;;
-
-  toolchain)
-    shift
-    python3 "$ROOT/toolchain/production_toolchain.py" "$@"
-    ;;
-
   new)
     shift
     python3 "$ROOT/project_templates/template_cli.py" "$@"
@@ -54,12 +29,7 @@ case "${1:-}" in
     python3 "$ROOT/package_manager/package_cli.py" "$@"
     ;;
 
-  build)
-    shift
-    python3 "$ROOT/toolchain/production_toolchain.py" build "$@"
-    ;;
-
-  new|run|check)
+  new|run|build|check)
     python3 "$ROOT/cli/panther_cli_v2.py" "$@"
     ;;
 

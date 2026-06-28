@@ -9,32 +9,12 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 COMPILER = ROOT / "compiler" / "pipeline" / "panther_compiler.py"
 
 
 class PantherCLIError(Exception):
     pass
-
-
-def write_build_manifest(project_root: Path, source: Path, artifact: Path, mode: str) -> Path:
-    import json
-    manifest = {
-        "phase": "9.1",
-        "mode": mode,
-        "project_root": str(project_root),
-        "source": str(source),
-        "artifact": str(artifact),
-        "production_build": True,
-        "local_build_output": True,
-    }
-    out = project_root / "build" / "build_manifest.json"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
-    return out
 
 
 def print_json(data: Any) -> None:
@@ -67,19 +47,14 @@ def run_panther_file(source: Path) -> int:
     return run_proc.returncode
 
 
-def build_panther_file(source: Path, out: Path | None = None, mode: str = "debug") -> int:
+def build_panther_file(source: Path, out: Path | None = None) -> int:
     source = source.expanduser().resolve()
     if not source.exists():
         raise PantherCLIError(f"Source file not found: {source}")
     if source.suffix != ".panther":
         raise PantherCLIError("panther build expects a .panther file")
 
-    project_root = Path.cwd().resolve()
-    if out is None:
-        out = project_root / "build" / f"{source.stem}.sh"
-    else:
-        out = out.expanduser().resolve()
-
+    out = out or (ROOT / "build" / f"{source.stem}.sh")
     out.parent.mkdir(parents=True, exist_ok=True)
 
     proc = subprocess.run(
@@ -88,9 +63,7 @@ def build_panther_file(source: Path, out: Path | None = None, mode: str = "debug
         text=True,
     )
     if proc.returncode == 0:
-        write_build_manifest(project_root, source, out, mode)
         print(f"✅ build complete: {out}")
-        print(f"mode: {mode}")
     return proc.returncode
 
 
@@ -147,8 +120,6 @@ def main(argv: list[str] | None = None) -> int:
     build_p = sub.add_parser("build")
     build_p.add_argument("source", nargs="?")
     build_p.add_argument("--out", default=None)
-    build_p.add_argument("--release", action="store_true")
-    build_p.add_argument("--debug", action="store_true")
 
     check_p = sub.add_parser("check")
     check_p.add_argument("source", nargs="?")
@@ -167,8 +138,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.cmd == "build":
             source = Path(args.source) if args.source else Path("src/main.panther")
             out = Path(args.out) if args.out else None
-            mode = "release" if args.release else "debug"
-            return build_panther_file(source, out, mode)
+            return build_panther_file(source, out)
         if args.cmd == "check":
             source = Path(args.source) if args.source else Path("src/main.panther")
             return check_panther_file(source)
