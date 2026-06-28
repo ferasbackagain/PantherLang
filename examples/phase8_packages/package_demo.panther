@@ -1,0 +1,3 @@
+module panther.package.demo
+
+print "Phase 8.2 Package Manager Foundation"

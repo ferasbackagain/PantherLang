@@ -1,0 +1,7 @@
+{
+  "name": "PantherLang Standard Library Foundation",
+  "phase": "8.4",
+  "version": "0.8.4",
+  "modules": ["core", "io", "math", "string"],
+  "status": "foundation"
+}

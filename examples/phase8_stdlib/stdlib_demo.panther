@@ -1,0 +1,3 @@
+module panther.stdlib.demo
+
+print "Phase 8.4 Standard Library Foundation"

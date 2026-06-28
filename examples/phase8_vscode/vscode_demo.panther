@@ -1,0 +1,3 @@
+module panther.vscode
+
+print "Phase 8.8 VS Code Extension Foundation"

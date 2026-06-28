@@ -1,0 +1,5 @@
+module panther.debugger
+
+let name = "PantherLang"
+print "Phase 8.9 Debugger Foundation"
+print name

@@ -1,0 +1,3 @@
+module panther.docs
+
+print "Phase 8.5 Documentation Generator"

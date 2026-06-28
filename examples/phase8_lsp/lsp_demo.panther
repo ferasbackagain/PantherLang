@@ -1,0 +1,9 @@
+module panther.lsp
+
+fn hello(name) {
+    print "Phase 8.7 Language Server Protocol"
+    print name
+}
+
+let project = "PantherLang"
+hello(project)

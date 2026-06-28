@@ -22,6 +22,7 @@ def print_json(data: Any) -> None:
 
 
 def run_panther_file(source: Path) -> int:
+    source = source.expanduser().resolve()
     if not source.exists():
         raise PantherCLIError(f"Source file not found: {source}")
     if source.suffix != ".panther":
@@ -47,6 +48,7 @@ def run_panther_file(source: Path) -> int:
 
 
 def build_panther_file(source: Path, out: Path | None = None) -> int:
+    source = source.expanduser().resolve()
     if not source.exists():
         raise PantherCLIError(f"Source file not found: {source}")
     if source.suffix != ".panther":
@@ -66,6 +68,7 @@ def build_panther_file(source: Path, out: Path | None = None) -> int:
 
 
 def check_panther_file(source: Path) -> int:
+    source = source.expanduser().resolve()
     if not source.exists():
         raise PantherCLIError(f"Source file not found: {source}")
     with tempfile.NamedTemporaryFile(prefix="panther_check_", suffix=".sh") as tmp:
@@ -112,14 +115,14 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     run_p = sub.add_parser("run")
-    run_p.add_argument("source")
+    run_p.add_argument("source", nargs="?")
 
     build_p = sub.add_parser("build")
-    build_p.add_argument("source")
+    build_p.add_argument("source", nargs="?")
     build_p.add_argument("--out", default=None)
 
     check_p = sub.add_parser("check")
-    check_p.add_argument("source")
+    check_p.add_argument("source", nargs="?")
 
     new_p = sub.add_parser("new")
     new_p.add_argument("name")
@@ -130,12 +133,15 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         if args.cmd == "run":
-            return run_panther_file(Path(args.source))
+            source = Path(args.source) if args.source else Path("src/main.panther")
+            return run_panther_file(source)
         if args.cmd == "build":
+            source = Path(args.source) if args.source else Path("src/main.panther")
             out = Path(args.out) if args.out else None
-            return build_panther_file(Path(args.source), out)
+            return build_panther_file(source, out)
         if args.cmd == "check":
-            return check_panther_file(Path(args.source))
+            source = Path(args.source) if args.source else Path("src/main.panther")
+            return check_panther_file(source)
         if args.cmd == "new":
             return new_project(args.name)
         if args.cmd == "doctor":
