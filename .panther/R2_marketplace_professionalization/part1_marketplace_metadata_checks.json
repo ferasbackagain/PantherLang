@@ -1,0 +1,96 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "name",
+      "ok": true,
+      "detail": "pantherlang"
+    },
+    {
+      "name": "displayName",
+      "ok": true,
+      "detail": "PantherLang"
+    },
+    {
+      "name": "version_1_0_0",
+      "ok": true,
+      "detail": "1.0.0"
+    },
+    {
+      "name": "publisher",
+      "ok": true,
+      "detail": "pantherlang"
+    },
+    {
+      "name": "description",
+      "ok": true,
+      "detail": "Official PantherLang language support, developer tooling, and debug adapter integration for Visual Studio Code."
+    },
+    {
+      "name": "engines_vscode",
+      "ok": true,
+      "detail": "{\"vscode\":\"^1.80.0\"}"
+    },
+    {
+      "name": "categories",
+      "ok": true,
+      "detail": "[\"Debuggers\",\"Other\",\"Programming Languages\"]"
+    },
+    {
+      "name": "keywords",
+      "ok": true,
+      "detail": "[\"compiler\",\"debugger\",\"developer-tools\",\"language-server\",\"panther\",\"pantherlang\",\"programming-language\"]"
+    },
+    {
+      "name": "icon_path",
+      "ok": true,
+      "detail": "assets/pantherlang-icon.png"
+    },
+    {
+      "name": "icon_exists",
+      "ok": true,
+      "detail": "assets/pantherlang-icon.png"
+    },
+    {
+      "name": "gallery_banner_dark_blue",
+      "ok": true,
+      "detail": "{\"color\":\"#0B1F3A\",\"theme\":\"dark\"}"
+    },
+    {
+      "name": "repository",
+      "ok": true,
+      "detail": "{\"type\":\"git\",\"url\":\"https://github.com/feras-khatib/pantherlang.git\"}"
+    },
+    {
+      "name": "bugs",
+      "ok": true,
+      "detail": "{\"url\":\"https://github.com/feras-khatib/pantherlang/issues\"}"
+    },
+    {
+      "name": "homepage",
+      "ok": true,
+      "detail": "https://github.com/feras-khatib/pantherlang"
+    },
+    {
+      "name": "readme",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "changelog",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "license",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contributes",
+      "ok": true,
+      "detail": "[\"languages\",\"grammars\",\"commands\",\"debuggers\"]"
+    }
+  ],
+  "failed": []
+}

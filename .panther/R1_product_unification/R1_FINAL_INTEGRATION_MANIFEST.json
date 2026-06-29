@@ -1,0 +1,514 @@
+{
+  "aligned_files": [
+    {
+      "path": "panther_core/__init__.py",
+      "sha256": "6b2cd57d5ff250abf77f95a3c6f3c46c40ea3cba6ff23a349bce38bcaa3c7425",
+      "size": 384
+    },
+    {
+      "path": "panther_core/version.py",
+      "sha256": "a1bbcc012e0ae42e0b90743438bec818817ecf6ac629ee349465ea030af9bfb5",
+      "size": 569
+    },
+    {
+      "path": "cli/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "cli/panther_cli_v2.py",
+      "sha256": "6acc74e8a533f3f199f821f3dae4f5d2d0c5e8bac66a2383889d4c5cd236a68e",
+      "size": 6045
+    },
+    {
+      "path": "cli/version.py",
+      "sha256": "68676969ac4b088d762176232fe054c020dfd2cb2204795cd7f67cdb8717c286",
+      "size": 110
+    },
+    {
+      "path": "runtime/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "runtime/agents/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "runtime/agents/agent.py",
+      "sha256": "a67cec442c2eee81d13957d477a0e15b5ee641a698803a07f7526d5dec70d3a9",
+      "size": 1601
+    },
+    {
+      "path": "runtime/agents/agent_api.py",
+      "sha256": "37bfe3ba2f7543fffd40d2641278ac6b4be0984afa4b35ed597a5fc1803ba6f4",
+      "size": 1414
+    },
+    {
+      "path": "runtime/agents/agent_context.py",
+      "sha256": "2f9df54acf5194f7861053169cae76deb0fc02355764f7dfffff1455163b1fb7",
+      "size": 848
+    },
+    {
+      "path": "runtime/agents/agent_executor.py",
+      "sha256": "0c89a1f10717ea1f01efa492a1cc5243811eaf4973932be490d9fec521b99a2b",
+      "size": 1149
+    },
+    {
+      "path": "runtime/agents/agent_registry.py",
+      "sha256": "76869f088420a0ddc47a43fd5aec704926166d2cb3bb274b29c1e88fe2b9d981",
+      "size": 875
+    },
+    {
+      "path": "runtime/ai_runtime/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "runtime/ai_runtime/ai_runtime.py",
+      "sha256": "ab7674d6caa1e74125fbe8e27f0d5ec08f93a96c723e96a684deb57cfcfdb596",
+      "size": 2727
+    },
+    {
+      "path": "runtime/ai_runtime/runtime_api.py",
+      "sha256": "912085069edc83bc78021b9475446e4aedb7a8e79cb14c008980dfa720584409",
+      "size": 2605
+    },
+    {
+      "path": "runtime/ai_runtime/runtime_config.py",
+      "sha256": "fab20ff75beb59add78279fc02068052f5aa0f161d0ad74287e92acfa660cf23",
+      "size": 427
+    },
+    {
+      "path": "runtime/ai_runtime/runtime_context.py",
+      "sha256": "e52efe09c5154b059349700969efaff39ac8b7eabb7b624396bb493fbcd97d19",
+      "size": 772
+    },
+    {
+      "path": "runtime/ai_runtime/runtime_events.py",
+      "sha256": "56182f7c7102cb642ee5fdd8cbe5334c751be37e04b2629ec55d6cb40be0d1a5",
+      "size": 912
+    },
+    {
+      "path": "runtime/ai_runtime/runtime_session.py",
+      "sha256": "910f4db258de2ae9293234b8217aab97bb1b5539754a82f92b0639f27036defe",
+      "size": 1006
+    },
+    {
+      "path": "runtime/context_state/state_engine.py",
+      "sha256": "efd7e53517933c1f2b13451cff59ad836b69a1086520ea5b974964f9001d8d0e",
+      "size": 638
+    },
+    {
+      "path": "runtime/distributed/distributed_runtime.py",
+      "sha256": "c9e45aba39b51d566caf171e6353b2d2c49226ecf1636284dcb75ad812df34b0",
+      "size": 451
+    },
+    {
+      "path": "runtime/final_integration/final_runtime.py",
+      "sha256": "f8714e3bd18141ff7ce18aa95953b7e49708d8f2e1af2808352650b2310a34e3",
+      "size": 2676
+    },
+    {
+      "path": "runtime/memory/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "runtime/memory/memory_api.py",
+      "sha256": "50f4d7f5318a3b6388371e273879fb0e0f13a5c8858fa5cd1bebdf812cb604fa",
+      "size": 1869
+    },
+    {
+      "path": "runtime/memory/memory_cell.py",
+      "sha256": "0c33dfa32e1f273d827b8533e52ac4a7b7218a8957c36cbcaa94f8ad3588c04f",
+      "size": 669
+    },
+    {
+      "path": "runtime/memory/memory_store.py",
+      "sha256": "59e1d87b665b1b03046545aae97fc95cb931175528e584fe76695057fc704226",
+      "size": 1464
+    },
+    {
+      "path": "runtime/multi_agent/bus.py",
+      "sha256": "bf97d8f9b420435f7d3605c0219bdc6225af89431c05f747cbab301fd8ee3aca",
+      "size": 539
+    },
+    {
+      "path": "runtime/plugins/plugin_system.py",
+      "sha256": "2dc31641103f6d0350fe3de29853f60bcc6496e2e3df95cb03fc55fcca2ff22e",
+      "size": 467
+    },
+    {
+      "path": "runtime/runtime_manifest.json",
+      "sha256": "0c6737f554f073195b62e211414afac709c30a4fe62ff206a564e5141cf82709",
+      "size": 168
+    },
+    {
+      "path": "runtime/sandbox/sandbox.py",
+      "sha256": "01872e78cb24031bb708a9e8a7aa86d744053905752ca39b360a618a852af418",
+      "size": 651
+    },
+    {
+      "path": "runtime/task_scheduler/scheduler.py",
+      "sha256": "b3af6e16bd308b93ed7188c7f4d56c452bd0dba67ec6ef92d26f79ac28ae408e",
+      "size": 368
+    },
+    {
+      "path": "runtime/version.py",
+      "sha256": "68676969ac4b088d762176232fe054c020dfd2cb2204795cd7f67cdb8717c286",
+      "size": 110
+    },
+    {
+      "path": "compiler/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/control_flow/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/control_flow/control_flow_engine.py",
+      "sha256": "e7ee0bc14f30a2d895cbdce90e1f354e5d1c325efce3f1fe3d2b551001837b05",
+      "size": 2520
+    },
+    {
+      "path": "compiler/diagnostics/diagnostics.py",
+      "sha256": "6d0ddde08c23ead34edcbbb0c0b90f749e927745d108c59e9ebd4b293dacf542",
+      "size": 931
+    },
+    {
+      "path": "compiler/expressions/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/expressions/expression_engine.py",
+      "sha256": "b8ae41879f6abcce85ee48a9cd4ec5d44e0af73cee20df9915cc2db8419f52f6",
+      "size": 3107
+    },
+    {
+      "path": "compiler/functions/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/functions/functions_engine.py",
+      "sha256": "5c39182b9d8f743c0d3d95b5660d723448403dcd1603b01197aac7be1694f56c",
+      "size": 1222
+    },
+    {
+      "path": "compiler/incremental/incremental_compiler.py",
+      "sha256": "dc83bbff6d8e2c9e81e3a8e30e252331f9f34e246153f774df9924be8fb43fc7",
+      "size": 936
+    },
+    {
+      "path": "compiler/loops/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/loops/loops_engine.py",
+      "sha256": "5befdc54a33b6424021174f03ba4eb769c16e492a9a22d1eb4542c0c0275bc4c",
+      "size": 1837
+    },
+    {
+      "path": "compiler/modules/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/modules/modules_engine.py",
+      "sha256": "40b04e3d551217618da46fe495d0e32d67b52f16885c1ebe31213119f851ee15",
+      "size": 597
+    },
+    {
+      "path": "compiler/optimization/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/optimization/optimizer.py",
+      "sha256": "ddf770fc851172b9f4058827370eba2cce2bc738cd45935af15882e1d87c3b60",
+      "size": 1333
+    },
+    {
+      "path": "compiler/pipeline/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/pipeline/panther_compiler.py",
+      "sha256": "c3313da1396219c767f283469d6ecace8f4ff8d3b853e4fc21fd7de44812c5b4",
+      "size": 20320
+    },
+    {
+      "path": "compiler/runtime_bridge/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/runtime_bridge/runtime_bridge.py",
+      "sha256": "245b39c1e8d633f71cb76f5e2fee2e9d8a6138d91a2b1026505b653d822844f7",
+      "size": 370
+    },
+    {
+      "path": "compiler/runtime_bridge/runtime_runner.py",
+      "sha256": "3f366dc1e8651468607df4a3624c19489d58ad19d042b45146ce4e6042109de3",
+      "size": 1295
+    },
+    {
+      "path": "compiler/stdlib/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/stdlib/stdlib_engine.py",
+      "sha256": "f9b1afb53dbd650632bd826c26288a9e6aa4f7ea8f5da756662c90bef428a1eb",
+      "size": 2873
+    },
+    {
+      "path": "compiler/structs/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "compiler/structs/structs_engine.py",
+      "sha256": "f3d9f737763f5b65151290c3db7b28c8cfc4b9edb80f8dd348f4814fc1ee6e1c",
+      "size": 737
+    },
+    {
+      "path": "compiler/version.py",
+      "sha256": "661911ae109b0fa4aa68931e045cec70e8dbae82e9e4fe6c7ae2f4ab6b7139c3",
+      "size": 106
+    },
+    {
+      "path": "toolchain/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "toolchain/cache/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "toolchain/cache/build_cache.py",
+      "sha256": "72341fe428d10e3911af1935d855a78fe8e397bf720e6ff7ac1245a7a96c0cc4",
+      "size": 2173
+    },
+    {
+      "path": "toolchain/cache/cache_cli.py",
+      "sha256": "58fb8ba6399b9d26ea1f36d95bad4de0f368b3dd5b4d6f33557e7af56861365a",
+      "size": 1380
+    },
+    {
+      "path": "toolchain/cross_platform/cross_platform_toolchain.py",
+      "sha256": "05833bd52a40604a93a06a9139b0be9826b8a6154a19a048525176a7d249081f",
+      "size": 966
+    },
+    {
+      "path": "toolchain/final/final_toolchain.py",
+      "sha256": "a4f0aed746b161d5f1ba56372b621d47a928b007453e245026fcc98e018776ea",
+      "size": 932
+    },
+    {
+      "path": "toolchain/packager/artifact_packager.py",
+      "sha256": "3a4f8f0ea7266cdb4e9e2d1881ab8aff71ffe6425917b0c05f48d54553828cfa",
+      "size": 3365
+    },
+    {
+      "path": "toolchain/production_toolchain.py",
+      "sha256": "2a89f71aa4f72026f03de3b68380213c09b17033805798bdea7ab573f58369a3",
+      "size": 4285
+    },
+    {
+      "path": "toolchain/version.py",
+      "sha256": "661911ae109b0fa4aa68931e045cec70e8dbae82e9e4fe6c7ae2f4ab6b7139c3",
+      "size": 106
+    }
+  ],
+  "completed_parts": [
+    "Part 1 - Official Product Inventory",
+    "Part 2 - Unified Version Contract",
+    "Part 3 - Repository Synchronization",
+    "Part 4 - CLI + Runtime Version Alignment",
+    "Part 5 - Compiler + Toolchain Alignment",
+    "Part 6 - VS Code Extension Alignment",
+    "Part 7 - Release Verification"
+  ],
+  "created_at": "2026-06-29T19:17:43.122573+00:00",
+  "name": "PantherLang Product Unification",
+  "next": "R2 - Marketplace Professionalization / Publish Gate",
+  "ok": true,
+  "phase": "R1",
+  "release_name": "PantherLang Developer Edition v1.0.0",
+  "runtime_modified": true,
+  "status": "COMPLETE",
+  "statuses": {
+    "status_part1_product_inventory.json": {
+      "name": "Official Product Inventory",
+      "next": "R1 Part 2 - Unified Version Contract",
+      "ok": true,
+      "part": "1",
+      "phase": "R1",
+      "runtime_modified": false,
+      "status": "PASSED"
+    },
+    "status_part2_unified_version_contract.json": {
+      "contract": ".panther/R1_product_unification/unified_version_contract.json",
+      "name": "Unified Version Contract",
+      "next": "R1 Part 3 - Repository Synchronization",
+      "ok": true,
+      "part": "2",
+      "phase": "R1",
+      "plan": ".panther/R1_product_unification/version_alignment_plan.json",
+      "runtime_modified": false,
+      "status": "PASSED",
+      "target_version": "1.0.0"
+    },
+    "status_part3_repository_synchronization.json": {
+      "next": "R1 Part 4 - CLI + Runtime Version Alignment",
+      "ok": true,
+      "part": "3",
+      "phase": "R1",
+      "runtime_modified": false,
+      "status": "PASSED"
+    },
+    "status_part4_cli_runtime_version_alignment.json": {
+      "backup": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/R1_part4_cli_runtime_version_alignment_20260629_141358",
+      "manifest": ".panther/R1_product_unification/part4_cli_runtime_version_alignment_manifest.json",
+      "name": "CLI + Runtime Version Alignment",
+      "next": "R1 Part 5 - Compiler + Toolchain Alignment",
+      "ok": true,
+      "part": "4",
+      "phase": "R1",
+      "runtime_modified": true,
+      "status": "PASSED",
+      "target_version": "1.0.0"
+    },
+    "status_part5_compiler_toolchain_alignment.json": {
+      "next": "R1 Part 6 - VS Code Extension Alignment",
+      "ok": true,
+      "part": "5",
+      "phase": "R1",
+      "status": "PASSED"
+    },
+    "status_part6_vscode_extension_alignment.json": {
+      "icon": "assets/pantherlang-icon.png",
+      "name": "VS Code Extension Alignment",
+      "next": "R1 Part 7 - Release Verification",
+      "ok": true,
+      "part": "6",
+      "phase": "R1",
+      "runtime_modified": true,
+      "status": "PASSED",
+      "version": "1.0.0",
+      "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix"
+    },
+    "status_part7_release_verification.json": {
+      "name": "Release Verification",
+      "next": "R1 Final Integration",
+      "ok": true,
+      "part": "7",
+      "phase": "R1",
+      "runtime_modified": true,
+      "status": "PASSED",
+      "version": "1.0.0",
+      "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix"
+    }
+  },
+  "target_version": "1.0.0",
+  "vscode_extension_files": [
+    {
+      "path": "vscode-extension/.vscode/launch.json",
+      "sha256": "a2b2dcada2e3d59483837cc452bbd0397c85f5be95539639cc25ca2bac371430",
+      "size": 920
+    },
+    {
+      "path": "vscode-extension/.vscode/tasks.json",
+      "sha256": "4edc35c5d2eec8601c0e410962aca96ed731529d48d037d803e4a330271adadb",
+      "size": 853
+    },
+    {
+      "path": "vscode-extension/CHANGELOG.md",
+      "sha256": "a5de8b167140187b6bb3129464e11574c97ff89cde80dcf6d56167e689c60616",
+      "size": 190
+    },
+    {
+      "path": "vscode-extension/LICENSE",
+      "sha256": "832990bc45e45a89834443cc16cf7e55a6e3439c6e613c8e08dde4e2bc4d082b",
+      "size": 109
+    },
+    {
+      "path": "vscode-extension/README.md",
+      "sha256": "05231104afb059ff262357739de967b5d03b685845b3f0c77e3308e91d228bfb",
+      "size": 662
+    },
+    {
+      "path": "vscode-extension/assets/pantherlang-icon.png",
+      "sha256": "509c07d14ed94757257c89358fa7baa639596059d082b07868870c9cc3765933",
+      "size": 4711
+    },
+    {
+      "path": "vscode-extension/dist/pantherlang-0.8.8.vsix.zip",
+      "sha256": "952da03ee8c9c68d273e8f6f51b5efe8b590ba77647cb28701cb949ad3d684e4",
+      "size": 6299
+    },
+    {
+      "path": "vscode-extension/language-configuration/panther-language-configuration.json",
+      "sha256": "b1b2383c56ccb2ed598eafff6613db859fdbb6e10f7bfc850283425fa98d535b",
+      "size": 439
+    },
+    {
+      "path": "vscode-extension/language-configuration.json",
+      "sha256": "3aa6df6a2b485ec06666ca7657db89487af01823b1833ac3701cd533288bc749",
+      "size": 370
+    },
+    {
+      "path": "vscode-extension/out/debugFlow.js",
+      "sha256": "dabaacaebed031ad381d3454c97bab317bfda3609a4ea2ba1f500dfe225afb3d",
+      "size": 699
+    },
+    {
+      "path": "vscode-extension/out/extension.js",
+      "sha256": "6eac934efb9bfdfa2f17b0fbfff2fce00df394b923a129faa94751d20dfc8613",
+      "size": 2721
+    },
+    {
+      "path": "vscode-extension/package.json",
+      "sha256": "657e3fde5f4a4508d7580714179fa2045109ba6e2f670874f25490e604661d61",
+      "size": 3923
+    },
+    {
+      "path": "vscode-extension/pantherlang-1.0.0.vsix",
+      "sha256": "ae8aebb6b4f054d3b3ce158f779e3bb63e23e9d6f142bc00325978e208b16219",
+      "size": 12451
+    },
+    {
+      "path": "vscode-extension/src/debugFlow.ts",
+      "sha256": "e19556b7ad2bb6864bb949f4f210f6e4cc1f1d3e2ecd563e0ae80bfea14ad5ef",
+      "size": 762
+    },
+    {
+      "path": "vscode-extension/src/extension.js",
+      "sha256": "cfb3e3fa170a2f2e35b7219e9bc20f1974152282da22ffd3fdaba7a7de2ae550",
+      "size": 1078
+    },
+    {
+      "path": "vscode-extension/src/extension.ts",
+      "sha256": "44e81cf049a1cfd7695258a966848c206942b665e443c43ca3ea0279d714f6ed",
+      "size": 2988
+    },
+    {
+      "path": "vscode-extension/syntaxes/panther.tmLanguage.json",
+      "sha256": "4802a20db86e9f185c3a323b3362c940d123e4ffea523b479ca8d9c581fa1be4",
+      "size": 488
+    }
+  ],
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix",
+  "vsix_sha256": "ae8aebb6b4f054d3b3ce158f779e3bb63e23e9d6f142bc00325978e208b16219"
+}

@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-06-29T18:14:03.139987+00:00",
+  "files": [
+    {
+      "path": "panther_core/version.py",
+      "sha256": "a1bbcc012e0ae42e0b90743438bec818817ecf6ac629ee349465ea030af9bfb5",
+      "size": 569
+    },
+    {
+      "path": "panther_core/__init__.py",
+      "sha256": "6b2cd57d5ff250abf77f95a3c6f3c46c40ea3cba6ff23a349bce38bcaa3c7425",
+      "size": 384
+    },
+    {
+      "path": "cli/version.py",
+      "sha256": "68676969ac4b088d762176232fe054c020dfd2cb2204795cd7f67cdb8717c286",
+      "size": 110
+    },
+    {
+      "path": "runtime/version.py",
+      "sha256": "68676969ac4b088d762176232fe054c020dfd2cb2204795cd7f67cdb8717c286",
+      "size": 110
+    },
+    {
+      "path": "language/runtime/version.py",
+      "sha256": "68676969ac4b088d762176232fe054c020dfd2cb2204795cd7f67cdb8717c286",
+      "size": 110
+    },
+    {
+      "path": "tests/R1_product_unification/test_r1_part4_cli_runtime_version_alignment.py",
+      "sha256": "fe8da2fd2a389f14ac9db0844cc072c926a4f6e07e501daba0a950fa3f81e485",
+      "size": 742
+    }
+  ],
+  "name": "CLI + Runtime Version Alignment",
+  "next": "R1 Part 5 - Compiler + Toolchain Alignment",
+  "ok": true,
+  "part": "4",
+  "phase": "R1",
+  "runtime_modified": true,
+  "target_version": "1.0.0"
+}

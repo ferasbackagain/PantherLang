@@ -1,0 +1,275 @@
+{
+  "created_at": "2026-06-29T17:59:33.005995+00:00",
+  "git": {
+    "branch": "main",
+    "head": "7bbbb04a2534ccef23aa0acc7c23c429e41be6ff",
+    "tags": [
+      "v0.7.10-runtime-complete",
+      "v0.8.10-developer-experience",
+      "v0.9.10-debug-adapter-official",
+      "v0.9.10-production-toolchain"
+    ]
+  },
+  "name": "Official Product Inventory",
+  "ok": true,
+  "part": "1",
+  "phase": "R1",
+  "products": [
+    {
+      "entries": [
+        {
+          "exists": true,
+          "path": "panther",
+          "size": 2142,
+          "type": "file"
+        },
+        {
+          "exists": false,
+          "path": "Panther"
+        },
+        {
+          "exists": true,
+          "file_count": 3,
+          "path": "cli",
+          "python_file_count": 2,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "cli"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 44,
+          "path": "compiler",
+          "python_file_count": 24,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 128,
+          "path": "language/compiler",
+          "python_file_count": 58,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "compiler"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 51,
+          "path": "runtime",
+          "python_file_count": 25,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 76,
+          "path": "language/runtime",
+          "python_file_count": 39,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "runtime"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 78,
+          "path": "debug_adapter",
+          "python_file_count": 39,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "debug_adapter"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 36,
+          "path": "debug_adapter_rebuilt",
+          "python_file_count": 18,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "debug_adapter_rebuilt"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 2,
+          "path": "tools/lsp",
+          "python_file_count": 1,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 11,
+          "path": "tools/panther-lsp",
+          "python_file_count": 5,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 16,
+          "path": "vscode-extension",
+          "python_file_count": 0,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "language_server"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 16,
+          "path": "vscode-extension",
+          "python_file_count": 0,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 5,
+          "path": "vscode_extension",
+          "python_file_count": 0,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "vscode_extension"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 16,
+          "path": "toolchain",
+          "python_file_count": 8,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 0,
+          "path": "production_toolchain",
+          "python_file_count": 0,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 3,
+          "path": "build_system",
+          "python_file_count": 2,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "toolchain"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 5,
+          "path": "package_manager",
+          "python_file_count": 3,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "package_manager"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 9,
+          "path": "stdlib",
+          "python_file_count": 4,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 23,
+          "path": "language/stdlib",
+          "python_file_count": 10,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "stdlib"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 131,
+          "path": "docs",
+          "python_file_count": 0,
+          "type": "directory"
+        },
+        {
+          "exists": true,
+          "file_count": 1,
+          "path": "website",
+          "python_file_count": 0,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "docs"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 130,
+          "path": "tests",
+          "python_file_count": 81,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "tests"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 71,
+          "path": "reports",
+          "python_file_count": 0,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "reports"
+    },
+    {
+      "entries": [
+        {
+          "exists": true,
+          "file_count": 189,
+          "path": "releases",
+          "python_file_count": 93,
+          "type": "directory"
+        }
+      ],
+      "present": true,
+      "product": "releases"
+    }
+  ],
+  "runtime_modified": false
+}

@@ -118,15 +118,11 @@
     "test": "echo PantherLang VS Code extension tests are handled by Panther regression"
   },
   "files": [
+    "out",
+    "src",
     "package.json",
-    "README.md",
-    "CHANGELOG.md",
-    "LICENSE",
-    "assets/**",
     "language-configuration.json",
-    "syntaxes/**",
-    "out/**",
-    "src/**"
+    ".vscode"
   ],
   "keywords": [
     "compiler",
@@ -135,8 +131,7 @@
     "language-server",
     "panther",
     "pantherlang",
-    "programming-language",
-    "vscode-extension"
+    "programming-language"
   ],
   "repository": {
     "type": "git",

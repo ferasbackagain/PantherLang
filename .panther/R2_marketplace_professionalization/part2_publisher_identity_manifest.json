@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-06-29T19:40:44.835544+00:00",
+  "name": "Publisher Identity + Package Finalization",
+  "next": "R2 Part 3 - Local Install + Runtime Smoke Test",
+  "ok": true,
+  "part": "2",
+  "phase": "R2",
+  "publish_commands": ".panther/R2_marketplace_professionalization/PUBLISH_COMMANDS.md",
+  "publish_gate": ".panther/R2_marketplace_professionalization/publish_from_vsix_gate.sh",
+  "publisher": "pantherlang",
+  "runtime_modified": true,
+  "version": "1.0.0",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix",
+  "vsix_sha256": "e6d109324476900fcd2bfeeb597b727db5f0ee04868a7220a855677cd6eb4534"
+}

@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "R2",
+  "part": "2",
+  "status": "PASSED",
+  "name": "Publisher Identity + Package Finalization",
+  "publisher": "pantherlang",
+  "version": "1.0.0",
+  "runtime_modified": true,
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix",
+  "next": "R2 Part 3 - Local Install + Runtime Smoke Test"
+}

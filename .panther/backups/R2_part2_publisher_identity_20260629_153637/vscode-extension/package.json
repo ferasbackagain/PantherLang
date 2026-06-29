@@ -135,8 +135,7 @@
     "language-server",
     "panther",
     "pantherlang",
-    "programming-language",
-    "vscode-extension"
+    "programming-language"
   ],
   "repository": {
     "type": "git",

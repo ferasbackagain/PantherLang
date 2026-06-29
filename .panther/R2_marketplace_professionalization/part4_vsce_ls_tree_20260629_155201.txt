@@ -1,0 +1,17 @@
+pantherlang-1.0.0.vsix
+├─ CHANGELOG.md [0.18 KB]
+├─ LICENSE [0.11 KB]
+├─ README.md [0.66 KB]
+├─ language-configuration.json [0.36 KB]
+├─ package.json [3.85 KB]
+├─ assets/
+│  └─ pantherlang-icon.png [4.6 KB]
+├─ out/
+│  ├─ debugFlow.js [0.68 KB]
+│  └─ extension.js [2.66 KB]
+├─ src/
+│  ├─ debugFlow.ts [0.74 KB]
+│  ├─ extension.js [1.05 KB]
+│  └─ extension.ts [2.92 KB]
+└─ syntaxes/
+   └─ panther.tmLanguage.json [0.48 KB]

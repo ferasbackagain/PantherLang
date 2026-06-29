@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "phase": "R1",
+  "part": "5",
+  "target_version": "1.0.0",
+  "created_at": "2026-06-29T18:16:11.520253+00:00",
+  "files": [
+    {
+      "path": "compiler/version.py",
+      "sha256": "661911ae109b0fa4aa68931e045cec70e8dbae82e9e4fe6c7ae2f4ab6b7139c3"
+    },
+    {
+      "path": "toolchain/version.py",
+      "sha256": "661911ae109b0fa4aa68931e045cec70e8dbae82e9e4fe6c7ae2f4ab6b7139c3"
+    },
+    {
+      "path": "tests/R1_product_unification/test_r1_part5_compiler_toolchain.py",
+      "sha256": "c218381e14a10a8f5f864eedf1577424cc9be09350da6e6b0ffd8a48b2a0e5ee"
+    }
+  ],
+  "next": "R1 Part 6 - VS Code Extension Alignment"
+}

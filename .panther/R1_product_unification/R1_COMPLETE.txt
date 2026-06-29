@@ -1,0 +1,5 @@
+PantherLang R1 Product Unification COMPLETE
+Version: 1.0.0
+VSIX: /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/releases/vscode_marketplace/pantherlang-1.0.0.vsix
+Archive: /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/releases/R1_product_unification/PantherLang_R1_Product_Unification_v1.0.0_20260629_151738.tar.gz
+Next: R2 Marketplace Professionalization / Publish Gate

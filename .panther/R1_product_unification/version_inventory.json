@@ -1,0 +1,449 @@
+{
+  "created_at": "2026-06-29T17:59:36.230138+00:00",
+  "current_release_reference": "v0.9.10-debug-adapter-official",
+  "files": [
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": "vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": "vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.6.8",
+        "1.85.0"
+      ],
+      "path": "tools/panther-ide/vscode/pantherlang/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_132721/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_133002/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.8.8",
+        "1.80.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134705/vscode-extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "1.0.0",
+        "1.90.0"
+      ],
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134705/vscode_extension/package.json"
+    },
+    {
+      "detected_versions": [
+        "0.6.8"
+      ],
+      "path": "tools/panther-lsp/pyproject.toml"
+    },
+    {
+      "detected_versions": [
+        "0.6.4-advanced-type-inference"
+      ],
+      "path": "VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [],
+      "path": ".phase_backups/phase6_4_advanced_type_inference_20260626_160659/VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [],
+      "path": ".phase_backups/phase6_2_incremental_20260626_154030/VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [],
+      "path": ".phase_backups/phase6_2_incremental_20260626_154241/VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [],
+      "path": ".phase_backups/phase6_3_workspace_20260626_154717/VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [
+        "0.6.4-advanced-type-inference"
+      ],
+      "path": ".phase_backups/phase6_20_production_readiness_20260627_173155/VERSION_PLAN.md"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official"
+      ],
+      "path": "reports/P3/Batch10/OFFICIAL_DEBUG_ADAPTER_VERSION.md"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official"
+      ],
+      "path": "reports/P3/Batch10/P3_BATCH10_PART2_VERSION_STAMPING.md"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/p3_batch10_official_release/OFFICIAL_DEBUG_ADAPTER_VERSION.json"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_132721/p3_batch10_official_release/OFFICIAL_DEBUG_ADAPTER_VERSION.json"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_133002/p3_batch10_official_release/OFFICIAL_DEBUG_ADAPTER_VERSION.json"
+    },
+    {
+      "detected_versions": [
+        "$VERSION",
+        "0.9.10-debug-adapter-official"
+      ],
+      "path": "bootstrap_P3_batch10_part2_version_stamping.sh"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/p3_batch10_official_release/status_part2_version_stamping.json"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_132721/p3_batch10_official_release/status_part2_version_stamping.json"
+    },
+    {
+      "detected_versions": [
+        "0.9.10-debug-adapter-official",
+        "v0.9.10-debug-adapter-official"
+      ],
+      "path": ".panther/backups/release_handoff_20260629_133002/p3_batch10_official_release/status_part2_version_stamping.json"
+    }
+  ],
+  "name": "Version Inventory",
+  "ok": true,
+  "part": "1",
+  "phase": "R1",
+  "target_unified_version": "1.0.0"
+}

@@ -1,16 +1,15 @@
 {
   "name": "pantherlang",
   "displayName": "PantherLang",
-  "description": "Official PantherLang language support, developer tooling, and debug adapter integration for Visual Studio Code.",
-  "version": "1.0.0",
+  "description": "PantherLang language support for VS Code",
+  "version": "0.8.8",
   "publisher": "pantherlang",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Debuggers",
-    "Other",
-    "Programming Languages"
+    "Programming Languages",
+    "Debuggers"
   ],
   "activationEvents": [
     "onLanguage:panther",
@@ -118,37 +117,10 @@
     "test": "echo PantherLang VS Code extension tests are handled by Panther regression"
   },
   "files": [
+    "out",
+    "src",
     "package.json",
-    "README.md",
-    "CHANGELOG.md",
-    "LICENSE",
-    "assets/**",
     "language-configuration.json",
-    "syntaxes/**",
-    "out/**",
-    "src/**"
-  ],
-  "keywords": [
-    "compiler",
-    "debugger",
-    "developer-tools",
-    "language-server",
-    "panther",
-    "pantherlang",
-    "programming-language",
-    "vscode-extension"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/feras-khatib/pantherlang.git"
-  },
-  "bugs": {
-    "url": "https://github.com/feras-khatib/pantherlang/issues"
-  },
-  "homepage": "https://github.com/feras-khatib/pantherlang",
-  "galleryBanner": {
-    "color": "#0B1F3A",
-    "theme": "dark"
-  },
-  "icon": "assets/pantherlang-icon.png"
+    ".vscode"
+  ]
 }

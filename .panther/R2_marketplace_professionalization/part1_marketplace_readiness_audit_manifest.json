@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-06-29T19:29:40.404708+00:00",
+  "metadata_checks": ".panther/R2_marketplace_professionalization/part1_marketplace_metadata_checks.json",
+  "name": "Marketplace Readiness Audit",
+  "next": "R2 Part 2 - Publisher Identity + Package Finalization",
+  "ok": true,
+  "part": "1",
+  "phase": "R2",
+  "publish_gate_script": ".panther/R2_marketplace_professionalization/publish_gate_command.sh",
+  "publisher_requirements": ".panther/R2_marketplace_professionalization/PUBLISHER_REQUIREMENTS.md",
+  "runtime_modified": false,
+  "version": "1.0.0",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix",
+  "vsix_audit": ".panther/R2_marketplace_professionalization/part1_vsix_audit.json",
+  "vsix_sha256": "ae8aebb6b4f054d3b3ce158f779e3bb63e23e9d6f142bc00325978e208b16219"
+}

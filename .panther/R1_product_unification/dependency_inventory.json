@@ -1,0 +1,209 @@
+{
+  "created_at": "2026-06-29T17:59:38.667469+00:00",
+  "dependency_files": [
+    {
+      "path": ".panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json",
+      "size": 1113
+    },
+    {
+      "path": ".panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json",
+      "size": 1113
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json",
+      "size": 1113
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123519/vscode_extension/package.json",
+      "size": 1113
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d1_vscode_debugger_contribution_20260628_123651/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124052/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d3_workspace_debug_configs_20260628_124213/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d4_f5_debug_flow_20260628_125026/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d5_vscode_extension_package_verification_20260628_125750/vscode_extension/package.json",
+      "size": 2948
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_4_d6_vscode_end_to_end_verification_20260628_130022/vscode_extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134705/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134705/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/vscode_extension/package.json",
+      "size": 606
+    },
+    {
+      "path": ".panther/backups/release_handoff_20260629_132721/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": ".panther/backups/release_handoff_20260629_133002/vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": "tools/panther-ide/vscode/pantherlang/package.json",
+      "size": 1082
+    },
+    {
+      "path": "tools/panther-lsp/pyproject.toml",
+      "size": 318
+    },
+    {
+      "path": "vscode-extension/package.json",
+      "size": 3244
+    },
+    {
+      "path": "vscode_extension/package.json",
+      "size": 606
+    }
+  ],
+  "name": "Dependency Inventory",
+  "ok": true,
+  "part": "1",
+  "phase": "R1"
+}

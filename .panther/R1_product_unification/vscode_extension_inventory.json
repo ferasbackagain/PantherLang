@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-06-29T17:59:38.735729+00:00",
+  "name": "VS Code Extension Inventory",
+  "ok": true,
+  "part": "1",
+  "phase": "R1",
+  "vscode_extension": {
+    "data": {
+      "activationEvents": [
+        "onLanguage:panther",
+        "onDebug",
+        "onDebugResolve:panther",
+        "onDebugInitialConfigurations",
+        "onCommand:panther.debug.start"
+      ],
+      "bugs": null,
+      "categories": [
+        "Programming Languages",
+        "Debuggers"
+      ],
+      "contributes_keys": [
+        "commands",
+        "debuggers",
+        "grammars",
+        "languages"
+      ],
+      "displayName": "PantherLang",
+      "engines": {
+        "vscode": "^1.80.0"
+      },
+      "homepage": null,
+      "icon": null,
+      "name": "pantherlang",
+      "publisher": "pantherlang",
+      "repository": null,
+      "version": "0.8.8"
+    },
+    "exists": true,
+    "package_json_exists": true,
+    "warnings": [
+      "icon missing",
+      "repository missing",
+      "version is 0.8.8 not 1.0.0"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "created_at": "2026-06-29T17:59:38.793518+00:00",
+  "matrix": [
+    {
+      "item": "debug_adapter",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "compiler",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "runtime",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "toolchain",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "vscode_extension",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "tests",
+      "ok": true,
+      "status": "READY"
+    },
+    {
+      "item": "official_release_status",
+      "ok": true,
+      "status": "READY"
+    }
+  ],
+  "name": "Product Unification Readiness Matrix",
+  "next": "R1 Part 2 - Unified Version Contract",
+  "ok": true,
+  "part": "1",
+  "phase": "R1",
+  "target_unified_version": "1.0.0",
+  "warnings": [
+    "icon missing",
+    "repository missing",
+    "version is 0.8.8 not 1.0.0",
+    "version files detected; require normalization in R1 Part 2+"
+  ]
+}

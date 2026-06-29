@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "R1",
+  "part": "6",
+  "status": "PASSED",
+  "name": "VS Code Extension Alignment",
+  "version": "1.0.0",
+  "icon": "assets/pantherlang-icon.png",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.0.vsix",
+  "runtime_modified": true,
+  "next": "R1 Part 7 - Release Verification"
+}
