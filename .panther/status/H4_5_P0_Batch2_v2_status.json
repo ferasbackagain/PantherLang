@@ -1,0 +1,12 @@
+{
+  "backup_index": ".panther/h4_5_p0/backup_index.json",
+  "backup_manifest": ".panther/h4_5_p0/backup_manifest.json",
+  "batch": "Batch 2 v2",
+  "engineering_report": "reports/H4_5/P0/H4_5_P0_Batch2_v2_ENGINEERING_REPORT.md",
+  "milestone": "P0",
+  "name": "Cleanup Recursive Backup + Safe Backup Normalization",
+  "next": "H4.5 P0 Batch 3 \u2014 Dry Run + Static Validation",
+  "ok": true,
+  "phase": "H4.5",
+  "rollback_metadata": ".panther/h4_5_p0/rollback_metadata.json"
+}

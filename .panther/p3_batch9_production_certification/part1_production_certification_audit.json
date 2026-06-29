@@ -1,0 +1,416 @@
+{
+  "batch": "9",
+  "created_at": "2026-06-29T16:35:18.220378+00:00",
+  "gates": {
+    "batch8_final_status": true,
+    "batch8_release_gate": true,
+    "p2_canonical_regression": true,
+    "p3_atomic_tests_if_present": true,
+    "production_compile": true,
+    "rc_sha256": true,
+    "rc_sha512": true,
+    "rc_tar_valid": true
+  },
+  "name": "Production Certification Audit",
+  "next": "P-3 Batch 9 Part 2 - Integrity Verification",
+  "ok": true,
+  "part": "1",
+  "phase": "P-3",
+  "production_debug_adapter_file_count": 78,
+  "production_debug_adapter_files": [
+    {
+      "path": "debug_adapter/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": "debug_adapter/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "966f2319e9ccad4989b12799cfac3be840fba8dc1a7619711044eab835aa3745",
+      "size": 570
+    },
+    {
+      "path": "debug_adapter/__pycache__/adapter.cpython-313.pyc",
+      "sha256": "e89bc3b690065f94d4d0e4c3485709c4a2b73276a310a8aacf61b1c0d04627f1",
+      "size": 5736
+    },
+    {
+      "path": "debug_adapter/__pycache__/breakpoint_store.cpython-313.pyc",
+      "sha256": "d7678a73dbf837a3329339b4acf140995f6a4e02e1da0d9d00186a0fdda6f19b",
+      "size": 2420
+    },
+    {
+      "path": "debug_adapter/__pycache__/breakpoints.cpython-313.pyc",
+      "sha256": "72ad2db5085d02c44354ebc3c9a376378dc5ef23adf794944b5568f8cb341ac8",
+      "size": 10703
+    },
+    {
+      "path": "debug_adapter/__pycache__/capabilities.cpython-313.pyc",
+      "sha256": "4ad93a9a8e13cabe39cec68763d8f290b176d46673568cd74d7c46e11c15ff1f",
+      "size": 506
+    },
+    {
+      "path": "debug_adapter/__pycache__/dispatcher.cpython-313.pyc",
+      "sha256": "83c46feb71b70b83e6853a7a049e6db621869589eea1da501ad8ac3a82ad32c6",
+      "size": 4590
+    },
+    {
+      "path": "debug_adapter/__pycache__/dispatcher_contract.cpython-313.pyc",
+      "sha256": "816f686f170d9a4de317c502b878b9662adf8b6a8eee93f6d41cbe2d7b6d4535",
+      "size": 2085
+    },
+    {
+      "path": "debug_adapter/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "0d1be63c5a8a71ccb1014690cd258a775316664d8b413677461687796d6e9965",
+      "size": 1783
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "f6aa6810fc0535de00b12b08f2a0e63a4161b5701df38a9fc08d629fd8173ac9",
+      "size": 2060
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "ce43299c7f567d84a3c3db4e4d18f20beaf35b6f7b0c476ea662e54589e39d87",
+      "size": 3563
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_merge.cpython-313.pyc",
+      "sha256": "71a46179068de0cba2aba6dd7dd01a08fb3a44b80a318a1c6eda863923dec248",
+      "size": 4923
+    },
+    {
+      "path": "debug_adapter/__pycache__/events.cpython-313.pyc",
+      "sha256": "4cc64d466ee63abf1a2f658a740360626291e7f0f112fa4c6dbdb7cc8011daae",
+      "size": 2753
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_controller.cpython-313.pyc",
+      "sha256": "3281e1575bbacf16e5dd3f7b15a206f6db612274b5d401f001faa7d691b727ce",
+      "size": 6254
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "7650469961c11edad511434a61ce2f3e0e0c8777dc55e2dc5cd1ef84a994600b",
+      "size": 3156
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_state.cpython-313.pyc",
+      "sha256": "092c83d122ceaedb186be3812ea576cb17d8a98513339dc7c8ad73dde88f6943",
+      "size": 2892
+    },
+    {
+      "path": "debug_adapter/__pycache__/finalize_v2_guard.cpython-313.pyc",
+      "sha256": "2eac7182a725ff88c670e43f2c1df32f7577b21af72dea999e0883cb5b180f00",
+      "size": 2193
+    },
+    {
+      "path": "debug_adapter/__pycache__/finalize_v2_status.cpython-313.pyc",
+      "sha256": "b7b935ae4a1e6ae3d1104169d6c227255c31c39177a1f020e392651f21ec5234",
+      "size": 406
+    },
+    {
+      "path": "debug_adapter/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "e25b05a66cb0d8ebea61736a52afe2619c6a779f040225b2841b894276127f86",
+      "size": 1098
+    },
+    {
+      "path": "debug_adapter/__pycache__/legacy_cleanup.cpython-313.pyc",
+      "sha256": "1baaa5fe83a8b9c1c05749240ff3e12793d310acff37a4b09020afc71b1b14b2",
+      "size": 1009
+    },
+    {
+      "path": "debug_adapter/__pycache__/locations.cpython-313.pyc",
+      "sha256": "c8cc63d738c86fb8e2fd86ae52e1761cb59dc6713472f66dec32a663626cf424",
+      "size": 3598
+    },
+    {
+      "path": "debug_adapter/__pycache__/messages.cpython-313.pyc",
+      "sha256": "59b3403aa3ec42603d466d4fd04aafd43fb48b6037f24e1231719255ac5c7c6f",
+      "size": 2528
+    },
+    {
+      "path": "debug_adapter/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "f1fada581fa61a51ff305b9608d1ee8e0c8357c3a7b3a82c04962cec7eb77e55",
+      "size": 6272
+    },
+    {
+      "path": "debug_adapter/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "aededf4fb71f9ca253454248c6dfcff9d2f0784361169551845e9b6d5e16e01e",
+      "size": 4364
+    },
+    {
+      "path": "debug_adapter/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "54bfaf1192d0d5a21463610e3d52496a09c17820ba13f467e1aa241aa68fb7be",
+      "size": 1884
+    },
+    {
+      "path": "debug_adapter/__pycache__/response_merge.cpython-313.pyc",
+      "sha256": "a8dffe3ef46534fdb4ec338d9a9d45ccf9c6de95d489d79419141b2315d962a5",
+      "size": 4529
+    },
+    {
+      "path": "debug_adapter/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "c21c6b05cd119a8af91c04e79e8f3ed269a6e0a19016add4c2f6b2bd5e8432d1",
+      "size": 1388
+    },
+    {
+      "path": "debug_adapter/__pycache__/server.cpython-313.pyc",
+      "sha256": "f2e5d7ca9dfe0c494d193d23bea376d847e0349537815a2b5371e572ecba41ee",
+      "size": 1553
+    },
+    {
+      "path": "debug_adapter/__pycache__/session.cpython-313.pyc",
+      "sha256": "fa7419a54c37add0b5c01b8f4dfb72724ee21bb94b79b5398263414deca5f2d6",
+      "size": 2362
+    },
+    {
+      "path": "debug_adapter/__pycache__/source_map.cpython-313.pyc",
+      "sha256": "2d8eb3c17e3abde5d13533b135571871a8432c466af1846141c696e0a0759ef6",
+      "size": 6869
+    },
+    {
+      "path": "debug_adapter/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "8a4ef061d2f6d921e6353edd89e4d71146a1272030df74043b166f0ef6ff6b3e",
+      "size": 1802
+    },
+    {
+      "path": "debug_adapter/__pycache__/state_machine.cpython-313.pyc",
+      "sha256": "9458b55dde4857168c5f009fad3c513d808cd0dbbbaf4809c0b4c917598049cf",
+      "size": 2788
+    },
+    {
+      "path": "debug_adapter/__pycache__/threads.cpython-313.pyc",
+      "sha256": "fbed1cd340a6651286231f4bbb88e8226c52350805f8721b12fe7523294e0795",
+      "size": 1970
+    },
+    {
+      "path": "debug_adapter/__pycache__/transport.cpython-313.pyc",
+      "sha256": "ee10c7840583738b4173573bd29135d56ccc206da4d5af8b2d68d81c205c56c2",
+      "size": 3625
+    },
+    {
+      "path": "debug_adapter/__pycache__/validation.cpython-313.pyc",
+      "sha256": "c991ced5c15f252d844104e4dceb69522eff75f9670ac76dee64b8b6b71db662",
+      "size": 3580
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "de7423b9a3ebe9c6619b4a2d1edc860a640460c018417189496fe62ac95bef1c",
+      "size": 1298
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "d8d3b60ece763b41b5fba1056125065afc168be6d78c22973c4282512f19a2bf",
+      "size": 1996
+    },
+    {
+      "path": "debug_adapter/__pycache__/variables.cpython-313.pyc",
+      "sha256": "98c43982b1c1e358cead710717002ffd483672809e8c5133926b9f89ae69f5f8",
+      "size": 613
+    },
+    {
+      "path": "debug_adapter/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "edc9b1a6b5ae17032bd764cd3b045ee5c63ba620257ee86c3e0f4a0825d8fce4",
+      "size": 1990
+    },
+    {
+      "path": "debug_adapter/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "ef8cf8fbba23ca8bf30eabe961e3fddd138d984699cfda5f6e89545a996fd49e",
+      "size": 1284
+    },
+    {
+      "path": "debug_adapter/adapter.py",
+      "sha256": "13c2d2ff61ff4b96a387e83906bff96f6cb56ccfdc4cfb28e7d0f2f6a5ac30d1",
+      "size": 2918
+    },
+    {
+      "path": "debug_adapter/breakpoint_store.py",
+      "sha256": "89dd7ad1d3307e340b33d79d9f28ce59e44b81eae6e20843394251b20b89abb7",
+      "size": 895
+    },
+    {
+      "path": "debug_adapter/breakpoints.py",
+      "sha256": "8b7e5ba0014fcbaadf9255eb86b18ef1269d299fcd6a50a0a3c5c80a17f987f7",
+      "size": 6131
+    },
+    {
+      "path": "debug_adapter/capabilities.py",
+      "sha256": "96e99f484a1e70af6abb1a5327cb4ca4f76b3f715158c58ad70591a09d79cc2a",
+      "size": 309
+    },
+    {
+      "path": "debug_adapter/dispatcher.py",
+      "sha256": "05297fac3122067a383b9a0776b9f57a8c725186fc70f37f6fc4aa29d06aba46",
+      "size": 2321
+    },
+    {
+      "path": "debug_adapter/dispatcher_contract.py",
+      "sha256": "54e2ee3077baa6fd76548e2e98ed335568ac6946f07e0071b869f394bb025f32",
+      "size": 1892
+    },
+    {
+      "path": "debug_adapter/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": "debug_adapter/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": "debug_adapter/event_merge.py",
+      "sha256": "3f234bbadb962b5ba04edd1cd9f5f2f661c55a6b9724374376d7bccd808f1692",
+      "size": 3215
+    },
+    {
+      "path": "debug_adapter/events.py",
+      "sha256": "0335bcb62139a7e476e15fac0de097313964d27efe8b00dd8bcd7ede3982e409",
+      "size": 1624
+    },
+    {
+      "path": "debug_adapter/execution_controller.py",
+      "sha256": "550e27e6f30674c4f4a7ef227fa053480c50ec78928c6eddfd83146620c940b4",
+      "size": 3294
+    },
+    {
+      "path": "debug_adapter/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": "debug_adapter/execution_state.py",
+      "sha256": "05bce1a679a6d503b06463fcd7401a9a77c3569072777a5476f67c6247fee01c",
+      "size": 1468
+    },
+    {
+      "path": "debug_adapter/finalize_v2_guard.py",
+      "sha256": "469a0557cea8879ece4a2096eb1922e9b062eba44bb7fd3e0e2ed80cc51767ad",
+      "size": 1429
+    },
+    {
+      "path": "debug_adapter/finalize_v2_status.py",
+      "sha256": "49a4af980037b4677760a933f76afd47aff402f4b71aa2d1f30914e30770dc9f",
+      "size": 264
+    },
+    {
+      "path": "debug_adapter/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": "debug_adapter/legacy_cleanup.py",
+      "sha256": "d60908145e80614394bc45d80560097dbfad963bff3a72aa710323f27bb0bf50",
+      "size": 484
+    },
+    {
+      "path": "debug_adapter/locations.py",
+      "sha256": "b9d878e6dd8e6d93d75cad1ed4b83c72b4af6a0a618c6bfe7faf0c14f564284d",
+      "size": 1425
+    },
+    {
+      "path": "debug_adapter/messages.py",
+      "sha256": "7300612fe20d5e2750891850185a818a6f9743273c4e9acf2a347ec35f2b2e3b",
+      "size": 1433
+    },
+    {
+      "path": "debug_adapter/protocol.py",
+      "sha256": "5be891e91ded328a71625535a014b64e91f0c1a6a3f846f510100a906b35b989",
+      "size": 3892
+    },
+    {
+      "path": "debug_adapter/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": "debug_adapter/response_dispatcher.py",
+      "sha256": "1eb4197a7c67677203fec79310ef7dc75085324a16f6f714b4e9b755de55dd70",
+      "size": 1418
+    },
+    {
+      "path": "debug_adapter/response_merge.py",
+      "sha256": "c0056f04aa78b18b8616eef3301e7bc214c2a806869862472763296c3846a512",
+      "size": 3620
+    },
+    {
+      "path": "debug_adapter/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": "debug_adapter/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": "debug_adapter/source_map.py",
+      "sha256": "2ee7f2b38bcaabf7f1a389396a7c87732816b2b5dce0fc391c2b6a8279ad097e",
+      "size": 4103
+    },
+    {
+      "path": "debug_adapter/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": "debug_adapter/state_machine.py",
+      "sha256": "dc293a2da0cb60a769ed0118e5b5d73ab90715ba57a2ce08f7eb2a154e809a5e",
+      "size": 1438
+    },
+    {
+      "path": "debug_adapter/threads.py",
+      "sha256": "bf00f0c084ea0a3c1148ed5eecb10c6e4a0c86197a34799285b33163f4d0f555",
+      "size": 892
+    },
+    {
+      "path": "debug_adapter/transport.py",
+      "sha256": "aaaccaddb875b80dcde1253c588ba92d8113c653db76589703ed02c19e937ab7",
+      "size": 1375
+    },
+    {
+      "path": "debug_adapter/validation.py",
+      "sha256": "b7e23a5a7286ec3876e0d0b3524d2c43bb535ffd27e36103e1de0e219163aa13",
+      "size": 2155
+    },
+    {
+      "path": "debug_adapter/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": "debug_adapter/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": "debug_adapter/variables.py",
+      "sha256": "d099feb5adddc72e5e88a993bf1cba6a81ea4330078502afd6dccc49a73cf1d9",
+      "size": 678
+    },
+    {
+      "path": "debug_adapter/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": "debug_adapter/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    }
+  ],
+  "release_candidate": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/releases/P3_RC/PantherLang_RC_20260629_121035.tar.gz",
+  "release_candidate_sha256": "5eb398d09eba0d420562a8f92be358779e405e897a6b8a168a52ad9f3d2d0089",
+  "release_candidate_size": 93695,
+  "runtime_modified": false
+}

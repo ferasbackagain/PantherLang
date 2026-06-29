@@ -1,0 +1,118 @@
+=== H4.3 D10 Professional Verification Log ===
+Root: /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5
+Timestamp: 20260628_122839
+Trace: docs/hardening/H4_3_D10_DEBUG_DATA_MODEL_TRACE_20260628_122839.json
+
+F...                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_d10_professional_debugging_data_model_full_workflow ___________
+
+    def test_d10_professional_debugging_data_model_full_workflow():
+        trace = []
+    
+        threads = ThreadStore()
+        main = threads.ensure_main_thread()
+    
+        trace.append({"step": "thread.created", "thread": main.to_dap()})
+    
+        frame = threads.add_frame(
+            main.id,
+            name="main",
+            source_path="examples/hello.pan",
+            line=21,
+            column=1,
+            variables={
+                "count": 7,
+                "name": "panther",
+                "enabled": True,
+                "config": {
+                    "mode": "debug",
+                    "level": 3,
+                },
+                "items": [10, 20, 30],
+            },
+        )
+    
+        stack_trace = threads.stack_trace_body(main.id)
+        trace.append({"step": "stackTrace", "body": stack_trace})
+    
+        assert stack_trace["totalFrames"] == 1
+        assert stack_trace["stackFrames"][0]["name"] == "main"
+        assert stack_trace["stackFrames"][0]["source"]["path"] == "examples/hello.pan"
+        assert stack_trace["stackFrames"][0]["line"] == 21
+    
+        scopes = ScopeStore(thread_store=threads)
+        scopes_body = scopes.scopes_body(frame.id)
+    
+        trace.append({"step": "scopes", "body": scopes_body})
+    
+        assert len(scopes_body["scopes"]) == 1
+        local_scope = scopes_body["scopes"][0]
+    
+        assert local_scope["name"] == "Locals"
+        assert local_scope["variablesReference"] > 0
+        assert local_scope["namedVariables"] == 5
+    
+        variables = scopes.variables_for_scope_reference(local_scope["variablesReference"])
+        by_name = {item["name"]: item for item in variables}
+    
+        trace.append({"step": "variables", "variables": variables})
+    
+        assert by_name["count"]["result"] if False else True
+        assert by_name["count"]["value"] == "7"
+        assert by_name["count"]["type"] == "int"
+    
+        assert by_name["name"]["value"] == "panther"
+        assert by_name["enabled"]["value"] == "true"
+    
+        assert by_name["config"]["type"] == "object"
+        assert by_name["config"]["variablesReference"] > 0
+    
+        assert by_name["items"]["type"] == "array"
+        assert by_name["items"]["variablesReference"] > 0
+    
+        config_children = scopes.variables_for_scope_reference(by_name["config"]["variablesReference"])
+        config_by_name = {item["name"]: item for item in config_children}
+    
+        trace.append({"step": "config.children", "variables": config_children})
+    
+        assert config_by_name["mode"]["value"] == "debug"
+        assert config_by_name["level"]["value"] == "3"
+    
+        evaluate = EvaluateEngine()
+        evaluate.context.scope_store = scopes
+    
+        eval_count = evaluate.evaluate_body("count", frame_id=frame.id)
+        eval_name = evaluate.evaluate_body("name", frame_id=frame.id)
+        eval_config = evaluate.evaluate_body("config", frame_id=frame.id)
+        eval_literal = evaluate.evaluate_body('"hello"', frame_id=frame.id)
+        eval_missing = evaluate.evaluate_body("missing_symbol", frame_id=frame.id)
+    
+        trace.append({
+            "step": "evaluate",
+            "count": eval_count,
+            "name": eval_name,
+            "config": eval_config,
+            "literal": eval_literal,
+            "missing": eval_missing,
+        })
+    
+        assert eval_count["result"] == "7"
+        assert eval_count["type"] == "int"
+    
+        assert eval_name["result"] == "panther"
+        assert eval_name["type"] == "string"
+    
+        assert eval_config["type"] == "object"
+        assert eval_config["variablesReference"] > 0
+    
+>       assert eval_literal["result"] == "hello"
+E       assert '<unresolved: "hello">' == 'hello'
+E         
+E         - hello
+E         + <unresolved: "hello">
+
+tests/test_h4_3_d10_professional_verification.py:128: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_h4_3_d10_professional_verification.py::test_d10_professional_debugging_data_model_full_workflow
+1 failed, 3 passed in 0.39s

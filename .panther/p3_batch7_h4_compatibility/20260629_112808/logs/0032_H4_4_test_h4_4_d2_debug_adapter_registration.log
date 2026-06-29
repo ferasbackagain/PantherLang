@@ -1,0 +1,12 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+__________________ test_h44_d2_adapter_file_exists_in_project __________________
+tests/test_h4_4_d2_debug_adapter_registration.py:60: in test_h44_d2_adapter_file_exists_in_project
+    assert Path("debug_adapter/adapter.py").exists()
+E   AssertionError: assert False
+E    +  where False = exists()
+E    +    where exists = PosixPath('debug_adapter/adapter.py').exists
+E    +      where PosixPath('debug_adapter/adapter.py') = Path('debug_adapter/adapter.py')
+=========================== short test summary info ============================
+FAILED tests/test_h4_4_d2_debug_adapter_registration.py::test_h44_d2_adapter_file_exists_in_project
+1 failed, 5 passed in 0.11s

@@ -1,0 +1,2183 @@
+{
+  "candidate_count": 92,
+  "candidates": [
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 15,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/debug_adapter",
+      "source_path": "debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d10_evaluate_literal_resolution_20260628_123036__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d10_professional_verification_20260628_122839__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d10_professional_verification_20260628_123054__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter"
+    },
+    {
+      "file_count": 38,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d8_watch_expressions_20260628_114934__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d8_watch_expressions_20260628_114934/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d9_full_regression_20260628_122555__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_evaluate_literal_resolution_20260628_123036__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_professional_verification_20260628_122839__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_professional_verification_20260628_123054__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter"
+    },
+    {
+      "file_count": 38,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d8_watch_expressions_20260628_114934__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d8_watch_expressions_20260628_114934/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d9_full_regression_20260628_122555__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_5_P0_Batch1_20260628_134552__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d10_evaluate_literal_resolution_20260628_123036__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d10_professional_verification_20260628_122839__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d10_professional_verification_20260628_123054__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter"
+    },
+    {
+      "file_count": 38,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d8_watch_expressions_20260628_114934__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d8_watch_expressions_20260628_114934/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d9_full_regression_20260628_122555__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_evaluate_literal_resolution_20260628_123036__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_professional_verification_20260628_122839__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d10_professional_verification_20260628_123054__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter"
+    },
+    {
+      "file_count": 38,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d8_watch_expressions_20260628_114934__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d8_watch_expressions_20260628_114934/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d9_full_regression_20260628_122555__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_5_P0_Batch1_20260628_134552__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_5_P0_Batch1_20260628_134552/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134705__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134705/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch4_v2_20260628_174235__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch4_v2_20260628_174235/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__P1_Batch4_v2_original_debug_adapter_20260629_085448__debug_adapter",
+      "source_path": ".panther/backups/P1_Batch4_v2_original_debug_adapter_20260629_085448/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__P1_Batch4_v2_original_debug_adapter_20260629_085711__debug_adapter",
+      "source_path": ".panther/backups/P1_Batch4_v2_original_debug_adapter_20260629_085711/debug_adapter"
+    },
+    {
+      "file_count": 39,
+      "missing_required": [],
+      "present_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 14,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__P1_Batch4_v3_original_debug_adapter_20260629_090934__debug_adapter",
+      "source_path": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter"
+    },
+    {
+      "file_count": 37,
+      "missing_required": [
+        "evaluate.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 13,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d7_evaluate_20260628_114205__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d7_evaluate_20260628_114205/debug_adapter"
+    },
+    {
+      "file_count": 37,
+      "missing_required": [
+        "evaluate.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 13,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d7_evaluate_20260628_114205__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d7_evaluate_20260628_114205/debug_adapter"
+    },
+    {
+      "file_count": 37,
+      "missing_required": [
+        "evaluate.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 13,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d7_evaluate_20260628_114205__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d7_evaluate_20260628_114205/debug_adapter"
+    },
+    {
+      "file_count": 37,
+      "missing_required": [
+        "evaluate.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 13,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d7_evaluate_20260628_114205__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d7_evaluate_20260628_114205/debug_adapter"
+    },
+    {
+      "file_count": 36,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 12,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d6_scopes_20260628_113126__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d6_scopes_20260628_113126/debug_adapter"
+    },
+    {
+      "file_count": 36,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 12,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d6_scopes_20260628_113126__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d6_scopes_20260628_113126/debug_adapter"
+    },
+    {
+      "file_count": 36,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 12,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d6_scopes_20260628_113126__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d6_scopes_20260628_113126/debug_adapter"
+    },
+    {
+      "file_count": 36,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 12,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d6_scopes_20260628_113126__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d6_scopes_20260628_113126/debug_adapter"
+    },
+    {
+      "file_count": 35,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 11,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d5_threads_20260628_112703__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d5_threads_20260628_112703/debug_adapter"
+    },
+    {
+      "file_count": 35,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 11,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d5_threads_20260628_112703__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d5_threads_20260628_112703/debug_adapter"
+    },
+    {
+      "file_count": 35,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 11,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d5_threads_20260628_112703__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d5_threads_20260628_112703/debug_adapter"
+    },
+    {
+      "file_count": 35,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 11,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d5_threads_20260628_112703__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d5_threads_20260628_112703/debug_adapter"
+    },
+    {
+      "file_count": 34,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 10,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d4_stack_frames_20260628_111656__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d4_stack_frames_20260628_111656/debug_adapter"
+    },
+    {
+      "file_count": 34,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 10,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d4_stack_frames_20260628_111656__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d4_stack_frames_20260628_111656/debug_adapter"
+    },
+    {
+      "file_count": 34,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 10,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d4_stack_frames_20260628_111656__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d4_stack_frames_20260628_111656/debug_adapter"
+    },
+    {
+      "file_count": 34,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "score": 10,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d4_stack_frames_20260628_111656__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d4_stack_frames_20260628_111656/debug_adapter"
+    },
+    {
+      "file_count": 33,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variables_core.py"
+      ],
+      "score": 9,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d3_variable_store_20260628_110153__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d3_variable_store_20260628_110153/debug_adapter"
+    },
+    {
+      "file_count": 33,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variables_core.py"
+      ],
+      "score": 9,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d3_variable_store_20260628_110153__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d3_variable_store_20260628_110153/debug_adapter"
+    },
+    {
+      "file_count": 33,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variables_core.py"
+      ],
+      "score": 9,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d3_variable_store_20260628_110153__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d3_variable_store_20260628_110153/debug_adapter"
+    },
+    {
+      "file_count": 33,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variable_references.py",
+        "variables_core.py"
+      ],
+      "score": 9,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d3_variable_store_20260628_110153__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d3_variable_store_20260628_110153/debug_adapter"
+    },
+    {
+      "file_count": 32,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variables_core.py"
+      ],
+      "score": 8,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d2_variables_references_20260628_104824__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d2_variables_references_20260628_104824/debug_adapter"
+    },
+    {
+      "file_count": 32,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variables_core.py"
+      ],
+      "score": 8,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d2_variables_references_20260628_104824__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d2_variables_references_20260628_104824/debug_adapter"
+    },
+    {
+      "file_count": 32,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variables_core.py"
+      ],
+      "score": 8,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d2_variables_references_20260628_104824__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d2_variables_references_20260628_104824/debug_adapter"
+    },
+    {
+      "file_count": 32,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py",
+        "variables_core.py"
+      ],
+      "score": 8,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d2_variables_references_20260628_104824__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d2_variables_references_20260628_104824/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_finalize_v2_f7_full_regression_20260628_103812__debug_adapter",
+      "source_path": ".panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035__debug_adapter",
+      "source_path": ".panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_3_d1_variables_core_20260628_104635__debug_adapter",
+      "source_path": ".panther/backups/H4_3_d1_variables_core_20260628_104635/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f7_full_regression_20260628_103812__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d1_variables_core_20260628_104635__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d1_variables_core_20260628_104635/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_finalize_v2_f7_full_regression_20260628_103812__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_3_d1_variables_core_20260628_104635__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_3_d1_variables_core_20260628_104635/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f7_full_regression_20260628_103812__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/debug_adapter"
+    },
+    {
+      "file_count": 30,
+      "missing_required": [
+        "evaluate.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 7,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_3_d1_variables_core_20260628_104635__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d1_variables_core_20260628_104635/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_f5_event_dispatcher_compatibility_20260628_103053__debug_adapter",
+      "source_path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_f5_event_request_seq_20260628_103247__debug_adapter",
+      "source_path": ".panther/backups/H4_2_f5_event_request_seq_20260628_103247/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_f5_preserve_event_passthrough_20260628_102837__debug_adapter",
+      "source_path": ".panther/backups/H4_2_f5_preserve_event_passthrough_20260628_102837/debug_adapter"
+    },
+    {
+      "file_count": 26,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_finalize_v2_f4_response_merge_20260628_100225__debug_adapter",
+      "source_path": ".panther/backups/H4_2_finalize_v2_f4_response_merge_20260628_100225/debug_adapter"
+    },
+    {
+      "file_count": 27,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_finalize_v2_f5_event_merge_20260628_100527__debug_adapter",
+      "source_path": ".panther/backups/H4_2_finalize_v2_f5_event_merge_20260628_100527/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_2_finalize_v2_f6_execution_merge_20260628_103603__debug_adapter",
+      "source_path": ".panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_event_dispatcher_compatibility_20260628_103053__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_event_request_seq_20260628_103247__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_event_request_seq_20260628_103247/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_preserve_event_passthrough_20260628_102837__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_preserve_event_passthrough_20260628_102837/debug_adapter"
+    },
+    {
+      "file_count": 26,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f4_response_merge_20260628_100225__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f4_response_merge_20260628_100225/debug_adapter"
+    },
+    {
+      "file_count": 27,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f5_event_merge_20260628_100527__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f5_event_merge_20260628_100527/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f6_execution_merge_20260628_103603__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_f5_event_dispatcher_compatibility_20260628_103053__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_f5_event_request_seq_20260628_103247__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_f5_event_request_seq_20260628_103247/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_f5_preserve_event_passthrough_20260628_102837__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_f5_preserve_event_passthrough_20260628_102837/debug_adapter"
+    },
+    {
+      "file_count": 26,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_finalize_v2_f4_response_merge_20260628_100225__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_finalize_v2_f4_response_merge_20260628_100225/debug_adapter"
+    },
+    {
+      "file_count": 27,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_finalize_v2_f5_event_merge_20260628_100527__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_finalize_v2_f5_event_merge_20260628_100527/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_2_finalize_v2_f6_execution_merge_20260628_103603__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_event_dispatcher_compatibility_20260628_103053__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_event_request_seq_20260628_103247__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_event_request_seq_20260628_103247/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_f5_preserve_event_passthrough_20260628_102837__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_f5_preserve_event_passthrough_20260628_102837/debug_adapter"
+    },
+    {
+      "file_count": 26,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f4_response_merge_20260628_100225__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f4_response_merge_20260628_100225/debug_adapter"
+    },
+    {
+      "file_count": 27,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f5_event_merge_20260628_100527__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f5_event_merge_20260628_100527/debug_adapter"
+    },
+    {
+      "file_count": 28,
+      "missing_required": [
+        "evaluate.py",
+        "execution_dispatcher.py",
+        "scopes.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [
+        "dispatcher.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "protocol.py",
+        "server.py",
+        "session.py"
+      ],
+      "score": 6,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/_panther__backups__H4_5_P0_Batch1_20260628_134705___panther__backups__H4_5_P0_Batch1_20260628_134552___panther__backups__H4_2_finalize_v2_f6_execution_merge_20260628_103603__debug_adapter",
+      "source_path": ".panther/backups/H4_5_P0_Batch1_20260628_134705/.panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/debug_adapter"
+    },
+    {
+      "file_count": 0,
+      "missing_required": [
+        "dispatcher.py",
+        "evaluate.py",
+        "event_bus.py",
+        "event_dispatcher.py",
+        "execution_dispatcher.py",
+        "protocol.py",
+        "scopes.py",
+        "server.py",
+        "session.py",
+        "stack_frames.py",
+        "threads.py",
+        "variable_references.py",
+        "variable_store.py",
+        "variables_core.py"
+      ],
+      "present_required": [],
+      "score": 0,
+      "snapshot_path": "/tmp/panther_recovery_candidates_20260629_090934/candidates/architecture__debug_adapter",
+      "source_path": "architecture/debug_adapter"
+    }
+  ],
+  "ok": true,
+  "workdir": "/tmp/panther_recovery_candidates_20260629_090934"
+}

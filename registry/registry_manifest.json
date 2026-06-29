@@ -1,0 +1,16 @@
+{
+  "name": "PantherLang Official Package Registry",
+  "phase": "10.3",
+  "version": "1.0.0-rc1",
+  "status": "local-official-registry-foundation",
+  "registry_type": "local-first",
+  "network_required": false,
+  "external_api_required": false,
+  "commands": [
+    "Panther registry init",
+    "Panther registry publish",
+    "Panther registry search",
+    "Panther registry install",
+    "Panther registry list"
+  ]
+}

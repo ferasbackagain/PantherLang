@@ -1,0 +1,15 @@
+{
+  "name": "PantherLang H2 Native Executables",
+  "stage": "H2",
+  "version": "1.0.0",
+  "status": "native-executable-foundation",
+  "targets": [
+    "linux-x64",
+    "windows-x64",
+    "macos-arm64"
+  ],
+  "network_required": false,
+  "external_api_required": false,
+  "python_free_goal": true,
+  "current_mode": "native-launcher-foundation"
+}

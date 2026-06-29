@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "phase": "P-2",
+  "batch": "2",
+  "status": "PASSED",
+  "runtime_modified": false,
+  "implemented": [
+    "debug_adapter_rebuilt/__init__.py",
+    "debug_adapter_rebuilt/protocol.py",
+    "tests/P2_canonical_debug_adapter/test_p2_batch2_protocol.py"
+  ],
+  "next": "P-2 Batch 3 - Canonical Session"
+}

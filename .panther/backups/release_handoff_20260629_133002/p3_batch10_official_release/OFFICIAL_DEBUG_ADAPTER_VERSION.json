@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "product": "PantherLang",
+  "component": "Debug Adapter",
+  "release_line": "P-3",
+  "batch": "10",
+  "part": "2",
+  "version": "v0.9.10-debug-adapter-official",
+  "status": "OFFICIAL_VERSION_STAMPED",
+  "created_at_local": "20260629_131212",
+  "runtime_modified": false,
+  "next": "P-3 Batch 10 Part 3 - Final Release Manifest"
+}

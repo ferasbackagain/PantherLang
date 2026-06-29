@@ -1,0 +1,481 @@
+# Panther Recovery Engine - P-1 Batch 2
+
+## Status
+
+COMPLETE
+
+## Purpose
+
+Build a canonical baseline plan from the workspace census without modifying runtime files.
+
+## Canonical Location
+
+```json
+{
+  "location": "debug_adapter",
+  "score": 1889,
+  "file_count": 39,
+  "reasons": [
+    "live debug_adapter",
+    "contains complete H4.2-H4.4 debug adapter module set"
+  ],
+  "missing_required": [],
+  "present_required": [
+    "dispatcher.py",
+    "evaluate.py",
+    "event_bus.py",
+    "event_dispatcher.py",
+    "execution_dispatcher.py",
+    "protocol.py",
+    "scopes.py",
+    "server.py",
+    "session.py",
+    "stack_frames.py",
+    "threads.py",
+    "variable_references.py",
+    "variable_store.py",
+    "variables_core.py"
+  ]
+}
+```
+
+## Top Candidates
+
+```json
+[
+  {
+    "location": "debug_adapter",
+    "score": 1889,
+    "file_count": 39,
+    "reasons": [
+      "live debug_adapter",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_5_P0_Batch4_v2_20260628_174235/debug_adapter",
+    "score": 1439,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "pre-v2 safety backup likely contains latest H4.3/H4.4 files",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  },
+  {
+    "location": ".panther/backups/H4_5_P0_Batch1_20260628_134552/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter",
+    "score": 1289,
+    "file_count": 39,
+    "reasons": [
+      "backup candidate",
+      "H4.3 candidate",
+      "contains complete H4.2-H4.4 debug adapter module set"
+    ],
+    "missing_required": [],
+    "present_required": [
+      "dispatcher.py",
+      "evaluate.py",
+      "event_bus.py",
+      "event_dispatcher.py",
+      "execution_dispatcher.py",
+      "protocol.py",
+      "scopes.py",
+      "server.py",
+      "session.py",
+      "stack_frames.py",
+      "threads.py",
+      "variable_references.py",
+      "variable_store.py",
+      "variables_core.py"
+    ]
+  }
+]
+```
+
+## Canonical Files
+
+```json
+[
+  {
+    "file": "protocol.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/protocol.py",
+      "sha256": "9fe0a33f763489b40c30c733522a0564fb73164b0b7b88d2a9d188550cef60ac",
+      "size": 2422
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "session.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/session.py",
+      "sha256": "1dee0b9c8a23bdfab40712210a57e1567a7c3dcbfa687dbc15e5dfdb4288816a",
+      "size": 2228
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "event_bus.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/event_bus.py",
+      "sha256": "7c0770f8109b8e17ef42ed82262b71f80f93fae41c91ac7a409060f400554e0d",
+      "size": 405
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "event_dispatcher.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/event_dispatcher.py",
+      "sha256": "eb28c24a2426a3e87d1f86aeb85280ec425891dc02b30f810f9d514651b560eb",
+      "size": 1391
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "dispatcher.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/dispatcher.py",
+      "sha256": "05297fac3122067a383b9a0776b9f57a8c725186fc70f37f6fc4aa29d06aba46",
+      "size": 2321
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "server.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/server.py",
+      "sha256": "43c0dbdb139846c708e55cf3a7c7af3328f4c08a3755aa306a406939e292fc4b",
+      "size": 5675
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 88
+  },
+  {
+    "file": "variables_core.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/variables_core.py",
+      "sha256": "70d4247a39689ab773946bbbfaa44c7f8487593039849b718bbdb4f59c18b1bd",
+      "size": 5361
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 52
+  },
+  {
+    "file": "variable_references.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/variable_references.py",
+      "sha256": "42fc6b279c7bdf45b461684d8734609b1cb251a64861b39caa93dc331b094e99",
+      "size": 5421
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 48
+  },
+  {
+    "file": "variable_store.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/variable_store.py",
+      "sha256": "df8109c6874ba3cded3e8c183fb6d2d5bc1190151e7420f82716dfa41626f7bb",
+      "size": 3591
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 44
+  },
+  {
+    "file": "stack_frames.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/stack_frames.py",
+      "sha256": "5a7380fecb931be215d1be2d810665b0632dc0bc963cd15e3c004b2342bd998c",
+      "size": 5369
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 40
+  },
+  {
+    "file": "threads.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/threads.py",
+      "sha256": "942c58eec983a0a0586fa6c344d80cf06cfd84eeeb3d58bd215ba6b41f406832",
+      "size": 5455
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 36
+  },
+  {
+    "file": "scopes.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/scopes.py",
+      "sha256": "60ed8d89b50371a32eb8054cb91289fcaedeaf8f40af1c8661963af56eccc177",
+      "size": 6915
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 32
+  },
+  {
+    "file": "evaluate.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/evaluate.py",
+      "sha256": "7cb6f3850b085abe5e0bff39ac368f7f4a0797a2b7c6afb1c45b0a1037b4f960",
+      "size": 8313
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 28
+  },
+  {
+    "file": "execution_dispatcher.py",
+    "status": "selected",
+    "selected": {
+      "path": "debug_adapter/execution_dispatcher.py",
+      "sha256": "c262b5ae33732b43d852e61f629a5420d73af781ec5364323ecd626b5ca77bb4",
+      "size": 941
+    },
+    "selected_location": "debug_adapter",
+    "candidate_count": 64
+  }
+]
+```
+
+## Next
+
+P-1 Batch 3 - Reconstruction Plan.

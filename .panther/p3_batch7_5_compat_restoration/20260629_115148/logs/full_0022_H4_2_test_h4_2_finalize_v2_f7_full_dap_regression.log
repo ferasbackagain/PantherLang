@@ -1,0 +1,9 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+___________________ test_f7_professional_dap_flow_regression ___________________
+.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py:14: in test_f7_professional_dap_flow_regression
+    assert init["success"] is True
+E   assert False is True
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py::test_f7_professional_dap_flow_regression
+1 failed, 1 passed in 0.15s

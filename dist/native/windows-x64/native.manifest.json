@@ -1,0 +1,10 @@
+{
+  "artifact": "dist/native/windows-x64/Panther.cmd",
+  "current_mode": "launcher wraps Panther CLI until H2 binary compiler packaging matures",
+  "kind": "windows",
+  "native_launcher": true,
+  "ok": true,
+  "python_free_goal": true,
+  "stage": "H2",
+  "target": "windows-x64"
+}

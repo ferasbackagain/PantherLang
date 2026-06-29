@@ -1,0 +1,40 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______________________________ test_panther_run _______________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py:10: in test_panther_run
+    proc = subprocess.run(
+/usr/lib/python3.13/subprocess.py:554: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.13/subprocess.py:1991: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/panther'
+______________________________ test_panther_check ______________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py:22: in test_panther_check
+    proc = subprocess.run(
+/usr/lib/python3.13/subprocess.py:554: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.13/subprocess.py:1991: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/panther'
+________________________ test_panther_run_missing_fails ________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py:33: in test_panther_run_missing_fails
+    proc = subprocess.run(
+/usr/lib/python3.13/subprocess.py:554: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.13/subprocess.py:1991: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/panther'
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py::test_panther_run
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py::test_panther_check
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase7_2/test_cli_run.py::test_panther_run_missing_fails
+3 failed in 0.40s

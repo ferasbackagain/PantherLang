@@ -1,0 +1,9 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________ test_full_dap_event_routing_end_to_end ____________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_finalize.py:17: in test_full_dap_event_routing_end_to_end
+    assert dispatch_framed(dispatcher, {
+E   assert False is True
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_finalize.py::test_full_dap_event_routing_end_to_end
+1 failed in 0.20s

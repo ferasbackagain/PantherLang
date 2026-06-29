@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+__________ ERROR collecting tests/test_h4_2_part2a_execution_core.py ___________
+ImportError while importing test module '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part2a_execution_core.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_h4_2_part2a_execution_core.py:1: in <module>
+    from debug_adapter.execution_controller import ExecutionController
+E   ModuleNotFoundError: No module named 'debug_adapter.execution_controller'
+=========================== short test summary info ============================
+ERROR tests/test_h4_2_part2a_execution_core.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.24s

@@ -1,0 +1,14 @@
+{
+  "stage":"H3",
+  "version":"1.0.0",
+  "status":"professional-vscode-foundation",
+  "features":[
+    "syntax-highlighting",
+    "language-configuration",
+    "commands",
+    "lsp-bridge",
+    "debug-bridge",
+    "formatter-bridge",
+    "vsix-ready"
+  ]
+}

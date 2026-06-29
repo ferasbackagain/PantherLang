@@ -1,0 +1,8 @@
+{
+  "phase": "H4.4 Professional VS Code Debug Integration",
+  "batch": "Batch 2",
+  "step": "D4 F5 Debug Flow",
+  "status": "passed_locally_after_out_marker_patch",
+  "report": "docs/hardening/H4_4_D4_OUT_STARTDEBUGGING_MARKER_REPORT.md",
+  "next": "D5 VS Code Extension Package Verification"
+}

@@ -1,0 +1,274 @@
+[
+  {
+    "step": "thread.created",
+    "thread": {
+      "id": 1,
+      "name": "Main Thread"
+    }
+  },
+  {
+    "step": "stackTrace",
+    "body": {
+      "stackFrames": [
+        {
+          "id": 1,
+          "name": "main",
+          "source": {
+            "path": "examples/hello.pan",
+            "name": "hello.pan"
+          },
+          "line": 21,
+          "column": 1
+        }
+      ],
+      "totalFrames": 1
+    }
+  },
+  {
+    "step": "scopes",
+    "body": {
+      "scopes": [
+        {
+          "name": "Locals",
+          "variablesReference": 1002,
+          "expensive": false,
+          "namedVariables": 5,
+          "indexedVariables": 0,
+          "source": {
+            "path": "examples/hello.pan",
+            "name": "hello.pan"
+          },
+          "line": 21,
+          "column": 1,
+          "metadata": {
+            "frameId": 1,
+            "scopeName": "frame:1:locals"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "step": "variables",
+    "variables": [
+      {
+        "name": "count",
+        "value": "7",
+        "type": "int",
+        "variablesReference": 0,
+        "evaluateName": "count"
+      },
+      {
+        "name": "name",
+        "value": "panther",
+        "type": "string",
+        "variablesReference": 0,
+        "evaluateName": "name"
+      },
+      {
+        "name": "enabled",
+        "value": "true",
+        "type": "bool",
+        "variablesReference": 0,
+        "evaluateName": "enabled"
+      },
+      {
+        "name": "config",
+        "value": "{'mode': 'debug', 'level': 3}",
+        "type": "object",
+        "variablesReference": 1003,
+        "evaluateName": "config"
+      },
+      {
+        "name": "items",
+        "value": "[10, 20, 30]",
+        "type": "array",
+        "variablesReference": 1004,
+        "evaluateName": "items"
+      }
+    ]
+  },
+  {
+    "step": "config.children",
+    "variables": [
+      {
+        "name": "mode",
+        "value": "debug",
+        "type": "string",
+        "variablesReference": 0,
+        "evaluateName": "mode"
+      },
+      {
+        "name": "level",
+        "value": "3",
+        "type": "int",
+        "variablesReference": 0,
+        "evaluateName": "level"
+      }
+    ]
+  },
+  {
+    "step": "evaluate",
+    "count": {
+      "result": "7",
+      "type": "int",
+      "variablesReference": 0,
+      "metadata": {
+        "context": "watch",
+        "source": "variable",
+        "name": "count"
+      }
+    },
+    "name": {
+      "result": "panther",
+      "type": "string",
+      "variablesReference": 0,
+      "metadata": {
+        "context": "watch",
+        "source": "variable",
+        "name": "name"
+      }
+    },
+    "config": {
+      "result": "{'mode': 'debug', 'level': 3}",
+      "type": "object",
+      "variablesReference": 1009,
+      "namedVariables": 1,
+      "metadata": {
+        "context": "watch",
+        "source": "variable",
+        "name": "config"
+      }
+    },
+    "literal": {
+      "result": "hello",
+      "type": "string",
+      "variablesReference": 0,
+      "metadata": {
+        "context": "watch",
+        "source": "literal"
+      }
+    },
+    "missing": {
+      "result": "<unresolved: missing_symbol>",
+      "type": "unresolved",
+      "variablesReference": 0,
+      "metadata": {
+        "context": "watch",
+        "frameId": 1
+      }
+    }
+  },
+  {
+    "step": "watch.evaluateAll",
+    "watches": {
+      "watchCount": 3,
+      "watchExpressions": [
+        {
+          "id": 1,
+          "expression": "count",
+          "frameId": 1,
+          "variablesReference": null,
+          "context": "watch",
+          "enabled": true,
+          "lastResult": {
+            "result": "7",
+            "type": "int",
+            "variablesReference": 0,
+            "metadata": {
+              "context": "watch",
+              "source": "variable",
+              "name": "count",
+              "watchId": 1
+            }
+          }
+        },
+        {
+          "id": 2,
+          "expression": "config",
+          "frameId": 1,
+          "variablesReference": null,
+          "context": "watch",
+          "enabled": true,
+          "lastResult": {
+            "result": "{'mode': 'debug', 'level': 3}",
+            "type": "object",
+            "variablesReference": 1017,
+            "namedVariables": 1,
+            "metadata": {
+              "context": "watch",
+              "source": "variable",
+              "name": "config",
+              "watchId": 2
+            }
+          }
+        },
+        {
+          "id": 3,
+          "expression": "missing_symbol",
+          "frameId": 1,
+          "variablesReference": null,
+          "context": "watch",
+          "enabled": true,
+          "lastResult": {
+            "result": "<unresolved: missing_symbol>",
+            "type": "unresolved",
+            "variablesReference": 0,
+            "metadata": {
+              "context": "watch",
+              "frameId": 1,
+              "watchId": 3
+            }
+          }
+        }
+      ]
+    },
+    "results": [
+      {
+        "result": "7",
+        "type": "int",
+        "variablesReference": 0,
+        "metadata": {
+          "context": "watch",
+          "source": "variable",
+          "name": "count",
+          "watchId": 1
+        }
+      },
+      {
+        "result": "{'mode': 'debug', 'level': 3}",
+        "type": "object",
+        "variablesReference": 1017,
+        "namedVariables": 1,
+        "metadata": {
+          "context": "watch",
+          "source": "variable",
+          "name": "config",
+          "watchId": 2
+        }
+      },
+      {
+        "result": "<unresolved: missing_symbol>",
+        "type": "unresolved",
+        "variablesReference": 0,
+        "metadata": {
+          "context": "watch",
+          "frameId": 1,
+          "watchId": 3
+        }
+      }
+    ]
+  },
+  {
+    "step": "watch.disabled",
+    "result": {
+      "result": "<disabled>",
+      "type": "disabled",
+      "variablesReference": 0,
+      "metadata": {
+        "watchId": 3,
+        "enabled": false
+      }
+    }
+  }
+]

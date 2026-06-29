@@ -1,0 +1,8 @@
+{
+  "name":"PantherLang",
+  "version":"1.0.0",
+  "phase":"10.5",
+  "status":"stable",
+  "cli":"Panther",
+  "ready_for_hardening":true
+}

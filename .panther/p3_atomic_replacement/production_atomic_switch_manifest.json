@@ -1,0 +1,195 @@
+{
+  "batch": "6",
+  "created_at": "2026-06-29T15:11:38.012818+00:00",
+  "files": [
+    {
+      "path": "debug_adapter/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": "debug_adapter/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "966f2319e9ccad4989b12799cfac3be840fba8dc1a7619711044eab835aa3745",
+      "size": 570
+    },
+    {
+      "path": "debug_adapter/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "0d1be63c5a8a71ccb1014690cd258a775316664d8b413677461687796d6e9965",
+      "size": 1783
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "f6aa6810fc0535de00b12b08f2a0e63a4161b5701df38a9fc08d629fd8173ac9",
+      "size": 2060
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "ce43299c7f567d84a3c3db4e4d18f20beaf35b6f7b0c476ea662e54589e39d87",
+      "size": 3563
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "7650469961c11edad511434a61ce2f3e0e0c8777dc55e2dc5cd1ef84a994600b",
+      "size": 3156
+    },
+    {
+      "path": "debug_adapter/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "e25b05a66cb0d8ebea61736a52afe2619c6a779f040225b2841b894276127f86",
+      "size": 1098
+    },
+    {
+      "path": "debug_adapter/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "12f53819748fc22986f961dadc8a92751641b670d2216ea927166a780ffbf872",
+      "size": 6096
+    },
+    {
+      "path": "debug_adapter/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "aededf4fb71f9ca253454248c6dfcff9d2f0784361169551845e9b6d5e16e01e",
+      "size": 4364
+    },
+    {
+      "path": "debug_adapter/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "91ad900c33eef8481d0b14e2002bd4573833469d1024ecf75fdacb1251e3e25c",
+      "size": 1215
+    },
+    {
+      "path": "debug_adapter/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "c21c6b05cd119a8af91c04e79e8f3ed269a6e0a19016add4c2f6b2bd5e8432d1",
+      "size": 1388
+    },
+    {
+      "path": "debug_adapter/__pycache__/server.cpython-313.pyc",
+      "sha256": "f2e5d7ca9dfe0c494d193d23bea376d847e0349537815a2b5371e572ecba41ee",
+      "size": 1553
+    },
+    {
+      "path": "debug_adapter/__pycache__/session.cpython-313.pyc",
+      "sha256": "fa7419a54c37add0b5c01b8f4dfb72724ee21bb94b79b5398263414deca5f2d6",
+      "size": 2362
+    },
+    {
+      "path": "debug_adapter/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "8a4ef061d2f6d921e6353edd89e4d71146a1272030df74043b166f0ef6ff6b3e",
+      "size": 1802
+    },
+    {
+      "path": "debug_adapter/__pycache__/threads.cpython-313.pyc",
+      "sha256": "5bb7d2d9a58f8ad56266146ade3001e30a19c816ec81697b1a3271fc4f3ff6b8",
+      "size": 1261
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "de7423b9a3ebe9c6619b4a2d1edc860a640460c018417189496fe62ac95bef1c",
+      "size": 1298
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "d8d3b60ece763b41b5fba1056125065afc168be6d78c22973c4282512f19a2bf",
+      "size": 1996
+    },
+    {
+      "path": "debug_adapter/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "edc9b1a6b5ae17032bd764cd3b045ee5c63ba620257ee86c3e0f4a0825d8fce4",
+      "size": 1990
+    },
+    {
+      "path": "debug_adapter/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "ef8cf8fbba23ca8bf30eabe961e3fddd138d984699cfda5f6e89545a996fd49e",
+      "size": 1284
+    },
+    {
+      "path": "debug_adapter/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": "debug_adapter/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": "debug_adapter/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": "debug_adapter/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": "debug_adapter/protocol.py",
+      "sha256": "c6fa1143afa032ca632ab1ccc3caa583697b92cc6d6d06c05a96eff1942cea82",
+      "size": 3644
+    },
+    {
+      "path": "debug_adapter/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": "debug_adapter/response_dispatcher.py",
+      "sha256": "f5cc947347fa62e79898aa3a3c895b8521952631d7baaab021c523a0688f0484",
+      "size": 747
+    },
+    {
+      "path": "debug_adapter/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": "debug_adapter/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": "debug_adapter/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": "debug_adapter/threads.py",
+      "sha256": "03b27576936224a148b337d17b3ce069674b3cc4d033cd743a1d1554750c9b4b",
+      "size": 293
+    },
+    {
+      "path": "debug_adapter/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": "debug_adapter/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": "debug_adapter/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": "debug_adapter/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    }
+  ],
+  "legacy_moved_to": "debug_adapter_legacy_P3_20260629_111133",
+  "name": "Production Atomic Switch with Rollback Gate",
+  "ok": true,
+  "phase": "P-3",
+  "promoted": "debug_adapter_rebuilt -> debug_adapter",
+  "promoted_file_count": 36,
+  "rollback_dir": ".panther/backups/P3_Batch6_pre_atomic_switch_20260629_111133",
+  "rollback_script": ".panther/backups/P3_Batch6_pre_atomic_switch_20260629_111133/rollback_P3_batch6.sh",
+  "runtime_modified": true
+}

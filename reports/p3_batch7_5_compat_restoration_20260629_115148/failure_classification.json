@@ -1,0 +1,523 @@
+{
+  "classifications": {
+    "missing compatibility layer": [
+      {
+        "suite_id": "0021_H4_2_test_h4_2_finalize_v2_f6_execution_merge",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.23,
+        "sha256": "0f0da47744b972fdd353a79adf000df4c22d3ddf7fd07feb5413f7f93743177f",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0021_H4_2_test_h4_2_finalize_v2_f6_execution_merge.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ModuleNotFoundError: No module named 'debug_adapter.execution_merge'"
+        ],
+        "classification": "missing compatibility layer"
+      }
+    ],
+    "obsolete legacy expectation": [
+      {
+        "suite_id": "0001_H4_2_test_debug_adapter_core",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/H4_1/test_debug_adapter_core.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.837,
+        "sha256": "8e670b2adec3c5eeb867829712332c6808ca782e4c0436b5e3f7fd00b2a74585",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0001_H4_2_test_debug_adapter_core.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/H4_1/test_debug_adapter_core.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   TypeError: a bytes-like object is required, not 'DAPEncodedMessage'",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/H4_1/test_debug_adapter_core.py::test_dap_protocol_roundtrip"
+        ],
+        "classification": "obsolete legacy expectation"
+      }
+    ],
+    "implementation defect": [
+      {
+        "suite_id": "0006_H4_2_test_h4_2_finalize_v2_f3_dispatcher_merge",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.896,
+        "sha256": "171d6d77c5f021f61167db480fb4935c9ba2d84699c37e6d2244d0197f85d40b",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0006_H4_2_test_h4_2_finalize_v2_f3_dispatcher_merge.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py::test_dispatcher_smoke_sequence_uses_v2_event_routing"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0007_H4_2_test_h4_2_finalize_v2_f4_response_merge",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 1.0,
+        "sha256": "31a7d1e6fa6ee5e284956deafd72c5bc9707becaf7c7cc41299438c08c0b0fcb",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0007_H4_2_test_h4_2_finalize_v2_f4_response_merge.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   TypeError: ResponseDispatcher.error() got an unexpected keyword argument 'body'",
+          "E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'",
+          "E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'",
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_error_response_contract"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0008_H4_2_test_h4_2_finalize_v2_f5_event_merge",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f5_event_merge.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 1.035,
+        "sha256": "227abf9812ea5aaa92ba3760d1c9e4e9feb0e0f310ed22bba0ee9fa1d41daa93",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0008_H4_2_test_h4_2_finalize_v2_f5_event_merge.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f5_event_merge.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   AttributeError: 'EventDispatcher' object has no attribute 'initialized'",
+          "E   assert 0 == 123",
+          "E   AttributeError: 'EventDispatcher' object has no attribute 'exited'",
+          "E   AttributeError: 'EventDispatcher' object has no attribute 'initialized'",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f5_event_merge.py::test_f5_initialized_event_contract"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0009_H4_2_test_h4_2_part1_finalize_dap_set_breakpoints",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part1_finalize_dap_set_breakpoints.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.917,
+        "sha256": "51b1f29832e7ca933ee4f019c454bf9270aed827373f613227a6edbf6fe96eb0",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0009_H4_2_test_h4_2_part1_finalize_dap_set_breakpoints.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part1_finalize_dap_set_breakpoints.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False",
+          "E   assert False",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part1_finalize_dap_set_breakpoints.py::test_dap_set_breakpoints_response_shape",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part1_finalize_dap_set_breakpoints.py::test_end_to_end_with_breakpoints_then_launch"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0013_H4_2_test_h4_2_part2b_v2_core",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_core.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.669,
+        "sha256": "33234d805b907e0162dbfd008d22a58993a5ab48d5bdd46926fce9ea1fe1f4bf",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0013_H4_2_test_h4_2_part2b_v2_core.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_core.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   TypeError: EventDispatcher.stopped() got an unexpected keyword argument 'status'",
+          "E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_core.py::test_event_dispatcher_control_events",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_core.py::test_response_dispatcher_preserves_events_and_normalizes_responses"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0014_H4_2_test_h4_2_part2b_v2_dap_routing",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_dap_routing.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.946,
+        "sha256": "c8a8c5c72127c7529fdd1dd91f22c6e117bf7cf35745dd5cf1a711fcfcc31f43",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0014_H4_2_test_h4_2_part2b_v2_dap_routing.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_dap_routing.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_dap_routing.py::test_continue_pause_stop_terminate_disconnect_events"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0015_H4_2_test_h4_2_part2b_v2_finalize",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_finalize.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 1.026,
+        "sha256": "308fcb48ad6f01d7cd04e2d6afe4324719f26f3b23739306465ed985070bdbb5",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0015_H4_2_test_h4_2_part2b_v2_finalize.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_finalize.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_part2b_v2_finalize.py::test_full_dap_event_routing_end_to_end"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0016_H4_2_test_h4_finalize",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_finalize.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 1.117,
+        "sha256": "a52b8cbd6d03d3e2a4537bc0285306660a23093a291543fb24a5fc73eb9eafbd",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0016_H4_2_test_h4_finalize.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_finalize.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_finalize.py::test_end_to_end_debug_adapter"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0017_H4_2_test_h4_part2",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_part2.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.916,
+        "sha256": "dcef9bb6fdb79584b4270598326d3c89e8537c350e5ecc29726ced4ed4c78dda",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0017_H4_2_test_h4_part2.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_part2.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'PantherProgramLauncher' from 'debug_adapter.launcher' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/launcher.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0018_H4_2_test_h4_part3",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_part3.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.129,
+        "sha256": "8654211ee160ae3246adb328e4c8c66053a27969112d5215f02ed33b8b104c8a",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0018_H4_2_test_h4_part3.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_part3.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'DAPProtocol' from 'debug_adapter.protocol' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/protocol.py). Did you mean: 'protocol'?"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0019_H4_2_test_h4_2_f5_event_dispatcher_compatibility",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_f5_event_request_seq_20260628_103247/tests/test_h4_2_f5_event_dispatcher_compatibility.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.734,
+        "sha256": "e15cc7a9ef798d80dcaaf131a0ed1d71a9c415921fca13ba814b100c69715dbe",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0019_H4_2_test_h4_2_f5_event_dispatcher_compatibility.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_f5_event_request_seq_20260628_103247/tests/test_h4_2_f5_event_dispatcher_compatibility.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_f5_event_request_seq_20260628_103247/tests/test_h4_2_f5_event_dispatcher_compatibility.py::test_f5_dispatcher_launch_still_returns_event"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0020_H4_2_test_h4_2_f5_event_request_seq_compatibility",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/tests/test_h4_2_f5_event_request_seq_compatibility.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.712,
+        "sha256": "6e57a03338c7e87064ab799b71a8f4e67e7588772d7c02ff3007af10f9d3a1c3",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0020_H4_2_test_h4_2_f5_event_request_seq_compatibility.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603/tests/test_h4_2_f5_event_request_seq_compatibility.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'",
+          "E   AssertionError: assert 'response' == 'event'",
+          "E",
+          "E     - event",
+          "E     + response"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0022_H4_2_test_h4_2_finalize_v2_f7_full_dap_regression",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.873,
+        "sha256": "d5a6fecbbd539426f478fc852fcf91c9e3b1115706b95371579a890a32a8c347",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0022_H4_2_test_h4_2_finalize_v2_f7_full_dap_regression.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "FAILED .panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py::test_f7_professional_dap_flow_regression"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0023_H4_2_test_h4_2_finalize_v2_f7_full_regression_manifest",
+        "module": "H4.2",
+        "path": ".panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.927,
+        "sha256": "98db873a3487cd2984a09485768567c5db7ce4de09852a91ed76e40b8debff9f",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0023_H4_2_test_h4_2_finalize_v2_f7_full_regression_manifest.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   AssertionError: Missing required H4.2 module: debug_adapter/execution_merge.py",
+          "E   assert False",
+          "E    +  where False = exists()",
+          "E    +    where exists = PosixPath('debug_adapter/execution_merge.py').exists",
+          "E    +      where PosixPath('debug_adapter/execution_merge.py') = Path('debug_adapter/execution_merge.py')"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0024_H4_3_test_h4_2_finalize_v2_f8_end_to_end_professional_verification",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.825,
+        "sha256": "8fbf90cde2b6ace5f7fa7126e802f5f2407ea22fa10fe123a3658333b024f9db",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0024_H4_3_test_h4_2_finalize_v2_f8_end_to_end_professional_verification.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   assert False is True",
+          "E   AssertionError: Missing professional DAP component: debug_adapter/execution_merge.py",
+          "E   assert False",
+          "E    +  where False = exists()",
+          "E    +    where exists = PosixPath('debug_adapter/execution_merge.py').exists"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0025_H4_3_test_h4_3_d10_professional_verification",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d10_professional_verification.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 0.757,
+        "sha256": "80414d0bb9a97687685eb5bfd5b5ddf674c60ea86717fe49a9dc742737e5ebf9",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0025_H4_3_test_h4_3_d10_professional_verification.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d10_professional_verification.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'VariableReferenceService' from 'debug_adapter.variables' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0026_H4_3_test_h4_3_d1_variables_core",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d1_variables_core.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.977,
+        "sha256": "e02d2ccdb2b14a659a11bf92afa519e0fd04918a12eb3af205e7d43dea73e388",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0026_H4_3_test_h4_3_d1_variables_core.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d1_variables_core.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   AttributeError: 'DebugVariable' object has no attribute 'to_dap'",
+          "E   AttributeError: 'DebugVariable' object has no attribute 'type_name'",
+          "E   AttributeError: 'VariableFactory' object has no attribute 'from_mapping'",
+          "E   AttributeError: 'VariableFactory' object has no attribute 'from_iterable'",
+          "E   AttributeError: 'VariablesCore' object has no attribute 'variable'"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0027_H4_3_test_h4_3_d2_variables_references",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d2_variables_references.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.022,
+        "sha256": "a8660d1f3198517db42532df3a44ba6f317aeb79c723cea3ee6c81e6304ca3b0",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0027_H4_3_test_h4_3_d2_variables_references.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d2_variables_references.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'VariableReferenceResolver' from 'debug_adapter.variable_references' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variable_references.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0028_H4_3_test_h4_3_d3_variable_store",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d3_variable_store.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.946,
+        "sha256": "71d2926fedd3b8bce34f73c1b5b957ffaaa64a7369daca338155c4abcf71b2a7",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0028_H4_3_test_h4_3_d3_variable_store.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d3_variable_store.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   AttributeError: 'VariableStore' object has no attribute 'create_scope'",
+          "E   AttributeError: 'VariableStore' object has no attribute 'create_scope'",
+          "E   AttributeError: 'VariableStore' object has no attribute 'create_scope'",
+          "E   AttributeError: 'VariableStore' object has no attribute 'create_scope'",
+          "E   AttributeError: 'VariableStore' object has no attribute 'get_scope'"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0029_H4_3_test_h4_3_d4_stack_frames",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d4_stack_frames.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.22,
+        "sha256": "7c07e81ef270f66a3d883415d250de52267344bcf19168063de768525bca7f92",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0029_H4_3_test_h4_3_d4_stack_frames.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d4_stack_frames.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'StackFrameStore' from 'debug_adapter.variables' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0030_H4_3_test_h4_3_d5_threads",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d5_threads.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.102,
+        "sha256": "ea8038f9032eeb4f788a22faafeecd37ab559e3921d1358f4cea7f99b91a37e7",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0030_H4_3_test_h4_3_d5_threads.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d5_threads.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'ThreadStore' from 'debug_adapter.variables' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0031_H4_3_test_h4_3_d6_scopes",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d6_scopes.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.196,
+        "sha256": "94eb7192b2c1a1774576dc67f85b97acbca069e826009864f9118524bd930830",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0031_H4_3_test_h4_3_d6_scopes.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d6_scopes.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'ScopeStore' from 'debug_adapter.variables' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0032_H4_3_test_h4_3_d7_evaluate",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d7_evaluate.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 0.898,
+        "sha256": "080b0047f9046a5034fde272f4002e8fdd5aa5dca060a50cc2c01f5b2dacc26a",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0032_H4_3_test_h4_3_d7_evaluate.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d7_evaluate.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'EvaluateEngine' from 'debug_adapter.variables' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0033_H4_3_test_h4_3_d8_watch_expressions",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d8_watch_expressions.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 2,
+        "duration_seconds": 1.021,
+        "sha256": "c2829ddc634d260efd4da2c393bd85afe27f7367b3a953f6e51cd4ac72b2f71b",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0033_H4_3_test_h4_3_d8_watch_expressions.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d8_watch_expressions.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   ImportError: cannot import name 'WatchExpressionManager' from 'debug_adapter.watch_expressions' (/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/watch_expressions.py)"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "suite_id": "0035_H4_3_test_h4_3_d9_integrated_data_model_regression",
+        "module": "H4.3",
+        "path": ".panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d9_integrated_data_model_regression.py",
+        "origin": "historical_backup",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.81,
+        "sha256": "62141d8137e08659c6d0d838396e8e4fa29d5a6aa6162695ca367597a2a3c557",
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/full_0035_H4_3_test_h4_3_d9_integrated_data_model_regression.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d9_integrated_data_model_regression.py -q --tb=short --disable-warnings",
+        "evidence": [
+          "E   AttributeError: 'ThreadStore' object has no attribute 'add_frame'",
+          "E   AttributeError: 'ThreadStore' object has no attribute 'add_frame'",
+          "E   AttributeError: 'ThreadStore' object has no attribute 'create_thread'",
+          "FAILED .panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d9_integrated_data_model_regression.py::test_d9_integrated_thread_frame_scope_variable_evaluate_watch_flow",
+          "FAILED .panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_3_d9_integrated_data_model_regression.py::test_d9_integrated_safe_unresolved_watch_expression"
+        ],
+        "classification": "implementation defect"
+      },
+      {
+        "path": "tests/H4_1/test_debug_adapter_core.py",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 1.11,
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_01_test_debug_adapter_core.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/H4_1/test_debug_adapter_core.py -q --tb=short --disable-warnings",
+        "classification": "implementation defect"
+      },
+      {
+        "path": "tests/test_h4_2_f5_event_dispatcher_compatibility.py",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.773,
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_02_test_h4_2_f5_event_dispatcher_compatibility.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_f5_event_dispatcher_compatibility.py -q --tb=short --disable-warnings",
+        "classification": "implementation defect"
+      },
+      {
+        "path": "tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.815,
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_03_test_h4_2_finalize_v2_f7_full_regression_manifest.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py -q --tb=short --disable-warnings",
+        "classification": "implementation defect"
+      },
+      {
+        "path": "tests/test_h4_3_d9_integrated_data_model_regression.py",
+        "status": "FAIL",
+        "exit_code": 1,
+        "duration_seconds": 0.882,
+        "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_05_test_h4_3_d9_integrated_data_model_regression.log",
+        "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d9_integrated_data_model_regression.py -q --tb=short --disable-warnings",
+        "classification": "implementation defect"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+module panther.phase10.registry
+
+print "Phase 10.3 Official Package Registry"
+print "Local-first registry ready"

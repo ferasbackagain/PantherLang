@@ -1,0 +1,81 @@
+{
+  "batch": "4",
+  "compile": {
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": ""
+  },
+  "created_at": "2026-06-29T12:49:47.689622+00:00",
+  "errors": [
+    "H4 regression failed"
+  ],
+  "executed": [
+    {
+      "action": "kept_live",
+      "file": "protocol.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "session.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "event_bus.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "event_dispatcher.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "dispatcher.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "server.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "variables_core.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "variable_references.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "variable_store.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "stack_frames.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "threads.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "scopes.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "evaluate.py"
+    },
+    {
+      "action": "kept_live",
+      "file": "execution_dispatcher.py"
+    }
+  ],
+  "name": "Controlled Reconstruction",
+  "next": "Inspect controlled reconstruction report",
+  "ok": false,
+  "phase": "P-1",
+  "pytest": {
+    "returncode": 1,
+    "stderr_tail": "",
+    "stdout_tail": "    assert message[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py:19: AssertionError\n_________________ test_end_to_end_with_breakpoints_then_launch _________________\n\ntmp_path = PosixPath('/tmp/pytest-of-panther/pytest-0/test_end_to_end_with_breakpoin0')\n\n    def test_end_to_end_with_breakpoints_then_launch(tmp_path):\n        source = tmp_path / \"demo.pan\"\n        source.write_text(\"let a = 1\\nlet b = 2\\n\", encoding=\"utf-8\")\n        dispatcher = RequestDispatcher()\n    \n        assert dispatcher.dispatch({\"seq\": 1, \"type\": \"request\", \"command\": \"initialize\", \"arguments\": {}})[\"success\"]\n        bp_response = dispatcher.dispatch({\n            \"seq\": 2,\n            \"type\": \"request\",\n            \"command\": \"setBreakpoints\",\n            \"arguments\": {\"source\": {\"path\": str(source)}, \"breakpoints\": [{\"line\": 2}]},\n        })\n        assert bp_response[\"body\"][\"breakpoints\"][0][\"verified\"] is True\n    \n        assert dispatcher.dispatch({\"seq\": 3, \"type\": \"request\", \"command\": \"configurationDone\"})[\"success\"]\n        launch = dispatcher.dispatch({\n            \"seq\": 4,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": str(source), \"dryRun\": True},\n        })\n>       assert launch[\"event\"] == \"process\"\n               ^^^^^^^^^^^^^^^\nE       KeyError: 'event'\n\ntests/test_h4_2_part1_finalize_dap_set_breakpoints.py:57: KeyError\n_____________ test_event_dispatcher_emits_and_queues_process_event _____________\n\n    def test_event_dispatcher_emits_and_queues_process_event():\n        bus = EventBus()\n        dispatcher = EventDispatcher(bus)\n>       event = dispatcher.process(\n            name=\"main.pan\",\n            command=[\"Panther\", \"run\", \"main.pan\"],\n            state=\"running\",\n            execution={\"status\": \"ready\"},\n            request_seq=7,\n        )\nE       TypeError: EventDispatcher.process() got an unexpected keyword argument 'command'\n\ntests/test_h4_2_part2b_v2_core.py:9: TypeError\n_____________________ test_event_dispatcher_control_events _____________________\n\n    def test_event_dispatcher_control_events():\n        dispatcher = EventDispatcher()\n        assert dispatcher.continued()[\"event\"] == \"continued\"\n>       paused = dispatcher.stopped(\"pause\", status=\"paused\")\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       TypeError: EventDispatcher.stopped() got an unexpected keyword argument 'status'\n\ntests/test_h4_2_part2b_v2_core.py:28: TypeError\n_____________ test_continue_pause_stop_terminate_disconnect_events _____________\n\n    def test_continue_pause_stop_terminate_disconnect_events():\n>       dispatcher = boot_dispatcher_with_launch()\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/test_h4_2_part2b_v2_dap_routing.py:36: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def boot_dispatcher_with_launch():\n        dispatcher = RequestDispatcher()\n        init = dispatcher.dispatch({\"seq\": 1, \"type\": \"request\", \"command\": \"initialize\", \"arguments\": {}})\n        assert init[\"type\"] == \"response\"\n        assert init[\"success\"] is True\n    \n        config = dispatcher.dispatch({\"seq\": 2, \"type\": \"request\", \"command\": \"configurationDone\"})\n        assert config[\"success\"] is True\n    \n        bps = dispatcher.dispatch({\n            \"seq\": 3,\n            \"type\": \"request\",\n            \"command\": \"setBreakpoints\",\n            \"arguments\": {\"source\": {\"path\": \"examples/hello.pan\"}, \"breakpoints\": [{\"line\": 1}]},\n        })\n        assert bps[\"success\"] is True\n        assert len(bps[\"body\"][\"breakpoints\"]) == 1\n    \n        launched = dispatcher.dispatch({\n            \"seq\": 4,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": \"examples/hello.pan\", \"dryRun\": True},\n        })\n>       assert launched[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_2_part2b_v2_dap_routing.py:28: AssertionError\n____________________ test_full_dap_event_routing_end_to_end ____________________\n\n    def test_full_dap_event_routing_end_to_end():\n        dispatcher = RequestDispatcher()\n    \n        assert dispatch_framed(dispatcher, {\n            \"seq\": 1,\n            \"type\": \"request\",\n            \"command\": \"initialize\",\n            \"arguments\": {\"adapterID\": \"panther\"},\n        })[\"success\"] is True\n    \n        assert dispatch_framed(dispatcher, {\n            \"seq\": 2,\n            \"type\": \"request\",\n            \"command\": \"configurationDone\",\n        })[\"success\"] is True\n    \n        breakpoints = dispatch_framed(dispatcher, {\n            \"seq\": 3,\n            \"type\": \"request\",\n            \"command\": \"setBreakpoints\",\n            \"arguments\": {\n                \"source\": {\"path\": \"examples/hello.pan\"},\n                \"breakpoints\": [{\"line\": 1}, {\"line\": 2}],\n            },\n        })\n        assert breakpoints[\"success\"] is True\n        assert len(breakpoints[\"body\"][\"breakpoints\"]) == 2\n    \n        launched = dispatch_framed(dispatcher, {\n            \"seq\": 4,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": \"examples/hello.pan\", \"dryRun\": True},\n        })\n>       assert launched[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_2_part2b_v2_finalize.py:48: AssertionError\n________________________ test_end_to_end_debug_adapter _________________________\n\n    def test_end_to_end_debug_adapter():\n        dispatcher = RequestDispatcher()\n    \n        sequence = [\n            {\"seq\":1,\"type\":\"request\",\"command\":\"initialize\",\"arguments\":{\"adapterID\":\"panther\"}},\n            {\"seq\":2,\"type\":\"request\",\"command\":\"configurationDone\"},\n            {\"seq\":3,\"type\":\"request\",\"command\":\"launch\",\"arguments\":{\"program\":\"examples/hello.pan\",\"dryRun\":True}},\n            {\"seq\":4,\"type\":\"request\",\"command\":\"terminate\"},\n            {\"seq\":5,\"type\":\"request\",\"command\":\"disconnect\"},\n        ]\n    \n        for req in sequence:\n            framed = encode_message(req)\n            parsed = read_message(StringIO(framed))\n            assert parsed == req\n            resp = dispatcher.dispatch(parsed)\n            if req[\"command\"] in (\"initialize\",\"configurationDone\"):\n                assert resp[\"success\"] is True\n            elif req[\"command\"]==\"launch\":\n>               assert resp[\"event\"]==\"process\"\n                       ^^^^^^^^^^^^^\nE               KeyError: 'event'\n\ntests/test_h4_finalize.py:26: KeyError\n___ test_session_lifecycle_initialize_configure_launch_terminate_disconnect ____\n\n    def test_session_lifecycle_initialize_configure_launch_terminate_disconnect():\n        server = DebugServer()\n    \n        initialize = server.initialize({\"adapterID\": \"panther\"})\n        assert initialize[\"success\"] is True\n        assert initialize[\"body\"][\"supportsConfigurationDoneRequest\"] is True\n        assert server.session.state == \"initialized\"\n    \n        configuration_done = server.configuration_done()\n        assert configuration_done[\"success\"] is True\n        assert server.session.state == \"configured\"\n    \n>       launch = server.launch({\"program\": \"examples/hello.pan\", \"args\": [\"--demo\"], \"dryRun\": True})\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/test_h4_part2.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <debug_adapter.server.DebugServer object at 0x7fec33fdad50>\narguments = {'program': 'examples/hello.pan', 'args': ['--demo'], 'dryRun': True}\n\n    def launch(self, arguments):\n        arguments = arguments or {}\n        program = arguments.get(\"program\") if isinstance(arguments, dict) else arguments\n        args = arguments.get(\"args\", []) if isinstance(arguments, dict) else []\n        cwd = arguments.get(\"cwd\") if isinstance(arguments, dict) else None\n        dry_run = arguments.get(\"dryRun\", True) if isinstance(arguments, dict) else True\n    \n        launch_info = self.launcher.launch(program, args=args, cwd=cwd, dry_run=dry_run)\n        session_info = self.session.launch(program, args=args, cwd=cwd)\n        self.execution.prepare(program=program, current_line=1)\n    \n>       return self.events.process(\n            name=program,\n            pid=launch_info.pid,\n            command=launch_info.command,\n            state=session_info[\"state\"],\n            execution=self.execution.to_body(),\n        )\nE       TypeError: EventDispatcher.process() got an unexpected keyword argument 'pid'\n\ndebug_adapter/server.py:110: TypeError\n_ test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect __\n\n    def test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect():\n        dispatcher = RequestDispatcher()\n    \n        initialize = dispatcher.dispatch({\n            \"seq\": 1,\n            \"type\": \"request\",\n            \"command\": \"initialize\",\n            \"arguments\": {\"adapterID\": \"panther\"},\n        })\n        assert initialize[\"success\"] is True\n        assert initialize[\"body\"][\"supportsConfigurationDoneRequest\"] is True\n    \n        config = dispatcher.dispatch({\n            \"seq\": 2,\n            \"type\": \"request\",\n            \"command\": \"configurationDone\",\n        })\n        assert config[\"success\"] is True\n    \n        launch = dispatcher.dispatch({\n            \"seq\": 3,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": \"main.pan\", \"args\": [\"--debug\"], \"dryRun\": True},\n        })\n>       assert launch[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_part3.py:32: AssertionError\n=========================== short test summary info ============================\nFAILED tests/H4_1/test_debug_adapter_core.py::test_dap_protocol_roundtrip - T...\nFAILED tests/H4_1/test_debug_adapter_core.py::test_session_capabilities_are_dap_ready\nFAILED tests/test_h4_2_f5_event_dispatcher_compatibility.py::test_f5_event_dispatcher_accepts_debug_server_process_signature\nFAILED tests/test_h4_2_f5_event_dispatcher_compatibility.py::test_f5_dispatcher_launch_still_returns_event\nFAILED tests/test_h4_2_f5_event_request_seq_compatibility.py::test_f5_response_dispatcher_preserves_event_and_adds_request_seq\nFAILED tests/test_h4_2_f5_event_request_seq_compatibility.py::test_f5_launch_event_has_request_seq\nFAILED tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py::test_dispatcher_smoke_sequence_uses_v2_event_routing\nFAILED tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_event_passthrough_keeps_clean_dap_routing\nFAILED tests/test_h4_2_finalize_v2_f6_execution_merge.py::test_f6_existing_dap_routing_still_preserved\nFAILED tests/test_h4_2_finalize_v2_f7_full_dap_regression.py::test_f7_professional_dap_flow_regression\nFAILED tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py::test_f8_complete_professional_debug_adapter_sequence\nFAILED tests/test_h4_2_part1_finalize_dap_set_breakpoints.py::test_end_to_end_with_breakpoints_then_launch\nFAILED tests/test_h4_2_part2b_v2_core.py::test_event_dispatcher_emits_and_queues_process_event\nFAILED tests/test_h4_2_part2b_v2_core.py::test_event_dispatcher_control_events\nFAILED tests/test_h4_2_part2b_v2_dap_routing.py::test_continue_pause_stop_terminate_disconnect_events\nFAILED tests/test_h4_2_part2b_v2_finalize.py::test_full_dap_event_routing_end_to_end\nFAILED tests/test_h4_finalize.py::test_end_to_end_debug_adapter - KeyError: '...\nFAILED tests/test_h4_part2.py::test_session_lifecycle_initialize_configure_launch_terminate_disconnect\nFAILED tests/test_h4_part3.py::test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect\n19 failed, 153 passed in 2.29s\n",
+    "test_file_count": 39
+  },
+  "runtime_modified": true
+}

@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+________ ERROR collecting tests/test_h4_2_finalize_v2_f5_event_merge.py ________
+ImportError while importing test module '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f5_event_merge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_h4_2_finalize_v2_f5_event_merge.py:2: in <module>
+    from debug_adapter.event_merge import EventMergeEngine
+E   ModuleNotFoundError: No module named 'debug_adapter.event_merge'
+=========================== short test summary info ============================
+ERROR tests/test_h4_2_finalize_v2_f5_event_merge.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.32s

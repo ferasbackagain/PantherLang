@@ -1,0 +1,43 @@
+{
+  "archive": ".panther/safety_backups/H4_5_P0_Batch2_v2_safe_backup_20260628_161116.tar.gz",
+  "archive_sha256": "f469f21e55d651519f3178f96857fd30654200979bf4d1b6cf8f4b45f75aee10",
+  "batch": "Batch 2 v2",
+  "created_at": "2026-06-28T20:11:26.554235+00:00",
+  "exclusions": [
+    ".git/",
+    ".panther/backups/",
+    ".panther/safety_backups/",
+    ".panther_backups/",
+    ".phase_backups/",
+    ".pytest_cache/"
+  ],
+  "included_file_count": 1444,
+  "legacy_locations": [
+    {
+      "entries": 14308,
+      "exists": true,
+      "path": ".panther/backups"
+    },
+    {
+      "entries": 675,
+      "exists": true,
+      "path": ".phase_backups"
+    },
+    {
+      "entries": 15,
+      "exists": true,
+      "path": ".panther_backups"
+    },
+    {
+      "entries": 1,
+      "exists": true,
+      "path": ".panther/safety_backups"
+    }
+  ],
+  "milestone": "P0",
+  "name": "Cleanup Recursive Backup + Safe Backup Normalization",
+  "ok": true,
+  "phase": "H4.5",
+  "safety_property": "Archive excludes .panther/safety_backups to prevent recursive backup growth.",
+  "skipped_count": 17754
+}

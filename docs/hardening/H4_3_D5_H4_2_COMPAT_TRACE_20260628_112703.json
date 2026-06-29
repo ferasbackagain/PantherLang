@@ -1,0 +1,249 @@
+[
+  {
+    "request": {
+      "seq": 1,
+      "type": "request",
+      "command": "initialize",
+      "arguments": {}
+    },
+    "response": {
+      "type": "response",
+      "request_seq": 1,
+      "command": "initialize",
+      "success": true,
+      "body": {
+        "supportsConfigurationDoneRequest": true,
+        "supportsTerminateRequest": true,
+        "supportsRestartRequest": false,
+        "supportsSetVariable": false,
+        "supportsEvaluateForHovers": false,
+        "supportsExceptionInfoRequest": false,
+        "supportsHitConditionalBreakpoints": true,
+        "supportsConditionalBreakpoints": true,
+        "supportsLogPoints": true,
+        "supportsSingleThreadExecutionRequests": true
+      }
+    }
+  },
+  {
+    "request": {
+      "seq": 2,
+      "type": "request",
+      "command": "configurationDone"
+    },
+    "response": {
+      "type": "response",
+      "request_seq": 2,
+      "command": "configurationDone",
+      "success": true
+    }
+  },
+  {
+    "request": {
+      "seq": 3,
+      "type": "request",
+      "command": "setBreakpoints",
+      "arguments": {
+        "source": {
+          "path": "examples/hello.pan"
+        },
+        "breakpoints": [
+          {
+            "line": 1
+          },
+          {
+            "line": 3
+          },
+          {
+            "line": 5
+          }
+        ]
+      }
+    },
+    "response": {
+      "type": "response",
+      "request_seq": 3,
+      "command": "setBreakpoints",
+      "success": true,
+      "body": {
+        "breakpoints": [
+          {
+            "id": 1,
+            "verified": true,
+            "line": 1,
+            "column": 1,
+            "source": {
+              "name": "hello.pan",
+              "path": "examples/hello.pan"
+            }
+          },
+          {
+            "id": 2,
+            "verified": true,
+            "line": 3,
+            "column": 1,
+            "source": {
+              "name": "hello.pan",
+              "path": "examples/hello.pan"
+            }
+          },
+          {
+            "id": 3,
+            "verified": true,
+            "line": 5,
+            "column": 1,
+            "source": {
+              "name": "hello.pan",
+              "path": "examples/hello.pan"
+            }
+          }
+        ],
+        "sourceModified": false
+      }
+    }
+  },
+  {
+    "request": {
+      "seq": 4,
+      "type": "request",
+      "command": "launch",
+      "arguments": {
+        "program": "examples/hello.pan",
+        "dryRun": true
+      }
+    },
+    "response": {
+      "type": "event",
+      "event": "process",
+      "body": {
+        "name": "examples/hello.pan",
+        "systemProcessId": 0,
+        "isLocalProcess": true,
+        "startMethod": "launch",
+        "command": [
+          "Panther",
+          "run",
+          "examples/hello.pan"
+        ],
+        "state": "running",
+        "execution": {
+          "status": "ready",
+          "reason": "prepared",
+          "threadId": 1,
+          "program": "examples/hello.pan",
+          "currentLine": 1,
+          "metadata": {}
+        }
+      },
+      "request_seq": 4,
+      "sourceCommand": "launch"
+    }
+  },
+  {
+    "request": {
+      "seq": 5,
+      "type": "request",
+      "command": "continue"
+    },
+    "response": {
+      "type": "event",
+      "event": "continued",
+      "body": {
+        "threadId": 1,
+        "allThreadsContinued": true,
+        "status": "running",
+        "reason": "continued"
+      },
+      "request_seq": 5,
+      "sourceCommand": "continue"
+    }
+  },
+  {
+    "request": {
+      "seq": 6,
+      "type": "request",
+      "command": "pause"
+    },
+    "response": {
+      "type": "event",
+      "event": "stopped",
+      "body": {
+        "reason": "pause",
+        "threadId": 1,
+        "allThreadsStopped": true,
+        "status": "paused",
+        "sourceCommand": "pause"
+      },
+      "request_seq": 6,
+      "sourceCommand": "pause"
+    }
+  },
+  {
+    "request": {
+      "seq": 7,
+      "type": "request",
+      "command": "continue"
+    },
+    "response": {
+      "type": "event",
+      "event": "continued",
+      "body": {
+        "threadId": 1,
+        "allThreadsContinued": true,
+        "status": "running",
+        "reason": "continued"
+      },
+      "request_seq": 7,
+      "sourceCommand": "continue"
+    }
+  },
+  {
+    "request": {
+      "seq": 8,
+      "type": "request",
+      "command": "stop"
+    },
+    "response": {
+      "type": "event",
+      "event": "stopped",
+      "body": {
+        "reason": "stop",
+        "threadId": 1,
+        "allThreadsStopped": true,
+        "status": "stopped",
+        "sourceCommand": "stop"
+      },
+      "request_seq": 8,
+      "sourceCommand": "stop"
+    }
+  },
+  {
+    "request": {
+      "seq": 9,
+      "type": "request",
+      "command": "terminate"
+    },
+    "response": {
+      "type": "event",
+      "event": "terminated",
+      "request_seq": 9,
+      "sourceCommand": "terminate"
+    }
+  },
+  {
+    "request": {
+      "seq": 10,
+      "type": "request",
+      "command": "disconnect"
+    },
+    "response": {
+      "type": "event",
+      "event": "exited",
+      "body": {
+        "exitCode": 0
+      },
+      "request_seq": 10,
+      "sourceCommand": "disconnect"
+    }
+  }
+]

@@ -2,9 +2,9 @@
   "ok": true,
   "phase": "6.4",
   "version": "0.6.4-advanced-type-inference",
-  "workspace": "build/phase6_4_demo_workspace",
+  "workspace": "/tmp/pytest-of-panther/pytest-42/test_workspace_analysis_uses_p0/ws",
   "manifest": {
-    "name": "phase6_4_demo_workspace",
+    "name": "phase6_4_ws",
     "version": "0.1.0",
     "entry": "app.main",
     "panther_version": "0.6.3",
@@ -29,69 +29,43 @@
   },
   "files_analyzed": 2,
   "results": {
-    "build/phase6_4_demo_workspace/core/math.panther": {
+    "/tmp/pytest-of-panther/pytest-42/test_workspace_analysis_uses_p0/ws/core/math.panther": {
       "ok": true,
       "phase": "6.4",
       "version": "0.6.4-advanced-type-inference",
-      "source": "build/phase6_4_demo_workspace/core/math.panther",
+      "source": "/tmp/pytest-of-panther/pytest-42/test_workspace_analysis_uses_p0/ws/core/math.panther",
       "symbols": {
-        "base": "Int",
-        "scores": "List<Int>"
+        "base": "Int"
       },
       "functions": {
-        "add": {
+        "twice": {
           "params": [
             {
-              "name": "a",
-              "type": "Int"
-            },
-            {
-              "name": "b",
+              "name": "x",
               "type": "Int"
             }
           ],
           "return_type": "Int",
           "inferred_return_type": "Int"
-        },
-        "label": {
-          "params": [
-            {
-              "name": "name",
-              "type": "String"
-            }
-          ],
-          "return_type": "String",
-          "inferred_return_type": "String"
         }
       },
       "diagnostics": [],
       "expression_types": {
-        "\"Hello \"": "String",
-        "\"Hello \" + name": "String",
-        "1": "Int",
-        "2": "Int",
-        "3": "Int",
-        "40": "Int",
-        "[1, 2, 3]": "List<Int>",
-        "a": "Int",
-        "a + b": "Int",
-        "b": "Int",
-        "name": "String"
+        "21": "Int",
+        "x": "Int",
+        "x + x": "Int"
       },
-      "duration_ms": 1.524,
+      "duration_ms": 0.127,
       "external_api_used": false,
       "network_required": false
     },
-    "build/phase6_4_demo_workspace/app/main.panther": {
+    "/tmp/pytest-of-panther/pytest-42/test_workspace_analysis_uses_p0/ws/app/main.panther": {
       "ok": true,
       "phase": "6.4",
       "version": "0.6.4-advanced-type-inference",
-      "source": "build/phase6_4_demo_workspace/app/main.panther",
+      "source": "/tmp/pytest-of-panther/pytest-42/test_workspace_analysis_uses_p0/ws/app/main.panther",
       "symbols": {
-        "answer": "Int",
-        "ready": "Bool",
-        "title": "String",
-        "x": "Int"
+        "answer": "Int"
       },
       "functions": {
         "main": {
@@ -102,19 +76,14 @@
       },
       "diagnostics": [],
       "expression_types": {
-        "\"Lang\"": "String",
-        "\"Panther\"": "String",
-        "\"Panther\" + \"Lang\"": "String",
-        "2": "Int",
-        "42": "Int",
-        "true": "Bool"
+        "42": "Int"
       },
-      "duration_ms": 0.433,
+      "duration_ms": 0.063,
       "external_api_used": false,
       "network_required": false
     }
   },
-  "duration_ms": 6.205,
+  "duration_ms": 4.071,
   "external_api_used": false,
   "network_required": false
 }

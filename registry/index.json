@@ -1,0 +1,16 @@
+{
+  "packages": {
+    "enterprise.test@1.0.0": {
+      "description": "enterprise validation package",
+      "name": "enterprise.test",
+      "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/registry/published/enterprise.test/1.0.0",
+      "version": "1.0.0"
+    },
+    "panther.ai@0.1.0": {
+      "description": "AI foundation package",
+      "name": "panther.ai",
+      "source": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/registry/published/panther.ai/0.1.0",
+      "version": "0.1.0"
+    }
+  }
+}

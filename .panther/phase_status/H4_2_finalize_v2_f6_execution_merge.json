@@ -1,0 +1,10 @@
+{
+  "phase": "H4.2 Finalize v2",
+  "batch": "Batch 2",
+  "step": "F6 Execution Merge",
+  "status": "passed_locally",
+  "debug_adapter_path": "debug_adapter",
+  "report": "docs/hardening/H4_2_FINALIZE_V2_F6_EXECUTION_MERGE_REPORT.md",
+  "backup": ".panther/backups/H4_2_finalize_v2_f6_execution_merge_20260628_103603",
+  "next": "F7 Full Regression"
+}

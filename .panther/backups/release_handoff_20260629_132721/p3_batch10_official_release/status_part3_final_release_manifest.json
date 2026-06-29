@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "P-3",
+  "batch": "10",
+  "part": "3",
+  "status": "PASSED",
+  "name": "Final Release Manifest",
+  "version": "v0.9.10-debug-adapter-official",
+  "runtime_modified": false,
+  "manifest": ".panther/p3_batch10_official_release/FINAL_RELEASE_MANIFEST.json",
+  "next": "P-3 Batch 10 Part 4 - Official Release Package"
+}

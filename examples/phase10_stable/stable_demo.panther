@@ -1,0 +1,4 @@
+module panther.phase10.stable
+
+print "Phase 10.1 Stable Release Preparation"
+print "PantherLang 1.0.0-rc1"

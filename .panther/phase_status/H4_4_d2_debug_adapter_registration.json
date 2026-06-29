@@ -1,0 +1,11 @@
+{
+  "phase": "H4.4 Professional VS Code Debug Integration",
+  "batch": "Batch 1",
+  "step": "D2 Debug Adapter Registration",
+  "status": "passed_locally",
+  "extension_package": "./vscode-extension/package.json",
+  "extension_dir": "./vscode-extension",
+  "report": "docs/hardening/H4_4_D2_DEBUG_ADAPTER_REGISTRATION_REPORT.md",
+  "backup": ".panther/backups/H4_4_d2_debug_adapter_registration_20260628_123907",
+  "next": "D3 launch.json and tasks.json Workspace Integration"
+}

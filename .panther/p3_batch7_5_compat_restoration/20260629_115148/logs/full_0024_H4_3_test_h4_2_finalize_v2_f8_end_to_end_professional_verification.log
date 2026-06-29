@@ -1,0 +1,20 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+_____________ test_f8_complete_professional_debug_adapter_sequence _____________
+.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py:46: in test_f8_complete_professional_debug_adapter_sequence
+    _assert_response(initialize, 1, "initialize", True)
+.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py:15: in _assert_response
+    assert message["success"] is success
+E   assert False is True
+________ test_f8_debug_adapter_components_are_professionally_integrated ________
+.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py:136: in test_f8_debug_adapter_components_are_professionally_integrated
+    assert Path(item).exists(), f"Missing professional DAP component: {item}"
+E   AssertionError: Missing professional DAP component: debug_adapter/execution_merge.py
+E   assert False
+E    +  where False = exists()
+E    +    where exists = PosixPath('debug_adapter/execution_merge.py').exists
+E    +      where PosixPath('debug_adapter/execution_merge.py') = Path('debug_adapter/execution_merge.py')
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py::test_f8_complete_professional_debug_adapter_sequence
+FAILED .panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py::test_f8_debug_adapter_components_are_professionally_integrated
+2 failed, 1 passed in 0.12s

@@ -1,0 +1,11 @@
+{
+  "phase": "H4.2 Finalize v2",
+  "batch": "Batch 3",
+  "step": "F7 Full Regression",
+  "status": "passed_locally",
+  "debug_adapter_path": "debug_adapter",
+  "report": "docs/hardening/H4_2_FINALIZE_V2_F7_FULL_REGRESSION_REPORT.md",
+  "log": "docs/hardening/H4_2_F7_FULL_REGRESSION_LOG_20260628_103812.txt",
+  "backup": ".panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812",
+  "next": "F8 End-to-End Professional Verification"
+}

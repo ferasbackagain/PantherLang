@@ -1,0 +1,17 @@
+{
+  "name":"pantherlang",
+  "displayName":"PantherLang",
+  "version":"1.0.0",
+  "engines":{"vscode":"^1.90.0"},
+  "activationEvents":["onLanguage:panther"],
+  "main":"extension.js",
+  "contributes":{
+    "languages":[{"id":"panther","aliases":["PantherLang"],"extensions":[".panther"]}],
+    "grammars":[{"language":"panther","scopeName":"source.panther","path":"./syntaxes/panther.tmLanguage.json"}],
+    "commands":[
+      {"command":"panther.run","title":"Panther: Run"},
+      {"command":"panther.build","title":"Panther: Build"},
+      {"command":"panther.check","title":"Panther: Check"}
+    ]
+  }
+}

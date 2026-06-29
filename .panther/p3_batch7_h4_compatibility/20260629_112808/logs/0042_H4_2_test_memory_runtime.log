@@ -1,0 +1,35 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______________________ test_memory_put_get_search_context ______________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase5_3/test_memory_runtime.py:27: in test_memory_put_get_search_context
+    code, put = run_cmd("--store", str(store), "put", "--key", "alpha", "--scope", "project", "--value", "Panther context memory", "--trust", "verified", "--tags", "memory,context")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase5_3/test_memory_runtime.py:20: in run_cmd
+    payload = json.loads(proc.stdout)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+___________________________ test_invalid_scope_fails ___________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase5_3/test_memory_runtime.py:68: in test_invalid_scope_fails
+    payload = json.loads(proc.stdout)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase5_3/test_memory_runtime.py::test_memory_put_get_search_context
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase5_3/test_memory_runtime.py::test_invalid_scope_fails
+2 failed in 0.57s

@@ -1,38 +1,40 @@
 {
   "after_cost": {
-    "ai_complexity_score": 2.36,
+    "ai_complexity_score": 4.75,
     "estimated_memory_cost": 1.0,
-    "estimated_runtime_cost": 3.6,
+    "estimated_runtime_cost": 7.5,
     "node_count": 2,
-    "unit_name": "stress_ai_opt_119"
+    "unit_name": "adapter_demo"
   },
   "before_cost": {
-    "ai_complexity_score": 2.47,
-    "estimated_memory_cost": 3.0,
-    "estimated_runtime_cost": 4.7,
-    "node_count": 5,
-    "unit_name": "stress_ai_opt_119"
+    "ai_complexity_score": 4.75,
+    "estimated_memory_cost": 1.0,
+    "estimated_runtime_cost": 7.5,
+    "node_count": 2,
+    "unit_name": "adapter_demo"
   },
   "diagnostics": [
-    "constant_folding: folded numeric addition",
-    "dead_code_elimination: removed 1 unreachable node(s)",
+    "constant_folding: no changes",
+    "dead_code_elimination: no changes",
+    "agent_hint_enrichment: annotated workflow",
     "agent_hint_enrichment: annotated agent_call"
   ],
   "optimized_unit": {
     "metadata": {
       "phase": "6.7",
-      "source_lines": 3
+      "source_lines": 2
     },
-    "name": "stress_ai_opt_119",
+    "name": "adapter_demo",
     "nodes": [
       {
         "children": [],
-        "kind": "constant",
+        "kind": "workflow",
         "metadata": {
-          "folded_by": "constant_folding",
-          "line": 1
+          "ai_optimization_hint": "batch_tools_cache_memory_and_limit_context",
+          "line": 1,
+          "safety": "preserve_permissions_and_audit_trail"
         },
-        "value": 239
+        "value": "workflow incident_response"
       },
       {
         "children": [],
@@ -42,12 +44,12 @@
           "line": 2,
           "safety": "preserve_permissions_and_audit_trail"
         },
-        "value": "agent stress_119"
+        "value": "agent analyst"
       }
     ]
   },
   "report_path": "build/reports/phase6_7_last_ai_optimization_report.json",
-  "sha256": "cc6aee9d156b52aef4a3e1b081c9adbf4bddf0d13facd38fa30266b7f1aff4c3",
+  "sha256": "2c0f146327123e5f75f7567cce6f1e09d87a95d36959767cf8870441a8814dea",
   "success": true,
-  "unit_name": "stress_ai_opt_119"
+  "unit_name": "adapter_demo"
 }

@@ -1,0 +1,11 @@
+{
+  "batch": "Batch 1",
+  "engineering_report": "reports/H4_5/P0/H4_5_P0_Batch1_ENGINEERING_REPORT.md",
+  "manifest": ".panther/h4_5_p0/live_workspace_manifest.json",
+  "milestone": "P0",
+  "name": "Live Workspace Discovery",
+  "next": "H4.5 P0 Batch 2 \u2014 Backup Normalization + Safety Backup",
+  "ok": true,
+  "phase": "H4.5",
+  "sha256_manifest": ".panther/h4_5_p0/sha256_manifest.json"
+}

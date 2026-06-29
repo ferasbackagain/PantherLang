@@ -1,0 +1,115 @@
+[
+  {
+    "step": "package.loaded",
+    "package": "vscode-extension/package.json"
+  },
+  {
+    "step": "workspace.launch.loaded",
+    "configCount": 3
+  },
+  {
+    "step": "workspace.tasks.loaded",
+    "taskCount": 4
+  },
+  {
+    "step": "debugger.contribution.verified",
+    "debugger": {
+      "type": "panther",
+      "label": "PantherLang Debug",
+      "languages": [
+        "panther",
+        "pantherlang"
+      ],
+      "program": "./out/extension.js",
+      "runtime": "node",
+      "configurationAttributes": {
+        "launch": {
+          "required": [
+            "program"
+          ],
+          "properties": {
+            "program": {
+              "type": "string",
+              "description": "Path to the PantherLang program to debug.",
+              "default": "${workspaceFolder}/examples/hello.pan"
+            },
+            "cwd": {
+              "type": "string",
+              "description": "Working directory.",
+              "default": "${workspaceFolder}"
+            },
+            "stopOnEntry": {
+              "type": "boolean",
+              "description": "Stop at program entry.",
+              "default": false
+            },
+            "dryRun": {
+              "type": "boolean",
+              "description": "Run Panther Debug Adapter in dry-run verification mode.",
+              "default": true
+            }
+          }
+        }
+      },
+      "initialConfigurations": [
+        {
+          "name": "Debug PantherLang File",
+          "type": "panther",
+          "request": "launch",
+          "program": "${file}",
+          "cwd": "${workspaceFolder}",
+          "stopOnEntry": true,
+          "dryRun": true
+        }
+      ]
+    }
+  },
+  {
+    "step": "language.contribution.verified",
+    "language": {
+      "id": "panther",
+      "aliases": [
+        "PantherLang",
+        "panther"
+      ],
+      "extensions": [
+        ".panther",
+        ".pan"
+      ],
+      "configuration": "./language-configuration/panther-language-configuration.json"
+    }
+  },
+  {
+    "step": "activation.events.verified",
+    "events": [
+      "onCommand:panther.debug.start",
+      "onDebug",
+      "onDebugInitialConfigurations",
+      "onDebugResolve:panther",
+      "onLanguage:panther"
+    ]
+  },
+  {
+    "step": "launch.configs.verified",
+    "names": [
+      "PantherLang: Debug Current File",
+      "PantherLang: Debug Example hello.pan",
+      "PantherLang: F5 Debug Current File"
+    ]
+  },
+  {
+    "step": "tasks.verified",
+    "labels": [
+      "PantherLang: Check",
+      "PantherLang: Check Current File",
+      "PantherLang: Check Example",
+      "PantherLang: Run Current File"
+    ]
+  },
+  {
+    "step": "extension.runtime.verified"
+  },
+  {
+    "step": "debug.adapter.and.prior.milestones.verified"
+  }
+]

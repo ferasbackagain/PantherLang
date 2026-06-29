@@ -1,0 +1,7 @@
+{
+  "batch": "Batch 2 v2",
+  "note": "This backup archive intentionally excludes backup/cache directories to avoid recursive restore noise.",
+  "ok": true,
+  "phase": "H4.5",
+  "restore_command": "tar -xzf .panther/safety_backups/H4_5_P0_Batch2_v2_safe_backup_20260628_161116.tar.gz -C /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5"
+}

@@ -1,0 +1,17 @@
+{
+  "commands": [
+    "Panther dap start",
+    "Panther dap doctor",
+    "Panther dap version"
+  ],
+  "handshake": [
+    "initialize",
+    "initialized",
+    "disconnect",
+    "terminated",
+    "exited"
+  ],
+  "phase": "H4.1 Part 1",
+  "real_dap_handshake": true,
+  "status": "verified"
+}

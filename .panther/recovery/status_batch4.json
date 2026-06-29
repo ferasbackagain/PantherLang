@@ -1,0 +1,9 @@
+{
+  "batch": "4",
+  "next": "Inspect controlled reconstruction summary",
+  "ok": false,
+  "phase": "P-1",
+  "report": "reports/recovery/P1_BATCH4_CONTROLLED_RECONSTRUCTION.md",
+  "status": "FAILED",
+  "summary": ".panther/recovery/controlled_reconstruction_summary.json"
+}

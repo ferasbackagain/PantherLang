@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug PantherLang File",
+      "type": "panther",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": true,
+      "dryRun": true
+    }
+  ]
+}

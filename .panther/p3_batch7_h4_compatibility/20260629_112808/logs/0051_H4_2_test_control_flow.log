@@ -1,0 +1,38 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______________________________ test_if_else_demo _______________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py:11: in test_if_else_demo
+    code, data = run_cmd("compile", "examples/phase6_control_flow/if_else_demo.panther", "--out", str(out))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py:8: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+__________________________ test_bad_if_missing_brace ___________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py:19: in test_bad_if_missing_brace
+    code, data = run_cmd("compile", str(src), "--out", str(tmp_path / "bad.sh"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py:8: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py::test_if_else_demo
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_12/test_control_flow.py::test_bad_if_missing_brace
+2 failed in 0.34s

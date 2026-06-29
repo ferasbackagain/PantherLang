@@ -1,0 +1,72 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+______________________________ test_demo_compiler ______________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:13: in test_demo_compiler
+    code, data = run_cmd("demo")
+                 ^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:10: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+_____________________________ test_compile_example _____________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:22: in test_compile_example
+    code, data = run_cmd("compile", "examples/phase6_final/hello_phase6_10.panther", "--out", str(out))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:10: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+_____________________________ test_negative_empty ______________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:31: in test_negative_empty
+    code, data = run_cmd("negative", "--case", "empty")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:10: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+__________________________ test_negative_unsupported ___________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:37: in test_negative_unsupported
+    code, data = run_cmd("negative", "--case", "unsupported")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py:10: in run_cmd
+    return proc.returncode, json.loads(proc.stdout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/json/decoder.py:363: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py::test_demo_compiler
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py::test_compile_example
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py::test_negative_empty
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/phase6_10/test_final_compiler.py::test_negative_unsupported
+4 failed in 0.53s

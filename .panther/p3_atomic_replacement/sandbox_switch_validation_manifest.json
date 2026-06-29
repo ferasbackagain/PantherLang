@@ -1,0 +1,192 @@
+{
+  "batch": "5",
+  "files": [
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "c1e831ed3c5d2feeebd83d62235c6cacb5beeab7d235e7adfd3ce04e5038fade",
+      "size": 623
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "949cbb77df6f9ccba9f638bb7486ef2f09611833b41a93b3ffd79f5912fbe800",
+      "size": 1836
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "5666e3ae8888ae22864f05325874bdf9bd70ab98b0fd3115cf80ecada460ee1d",
+      "size": 2113
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "aabe3f8ae445c121644207f1bce6522fcfdb5e0aa6638d5971f54f7bb118aaeb",
+      "size": 3616
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "cbd7171ead70a61f335a77065fe7580bddcdfe15c64cd8e1b8bea3ca32c2e3db",
+      "size": 3209
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "65d21efa6a4628350fbd3d5e15eee121da6c55339ac2dca2af43d3351f1f0342",
+      "size": 1151
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "2ce61370b6c45391d2c7dc3ec75ce98e763c18e6fd7aef744c57a6ca665ca5f9",
+      "size": 6149
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "c4449a997e35d93c2e50611a457f9a8a3eebc6841a400c377505434a008c8ff4",
+      "size": 4417
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "26df95a41c6eb14c0eb7cb2020d4b31e739db57819699eeb8df9b1fadaeca71b",
+      "size": 1268
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "8708ecc7b25933d829014249fa167ef8144c155234c79411aa2d3d6fdad30035",
+      "size": 1441
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/server.cpython-313.pyc",
+      "sha256": "6883d6eb6de8e99256489f3d82ae1099b880de1cfe906271317cb92653682662",
+      "size": 1606
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/session.cpython-313.pyc",
+      "sha256": "1bca665d2196b73deedc55b3f95851f517a56459ce2f2ab002ccc178c01e2afa",
+      "size": 2415
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "26991ec3dd7abab88cced718ea42bfcdccbb506e252b102f29996d5c3aceb11c",
+      "size": 1855
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/threads.cpython-313.pyc",
+      "sha256": "995aae541991ff6cbbc747f52184005398073e13c3faed1603f218c9f8344ae5",
+      "size": 1314
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "82d57d9e4ee185b205d627752710d12c9a1883b41076170cebaa4291c7cfc376",
+      "size": 1351
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "3204fc3c0b62d3c4e535e86256b4a525c1c3a28b23fd701ec805febfb4098b96",
+      "size": 2049
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "9ca2541904ef288dc8a06034fc7d91e112bff68fbd3206f7e6613c6afd96537c",
+      "size": 2043
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "2675a64333e7e6d4fe644601fb52c262fc0c0bfd0b56f7e3bfc4d7c4596dd21a",
+      "size": 1337
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/protocol.py",
+      "sha256": "c6fa1143afa032ca632ab1ccc3caa583697b92cc6d6d06c05a96eff1942cea82",
+      "size": 3644
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/response_dispatcher.py",
+      "sha256": "f5cc947347fa62e79898aa3a3c895b8521952631d7baaab021c523a0688f0484",
+      "size": 747
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/threads.py",
+      "sha256": "03b27576936224a148b337d17b3ce069674b3cc4d033cd743a1d1554750c9b4b",
+      "size": 293
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": ".panther/p3_atomic_replacement/sandbox_atomic_switch/debug_adapter/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    }
+  ],
+  "mode": "sandbox_only",
+  "name": "Controlled Atomic Switch Validation",
+  "ok": true,
+  "phase": "P-3",
+  "promoted_file_count": 36,
+  "runtime_modified": false,
+  "sandbox": ".panther/p3_atomic_replacement/sandbox_atomic_switch"
+}

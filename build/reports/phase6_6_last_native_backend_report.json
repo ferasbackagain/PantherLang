@@ -3,24 +3,24 @@
     "native backend build complete"
   ],
   "executable": {
-    "bytes_written": 502,
+    "bytes_written": 498,
     "diagnostics": [
       "native link complete"
     ],
-    "executable_path": "build/native/x86_64-unknown-linux-gnu/bin/stress_native_79.panther-native",
+    "executable_path": "build/native/x86_64-unknown-linux-gnu/bin/adapter_demo.panther-native",
     "object_count": 1,
-    "sha256": "1af076128bced23fe4a0eb5613e5c2e6f1a5b949e26b36ecb2606302a8f3cba5",
+    "sha256": "a3f51ca0b4a8072f0ea47b4ce0e37512ff0913488d357e793f3635ae3f686aec",
     "target": "x86_64-unknown-linux-gnu"
   },
-  "module": "stress_native_79",
+  "module": "adapter_demo",
   "object": {
     "artifact_kind": "portable-native-object",
-    "artifact_path": "build/native/x86_64-unknown-linux-gnu/obj/stress_native_79.elf.pobj",
-    "bytes_written": 545,
+    "artifact_path": "build/native/x86_64-unknown-linux-gnu/obj/adapter_demo.elf.pobj",
+    "bytes_written": 411,
     "diagnostics": [
       "object emission complete"
     ],
-    "sha256": "702f43910621961c23f78cb7b951601dbd172900b38655d2f6afadcf3f84225a",
+    "sha256": "31a86780c5682335de51eba160f530448fb396c48eaccbdf40ee6ccf5258f3b0",
     "target": "x86_64-unknown-linux-gnu"
   },
   "report_path": "build/reports/phase6_6_last_native_backend_report.json",

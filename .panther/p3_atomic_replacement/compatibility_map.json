@@ -1,0 +1,449 @@
+{
+  "legacy": [
+    {
+      "file": "debug_adapter/event_merge.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/variable_references.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing",
+        "variables_core"
+      ]
+    },
+    {
+      "file": "debug_adapter/messages.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/variable_store.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing",
+        "variable_references"
+      ]
+    },
+    {
+      "file": "debug_adapter/finalize_v2_status.py",
+      "imports": []
+    },
+    {
+      "file": "debug_adapter/launcher.py",
+      "imports": [
+        "dataclasses",
+        "os",
+        "subprocess",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/execution_controller.py",
+      "imports": [
+        "dataclasses",
+        "execution_state",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/source_map.py",
+      "imports": [
+        "dataclasses",
+        "locations",
+        "pathlib",
+        "typing",
+        "validation"
+      ]
+    },
+    {
+      "file": "debug_adapter/capabilities.py",
+      "imports": []
+    },
+    {
+      "file": "debug_adapter/__init__.py",
+      "imports": [
+        "adapter",
+        "session"
+      ]
+    },
+    {
+      "file": "debug_adapter/adapter.py",
+      "imports": [
+        "__future__",
+        "messages",
+        "pathlib",
+        "protocol",
+        "session",
+        "sys",
+        "transport",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/session.py",
+      "imports": [
+        "capabilities",
+        "dataclasses",
+        "state_machine",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/evaluate.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "scopes",
+        "threads",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/response_merge.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/breakpoint_store.py",
+      "imports": [
+        "breakpoints",
+        "json",
+        "locations",
+        "pathlib",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/dispatcher_contract.py",
+      "imports": [
+        "debug_adapter.dispatcher"
+      ]
+    },
+    {
+      "file": "debug_adapter/server.py",
+      "imports": [
+        "breakpoints",
+        "capabilities",
+        "event_dispatcher",
+        "execution_controller",
+        "launcher",
+        "response_dispatcher",
+        "session",
+        "source_map"
+      ]
+    },
+    {
+      "file": "debug_adapter/scopes.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "stack_frames",
+        "threads",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/legacy_cleanup.py",
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "file": "debug_adapter/stack_frames.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing",
+        "variable_store"
+      ]
+    },
+    {
+      "file": "debug_adapter/validation.py",
+      "imports": [
+        "locations",
+        "pathlib",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/protocol.py",
+      "imports": [
+        "json"
+      ]
+    },
+    {
+      "file": "debug_adapter/transport.py",
+      "imports": [
+        "__future__",
+        "protocol",
+        "socket",
+        "sys",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/breakpoints.py",
+      "imports": [
+        "dataclasses",
+        "locations",
+        "typing",
+        "validation"
+      ]
+    },
+    {
+      "file": "debug_adapter/variables.py",
+      "imports": [
+        "evaluate",
+        "scopes",
+        "stack_frames",
+        "threads",
+        "variable_references",
+        "variable_store",
+        "variables_core",
+        "watch_expressions"
+      ]
+    },
+    {
+      "file": "debug_adapter/response_dispatcher.py",
+      "imports": [
+        "response_merge"
+      ]
+    },
+    {
+      "file": "debug_adapter/locations.py",
+      "imports": [
+        "dataclasses",
+        "pathlib",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/events.py",
+      "imports": [
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/finalize_v2_guard.py",
+      "imports": [
+        "pathlib"
+      ]
+    },
+    {
+      "file": "debug_adapter/event_bus.py",
+      "imports": [
+        "collections"
+      ]
+    },
+    {
+      "file": "debug_adapter/execution_merge.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/execution_dispatcher.py",
+      "imports": [
+        "execution_merge"
+      ]
+    },
+    {
+      "file": "debug_adapter/dispatcher.py",
+      "imports": [
+        "response_dispatcher",
+        "server"
+      ]
+    },
+    {
+      "file": "debug_adapter/variables_core.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/event_dispatcher.py",
+      "imports": [
+        "event_merge"
+      ]
+    },
+    {
+      "file": "debug_adapter/state_machine.py",
+      "imports": [
+        "enum"
+      ]
+    },
+    {
+      "file": "debug_adapter/watch_expressions.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "evaluate",
+        "scopes",
+        "threads",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter/execution_state.py",
+      "imports": [
+        "enum"
+      ]
+    },
+    {
+      "file": "debug_adapter/threads.py",
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "stack_frames",
+        "typing"
+      ]
+    }
+  ],
+  "rebuilt": [
+    {
+      "file": "debug_adapter_rebuilt/variable_references.py",
+      "imports": []
+    },
+    {
+      "file": "debug_adapter_rebuilt/variable_store.py",
+      "imports": [
+        "variable_references",
+        "variables_core"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/launcher.py",
+      "imports": [
+        "dataclasses"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/__init__.py",
+      "imports": [
+        "protocol"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/session.py",
+      "imports": [
+        "dataclasses"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/evaluate.py",
+      "imports": [
+        "dataclasses"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/server.py",
+      "imports": [
+        "event_bus",
+        "event_dispatcher",
+        "execution_dispatcher",
+        "launcher",
+        "request_dispatcher",
+        "session"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/scopes.py",
+      "imports": [
+        "dataclasses"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/request_dispatcher.py",
+      "imports": [
+        "__future__",
+        "event_bus",
+        "event_dispatcher",
+        "execution_dispatcher",
+        "response_dispatcher",
+        "session",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/stack_frames.py",
+      "imports": [
+        "dataclasses"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/protocol.py",
+      "imports": [
+        "__future__",
+        "io",
+        "json",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/response_dispatcher.py",
+      "imports": [
+        "__future__",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/event_bus.py",
+      "imports": [
+        "__future__",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/execution_dispatcher.py",
+      "imports": [
+        "__future__",
+        "event_dispatcher",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/variables_core.py",
+      "imports": [
+        "dataclasses",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/event_dispatcher.py",
+      "imports": [
+        "__future__",
+        "event_bus",
+        "typing"
+      ]
+    },
+    {
+      "file": "debug_adapter_rebuilt/watch_expressions.py",
+      "imports": []
+    },
+    {
+      "file": "debug_adapter_rebuilt/threads.py",
+      "imports": [
+        "dataclasses"
+      ]
+    }
+  ],
+  "status": "READY_FOR_COMPATIBILITY_BRIDGE"
+}

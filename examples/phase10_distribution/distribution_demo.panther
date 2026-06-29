@@ -1,0 +1,4 @@
+module panther.phase10.distribution
+
+print "Phase 10.2 Installer & Distribution"
+print "Panther global installer ready"

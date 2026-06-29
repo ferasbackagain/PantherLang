@@ -1,0 +1,10 @@
+{
+  "batch": "Batch 3",
+  "dry_run_plan": ".panther/h4_5_p0/dry_run_plan.json",
+  "engineering_report": "reports/H4_5/P0/H4_5_P0_Batch3_ENGINEERING_REPORT.md",
+  "milestone": "P0",
+  "next": "H4.5 P0 Batch 4 \u2014 Runtime Validation + Regression",
+  "ok": true,
+  "phase": "H4.5",
+  "static_validation": ".panther/h4_5_p0/static_validation.json"
+}

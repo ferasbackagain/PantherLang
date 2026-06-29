@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting .panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py _
+ImportError while importing test module '/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py:3: in <module>
+    from debug_adapter.execution_merge import ExecutionMergeEngine
+E   ModuleNotFoundError: No module named 'debug_adapter.execution_merge'
+=========================== short test summary info ============================
+ERROR .panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/tests/test_h4_2_finalize_v2_f6_execution_merge.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.27s

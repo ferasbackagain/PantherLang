@@ -1,0 +1,613 @@
+{
+  "batch": "Batch 4",
+  "created_at": "2026-06-28T21:30:29.995313+00:00",
+  "errors": [
+    "pytest_h4_debug_tests failed with rc=1"
+  ],
+  "found_regressions": [],
+  "milestone": "P0",
+  "name": "Runtime Validation + Regression",
+  "ok": false,
+  "phase": "H4.5",
+  "results": [
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/__init__.py"
+      ],
+      "name": "py_compile:__init__.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/adapter.py"
+      ],
+      "name": "py_compile:adapter.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/breakpoint_store.py"
+      ],
+      "name": "py_compile:breakpoint_store.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/breakpoints.py"
+      ],
+      "name": "py_compile:breakpoints.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/capabilities.py"
+      ],
+      "name": "py_compile:capabilities.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/dispatcher.py"
+      ],
+      "name": "py_compile:dispatcher.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/dispatcher_contract.py"
+      ],
+      "name": "py_compile:dispatcher_contract.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/evaluate.py"
+      ],
+      "name": "py_compile:evaluate.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/event_bus.py"
+      ],
+      "name": "py_compile:event_bus.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/event_dispatcher.py"
+      ],
+      "name": "py_compile:event_dispatcher.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/event_merge.py"
+      ],
+      "name": "py_compile:event_merge.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/events.py"
+      ],
+      "name": "py_compile:events.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/execution_controller.py"
+      ],
+      "name": "py_compile:execution_controller.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/execution_dispatcher.py"
+      ],
+      "name": "py_compile:execution_dispatcher.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/execution_merge.py"
+      ],
+      "name": "py_compile:execution_merge.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/execution_state.py"
+      ],
+      "name": "py_compile:execution_state.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/finalize_v2_guard.py"
+      ],
+      "name": "py_compile:finalize_v2_guard.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/finalize_v2_status.py"
+      ],
+      "name": "py_compile:finalize_v2_status.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/launcher.py"
+      ],
+      "name": "py_compile:launcher.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/legacy_cleanup.py"
+      ],
+      "name": "py_compile:legacy_cleanup.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/locations.py"
+      ],
+      "name": "py_compile:locations.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/messages.py"
+      ],
+      "name": "py_compile:messages.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/protocol.py"
+      ],
+      "name": "py_compile:protocol.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/response_dispatcher.py"
+      ],
+      "name": "py_compile:response_dispatcher.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/response_merge.py"
+      ],
+      "name": "py_compile:response_merge.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/scopes.py"
+      ],
+      "name": "py_compile:scopes.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/server.py"
+      ],
+      "name": "py_compile:server.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/session.py"
+      ],
+      "name": "py_compile:session.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/source_map.py"
+      ],
+      "name": "py_compile:source_map.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/stack_frames.py"
+      ],
+      "name": "py_compile:stack_frames.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/state_machine.py"
+      ],
+      "name": "py_compile:state_machine.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/threads.py"
+      ],
+      "name": "py_compile:threads.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/transport.py"
+      ],
+      "name": "py_compile:transport.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/validation.py"
+      ],
+      "name": "py_compile:validation.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variable_references.py"
+      ],
+      "name": "py_compile:variable_references.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variable_store.py"
+      ],
+      "name": "py_compile:variable_store.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables.py"
+      ],
+      "name": "py_compile:variables.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/variables_core.py"
+      ],
+      "name": "py_compile:variables_core.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "py_compile",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/debug_adapter/watch_expressions.py"
+      ],
+      "name": "py_compile:watch_expressions.py",
+      "ok": true,
+      "required": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "cmd": [
+        "/home/panther/test_build/.venv/bin/python3",
+        "-m",
+        "pytest",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_f5_event_dispatcher_compatibility.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f4_response_merge.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d9_full_regression_manifest.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part2b_v2_finalize.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d5_threads.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part1_finalize_dap_set_breakpoints.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d4_stack_frames.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d3_variable_store.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d1_variables_core.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d3_workspace_debug_configs.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d4_f5_debug_flow.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d8_watch_expressions.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f5_event_merge.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f2_legacy_cleanup.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_finalize.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d9_integrated_data_model_regression.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d10_professional_verification.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d1_vscode_debugger_contribution.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f7_full_dap_regression.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d5_vscode_extension_package_verification.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part1b_source_mapping.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part2b_v2_core.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d2_variables_references.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d6_scopes.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d2_debug_adapter_registration.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part1a_breakpoint_core.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part2b_v2_dap_routing.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f1_core_merge.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_part2.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_part2a_execution_core.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f6_execution_merge.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d7_evaluate.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_f5_event_request_seq_compatibility.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d6_vscode_end_to_end_verification.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_part3.py",
+        "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/H4_1/test_debug_adapter_core.py",
+        "-q"
+      ],
+      "name": "pytest_h4_debug_tests",
+      "ok": false,
+      "required": true,
+      "returncode": 1,
+      "stderr_tail": "",
+      "stdout_tail": "er()\n    \n        dispatcher.dispatch({\"seq\": 1, \"type\": \"request\", \"command\": \"initialize\", \"arguments\": {}})\n        dispatcher.dispatch({\"seq\": 2, \"type\": \"request\", \"command\": \"configurationDone\"})\n    \n        launched = dispatcher.dispatch({\n            \"seq\": 4,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": \"examples/hello.pan\", \"dryRun\": True},\n        })\n    \n>       assert launched[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_2_f5_event_request_seq_compatibility.py:32: AssertionError\n_ test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect __\n\n    def test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect():\n        dispatcher = RequestDispatcher()\n    \n        initialize = dispatcher.dispatch({\n            \"seq\": 1,\n            \"type\": \"request\",\n            \"command\": \"initialize\",\n            \"arguments\": {\"adapterID\": \"panther\"},\n        })\n        assert initialize[\"success\"] is True\n        assert initialize[\"body\"][\"supportsConfigurationDoneRequest\"] is True\n    \n        config = dispatcher.dispatch({\n            \"seq\": 2,\n            \"type\": \"request\",\n            \"command\": \"configurationDone\",\n        })\n        assert config[\"success\"] is True\n    \n        launch = dispatcher.dispatch({\n            \"seq\": 3,\n            \"type\": \"request\",\n            \"command\": \"launch\",\n            \"arguments\": {\"program\": \"main.pan\", \"args\": [\"--debug\"], \"dryRun\": True},\n        })\n>       assert launch[\"type\"] == \"event\"\nE       AssertionError: assert 'response' == 'event'\nE         \nE         - event\nE         + response\n\ntests/test_h4_part3.py:32: AssertionError\n_____ test_protocol_keeps_part1_compatibility_with_content_length_framing ______\n\n    def test_protocol_keeps_part1_compatibility_with_content_length_framing():\n        message = {\"seq\": 1, \"type\": \"request\", \"command\": \"initialize\", \"arguments\": {}}\n        encoded = encode_message(message)\n    \n        assert encoded.startswith(\"Content-Length:\")\n>       decoded = read_message(StringIO(encoded))\n                               ^^^^^^^^^^^^^^^^^\nE       TypeError: initial_value must be str or None, not DAPEncodedMessage\n\ntests/test_h4_part3.py:57: TypeError\n=========================== short test summary info ============================\nFAILED tests/test_h4_2_f5_event_dispatcher_compatibility.py::test_f5_dispatcher_launch_still_returns_event\nFAILED tests/test_h4_2_finalize_v2_f8_end_to_end_professional_verification.py::test_f8_complete_professional_debug_adapter_sequence\nFAILED tests/test_h4_2_part2b_v2_finalize.py::test_full_dap_event_routing_end_to_end\nFAILED tests/test_h4_2_part1_finalize_dap_set_breakpoints.py::test_dap_set_breakpoints_response_shape\nFAILED tests/test_h4_2_part1_finalize_dap_set_breakpoints.py::test_end_to_end_with_breakpoints_then_launch\nFAILED tests/test_h4_2_finalize_v2_f3_dispatcher_merge.py::test_dispatcher_smoke_sequence_uses_v2_event_routing\nFAILED tests/test_h4_finalize.py::test_end_to_end_debug_adapter - TypeError: ...\nFAILED tests/test_h4_2_finalize_v2_f7_full_dap_regression.py::test_f7_professional_dap_flow_regression\nFAILED tests/test_h4_2_part2b_v2_core.py::test_event_dispatcher_emits_and_queues_process_event\nFAILED tests/test_h4_2_part2b_v2_dap_routing.py::test_continue_pause_stop_terminate_disconnect_events\nFAILED tests/test_h4_part2.py::test_session_lifecycle_initialize_configure_launch_terminate_disconnect\nFAILED tests/test_h4_2_finalize_v2_f6_execution_merge.py::test_f6_existing_dap_routing_still_preserved\nFAILED tests/test_h4_2_f5_event_request_seq_compatibility.py::test_f5_launch_event_has_request_seq\nFAILED tests/test_h4_part3.py::test_dispatcher_routes_initialize_configuration_launch_terminate_disconnect\nFAILED tests/test_h4_part3.py::test_protocol_keeps_part1_compatibility_with_content_length_framing\n15 failed, 157 passed in 1.78s\n"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PantherLang: Check",
+      "type": "shell",
+      "command": "Panther",
+      "args": ["check", "${file}"],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

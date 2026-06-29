@@ -1,0 +1,135 @@
+{
+  "reference_candidates": [
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/P1_Batch4_v2_original_debug_adapter_20260629_085711/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/P1_Batch4_v2_original_debug_adapter_20260629_085448/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_5_P0_Batch4_v2_20260628_174235/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_5_P0_Batch1_20260628_134705/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_5_P0_Batch1_20260628_134552/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_professional_verification_20260628_123054/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_evaluate_literal_resolution_20260628_123036/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d10_professional_verification_20260628_122839/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d9_full_regression_20260628_122555/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d8_watch_expressions_20260628_114934/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d7_evaluate_20260628_114205/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d6_scopes_20260628_113126/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d5_threads_20260628_112703/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d4_stack_frames_20260628_111656/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d3_variable_store_20260628_110153/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d2_variables_references_20260628_104824/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_3_d1_variables_core_20260628_104635/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f8_e2e_professional_verification_20260628_104035/debug_adapter",
+    "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/H4_2_finalize_v2_f7_full_regression_20260628_103812/debug_adapter"
+  ],
+  "restored": [
+    {
+      "file": "adapter.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/adapter.py",
+      "sha256": "13c2d2ff61ff4b96a387e83906bff96f6cb56ccfdc4cfb28e7d0f2f6a5ac30d1"
+    },
+    {
+      "file": "breakpoint_store.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/breakpoint_store.py",
+      "sha256": "89dd7ad1d3307e340b33d79d9f28ce59e44b81eae6e20843394251b20b89abb7"
+    },
+    {
+      "file": "breakpoints.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/breakpoints.py",
+      "sha256": "8b7e5ba0014fcbaadf9255eb86b18ef1269d299fcd6a50a0a3c5c80a17f987f7"
+    },
+    {
+      "file": "capabilities.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/capabilities.py",
+      "sha256": "96e99f484a1e70af6abb1a5327cb4ca4f76b3f715158c58ad70591a09d79cc2a"
+    },
+    {
+      "file": "dispatcher.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/dispatcher.py",
+      "sha256": "05297fac3122067a383b9a0776b9f57a8c725186fc70f37f6fc4aa29d06aba46"
+    },
+    {
+      "file": "dispatcher_contract.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/dispatcher_contract.py",
+      "sha256": "54e2ee3077baa6fd76548e2e98ed335568ac6946f07e0071b869f394bb025f32"
+    },
+    {
+      "file": "event_merge.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/event_merge.py",
+      "sha256": "3f234bbadb962b5ba04edd1cd9f5f2f661c55a6b9724374376d7bccd808f1692"
+    },
+    {
+      "file": "events.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/events.py",
+      "sha256": "0335bcb62139a7e476e15fac0de097313964d27efe8b00dd8bcd7ede3982e409"
+    },
+    {
+      "file": "execution_controller.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/execution_controller.py",
+      "sha256": "550e27e6f30674c4f4a7ef227fa053480c50ec78928c6eddfd83146620c940b4"
+    },
+    {
+      "file": "execution_state.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/execution_state.py",
+      "sha256": "05bce1a679a6d503b06463fcd7401a9a77c3569072777a5476f67c6247fee01c"
+    },
+    {
+      "file": "finalize_v2_guard.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/finalize_v2_guard.py",
+      "sha256": "469a0557cea8879ece4a2096eb1922e9b062eba44bb7fd3e0e2ed80cc51767ad"
+    },
+    {
+      "file": "finalize_v2_status.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/finalize_v2_status.py",
+      "sha256": "49a4af980037b4677760a933f76afd47aff402f4b71aa2d1f30914e30770dc9f"
+    },
+    {
+      "file": "legacy_cleanup.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/legacy_cleanup.py",
+      "sha256": "d60908145e80614394bc45d80560097dbfad963bff3a72aa710323f27bb0bf50"
+    },
+    {
+      "file": "locations.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/locations.py",
+      "sha256": "b9d878e6dd8e6d93d75cad1ed4b83c72b4af6a0a618c6bfe7faf0c14f564284d"
+    },
+    {
+      "file": "messages.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/messages.py",
+      "sha256": "7300612fe20d5e2750891850185a818a6f9743273c4e9acf2a347ec35f2b2e3b"
+    },
+    {
+      "file": "response_merge.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/response_merge.py",
+      "sha256": "c0056f04aa78b18b8616eef3301e7bc214c2a806869862472763296c3846a512"
+    },
+    {
+      "file": "source_map.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/source_map.py",
+      "sha256": "2ee7f2b38bcaabf7f1a389396a7c87732816b2b5dce0fc391c2b6a8279ad097e"
+    },
+    {
+      "file": "state_machine.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/state_machine.py",
+      "sha256": "dc293a2da0cb60a769ed0118e5b5d73ab90715ba57a2ce08f7eb2a154e809a5e"
+    },
+    {
+      "file": "transport.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/transport.py",
+      "sha256": "aaaccaddb875b80dcde1253c588ba92d8113c653db76589703ed02c19e937ab7"
+    },
+    {
+      "file": "validation.py",
+      "from": ".panther/backups/P1_Batch4_v3_original_debug_adapter_20260629_090934/debug_adapter/validation.py",
+      "sha256": "b7e23a5a7286ec3876e0d0b3524d2c43bb535ffd27e36103e1de0e219163aa13"
+    }
+  ],
+  "skipped_existing": [],
+  "missing_reference": [],
+  "generated": [
+    {
+      "file": "variables.py",
+      "reason": "compatibility facade for H4.3 imports",
+      "sha256": "d099feb5adddc72e5e88a993bf1cba6a81ea4330078502afd6dccc49a73cf1d9"
+    }
+  ]
+}

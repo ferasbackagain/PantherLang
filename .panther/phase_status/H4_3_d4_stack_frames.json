@@ -1,0 +1,10 @@
+{
+  "phase": "H4.3 Professional Debugging Data Model",
+  "batch": "Batch 2",
+  "step": "D4 Stack Frames",
+  "status": "passed_locally",
+  "debug_adapter_path": "debug_adapter",
+  "report": "docs/hardening/H4_3_D4_STACK_FRAMES_REPORT.md",
+  "backup": ".panther/backups/H4_3_d4_stack_frames_20260628_111656",
+  "next": "D5 Threads"
+}

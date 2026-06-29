@@ -1,0 +1,8 @@
+{
+  "phase": "H4.2 Finalize v2",
+  "patch": "F5 Event request_seq Compatibility",
+  "status": "passed_locally",
+  "report": "docs/hardening/H4_2_F5_EVENT_REQUEST_SEQ_COMPATIBILITY_REPORT.md",
+  "backup": ".panther/backups/H4_2_f5_event_request_seq_20260628_103247",
+  "next": "F6 Execution Merge"
+}

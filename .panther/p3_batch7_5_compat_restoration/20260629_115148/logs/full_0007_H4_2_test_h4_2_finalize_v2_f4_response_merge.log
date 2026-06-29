@@ -1,0 +1,25 @@
+.FFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_______________________ test_f4_error_response_contract ________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py:20: in test_f4_error_response_contract
+    message = dispatcher.error(
+E   TypeError: ResponseDispatcher.error() got an unexpected keyword argument 'body'
+___________________ test_f4_normalize_raw_body_into_response ___________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py:37: in test_f4_normalize_raw_body_into_response
+    message = dispatcher.normalize({"answer": 42}, request_seq=13, command="evaluate")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'
+______________ test_f4_event_passthrough_keeps_clean_dap_routing _______________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py:48: in test_f4_event_passthrough_keeps_clean_dap_routing
+    event = dispatcher.normalize(
+E   TypeError: _p75_response_dispatcher_normalize() got an unexpected keyword argument 'request_seq'
+_ test_f4_request_dispatcher_uses_merged_response_layer_for_initialize_and_error _
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py:73: in test_f4_request_dispatcher_uses_merged_response_layer_for_initialize_and_error
+    assert init["success"] is True
+E   assert False is True
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_error_response_contract
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_normalize_raw_body_into_response
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_event_passthrough_keeps_clean_dap_routing
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/test_h4_2_finalize_v2_f4_response_merge.py::test_f4_request_dispatcher_uses_merged_response_layer_for_initialize_and_error
+4 failed, 1 passed in 0.24s

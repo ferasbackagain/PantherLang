@@ -1,0 +1,1087 @@
+{
+  "created_at": "2026-06-29T17:30:06.123887+00:00",
+  "debug_adapter_files": [
+    {
+      "path": "debug_adapter/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": "debug_adapter/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "ad7f099ae7e5854a333727dcb3286f2c62811b303f3cd0b5e946801b88c16f19",
+      "size": 509
+    },
+    {
+      "path": "debug_adapter/__pycache__/adapter.cpython-313.pyc",
+      "sha256": "2da2c62cf20c989256dd08aedc7bbf4fac85604f4e9794b773d9dc1a74912a6e",
+      "size": 5675
+    },
+    {
+      "path": "debug_adapter/__pycache__/breakpoint_store.cpython-313.pyc",
+      "sha256": "34be564511fe2994c5c2da5e0317fc4b30eeaad1b60a2c2348575f7599da23e0",
+      "size": 2359
+    },
+    {
+      "path": "debug_adapter/__pycache__/breakpoints.cpython-313.pyc",
+      "sha256": "da947430a0e0762d52d7c3b733075c77d46bcc08abf3f7b21e99504c96bf9950",
+      "size": 10642
+    },
+    {
+      "path": "debug_adapter/__pycache__/capabilities.cpython-313.pyc",
+      "sha256": "4e0266c0f5fedb360cd1c90cfdabbaf2001d137e59156a7894cc0a1d124dd2c6",
+      "size": 445
+    },
+    {
+      "path": "debug_adapter/__pycache__/dispatcher.cpython-313.pyc",
+      "sha256": "70725acc44535a062407fca7a2d35185971442f4cf1bcb48988c01970fde8e31",
+      "size": 4529
+    },
+    {
+      "path": "debug_adapter/__pycache__/dispatcher_contract.cpython-313.pyc",
+      "sha256": "0c4fa1a11650b4811ab8b381e6b8e9bd671388c4ee11d4b92364195d99333b9d",
+      "size": 2024
+    },
+    {
+      "path": "debug_adapter/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "026760bd1df0a168e69d1bcbdbdb35f5749d98306e99f09451f56e418b249f8f",
+      "size": 1722
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "f0e797c7106db9ef4bac57c1cae8c2e7449951f539a174839b17299e35cd3d8f",
+      "size": 1999
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "83e0264e00a69bd6e7810cbb0f2a6d70ddfabd6d48beb7c9f73527710dc117f2",
+      "size": 3502
+    },
+    {
+      "path": "debug_adapter/__pycache__/event_merge.cpython-313.pyc",
+      "sha256": "ad95b086fd963fb73756674dda91831d3acb89f6a92701ca6c724108fe25d524",
+      "size": 4862
+    },
+    {
+      "path": "debug_adapter/__pycache__/events.cpython-313.pyc",
+      "sha256": "9f8615c4b8fb504bdc90a273f2085fd80a44cc223ed87996e625116c7d7c0ede",
+      "size": 2692
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_controller.cpython-313.pyc",
+      "sha256": "c887898eca1573f61c781f0a9833301fa10c6669e2c6266efa8db4960f85ae68",
+      "size": 6193
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "eb7c68795388a0a8266de697ca90852edc056c845ed30f355fd0a008ea4d843c",
+      "size": 3095
+    },
+    {
+      "path": "debug_adapter/__pycache__/execution_state.cpython-313.pyc",
+      "sha256": "f891e82fe16cd4f726d1969bfaee52a79fd36b48d1b28dcef6d5a912cee5e2a1",
+      "size": 2831
+    },
+    {
+      "path": "debug_adapter/__pycache__/finalize_v2_guard.cpython-313.pyc",
+      "sha256": "336404d03c8e598eecde25ae2201259529409a85109a0e7fe5296cde9ff87ab4",
+      "size": 2132
+    },
+    {
+      "path": "debug_adapter/__pycache__/finalize_v2_status.cpython-313.pyc",
+      "sha256": "f496ea77eec5d3d76510d8d5f6b6cfc45689d6736b289be4a53ec882b4cca40c",
+      "size": 345
+    },
+    {
+      "path": "debug_adapter/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "58ba1f5e55c4f2d82a4a2ff2d8c38a171b97254e2cc0d0797e2036f26ecbede4",
+      "size": 1037
+    },
+    {
+      "path": "debug_adapter/__pycache__/legacy_cleanup.cpython-313.pyc",
+      "sha256": "f5593543ab12f01a79a28e1dffe049f615b2fa665833b7d880fc89092638361d",
+      "size": 948
+    },
+    {
+      "path": "debug_adapter/__pycache__/locations.cpython-313.pyc",
+      "sha256": "80a68ff0fad022b42fbd123858c80916c7ce79ac5cac68e48f80ca7d3649bfb8",
+      "size": 3537
+    },
+    {
+      "path": "debug_adapter/__pycache__/messages.cpython-313.pyc",
+      "sha256": "59c366f30a69a489c7fda9d6aaf76481224be41ec51ba4c8a55dd7ebf457b004",
+      "size": 2467
+    },
+    {
+      "path": "debug_adapter/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "f43d8e38051bb8ce9330a835f8ca0bc2dba218194ce7c35fbee6c98b1f1fef9e",
+      "size": 6211
+    },
+    {
+      "path": "debug_adapter/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "6d3758b04d17721a9cbe9e0734602382ce5ed907e0603cc92ddc8108611601d9",
+      "size": 4303
+    },
+    {
+      "path": "debug_adapter/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "1a2ea250d69765ed292b7881d8135694429bf67362c93bc995ea1b6421233a91",
+      "size": 1823
+    },
+    {
+      "path": "debug_adapter/__pycache__/response_merge.cpython-313.pyc",
+      "sha256": "0ae19ff2dedf213bd6e804b5e39eb81ef29124573bede91d476ef3941fc349ba",
+      "size": 4468
+    },
+    {
+      "path": "debug_adapter/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "3f6bbc539dcd104c071a942aeeb33b46aaa4dd4496098d1b3e279be6765ed7f4",
+      "size": 1327
+    },
+    {
+      "path": "debug_adapter/__pycache__/server.cpython-313.pyc",
+      "sha256": "351d1e5208f834e9632b4999b556787142cd0613fb71b3988891bcb9e13c9bf9",
+      "size": 1492
+    },
+    {
+      "path": "debug_adapter/__pycache__/session.cpython-313.pyc",
+      "sha256": "a76b0dab1341bca7d4d6143eca0f4a101cf28e29d7dca587f8fa1154cab076aa",
+      "size": 2301
+    },
+    {
+      "path": "debug_adapter/__pycache__/source_map.cpython-313.pyc",
+      "sha256": "a1de0e3cc3fdc872aaf25e66b0b0164125b4b5167ecafcc9d0ce7d5016e584fc",
+      "size": 6808
+    },
+    {
+      "path": "debug_adapter/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "7cd3d62b2b49b4f9d839cce8828e2d1067249ae9b128514322e9a600390a6074",
+      "size": 1741
+    },
+    {
+      "path": "debug_adapter/__pycache__/state_machine.cpython-313.pyc",
+      "sha256": "c0252bd3a362e597ea02552eae41f3ce2bc7c1695d6ae992cdd5e3d60c8f73e0",
+      "size": 2727
+    },
+    {
+      "path": "debug_adapter/__pycache__/threads.cpython-313.pyc",
+      "sha256": "4251c7b6d0bd5c60bfc137a689f223605799d7f274031322306f290f5e12ed26",
+      "size": 1909
+    },
+    {
+      "path": "debug_adapter/__pycache__/transport.cpython-313.pyc",
+      "sha256": "c5b44507f71a4286f859b93d1e3079a237951ff299721e8c68eaaa50fc87093a",
+      "size": 3564
+    },
+    {
+      "path": "debug_adapter/__pycache__/validation.cpython-313.pyc",
+      "sha256": "1f1cf3e4c72dbfe1ef94ac9d6f34b596e3b8dc89ac5b07605f876aa8cf76975b",
+      "size": 3519
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "d5bc15f7b0f67e9de71fe2eb53445c51a1d8ed751a4142c188096fd1a7f452b9",
+      "size": 1237
+    },
+    {
+      "path": "debug_adapter/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "62172eae882758ef3a730ae5acd0870af292f57d319c3a0b7904d44b884466b8",
+      "size": 1935
+    },
+    {
+      "path": "debug_adapter/__pycache__/variables.cpython-313.pyc",
+      "sha256": "fbb83e72031a85a1f27d425dd01d84f367193a09aae215154d9d66be1a8f430a",
+      "size": 552
+    },
+    {
+      "path": "debug_adapter/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "ca322a6694fceaae8652467da6bf5074d25a337819d4993a2729d0647c63b818",
+      "size": 1929
+    },
+    {
+      "path": "debug_adapter/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "ff01053666c7c619c8534bbf8b6fffa8874e3708646fedc3d035fc9cd7116568",
+      "size": 1223
+    },
+    {
+      "path": "debug_adapter/adapter.py",
+      "sha256": "13c2d2ff61ff4b96a387e83906bff96f6cb56ccfdc4cfb28e7d0f2f6a5ac30d1",
+      "size": 2918
+    },
+    {
+      "path": "debug_adapter/breakpoint_store.py",
+      "sha256": "89dd7ad1d3307e340b33d79d9f28ce59e44b81eae6e20843394251b20b89abb7",
+      "size": 895
+    },
+    {
+      "path": "debug_adapter/breakpoints.py",
+      "sha256": "8b7e5ba0014fcbaadf9255eb86b18ef1269d299fcd6a50a0a3c5c80a17f987f7",
+      "size": 6131
+    },
+    {
+      "path": "debug_adapter/capabilities.py",
+      "sha256": "96e99f484a1e70af6abb1a5327cb4ca4f76b3f715158c58ad70591a09d79cc2a",
+      "size": 309
+    },
+    {
+      "path": "debug_adapter/dispatcher.py",
+      "sha256": "05297fac3122067a383b9a0776b9f57a8c725186fc70f37f6fc4aa29d06aba46",
+      "size": 2321
+    },
+    {
+      "path": "debug_adapter/dispatcher_contract.py",
+      "sha256": "54e2ee3077baa6fd76548e2e98ed335568ac6946f07e0071b869f394bb025f32",
+      "size": 1892
+    },
+    {
+      "path": "debug_adapter/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": "debug_adapter/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": "debug_adapter/event_merge.py",
+      "sha256": "3f234bbadb962b5ba04edd1cd9f5f2f661c55a6b9724374376d7bccd808f1692",
+      "size": 3215
+    },
+    {
+      "path": "debug_adapter/events.py",
+      "sha256": "0335bcb62139a7e476e15fac0de097313964d27efe8b00dd8bcd7ede3982e409",
+      "size": 1624
+    },
+    {
+      "path": "debug_adapter/execution_controller.py",
+      "sha256": "550e27e6f30674c4f4a7ef227fa053480c50ec78928c6eddfd83146620c940b4",
+      "size": 3294
+    },
+    {
+      "path": "debug_adapter/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": "debug_adapter/execution_state.py",
+      "sha256": "05bce1a679a6d503b06463fcd7401a9a77c3569072777a5476f67c6247fee01c",
+      "size": 1468
+    },
+    {
+      "path": "debug_adapter/finalize_v2_guard.py",
+      "sha256": "469a0557cea8879ece4a2096eb1922e9b062eba44bb7fd3e0e2ed80cc51767ad",
+      "size": 1429
+    },
+    {
+      "path": "debug_adapter/finalize_v2_status.py",
+      "sha256": "49a4af980037b4677760a933f76afd47aff402f4b71aa2d1f30914e30770dc9f",
+      "size": 264
+    },
+    {
+      "path": "debug_adapter/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": "debug_adapter/legacy_cleanup.py",
+      "sha256": "d60908145e80614394bc45d80560097dbfad963bff3a72aa710323f27bb0bf50",
+      "size": 484
+    },
+    {
+      "path": "debug_adapter/locations.py",
+      "sha256": "b9d878e6dd8e6d93d75cad1ed4b83c72b4af6a0a618c6bfe7faf0c14f564284d",
+      "size": 1425
+    },
+    {
+      "path": "debug_adapter/messages.py",
+      "sha256": "7300612fe20d5e2750891850185a818a6f9743273c4e9acf2a347ec35f2b2e3b",
+      "size": 1433
+    },
+    {
+      "path": "debug_adapter/protocol.py",
+      "sha256": "5be891e91ded328a71625535a014b64e91f0c1a6a3f846f510100a906b35b989",
+      "size": 3892
+    },
+    {
+      "path": "debug_adapter/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": "debug_adapter/response_dispatcher.py",
+      "sha256": "1eb4197a7c67677203fec79310ef7dc75085324a16f6f714b4e9b755de55dd70",
+      "size": 1418
+    },
+    {
+      "path": "debug_adapter/response_merge.py",
+      "sha256": "c0056f04aa78b18b8616eef3301e7bc214c2a806869862472763296c3846a512",
+      "size": 3620
+    },
+    {
+      "path": "debug_adapter/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": "debug_adapter/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": "debug_adapter/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": "debug_adapter/source_map.py",
+      "sha256": "2ee7f2b38bcaabf7f1a389396a7c87732816b2b5dce0fc391c2b6a8279ad097e",
+      "size": 4103
+    },
+    {
+      "path": "debug_adapter/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": "debug_adapter/state_machine.py",
+      "sha256": "dc293a2da0cb60a769ed0118e5b5d73ab90715ba57a2ce08f7eb2a154e809a5e",
+      "size": 1438
+    },
+    {
+      "path": "debug_adapter/threads.py",
+      "sha256": "bf00f0c084ea0a3c1148ed5eecb10c6e4a0c86197a34799285b33163f4d0f555",
+      "size": 892
+    },
+    {
+      "path": "debug_adapter/transport.py",
+      "sha256": "aaaccaddb875b80dcde1253c588ba92d8113c653db76589703ed02c19e937ab7",
+      "size": 1375
+    },
+    {
+      "path": "debug_adapter/validation.py",
+      "sha256": "b7e23a5a7286ec3876e0d0b3524d2c43bb535ffd27e36103e1de0e219163aa13",
+      "size": 2155
+    },
+    {
+      "path": "debug_adapter/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": "debug_adapter/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": "debug_adapter/variables.py",
+      "sha256": "d099feb5adddc72e5e88a993bf1cba6a81ea4330078502afd6dccc49a73cf1d9",
+      "size": 678
+    },
+    {
+      "path": "debug_adapter/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": "debug_adapter/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    }
+  ],
+  "name": "GitHub Safe Publish + VS Code Marketplace Readiness",
+  "non_destructive_policy": {
+    "git_add_ignore_removal": true,
+    "no_git_rm": true,
+    "no_stage_deletions": true
+  },
+  "official_release_files": [
+    {
+      "path": ".panther/p3_batch10_official_release/FINAL_RELEASE_MANIFEST.json",
+      "sha256": "46ae1d9370cec606d7bf909abea3a957b05317b2c6e586b9337f79aae1509715",
+      "size": 17823
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/OFFICIAL_DEBUG_ADAPTER_VERSION.json",
+      "sha256": "7aca5ff3b7fce632f0a73e8cc152b655909f1a1baf75bc807473eed37710405b",
+      "size": 349
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/OFFICIAL_RELEASE_COMPLETE.txt",
+      "sha256": "d5d69b2da0c02c74e7626582745a94fbdbb2975dc340bdc12f2714cb998615eb",
+      "size": 241
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/OFFICIAL_RELEASE_MANIFEST.json",
+      "sha256": "d2f1f499e423a3e93e3d34d850b299ab3ae4626421b916c59137f1d6ef5c14bb",
+      "size": 205
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/part1_release_manifest.json",
+      "sha256": "0ef2ce85f6f356f6ab1598ba5ab8de90a7a19d6ddf4e5b1e13aaaba39c22b846",
+      "size": 28248
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "ad7f099ae7e5854a333727dcb3286f2c62811b303f3cd0b5e946801b88c16f19",
+      "size": 509
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/adapter.cpython-313.pyc",
+      "sha256": "2da2c62cf20c989256dd08aedc7bbf4fac85604f4e9794b773d9dc1a74912a6e",
+      "size": 5675
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/breakpoint_store.cpython-313.pyc",
+      "sha256": "34be564511fe2994c5c2da5e0317fc4b30eeaad1b60a2c2348575f7599da23e0",
+      "size": 2359
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/breakpoints.cpython-313.pyc",
+      "sha256": "da947430a0e0762d52d7c3b733075c77d46bcc08abf3f7b21e99504c96bf9950",
+      "size": 10642
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/capabilities.cpython-313.pyc",
+      "sha256": "4e0266c0f5fedb360cd1c90cfdabbaf2001d137e59156a7894cc0a1d124dd2c6",
+      "size": 445
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/dispatcher.cpython-313.pyc",
+      "sha256": "70725acc44535a062407fca7a2d35185971442f4cf1bcb48988c01970fde8e31",
+      "size": 4529
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/dispatcher_contract.cpython-313.pyc",
+      "sha256": "0c4fa1a11650b4811ab8b381e6b8e9bd671388c4ee11d4b92364195d99333b9d",
+      "size": 2024
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "026760bd1df0a168e69d1bcbdbdb35f5749d98306e99f09451f56e418b249f8f",
+      "size": 1722
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "f0e797c7106db9ef4bac57c1cae8c2e7449951f539a174839b17299e35cd3d8f",
+      "size": 1999
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "83e0264e00a69bd6e7810cbb0f2a6d70ddfabd6d48beb7c9f73527710dc117f2",
+      "size": 3502
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/event_merge.cpython-313.pyc",
+      "sha256": "ad95b086fd963fb73756674dda91831d3acb89f6a92701ca6c724108fe25d524",
+      "size": 4862
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/events.cpython-313.pyc",
+      "sha256": "9f8615c4b8fb504bdc90a273f2085fd80a44cc223ed87996e625116c7d7c0ede",
+      "size": 2692
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/execution_controller.cpython-313.pyc",
+      "sha256": "c887898eca1573f61c781f0a9833301fa10c6669e2c6266efa8db4960f85ae68",
+      "size": 6193
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "eb7c68795388a0a8266de697ca90852edc056c845ed30f355fd0a008ea4d843c",
+      "size": 3095
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/execution_state.cpython-313.pyc",
+      "sha256": "f891e82fe16cd4f726d1969bfaee52a79fd36b48d1b28dcef6d5a912cee5e2a1",
+      "size": 2831
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/finalize_v2_guard.cpython-313.pyc",
+      "sha256": "336404d03c8e598eecde25ae2201259529409a85109a0e7fe5296cde9ff87ab4",
+      "size": 2132
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/finalize_v2_status.cpython-313.pyc",
+      "sha256": "f496ea77eec5d3d76510d8d5f6b6cfc45689d6736b289be4a53ec882b4cca40c",
+      "size": 345
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "58ba1f5e55c4f2d82a4a2ff2d8c38a171b97254e2cc0d0797e2036f26ecbede4",
+      "size": 1037
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/legacy_cleanup.cpython-313.pyc",
+      "sha256": "f5593543ab12f01a79a28e1dffe049f615b2fa665833b7d880fc89092638361d",
+      "size": 948
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/locations.cpython-313.pyc",
+      "sha256": "80a68ff0fad022b42fbd123858c80916c7ce79ac5cac68e48f80ca7d3649bfb8",
+      "size": 3537
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/messages.cpython-313.pyc",
+      "sha256": "59c366f30a69a489c7fda9d6aaf76481224be41ec51ba4c8a55dd7ebf457b004",
+      "size": 2467
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "f43d8e38051bb8ce9330a835f8ca0bc2dba218194ce7c35fbee6c98b1f1fef9e",
+      "size": 6211
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "6d3758b04d17721a9cbe9e0734602382ce5ed907e0603cc92ddc8108611601d9",
+      "size": 4303
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "1a2ea250d69765ed292b7881d8135694429bf67362c93bc995ea1b6421233a91",
+      "size": 1823
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/response_merge.cpython-313.pyc",
+      "sha256": "0ae19ff2dedf213bd6e804b5e39eb81ef29124573bede91d476ef3941fc349ba",
+      "size": 4468
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "3f6bbc539dcd104c071a942aeeb33b46aaa4dd4496098d1b3e279be6765ed7f4",
+      "size": 1327
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/server.cpython-313.pyc",
+      "sha256": "351d1e5208f834e9632b4999b556787142cd0613fb71b3988891bcb9e13c9bf9",
+      "size": 1492
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/session.cpython-313.pyc",
+      "sha256": "a76b0dab1341bca7d4d6143eca0f4a101cf28e29d7dca587f8fa1154cab076aa",
+      "size": 2301
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/source_map.cpython-313.pyc",
+      "sha256": "a1de0e3cc3fdc872aaf25e66b0b0164125b4b5167ecafcc9d0ce7d5016e584fc",
+      "size": 6808
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "7cd3d62b2b49b4f9d839cce8828e2d1067249ae9b128514322e9a600390a6074",
+      "size": 1741
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/state_machine.cpython-313.pyc",
+      "sha256": "c0252bd3a362e597ea02552eae41f3ce2bc7c1695d6ae992cdd5e3d60c8f73e0",
+      "size": 2727
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/threads.cpython-313.pyc",
+      "sha256": "4251c7b6d0bd5c60bfc137a689f223605799d7f274031322306f290f5e12ed26",
+      "size": 1909
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/transport.cpython-313.pyc",
+      "sha256": "c5b44507f71a4286f859b93d1e3079a237951ff299721e8c68eaaa50fc87093a",
+      "size": 3564
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/validation.cpython-313.pyc",
+      "sha256": "1f1cf3e4c72dbfe1ef94ac9d6f34b596e3b8dc89ac5b07605f876aa8cf76975b",
+      "size": 3519
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "d5bc15f7b0f67e9de71fe2eb53445c51a1d8ed751a4142c188096fd1a7f452b9",
+      "size": 1237
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "62172eae882758ef3a730ae5acd0870af292f57d319c3a0b7904d44b884466b8",
+      "size": 1935
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/variables.cpython-313.pyc",
+      "sha256": "fbb83e72031a85a1f27d425dd01d84f367193a09aae215154d9d66be1a8f430a",
+      "size": 552
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "ca322a6694fceaae8652467da6bf5074d25a337819d4993a2729d0647c63b818",
+      "size": 1929
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "ff01053666c7c619c8534bbf8b6fffa8874e3708646fedc3d035fc9cd7116568",
+      "size": 1223
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/adapter.py",
+      "sha256": "13c2d2ff61ff4b96a387e83906bff96f6cb56ccfdc4cfb28e7d0f2f6a5ac30d1",
+      "size": 2918
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/breakpoint_store.py",
+      "sha256": "89dd7ad1d3307e340b33d79d9f28ce59e44b81eae6e20843394251b20b89abb7",
+      "size": 895
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/breakpoints.py",
+      "sha256": "8b7e5ba0014fcbaadf9255eb86b18ef1269d299fcd6a50a0a3c5c80a17f987f7",
+      "size": 6131
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/capabilities.py",
+      "sha256": "96e99f484a1e70af6abb1a5327cb4ca4f76b3f715158c58ad70591a09d79cc2a",
+      "size": 309
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/dispatcher.py",
+      "sha256": "05297fac3122067a383b9a0776b9f57a8c725186fc70f37f6fc4aa29d06aba46",
+      "size": 2321
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/dispatcher_contract.py",
+      "sha256": "54e2ee3077baa6fd76548e2e98ed335568ac6946f07e0071b869f394bb025f32",
+      "size": 1892
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/event_merge.py",
+      "sha256": "3f234bbadb962b5ba04edd1cd9f5f2f661c55a6b9724374376d7bccd808f1692",
+      "size": 3215
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/events.py",
+      "sha256": "0335bcb62139a7e476e15fac0de097313964d27efe8b00dd8bcd7ede3982e409",
+      "size": 1624
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/execution_controller.py",
+      "sha256": "550e27e6f30674c4f4a7ef227fa053480c50ec78928c6eddfd83146620c940b4",
+      "size": 3294
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/execution_state.py",
+      "sha256": "05bce1a679a6d503b06463fcd7401a9a77c3569072777a5476f67c6247fee01c",
+      "size": 1468
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/finalize_v2_guard.py",
+      "sha256": "469a0557cea8879ece4a2096eb1922e9b062eba44bb7fd3e0e2ed80cc51767ad",
+      "size": 1429
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/finalize_v2_status.py",
+      "sha256": "49a4af980037b4677760a933f76afd47aff402f4b71aa2d1f30914e30770dc9f",
+      "size": 264
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/legacy_cleanup.py",
+      "sha256": "d60908145e80614394bc45d80560097dbfad963bff3a72aa710323f27bb0bf50",
+      "size": 484
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/locations.py",
+      "sha256": "b9d878e6dd8e6d93d75cad1ed4b83c72b4af6a0a618c6bfe7faf0c14f564284d",
+      "size": 1425
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/messages.py",
+      "sha256": "7300612fe20d5e2750891850185a818a6f9743273c4e9acf2a347ec35f2b2e3b",
+      "size": 1433
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/protocol.py",
+      "sha256": "5be891e91ded328a71625535a014b64e91f0c1a6a3f846f510100a906b35b989",
+      "size": 3892
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/response_dispatcher.py",
+      "sha256": "1eb4197a7c67677203fec79310ef7dc75085324a16f6f714b4e9b755de55dd70",
+      "size": 1418
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/response_merge.py",
+      "sha256": "c0056f04aa78b18b8616eef3301e7bc214c2a806869862472763296c3846a512",
+      "size": 3620
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/source_map.py",
+      "sha256": "2ee7f2b38bcaabf7f1a389396a7c87732816b2b5dce0fc391c2b6a8279ad097e",
+      "size": 4103
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/state_machine.py",
+      "sha256": "dc293a2da0cb60a769ed0118e5b5d73ab90715ba57a2ce08f7eb2a154e809a5e",
+      "size": 1438
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/threads.py",
+      "sha256": "bf00f0c084ea0a3c1148ed5eecb10c6e4a0c86197a34799285b33163f4d0f555",
+      "size": 892
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/transport.py",
+      "sha256": "aaaccaddb875b80dcde1253c588ba92d8113c653db76589703ed02c19e937ab7",
+      "size": 1375
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/validation.py",
+      "sha256": "b7e23a5a7286ec3876e0d0b3524d2c43bb535ffd27e36103e1de0e219163aa13",
+      "size": 2155
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/variables.py",
+      "sha256": "d099feb5adddc72e5e88a993bf1cba6a81ea4330078502afd6dccc49a73cf1d9",
+      "size": 678
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__init__.py",
+      "sha256": "1a8af55ff1b96c722b8135613455f2461afc73c6b25bf364c877191f65a6d51c",
+      "size": 448
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "1c7fc4899e1ab8e37cda8671798e85bc50435329ed6e16013d1c2c4f8c0d315f",
+      "size": 578
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/evaluate.cpython-313.pyc",
+      "sha256": "a2f86f507129491417a7a9949b65033917e925adb50ae996a2ae07364ef6cbd5",
+      "size": 1791
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/event_bus.cpython-313.pyc",
+      "sha256": "f06a6b1d729062f61ddacde31c993467199d12bd2e6f001ae15e4e519ceeeb84",
+      "size": 2068
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/event_dispatcher.cpython-313.pyc",
+      "sha256": "a56652be0b771126a7481e65d17e58a4760b981a101adf216481fb1e51c8460a",
+      "size": 3571
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/execution_dispatcher.cpython-313.pyc",
+      "sha256": "b333f81c3e1129b838ac3c1c06300f6f075e29d2ed1de52990edf7e330ac74da",
+      "size": 3164
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/launcher.cpython-313.pyc",
+      "sha256": "2c84624611806d0f1c56be59ca16c0057bc8737ba048d69ac3662a42650865b5",
+      "size": 1106
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/protocol.cpython-313.pyc",
+      "sha256": "4e509d47a67a4f97e6ba44bbb641e10289b5b46d1f63d618c02dc0e0acda5403",
+      "size": 6104
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/request_dispatcher.cpython-313.pyc",
+      "sha256": "922e0ead00e10ea0a023a57946192d3e2c7cc21f74f3ed78cd99774ee7f4c71b",
+      "size": 4372
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/response_dispatcher.cpython-313.pyc",
+      "sha256": "9456e6a90d7b244a81121bd01f5c394df29c5bd6da7a6dde0c231e98a8c40102",
+      "size": 1223
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/scopes.cpython-313.pyc",
+      "sha256": "062c612f46797e6e3ee83908d67acab0ff0b1e4a3a9565767ef3b307e911a507",
+      "size": 1396
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/server.cpython-313.pyc",
+      "sha256": "a150c975bb5d690eb4fe9eed53354e46858e77cabd19720dd0666123559d0b7b",
+      "size": 1561
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/session.cpython-313.pyc",
+      "sha256": "151c07ba0c0b6524aa3256d546b5ec830c42eb117fca0ba366e24553bce81533",
+      "size": 2370
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/stack_frames.cpython-313.pyc",
+      "sha256": "35e96e66e9781d15d2b057d2ef59987d71034ad2572bee878fd8651923176269",
+      "size": 1810
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/threads.cpython-313.pyc",
+      "sha256": "ea72945dbbc08c6bbbf59fbe25fe15b46f0e4e99408a76486922f2bf89762041",
+      "size": 1269
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/variable_references.cpython-313.pyc",
+      "sha256": "93cbf69690980c1dc3650f20d3c6c20561674e3ab172882473d887472989c131",
+      "size": 1306
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/variable_store.cpython-313.pyc",
+      "sha256": "9245394bad078c4140d39f3351168887f2fc67a8b3cb0d3de1b09495e35c3c7f",
+      "size": 2004
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/variables_core.cpython-313.pyc",
+      "sha256": "f55f2515efcdf800236ce75493397edb7fe6daa7d072098837b6e4a5ecc0c177",
+      "size": 1998
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/__pycache__/watch_expressions.cpython-313.pyc",
+      "sha256": "7d8e76c3f8a335f588c29f018b9146c2509aa1f911bf365f6db16dc3df8ebf7e",
+      "size": 1292
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/evaluate.py",
+      "sha256": "eccb6a104a3c01a1d1b4b6088b7b8d82767c881abcfc058ca9d25b9b72495ebc",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/event_bus.py",
+      "sha256": "a5c81d6c013655bfbed3e0427c2ea06dce60bc5812c7b66177d28d2b60184e1a",
+      "size": 855
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/event_dispatcher.py",
+      "sha256": "3fa63df86f067f7675247ba4185e81aabe0cbc6c335d415e93e3b40d0701a40b",
+      "size": 3230
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/execution_dispatcher.py",
+      "sha256": "905616f79304dd6b593c9132cd3887580db82a3854a6391d7e6c28c74e936236",
+      "size": 1799
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/launcher.py",
+      "sha256": "0bf5fc083f8610307cf1c33502402b8bf7e819049df4c1b545a5c9cf0207e6c7",
+      "size": 330
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/protocol.py",
+      "sha256": "c6fa1143afa032ca632ab1ccc3caa583697b92cc6d6d06c05a96eff1942cea82",
+      "size": 3644
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/request_dispatcher.py",
+      "sha256": "dfba0802daa9417b93d69d272e9df97c4717cae53ea76bc7d1b53d2e771c711e",
+      "size": 2821
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/response_dispatcher.py",
+      "sha256": "f5cc947347fa62e79898aa3a3c895b8521952631d7baaab021c523a0688f0484",
+      "size": 747
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/scopes.py",
+      "sha256": "20e43488f7db19307987697b7620519e2bc99fe0aa97f257914c6d55b6acffd4",
+      "size": 441
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/server.py",
+      "sha256": "379bfbaae1d9becaea523e2013e792b357d52764e37fe4c73476689d455cd67c",
+      "size": 729
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/session.py",
+      "sha256": "6a23bad8d1c375019b5b92c47fc11e1d6d0d6f9a8b6b70cb7a73545e52b960c0",
+      "size": 1145
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/stack_frames.py",
+      "sha256": "540e882e329bf9acb16b47169fc7fdae0c63d6c634963116d47ee7268227bbd5",
+      "size": 622
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/threads.py",
+      "sha256": "03b27576936224a148b337d17b3ce069674b3cc4d033cd743a1d1554750c9b4b",
+      "size": 293
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/variable_references.py",
+      "sha256": "68475f69340f0ad9270b497e93970b287b4a211c05b38b26443904b545806c7a",
+      "size": 367
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/variable_store.py",
+      "sha256": "2b43a3d91079e4a74fccdccc082977aa1da3c0d94303452782c5218daf6da587",
+      "size": 712
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/variables_core.py",
+      "sha256": "8ca760ce2a279667f0a84fde9cef614374b1ae8d45a40feb7df09eb5fdd0a798",
+      "size": 752
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/release_freeze_20260629_130508/debug_adapter_rebuilt/watch_expressions.py",
+      "sha256": "66feca4dea8b46357d6258ea594c707775fcb2e8225f188d5e80c515adadb664",
+      "size": 390
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/status_batch10_final.json",
+      "sha256": "c34c3fba0a03fd49d425cefeba7c838e12a887c5699c4e87cf22e76bb0605d70",
+      "size": 69
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/status_part1_release_freeze.json",
+      "sha256": "fecd0d6fe96acb6df54b2ee72a2bab26e13afbecbcde375dfc5a7d4ff5809def",
+      "size": 102
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/status_part2_version_stamping.json",
+      "sha256": "ab160c14f4fae0e62115c78a1a15c604c5ab746e46acf423d3de21f285b41e5a",
+      "size": 347
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/status_part3_final_release_manifest.json",
+      "sha256": "acdc2a88e6ef2ebaab248ecc8ff55ee9928c5da8a1e2f5e63d2184cdc090f36f",
+      "size": 343
+    },
+    {
+      "path": ".panther/p3_batch10_official_release/status_part4_official_release_package.json",
+      "sha256": "9c1ce974e734db4ddc06b8f7254a0e462e664f3f4dd21021944643b25cdaac3f",
+      "size": 276
+    }
+  ],
+  "ok": true,
+  "version": "v0.9.10-debug-adapter-official",
+  "vscode_extension_files": [
+    {
+      "path": "vscode-extension/.vscode/launch.json",
+      "sha256": "a2b2dcada2e3d59483837cc452bbd0397c85f5be95539639cc25ca2bac371430",
+      "size": 920
+    },
+    {
+      "path": "vscode-extension/.vscode/tasks.json",
+      "sha256": "4edc35c5d2eec8601c0e410962aca96ed731529d48d037d803e4a330271adadb",
+      "size": 853
+    },
+    {
+      "path": "vscode-extension/dist/pantherlang-0.8.8.vsix.zip",
+      "sha256": "952da03ee8c9c68d273e8f6f51b5efe8b590ba77647cb28701cb949ad3d684e4",
+      "size": 6299
+    },
+    {
+      "path": "vscode-extension/language-configuration/panther-language-configuration.json",
+      "sha256": "b1b2383c56ccb2ed598eafff6613db859fdbb6e10f7bfc850283425fa98d535b",
+      "size": 439
+    },
+    {
+      "path": "vscode-extension/language-configuration.json",
+      "sha256": "3aa6df6a2b485ec06666ca7657db89487af01823b1833ac3701cd533288bc749",
+      "size": 370
+    },
+    {
+      "path": "vscode-extension/out/debugFlow.js",
+      "sha256": "dabaacaebed031ad381d3454c97bab317bfda3609a4ea2ba1f500dfe225afb3d",
+      "size": 699
+    },
+    {
+      "path": "vscode-extension/out/extension.js",
+      "sha256": "6eac934efb9bfdfa2f17b0fbfff2fce00df394b923a129faa94751d20dfc8613",
+      "size": 2721
+    },
+    {
+      "path": "vscode-extension/package.json",
+      "sha256": "b670603b445cc24743c618ebfc215c651efa5a96bd939ecd44bed57b5ab1a05d",
+      "size": 3244
+    },
+    {
+      "path": "vscode-extension/src/debugFlow.ts",
+      "sha256": "e19556b7ad2bb6864bb949f4f210f6e4cc1f1d3e2ecd563e0ae80bfea14ad5ef",
+      "size": 762
+    },
+    {
+      "path": "vscode-extension/src/extension.js",
+      "sha256": "cfb3e3fa170a2f2e35b7219e9bc20f1974152282da22ffd3fdaba7a7de2ae550",
+      "size": 1078
+    },
+    {
+      "path": "vscode-extension/src/extension.ts",
+      "sha256": "44e81cf049a1cfd7695258a966848c206942b665e443c43ca3ea0279d714f6ed",
+      "size": 2988
+    },
+    {
+      "path": "vscode-extension/syntaxes/panther.tmLanguage.json",
+      "sha256": "4802a20db86e9f185c3a323b3362c940d123e4ffea523b479ca8d9c581fa1be4",
+      "size": 488
+    }
+  ]
+}

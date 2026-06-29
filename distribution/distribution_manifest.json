@@ -1,0 +1,14 @@
+{
+  "name": "PantherLang Distribution",
+  "phase": "10.2",
+  "version": "1.0.0-rc1",
+  "status": "installer-distribution-ready",
+  "installers": {
+    "linux": "installers/linux/install_panther.sh",
+    "macos": "installers/macos/install_panther.command",
+    "windows": "installers/windows/install_panther.ps1"
+  },
+  "global_command": "Panther",
+  "network_required": false,
+  "external_api_required": false
+}

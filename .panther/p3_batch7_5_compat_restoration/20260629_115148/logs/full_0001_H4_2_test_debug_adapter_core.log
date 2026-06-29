@@ -1,0 +1,10 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+_________________________ test_dap_protocol_roundtrip __________________________
+.panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/H4_1/test_debug_adapter_core.py:11: in test_dap_protocol_roundtrip
+    stream = io.BytesIO(encode_message(msg))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: a bytes-like object is required, not 'DAPEncodedMessage'
+=========================== short test summary info ============================
+FAILED .panther/backups/H4_2_f5_event_dispatcher_compatibility_20260628_103053/tests/H4_1/test_debug_adapter_core.py::test_dap_protocol_roundtrip
+1 failed, 1 passed in 0.12s

@@ -1,0 +1,9 @@
+{
+  "batch": "2",
+  "canonical_baseline": ".panther/recovery/canonical_baseline.json",
+  "next": "P-1 Batch 3 - Reconstruction Plan",
+  "ok": true,
+  "phase": "P-1",
+  "report": "reports/recovery/P1_BATCH2_CANONICAL_BASELINE.md",
+  "status": "COMPLETE"
+}

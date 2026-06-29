@@ -1,0 +1,74 @@
+{
+  "summary": {
+    "total": 8,
+    "pass": 4,
+    "fail": 4,
+    "missing": 0
+  },
+  "results": [
+    {
+      "path": "tests/H4_1/test_debug_adapter_core.py",
+      "status": "FAIL",
+      "exit_code": 1,
+      "duration_seconds": 1.11,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_01_test_debug_adapter_core.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/H4_1/test_debug_adapter_core.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_2_f5_event_dispatcher_compatibility.py",
+      "status": "FAIL",
+      "exit_code": 1,
+      "duration_seconds": 0.773,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_02_test_h4_2_f5_event_dispatcher_compatibility.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_f5_event_dispatcher_compatibility.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py",
+      "status": "FAIL",
+      "exit_code": 1,
+      "duration_seconds": 0.815,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_03_test_h4_2_finalize_v2_f7_full_regression_manifest.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_2_finalize_v2_f7_full_regression_manifest.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_3_d9_full_regression_manifest.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.928,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_04_test_h4_3_d9_full_regression_manifest.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d9_full_regression_manifest.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_3_d9_integrated_data_model_regression.py",
+      "status": "FAIL",
+      "exit_code": 1,
+      "duration_seconds": 0.882,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_05_test_h4_3_d9_integrated_data_model_regression.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_3_d9_integrated_data_model_regression.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_4_d2_debug_adapter_registration.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.673,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_06_test_h4_4_d2_debug_adapter_registration.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d2_debug_adapter_registration.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_4_d5_vscode_extension_package_verification.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.789,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_07_test_h4_4_d5_vscode_extension_package_verification.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d5_vscode_extension_package_verification.py -q --tb=short --disable-warnings"
+    },
+    {
+      "path": "tests/test_h4_4_d6_vscode_end_to_end_verification.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.759,
+      "log_file": ".panther/p3_batch7_5_compat_restoration/20260629_115148/logs/targeted_08_test_h4_4_d6_vscode_end_to_end_verification.log",
+      "command": "/home/panther/test_build/.venv/bin/python3 -m pytest /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/tests/test_h4_4_d6_vscode_end_to_end_verification.py -q --tb=short --disable-warnings"
+    }
+  ]
+}
