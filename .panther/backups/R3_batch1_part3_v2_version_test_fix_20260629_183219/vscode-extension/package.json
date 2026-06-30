@@ -1,0 +1,220 @@
+{
+  "name": "pantherlang",
+  "displayName": "PantherLang",
+  "description": "Official PantherLang language support, project wizard, developer tooling, and debug adapter integration for Visual Studio Code.",
+  "version": "1.0.3",
+  "publisher": "pantherlang",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Debuggers",
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:panther.debug.start",
+    "onCommand:pantherlang.doctor",
+    "onCommand:pantherlang.newAiProject",
+    "onCommand:pantherlang.newApiProject",
+    "onCommand:pantherlang.newConsoleProject",
+    "onCommand:pantherlang.newProject",
+    "onCommand:pantherlang.newWebProject",
+    "onCommand:pantherlang.runFile",
+    "onDebug",
+    "onDebugInitialConfigurations",
+    "onDebugResolve:panther",
+    "onLanguage:panther",
+    "onLanguage:pantherlang"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "panther",
+        "aliases": [
+          "PantherLang",
+          "panther"
+        ],
+        "extensions": [
+          ".panther",
+          ".pan"
+        ],
+        "configuration": "./language-configuration/panther-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "panther",
+        "scopeName": "source.panther",
+        "path": "./syntaxes/panther.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "panther.runFile",
+        "title": "Panther: Run Current File"
+      },
+      {
+        "command": "panther.checkFile",
+        "title": "Panther: Check Current File"
+      },
+      {
+        "command": "panther.formatFile",
+        "title": "Panther: Format Current File"
+      },
+      {
+        "command": "panther.debug.start",
+        "title": "PantherLang: Start Debugging"
+      },
+      {
+        "command": "pantherlang.newProject",
+        "title": "PantherLang: New Project"
+      },
+      {
+        "command": "pantherlang.newConsoleProject",
+        "title": "PantherLang: New Console Project"
+      },
+      {
+        "command": "pantherlang.newWebProject",
+        "title": "PantherLang: New Web Project"
+      },
+      {
+        "command": "pantherlang.newApiProject",
+        "title": "PantherLang: New API Project"
+      },
+      {
+        "command": "pantherlang.newAiProject",
+        "title": "PantherLang: New AI Project"
+      },
+      {
+        "command": "pantherlang.runFile",
+        "title": "PantherLang: Run Current File"
+      },
+      {
+        "command": "pantherlang.doctor",
+        "title": "PantherLang: Doctor"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "panther",
+        "label": "PantherLang Debug",
+        "languages": [
+          "panther",
+          "pantherlang"
+        ],
+        "program": "./out/extension.js",
+        "runtime": "node",
+        "configurationAttributes": {
+          "launch": {
+            "required": [
+              "program"
+            ],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "Path to the PantherLang program to debug.",
+                "default": "${workspaceFolder}/examples/hello.pan"
+              },
+              "cwd": {
+                "type": "string",
+                "description": "Working directory.",
+                "default": "${workspaceFolder}"
+              },
+              "stopOnEntry": {
+                "type": "boolean",
+                "description": "Stop at program entry.",
+                "default": false
+              },
+              "dryRun": {
+                "type": "boolean",
+                "description": "Run Panther Debug Adapter in dry-run verification mode.",
+                "default": true
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "name": "Debug PantherLang File",
+            "type": "panther",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": true,
+            "dryRun": true
+          }
+        ]
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "pantherlang.newProject"
+        },
+        {
+          "command": "pantherlang.newConsoleProject"
+        },
+        {
+          "command": "pantherlang.newWebProject"
+        },
+        {
+          "command": "pantherlang.newApiProject"
+        },
+        {
+          "command": "pantherlang.newAiProject"
+        },
+        {
+          "command": "pantherlang.doctor"
+        },
+        {
+          "command": "pantherlang.runFile"
+        }
+      ]
+    }
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "echo PantherLang extension uses checked-in out/extension.js",
+    "test": "echo PantherLang VS Code extension tests are handled by Panther regression"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "assets/**",
+    "language-configuration.json",
+    "syntaxes/**",
+    "out/**",
+    "src/**"
+  ],
+  "keywords": [
+    "build",
+    "compiler",
+    "debugger",
+    "deploy",
+    "developer-tools",
+    "language-server",
+    "panther",
+    "pantherlang",
+    "programming-language",
+    "project-wizard",
+    "run",
+    "templates",
+    "vscode-extension"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feras-khatib/pantherlang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feras-khatib/pantherlang/issues"
+  },
+  "homepage": "https://github.com/feras-khatib/pantherlang",
+  "galleryBanner": {
+    "color": "#0B1F3A",
+    "theme": "dark"
+  },
+  "icon": "assets/pantherlang-icon.png"
+}

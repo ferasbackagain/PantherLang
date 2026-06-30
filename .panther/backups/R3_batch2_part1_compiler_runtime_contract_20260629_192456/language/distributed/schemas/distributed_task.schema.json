@@ -1,0 +1,13 @@
+{
+  "title": "PantherLang Distributed Task",
+  "phase": "5.7",
+  "type": "object",
+  "required": ["id", "required_capability", "payload", "status", "audit"],
+  "properties": {
+    "id": { "type": "string" },
+    "required_capability": { "type": "string" },
+    "payload": { "type": ["string", "number", "boolean", "object", "array", "null"] },
+    "status": { "type": "string" },
+    "audit": { "type": "object" }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "archive": "releases/R3_developer_experience/PantherLang_R3_Batch1_Developer_Experience_v1.1.0_20260629_192122.tar.gz",
+  "archive_sha256": "525bf42aa568682aa77b9e1549a053cc3178a0069568c1ea22bac70fcbc6c22f",
+  "batch": "1",
+  "completed_parts": [
+    "Project Wizard Foundation",
+    "Project Wizard UX Integration",
+    "Project Templates Professionalization",
+    "Run Command Integration",
+    "Build Command Integration",
+    "Debug Launch Integration",
+    "Agent Knowledge Pack"
+  ],
+  "created_at": "2026-06-29T23:21:36.963315+00:00",
+  "name": "Developer Experience Release",
+  "next": "R3 Batch 2 - Compiler Runtime",
+  "ok": true,
+  "phase": "R3",
+  "runtime_modified": true,
+  "status": "COMPLETE",
+  "version": "1.1.0",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.1.0.vsix",
+  "vsix_sha256": "5275531860dfed49de7d40d49b8c808ecaef05cc86e26711693c54d5738e5fd1"
+}

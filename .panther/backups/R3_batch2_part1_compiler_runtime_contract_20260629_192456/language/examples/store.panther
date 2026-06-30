@@ -1,0 +1,44 @@
+app PantherStore {
+    version "0.5"
+    targets web, api, local
+    description "Executable data, API, and UI system"
+}
+
+capabilities {
+    network allow local
+    filesystem allow app_storage
+}
+
+data Product {
+    id UUID
+    title Text required
+    price Money required
+    stock Number = 0
+}
+
+api GET /products {
+    public
+    return Product.all()
+}
+
+api POST /products {
+    public
+    create Product from request.body
+}
+
+ui page Products {
+    title "Panther Store"
+    hero "Executable PantherLang v0.5"
+    table Product
+}
+
+security {
+    default deny
+    auth optional
+    secrets protected
+}
+
+deploy {
+    target local
+    port 7777
+}

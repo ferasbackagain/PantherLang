@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "phase": "R3",
+  "batch": "2",
+  "part": "1",
+  "name": "Compiler Runtime Contract",
+  "version": "0.1.0-r3-b2",
+  "source_extensions": [".panther", ".pan"],
+  "manifest_file": "panther.toml",
+  "supported_entrypoints": ["main", "web", "api", "ai", "test"],
+  "pipeline": [
+    "lex",
+    "parse",
+    "ast",
+    "semantic_check",
+    "ir",
+    "runtime_execute",
+    "artifact_emit"
+  ],
+  "artifact_format": "panther-build-json-v1",
+  "next": "R3 Batch 2 Part 2 - Lexer Foundation"
+}

@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "R3",
+  "batch": "1",
+  "status": "COMPLETE",
+  "name": "Developer Experience Release",
+  "version": "1.1.0",
+  "runtime_modified": true,
+  "vsix": "releases/vscode_marketplace/pantherlang-1.1.0.vsix",
+  "archive": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/releases/R3_developer_experience/PantherLang_R3_Batch1_Developer_Experience_v1.1.0_20260629_192122.tar.gz",
+  "next": "R3 Batch 2 - Compiler Runtime"
+}

@@ -1,0 +1,27 @@
+# PantherLang Memory & Context Types
+# Phase 5.3 syntax foundation
+
+type MemoryKey = String
+type MemoryScope = "local" | "project" | "agent" | "session"
+type MemoryTrust = "low" | "medium" | "high" | "verified"
+
+type MemoryRecord<T> {
+  key: MemoryKey
+  scope: MemoryScope
+  value: T
+  trust: MemoryTrust
+  created_at: String
+  tags: List<String>
+}
+
+type ContextWindow<T> {
+  id: String
+  max_records: Int
+  records: List<MemoryRecord<T>>
+}
+
+type RetrievalQuery {
+  text: String
+  scope: MemoryScope
+  limit: Int
+}

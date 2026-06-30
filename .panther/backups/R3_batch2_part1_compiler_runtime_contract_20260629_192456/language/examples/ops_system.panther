@@ -1,0 +1,45 @@
+app PantherOps {
+    version "0.5"
+    targets api, local, cyber
+    description "Operations and cyber task system"
+}
+
+data Finding {
+    id UUID
+    title Text required
+    severity Text required
+    status Text = "open"
+}
+
+api GET /findings {
+    public
+    return Finding.all()
+}
+
+api POST /findings {
+    public
+    create Finding from request.body
+}
+
+ui page Findings {
+    title "Panther Findings"
+    hero "Cyber findings dashboard"
+    table Finding
+}
+
+task Audit {
+    permission network required
+    run {
+        print "Audit started"
+    }
+}
+
+security {
+    default deny
+    auth optional
+}
+
+deploy {
+    target local
+    port 7778
+}

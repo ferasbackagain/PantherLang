@@ -1,0 +1,15 @@
+{
+  "name": "default_context",
+  "phase": "5.3",
+  "allow_long_term": true,
+  "allow_cross_agent": false,
+  "allow_network": false,
+  "allow_secret_storage": false,
+  "max_records": 1000,
+  "max_value_chars": 12000,
+  "require_audit": true,
+  "retrieval": {
+    "mode": "deterministic_keyword",
+    "default_limit": 5
+  }
+}

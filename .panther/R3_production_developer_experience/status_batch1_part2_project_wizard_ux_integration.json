@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "R3",
+  "batch": "1",
+  "part": "2",
+  "status": "PASSED",
+  "name": "Project Wizard UX Integration",
+  "version": "1.0.2",
+  "runtime_modified": true,
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.2.vsix",
+  "next": "R3 Batch 1 Part 3 - Project Templates Professionalization"
+}

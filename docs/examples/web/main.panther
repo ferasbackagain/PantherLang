@@ -1,0 +1,5 @@
+panther web {
+    route "/" {
+        return "Hello from PantherLang web"
+    }
+}

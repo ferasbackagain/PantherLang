@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "phase": "R3",
+  "batch": "1",
+  "part": "7",
+  "status": "PASSED",
+  "name": "Agent Knowledge Pack",
+  "version": "1.0.7",
+  "runtime_modified": true,
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.7.vsix",
+  "next": "R3 Batch 1 Final - Developer Experience Release"
+}

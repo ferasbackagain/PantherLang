@@ -1,0 +1,19 @@
+{
+  "name": "PantherLang Intelligent Type System",
+  "phase": "5.2",
+  "version": "0.5.2-intelligent-types",
+  "status": "experimental-foundation",
+  "depends_on": ["5.1"],
+  "features": [
+    "primitive_types",
+    "nullable_types",
+    "union_types",
+    "generic_types",
+    "option_type",
+    "result_type",
+    "contract_types",
+    "ai_types",
+    "static_analysis",
+    "inference_rules"
+  ]
+}

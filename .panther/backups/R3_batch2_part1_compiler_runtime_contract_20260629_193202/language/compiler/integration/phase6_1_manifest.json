@@ -1,0 +1,13 @@
+{
+  "name": "PantherLang Compiler Integration Framework",
+  "phase": "6.1",
+  "version": "0.6.1-compiler-integration-framework",
+  "status": "implemented",
+  "depends_on": ["5.10 AI-Native Foundation"],
+  "external_api_required": false,
+  "network_required": false,
+  "purpose": "Provide a deterministic compiler pipeline contract connecting source, tokens, AST, semantic analysis, IR/code generation, AI optimization, diagnostics, and artifacts.",
+  "stages": ["source", "tokenize", "ast", "semantic", "ir", "codegen", "ai_optimize", "artifacts"],
+  "testing_standard": ["structure", "manifest", "positive_pipeline", "negative_pipeline", "practical_demo", "regression", "stress"],
+  "engineering_rule": "No Feature Without Proof"
+}

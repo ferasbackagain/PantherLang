@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pantherlang",
+      "request": "launch",
+      "name": "Debug PantherLang Program",
+      "program": "${workspaceFolder}/src/main.panther"
+    }
+  ]
+}

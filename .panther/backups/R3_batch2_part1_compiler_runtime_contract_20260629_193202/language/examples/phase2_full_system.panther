@@ -1,0 +1,32 @@
+app PantherStore {
+    version "0.5"
+}
+
+model Product {
+    id: uuid
+    title: string required
+    price: decimal required
+    stock: int = 0
+}
+
+model User {
+    id: uuid
+    name: string required
+    email: string required
+}
+
+api GET /products {
+    public
+    return Product.all()
+}
+
+page Products {
+    title "Products"
+    table Product
+}
+
+agent InventoryAI {
+    purpose "Monitor inventory"
+    tools data, api
+    memory scoped
+}

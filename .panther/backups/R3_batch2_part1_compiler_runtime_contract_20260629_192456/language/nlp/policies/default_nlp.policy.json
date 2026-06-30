@@ -1,0 +1,25 @@
+{
+  "name": "default_nlp",
+  "phase": "5.5",
+  "allow_network": false,
+  "allow_secret_access": false,
+  "allow_shell_execution": false,
+  "max_intent_chars": 2000,
+  "require_deterministic_templates": true,
+  "reject_ambiguous_intent": true,
+  "reject_unsafe_intent": true,
+  "audit_required": true,
+  "allowed_intents": [
+    "print",
+    "variable",
+    "function",
+    "workflow"
+  ],
+  "blocked_terms": [
+    "delete system",
+    "steal",
+    "exfiltrate",
+    "malware",
+    "reverse shell"
+  ]
+}

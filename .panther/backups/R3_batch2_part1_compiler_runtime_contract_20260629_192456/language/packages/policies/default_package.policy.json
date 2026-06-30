@@ -1,0 +1,21 @@
+{
+  "name": "default_package",
+  "phase": "5.9",
+  "allow_network_registry": false,
+  "allow_unsigned_packages": false,
+  "require_integrity_hash": true,
+  "require_sandbox_policy": true,
+  "require_audit": true,
+  "allowed_package_kinds": [
+    "library",
+    "agent",
+    "plugin",
+    "workflow",
+    "tool"
+  ],
+  "blocked_names": [
+    "malware",
+    "stealer",
+    "reverse-shell"
+  ]
+}

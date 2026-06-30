@@ -1,0 +1,14 @@
+{
+  "batch": "1",
+  "created_at": "2026-06-29T22:32:46.501465+00:00",
+  "fix": "Part 2 UX test now accepts forward R3 versions >= 1.0.2",
+  "name": "Project Templates Professionalization Version-Aware Test Fix",
+  "next": "R3 Batch 1 Part 4 - Run Command Integration",
+  "ok": true,
+  "part": "3-v2",
+  "phase": "R3",
+  "runtime_modified": true,
+  "version": "1.0.3",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.3.vsix",
+  "vsix_sha256": "90bc91eeb28c8e6289ed0daf305433e16dac65b9b1083e9743cbeeeae99ca549"
+}

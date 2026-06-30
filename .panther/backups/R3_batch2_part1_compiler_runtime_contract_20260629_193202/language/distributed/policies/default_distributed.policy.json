@@ -1,0 +1,16 @@
+{
+  "name": "default_distributed",
+  "phase": "5.7",
+  "allow_network": false,
+  "allow_remote_shell": false,
+  "allow_secret_access": false,
+  "max_nodes": 100,
+  "max_tasks": 5000,
+  "require_registered_node": true,
+  "require_capability_match": true,
+  "audit_required": true,
+  "scheduler": {
+    "mode": "deterministic_round_robin",
+    "retry_failed_tasks": false
+  }
+}

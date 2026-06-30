@@ -1,0 +1,12 @@
+{
+  "name": "code_safe",
+  "phase": "5.1",
+  "network": false,
+  "filesystem": "read_project_only",
+  "secrets": "deny",
+  "max_prompt_chars": 12000,
+  "max_output_chars": 6000,
+  "allow_tools": false,
+  "audit_required": true,
+  "code_execution": false
+}

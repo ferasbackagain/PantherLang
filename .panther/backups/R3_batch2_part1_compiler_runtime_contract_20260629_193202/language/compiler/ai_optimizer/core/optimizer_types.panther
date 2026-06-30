@@ -1,0 +1,15 @@
+# PantherLang AI Optimizing Compiler Types
+# Phase 5.6 syntax foundation
+
+type OptimizationPass = "constant_folding" | "dead_print_elimination" | "let_propagation" | "ai_hints"
+type OptimizationLevel = "O0" | "O1" | "O2" | "AI"
+
+type OptimizationReport {
+  ok: Bool
+  phase: String
+  level: OptimizationLevel
+  passes_applied: List<OptimizationPass>
+  before_lines: Int
+  after_lines: Int
+  hints: List<String>
+}

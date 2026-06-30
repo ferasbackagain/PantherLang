@@ -1,0 +1,4 @@
+panther ai {
+    prompt = "Build safely with PantherLang"
+    print("PantherLang AI app ready")
+}

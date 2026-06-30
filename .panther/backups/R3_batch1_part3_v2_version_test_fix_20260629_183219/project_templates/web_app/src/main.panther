@@ -1,0 +1,5 @@
+panther web {
+    route "/" {
+        return "Hello from {{PROJECT_NAME}} Web App"
+    }
+}

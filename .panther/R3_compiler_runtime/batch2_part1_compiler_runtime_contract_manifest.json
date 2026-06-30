@@ -1,0 +1,48 @@
+{
+  "batch": "2",
+  "contract_version": "0.1.0-r3-b2",
+  "created_at": "2026-06-29T23:32:16.090034+00:00",
+  "files": [
+    {
+      "path": "compiler/runtime_contract/__init__.py",
+      "sha256": "b89e24cc453a5e5b15b367023d5bf69793f619094624918c49bea5cbee1005f3",
+      "size": 257
+    },
+    {
+      "path": "compiler/runtime_contract/contract.py",
+      "sha256": "8862bd2e49615c9c9b73e7c9e63ad9f5e7d90e3102c64b42f5c23fc5d68bb34c",
+      "size": 1017
+    },
+    {
+      "path": "runtime/panther_vm/__init__.py",
+      "sha256": "0bc6f4b51f5a8e83c6e7b0e2e6a39eeed09b2527a42d29c34952d4231d2c5b20",
+      "size": 97
+    },
+    {
+      "path": "runtime/panther_vm/vm.py",
+      "sha256": "6a7e62bf4a0d44e77efa81b45e43512c12463f1c9ba320511da9a6f6c6a229d7",
+      "size": 693
+    },
+    {
+      "path": "docs/compiler_runtime/COMPILER_RUNTIME_CONTRACT.md",
+      "sha256": "6efb7d1cbc66842bce3460fbcb4e74612561de7b2cb0443a83f445ad50ae378f",
+      "size": 561
+    },
+    {
+      "path": "tests/R3_compiler_runtime/test_r3_batch2_part1_contract.py",
+      "sha256": "9bd7a90c2322a9953b6e1204de661e927005d3277bca711c9a860e5678c40da6",
+      "size": 1231
+    },
+    {
+      "path": ".panther/R3_compiler_runtime/compiler_runtime_contract.json",
+      "sha256": "dd361acbf7d544e6cc6247a5fd25fcf0b809ac68c5d9647353591aaccf626897",
+      "size": 504
+    }
+  ],
+  "name": "Compiler Runtime Contract",
+  "next": "R3 Batch 2 Part 2 - Lexer Foundation",
+  "ok": true,
+  "part": "1",
+  "phase": "R3",
+  "runtime_modified": true
+}

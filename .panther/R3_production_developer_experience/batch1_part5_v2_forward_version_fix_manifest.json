@@ -1,0 +1,14 @@
+{
+  "batch": "1",
+  "created_at": "2026-06-29T22:58:08.668905+00:00",
+  "fix": "Part 4 run-command test now accepts forward R3 versions >= 1.0.4",
+  "name": "Build Command Integration Forward Version Fix",
+  "next": "R3 Batch 1 Part 6 - Debug Launch Integration",
+  "ok": true,
+  "part": "5-v2",
+  "phase": "R3",
+  "runtime_modified": true,
+  "version": "1.0.5",
+  "vsix": "releases/vscode_marketplace/pantherlang-1.0.5.vsix",
+  "vsix_sha256": "fd5a34fe2437df0cb68fc03d54216eff6a8f89efbda1fef18369aaff7966ed4b"
+}

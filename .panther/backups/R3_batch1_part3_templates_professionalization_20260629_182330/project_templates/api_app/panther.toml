@@ -1,0 +1,8 @@
+[project]
+name = "{{PROJECT_NAME}}"
+type = "api"
+version = "0.1.0"
+language = "panther"
+
+[run]
+main = "src/main.panther"
