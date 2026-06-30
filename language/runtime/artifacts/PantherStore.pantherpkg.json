@@ -5,92 +5,43 @@
   "runtime_program": {
     "app": "PantherStore",
     "models": {
-      "Product": [
-        "id",
-        "title",
-        "price",
-        "stock"
-      ],
-      "User": [
-        "id",
-        "name",
-        "email"
-      ]
+      "Product": [],
+      "User": []
     },
     "ir": {
-      "kind": "IRProgram",
       "name": "PantherStore",
+      "version": "0.5",
       "models": [
         {
-          "kind": "IRModel",
-          "name": "Product",
-          "fields": [
-            {
-              "kind": "IRField",
-              "name": "id",
-              "type": "uuid",
-              "required": false,
-              "nullable": false,
-              "default": null
-            },
-            {
-              "kind": "IRField",
-              "name": "title",
-              "type": "string",
-              "required": true,
-              "nullable": false,
-              "default": null
-            },
-            {
-              "kind": "IRField",
-              "name": "price",
-              "type": "decimal",
-              "required": true,
-              "nullable": false,
-              "default": null
-            },
-            {
-              "kind": "IRField",
-              "name": "stock",
-              "type": "int",
-              "required": false,
-              "nullable": false,
-              "default": "0"
-            }
-          ]
+          "name": "Product"
         },
         {
-          "kind": "IRModel",
-          "name": "User",
-          "fields": [
-            {
-              "kind": "IRField",
-              "name": "id",
-              "type": "uuid",
-              "required": false,
-              "nullable": false,
-              "default": null
-            },
-            {
-              "kind": "IRField",
-              "name": "name",
-              "type": "string",
-              "required": true,
-              "nullable": false,
-              "default": null
-            },
-            {
-              "kind": "IRField",
-              "name": "email",
-              "type": "string",
-              "required": true,
-              "nullable": false,
-              "default": null
-            }
-          ]
+          "name": "User"
         }
       ],
-      "metadata": {}
+      "apis": [
+        {
+          "method": "GET",
+          "path": "/products"
+        },
+        {
+          "method": "POST",
+          "path": "/products"
+        },
+        {
+          "method": "GET",
+          "path": "/users"
+        }
+      ],
+      "pages": [
+        {
+          "name": "Store",
+          "tables": [
+            "Product",
+            "User"
+          ]
+        }
+      ]
     }
   }
 }

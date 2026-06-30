@@ -1,0 +1,53 @@
+{
+  "batch": "2",
+  "created_at": "2026-06-30T11:19:18.231511+00:00",
+  "features": [
+    "token_kinds",
+    "keyword_lexing",
+    "identifier_lexing",
+    "number_lexing",
+    "string_lexing",
+    "comments",
+    "operators",
+    "line_column_tracking",
+    "lexer_cli"
+  ],
+  "files": [
+    {
+      "path": "compiler/lexer/__init__.py",
+      "sha256": "f0251e3b3e4fe01a7b3ef6d9ca5985409c8dd578a2793f4a3faf9c20ea0bac7b",
+      "size": 205
+    },
+    {
+      "path": "compiler/lexer/tokens.py",
+      "sha256": "171342ac20c1dd06c2c3e0e529f5822fa2a31cfdca2d93990da5601952303c15",
+      "size": 2025
+    },
+    {
+      "path": "compiler/lexer/lexer.py",
+      "sha256": "5ab910c8be1ecee7ccddef62a4bddffc885c66c74bb1e0f89da336cd8ba32303",
+      "size": 5328
+    },
+    {
+      "path": "compiler/lexer/panther_lex.py",
+      "sha256": "6fd9ab55f8a150403a751aee69712275b4cbd8c22facab8a9d1990c28b574008",
+      "size": 1320
+    },
+    {
+      "path": "docs/compiler_runtime/LEXER_FOUNDATION.md",
+      "sha256": "c727df878029ea759f068172a52d04c2d174aa16101f64df1f9e0439205001b4",
+      "size": 275
+    },
+    {
+      "path": "tests/R3_compiler_runtime/test_r3_batch2_part2_lexer_foundation.py",
+      "sha256": "960508ec3f504a3f4269138c41563c1629d594e035fa5ee94739c14f2eb715ff",
+      "size": 2123
+    }
+  ],
+  "name": "Lexer Foundation",
+  "next": "R3 Batch 2 Part 3 - Parser Foundation",
+  "ok": true,
+  "part": "2",
+  "phase": "R3",
+  "runtime_modified": true
+}

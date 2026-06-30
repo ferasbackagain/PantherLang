@@ -1,20 +1,10 @@
-from __future__ import annotations
-
-"""H4.3 compatibility facade for PantherLang debug adapter variables.
-
-This module preserves the historical import path `debug_adapter.variables` while
-forwarding to the canonical split modules introduced during P-2/P-3.
-"""
-
-try:
-    from .variables_core import *  # noqa: F401,F403
-except Exception:  # pragma: no cover
-    pass
-try:
-    from .variable_store import VariableStore  # noqa: F401
-except Exception:  # pragma: no cover
-    VariableStore = None  # type: ignore
-try:
-    from .variable_references import VariableReferenceStore  # noqa: F401
-except Exception:  # pragma: no cover
-    VariableReferenceStore = None  # type: ignore
+from .variables_core import DebugVariable, VariableFactory, VariablesCore
+from .variable_references import ReferenceEntry, VariableReferenceService, VariablesReferenceService
+from .variable_store import DebugVariableStore, VariableStore
+from .stack_frames import DebugStackFrame, StackFrameStore
+from .threads import DebugThread, ThreadStore
+from .scopes import DebugScope, ScopeStore
+from .evaluate import EvaluateEngine, EvaluateResult
+from .watch_expressions import WatchExpression, WatchExpressionStore, WatchExpressionManager, build_watch_manager_for_thread_store
+DAPVariable=DebugVariable
+__all__=[name for name in list(globals()) if not name.startswith('_')]

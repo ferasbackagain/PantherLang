@@ -22,7 +22,7 @@ def test_package_json_declares_all_commands_and_activation_events():
     for command in REQUIRED_COMMANDS:
         assert command in commands
         assert f"onCommand:{command}" in activation
-    assert pkg["version"] == "1.1.1"
+    assert pkg["version"] == "1.1.2"
     assert pkg["main"] == "./out/extension.js"
 
 def test_extension_js_registers_all_commands():
@@ -30,7 +30,7 @@ def test_extension_js_registers_all_commands():
     for command in REQUIRED_COMMANDS:
         assert command in text
     assert "registerCommand" in text
-    assert "PantherLang 1.1.1 activated" in text
+    assert "PantherLang 1.1.2 activated" in text
 
 def test_out_extension_matches_runtime_source():
     assert Path("vscode-extension/src/extension.js").read_text() == Path("vscode-extension/out/extension.js").read_text()

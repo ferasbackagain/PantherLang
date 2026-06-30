@@ -1,0 +1,38 @@
+import * as vscode from 'vscode';
+import * as path from 'path';
+
+export function resolvePantherDebugAdapterPath(context: vscode.ExtensionContext): string {
+  return path.join(context.extensionPath, '..', 'debug_adapter', 'adapter.py');
+}
+
+export async function startPantherDebugging(): Promise<void> {
+  const editor = vscode.window.activeTextEditor;
+  const program = editor?.document?.fileName || '${workspaceFolder}/examples/hello.pan';
+  await vscode.debug.startDebugging(undefined, {
+    type: 'panther',
+    request: 'launch',
+    name: 'Debug Panther Program',
+    program,
+    dryRun: true,
+  });
+}
+
+export function registerPantherDebug(context: vscode.ExtensionContext): void {
+  const factory: vscode.DebugAdapterDescriptorFactory = {
+    createDebugAdapterDescriptor: () => {
+      const adapter = resolvePantherDebugAdapterPath(context);
+      return new vscode.DebugAdapterExecutable('python3', [adapter]);
+    },
+  };
+  context.subscriptions.push(vscode.debug.registerDebugAdapterDescriptorFactory('panther', factory));
+  context.subscriptions.push(vscode.debug.registerDebugConfigurationProvider('panther', {
+    resolveDebugConfiguration(_folder, config) {
+      config.type = config.type || 'panther';
+      config.name = config.name || 'Debug Panther Program';
+      config.request = config.request || 'launch';
+      config.program = config.program || '${workspaceFolder}/examples/hello.pan';
+      return config;
+    },
+  }));
+  context.subscriptions.push(vscode.commands.registerCommand('panther.debug.start', startPantherDebugging));
+}

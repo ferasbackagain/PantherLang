@@ -9,7 +9,7 @@
   },
   {
     "step": "workspace.tasks.loaded",
-    "taskCount": 4
+    "taskCount": 5
   },
   {
     "step": "debugger.contribution.verified",
@@ -83,10 +83,22 @@
     "step": "activation.events.verified",
     "events": [
       "onCommand:panther.debug.start",
+      "onCommand:pantherlang.buildProject",
+      "onCommand:pantherlang.debugProject",
+      "onCommand:pantherlang.doctor",
+      "onCommand:pantherlang.newAiProject",
+      "onCommand:pantherlang.newApiProject",
+      "onCommand:pantherlang.newConsoleProject",
+      "onCommand:pantherlang.newProject",
+      "onCommand:pantherlang.newWebProject",
+      "onCommand:pantherlang.openAgentGuide",
+      "onCommand:pantherlang.runCurrentFile",
+      "onCommand:pantherlang.runFile",
       "onDebug",
       "onDebugInitialConfigurations",
       "onDebugResolve:panther",
-      "onLanguage:panther"
+      "onLanguage:panther",
+      "onLanguage:pantherlang"
     ]
   },
   {
@@ -100,6 +112,7 @@
   {
     "step": "tasks.verified",
     "labels": [
+      "Panther: Run Current File",
       "PantherLang: Check",
       "PantherLang: Check Current File",
       "PantherLang: Check Example",

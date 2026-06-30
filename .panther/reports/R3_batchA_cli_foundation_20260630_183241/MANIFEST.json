@@ -1,0 +1,17 @@
+{
+  "batch": "R3 Batch A",
+  "name": "CLI Foundation",
+  "timestamp": "20260630_183241",
+  "installed": [
+    "panther",
+    ".panther/tools/panther_cli.py"
+  ],
+  "purpose": [
+    "restore repository-local ./panther executable",
+    "support run/check/compile/build/test/new commands",
+    "support local project build manifest for phase9_1 tests",
+    "ensure project templates exist"
+  ],
+  "backup": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/backups/R3_batchA_cli_foundation_20260630_183241",
+  "report": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/.panther/reports/R3_batchA_cli_foundation_20260630_183241"
+}

@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo "PantherLang compiled artifact"
-# MODULE panther.runtime.demo
-# STORE name = PantherLang
-# STORE version = 0.6.18
-# STORE upper = PANTHERLANG
-# STORE sum = 42
-echo "Runtime Bridge test"
-echo "PANTHERLANG"
-echo "0.6.18"
-echo "42"
-# FUNCTION greet(target)
-echo "Hello from Panther run"
-echo "Phase 6.18"
-# CALL greet
+printf '%s\n' 'Runtime Bridge test'
+printf '%s\n' 'PANTHERLANG'
+printf '%s\n' '0.6.18'
+printf '%s\n' '42'
+printf '%s\n' 'Hello from Panther run'
+printf '%s\n' 'Phase 6.18'

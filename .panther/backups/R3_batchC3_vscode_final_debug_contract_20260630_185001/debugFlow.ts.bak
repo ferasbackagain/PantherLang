@@ -1,0 +1,41 @@
+import * as vscode from "vscode";
+import * as path from "path";
+
+export function resolvePantherDebugAdapterPath(context: vscode.ExtensionContext): string {
+    return path.join(context.extensionPath, "..", "debug_adapter", "adapter.py");
+}
+
+export function createPantherF5DebugConfiguration(): vscode.DebugConfiguration {
+    return {
+        type: "panther",
+        request: "launch",
+        name: "PantherLang Debug",
+        program: "${file}",
+        dryRun: true,
+    };
+}
+
+export function startPantherDebugging(): Thenable<boolean> {
+    return vscode.debug.startDebugging(undefined, createPantherF5DebugConfiguration());
+}
+
+export function registerPantherDebug(context: vscode.ExtensionContext): void {
+    const descriptorFactory: vscode.DebugAdapterDescriptorFactory = {
+        createDebugAdapterDescriptor: () => {
+            const adapterPath = resolvePantherDebugAdapterPath(context);
+            return new vscode.DebugAdapterExecutable("python3", [adapterPath]);
+        },
+    };
+
+    const configurationProvider: vscode.DebugConfigurationProvider = {
+        resolveDebugConfiguration: (_folder, config) => {
+            return config && Object.keys(config).length ? config : createPantherF5DebugConfiguration();
+        },
+    };
+
+    context.subscriptions.push(
+        vscode.debug.registerDebugAdapterDescriptorFactory("panther", descriptorFactory),
+        vscode.debug.registerDebugConfigurationProvider("panther", configurationProvider),
+        vscode.commands.registerCommand("panther.debug.start", startPantherDebugging),
+    );
+}

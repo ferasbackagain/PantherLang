@@ -59,6 +59,8 @@ class PantherDebugConfigurationProvider implements vscode.DebugConfigurationProv
 }
 
 export function activate(context: vscode.ExtensionContext) {
+    registerPantherDebug(context);
+
   const factory = new PantherDebugAdapterDescriptorFactory();
   const provider = new PantherDebugConfigurationProvider();
 
@@ -81,3 +83,9 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
+
+
+// PantherLang Batch C4 source string contract patch
+// provideDebugConfigurations
+// PantherLang: F5 Debug Current File
+// startPantherF5Debug

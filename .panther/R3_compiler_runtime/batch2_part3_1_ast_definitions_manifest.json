@@ -1,0 +1,72 @@
+{
+  "batch": "2",
+  "created_at": "2026-06-30T12:25:42.968432+00:00",
+  "features": [
+    "base_ast_node",
+    "source_location",
+    "expressions",
+    "statements",
+    "program_nodes",
+    "visitor_pattern",
+    "serializer",
+    "ast_tests"
+  ],
+  "files": [
+    {
+      "path": "compiler/ast/base.py",
+      "sha256": "f877303f4f6db8543c839b9dbcd9f8c03570bf938302468e73bea9b627c140ca",
+      "size": 1036
+    },
+    {
+      "path": "compiler/ast/expressions.py",
+      "sha256": "9e951515796461e9f762b62b4fb77124ec838a2e1a1fa4d599a22bc274ef2215",
+      "size": 2177
+    },
+    {
+      "path": "compiler/ast/statements.py",
+      "sha256": "3616db33670440b670c9a2a43fa30c485ac5e5fedae7dc758650ddfdca7fd7f6",
+      "size": 2385
+    },
+    {
+      "path": "compiler/ast/program.py",
+      "sha256": "ee61339ca82ce9112811504fdae71e149c87584902f7161a3f1aa41d9e6c4f0e",
+      "size": 1310
+    },
+    {
+      "path": "compiler/ast/visitor.py",
+      "sha256": "532b3214ebdecd4404fc174f856e9ac76462a6497152c9871ea80e10d488688c",
+      "size": 298
+    },
+    {
+      "path": "compiler/ast/serializer.py",
+      "sha256": "67a3680241fd30beaebd4da3f7e02c3941766b55db9f99816a6966ebc42a9125",
+      "size": 1033
+    },
+    {
+      "path": "compiler/ast/__init__.py",
+      "sha256": "3902904cf6b8fdf2a4f7b0ac5fa6994bf99bf8249ac0e36a5f69fe6b08c0b382",
+      "size": 1252
+    },
+    {
+      "path": "compiler/parser/__init__.py",
+      "sha256": "8fbf5b58190bd88cac7ab55e985cb9039b0b398b710f6e0f8405f8cec1f4a6e0",
+      "size": 89
+    },
+    {
+      "path": "docs/compiler_runtime/AST_DEFINITIONS.md",
+      "sha256": "3638b1e71788234c0c9473edea0b16044636fee3b508bae67c38fbd2b708e341",
+      "size": 639
+    },
+    {
+      "path": "tests/R3_compiler_runtime/test_r3_batch2_part3_1_ast_definitions.py",
+      "sha256": "0ae92099e3ed9d302bb7d239080808aae47c13e34e3a690f0b8cc1c7b7909964",
+      "size": 1977
+    }
+  ],
+  "name": "AST Definitions",
+  "next": "R3 Batch 2 Part 3.2 - Recursive Descent Parser Core",
+  "ok": true,
+  "part": "3.1",
+  "phase": "R3",
+  "runtime_modified": true
+}

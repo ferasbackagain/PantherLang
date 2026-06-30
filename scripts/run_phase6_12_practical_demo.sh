@@ -8,7 +8,7 @@ REPORT="$(./panther compile examples/phase6_control_flow/if_else_demo.panther --
 echo "$REPORT" | grep -q '"ok": true'
 
 RUN_OUT="$(bash "$OUT")"
-echo "$RUN_OUT" | grep -q 'Control flow if branch passed'
+echo "$RUN_OUT" | grep -q 'Control flow then branch passed'
 echo "$RUN_OUT" | grep -q 'Phase 6.12 control flow'
 
 rm -f "$OUT"

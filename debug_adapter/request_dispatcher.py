@@ -1,68 +1,23 @@
-from __future__ import annotations
-from typing import Any, Dict, Optional
-
-from .event_bus import EventBus
-from .event_dispatcher import EventDispatcher
-from .execution_dispatcher import ExecutionDispatcher
 from .response_dispatcher import ResponseDispatcher
-from .session import DebugSession
-
-
+from .server import DebugServer
 class RequestDispatcher:
-    def __init__(
-        self,
-        session: Optional[DebugSession] = None,
-        events: Optional[EventDispatcher] = None,
-        responses: Optional[ResponseDispatcher] = None,
-        execution: Optional[ExecutionDispatcher] = None,
-    ):
-        self.session = session if session is not None else DebugSession()
-        self.events = events if events is not None else EventDispatcher(EventBus())
-        self.responses = responses if responses is not None else ResponseDispatcher()
-        self.execution = execution if execution is not None else ExecutionDispatcher(self.events)
-        self.breakpoints = {}
-
-    def dispatch(self, request: Dict[str, Any]) -> Dict[str, Any]:
-        command = request.get("command")
-        seq = request.get("seq", 0)
-        arguments = request.get("arguments", {}) or {}
-
-        if command == "initialize":
-            self.session.apply_initialize_arguments(arguments)
-            return self.responses.success(command, seq, self.session.capabilities())
-
-        if command == "configurationDone":
-            self.session.configuration_done()
-            return self.responses.success(command, seq, {})
-
-        if command == "setBreakpoints":
-            source = arguments.get("source", {}).get("path", "unknown")
-            bps = arguments.get("breakpoints", [])
-            verified = [{"verified": True, "line": int(bp.get("line", 1))} for bp in bps]
-            self.breakpoints[source] = verified
-            return self.responses.success(command, seq, {"breakpoints": verified})
-
-        if command == "launch":
-            program = arguments.get("program", "main.pan")
-            args = arguments.get("args", [])
-            self.session.launch(program, args=args, cwd=arguments.get("cwd"))
-            return self.execution.launch(program, command=["Panther", "run", program], request_seq=seq)
-
-        if command == "continue":
-            return self.execution.continue_(request_seq=seq)
-
-        if command == "pause":
-            return self.execution.pause(request_seq=seq)
-
-        if command == "stop":
-            return self.execution.stop(request_seq=seq)
-
-        if command == "terminate":
-            self.session.terminate()
-            return self.execution.terminate(request_seq=seq)
-
-        if command == "disconnect":
-            self.session.disconnect()
-            return self.responses.success(command, seq, {})
-
-        return self.responses.error(command or "unknown", seq, f"unsupported command: {command}")
+    def __init__(self, server=None, responses=None):
+        self.server=server or DebugServer(); self.responses=responses or ResponseDispatcher()
+        self.routes={"initialize":self._initialize,"configurationDone":self._configuration_done,"setBreakpoints":self._set_breakpoints,"launch":self._launch,"continue":self._continue,"pause":self._pause,"stop":self._stop,"terminate":self._terminate,"disconnect":self._disconnect}
+    def dispatch(self, request):
+        if not isinstance(request,dict): return self.responses.error("",request_seq=0,message="request must be a dictionary")
+        cmd=request.get("command"); seq=request.get("seq",0)
+        if not cmd: return self.responses.error("",request_seq=seq,message="missing DAP command")
+        handler=self.routes.get(cmd)
+        if handler is None: return self.responses.error(cmd, request_seq=seq, message=f"Unsupported command: {cmd}")
+        try: return self.responses.normalize(handler(request.get("arguments",{}) or {}), request_seq=seq, command=cmd)
+        except Exception as exc: return self.responses.error(cmd, request_seq=seq, message=str(exc))
+    def _initialize(self,args): return self.server.initialize(args)
+    def _configuration_done(self,args): return self.server.configuration_done()
+    def _set_breakpoints(self,args): return self.server.set_breakpoints(args)
+    def _launch(self,args): return self.server.launch(args)
+    def _continue(self,args): return self.server.continue_execution(args)
+    def _pause(self,args): return self.server.pause(args)
+    def _stop(self,args): return self.server.stop(args)
+    def _terminate(self,args): return self.server.terminate()
+    def _disconnect(self,args): return self.server.disconnect()

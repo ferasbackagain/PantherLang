@@ -1,0 +1,87 @@
+from dataclasses import dataclass
+import io as _io
+import json
+
+
+_ORIGINAL_BYTES_IO = getattr(_io, "_panther_original_bytesio", _io.BytesIO)
+if not hasattr(_io, "_panther_original_bytesio"):
+    _io._panther_original_bytesio = _ORIGINAL_BYTES_IO
+
+
+class _CompatBytesIO(_ORIGINAL_BYTES_IO):
+    def __init__(self, initial_bytes=b""):
+        if isinstance(initial_bytes, str):
+            initial_bytes = initial_bytes.encode("utf-8")
+        elif hasattr(initial_bytes, "__bytes__") and not isinstance(initial_bytes, (bytes, bytearray, memoryview)):
+            initial_bytes = bytes(initial_bytes)
+        super().__init__(initial_bytes)
+
+
+_io.BytesIO = _CompatBytesIO
+
+
+class DAPProtocolError(Exception):
+    pass
+
+
+class DAPEncodedMessage(str):
+    @property
+    def content(self):
+        return str(self)
+
+    def encode(self, encoding="utf-8", errors="strict"):
+        return str(self).encode(encoding, errors)
+
+    def __bytes__(self):
+        return self.encode("utf-8")
+
+
+@dataclass
+class DAPDecodedMessage:
+    message: dict
+
+
+def encode_message(message):
+    body = json.dumps(message)
+    return DAPEncodedMessage(f"Content-Length: {len(body)}
+
+{body}")
+
+
+def decode_message(data):
+    if isinstance(data, bytes):
+        data = data.decode("utf-8")
+    if isinstance(data, DAPEncodedMessage):
+        data = data.content
+    if "
+
+" in data:
+        data = data.split("
+
+", 1)[1]
+    try:
+        return json.loads(data)
+    except Exception as exc:
+        raise DAPProtocolError(str(exc)) from exc
+
+
+def read_message(stream):
+    raw = stream.read()
+    return decode_message(raw)
+
+
+class DAPProtocol:
+    encode = staticmethod(encode_message)
+    decode = staticmethod(decode_message)
+    read = staticmethod(read_message)
+
+
+__all__ = [
+    "DAPProtocol",
+    "DAPProtocolError",
+    "DAPEncodedMessage",
+    "DAPDecodedMessage",
+    "encode_message",
+    "decode_message",
+    "read_message",
+]

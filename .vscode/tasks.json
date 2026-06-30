@@ -5,7 +5,10 @@
       "label": "PantherLang: Check",
       "type": "shell",
       "command": "Panther",
-      "args": ["check", "${file}"],
+      "args": [
+        "check",
+        "${file}"
+      ],
       "group": "build",
       "problemMatcher": []
     },
@@ -13,7 +16,10 @@
       "label": "PantherLang: Check Current File",
       "type": "shell",
       "command": "Panther",
-      "args": ["check", "${file}"],
+      "args": [
+        "check",
+        "${file}"
+      ],
       "group": "build",
       "problemMatcher": []
     },
@@ -21,7 +27,10 @@
       "label": "PantherLang: Check Example",
       "type": "shell",
       "command": "Panther",
-      "args": ["check", "${workspaceFolder}/examples/hello.pan"],
+      "args": [
+        "check",
+        "${workspaceFolder}/examples/hello.pan"
+      ],
       "group": "build",
       "problemMatcher": []
     },
@@ -29,8 +38,17 @@
       "label": "PantherLang: Run Current File",
       "type": "shell",
       "command": "Panther",
-      "args": ["run", "${file}"],
+      "args": [
+        "run",
+        "${file}"
+      ],
       "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Panther: Run Current File",
+      "type": "shell",
+      "command": "./panther run ${file}",
       "problemMatcher": []
     }
   ]

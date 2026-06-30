@@ -1,30 +1,46 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import * as path from "path";
 
-export interface PantherDebugFlowConfig {
-  name: string;
-  type: string;
-  request: string;
-  program: string;
-  cwd: string;
-  stopOnEntry: boolean;
-  dryRun: boolean;
-  preLaunchTask?: string;
+export function resolvePantherDebugAdapterPath(context: vscode.ExtensionContext): string {
+    return path.join(context.extensionPath, "..", "debug_adapter", "adapter.py");
 }
 
-export function createPantherF5DebugConfiguration(program: string): PantherDebugFlowConfig {
-  return {
-    name: 'PantherLang: F5 Debug Current File',
-    type: 'panther',
-    request: 'launch',
-    program,
-    cwd: '${workspaceFolder}',
-    stopOnEntry: true,
-    dryRun: true,
-    preLaunchTask: 'PantherLang: Check'
-  };
+export function createPantherF5DebugConfiguration(): vscode.DebugConfiguration {
+    return {
+        type: "panther",
+        request: "launch",
+        name: "PantherLang: Debug Current File",
+        program: "${file}",
+        dryRun: true
+    };
 }
 
-export async function startPantherF5Debug(program: string): Promise<boolean> {
-  const config = createPantherF5DebugConfiguration(program);
-  return vscode.debug.startDebugging(undefined, config);
+export function startPantherF5Debug(): Thenable<boolean> {
+    const folder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0] : undefined;
+    return vscode.debug.startDebugging(folder, createPantherF5DebugConfiguration());
+}
+
+export function startPantherDebugging(): Thenable<boolean> {
+    return startPantherF5Debug();
+}
+
+export function registerPantherDebug(context: vscode.ExtensionContext): void {
+    const provider: vscode.DebugConfigurationProvider = {
+        provideDebugConfigurations() {
+            return [createPantherF5DebugConfiguration()];
+        },
+        resolveDebugConfiguration(_folder, config) {
+            return config && Object.keys(config).length ? config : createPantherF5DebugConfiguration();
+        }
+    };
+
+    context.subscriptions.push(
+        vscode.debug.registerDebugConfigurationProvider("panther", provider),
+        vscode.debug.registerDebugAdapterDescriptorFactory("panther", {
+            createDebugAdapterDescriptor() {
+                return new vscode.DebugAdapterExecutable("python3", [resolvePantherDebugAdapterPath(context)]);
+            }
+        }),
+        vscode.commands.registerCommand("panther.debug.start", startPantherF5Debug)
+    );
 }

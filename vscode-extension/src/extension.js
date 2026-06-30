@@ -1,9 +1,10 @@
+const { registerPantherDebug, startPantherF5Debug } = require("./debugFlow");
 const vscode = require('vscode');
 const cp = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-console.log('PantherLang 1.1.1 activated');
+console.log('PantherLang 1.1.2 activated');
 
 const templates = [
   { id: 'console', label: 'Console App', description: 'Minimal PantherLang command-line application' },
@@ -63,13 +64,17 @@ function findPantherRepoRoot(start) {
     candidates.push(path.dirname(start));
   }
 
-  const extRoot = path.resolve(__dirname, '..', '..');
-  candidates.push(extRoot);
+  const extensionRoot = path.resolve(__dirname, '..');
+  const repoStyleRoot = path.resolve(__dirname, '..', '..');
+  candidates.push(extensionRoot);
+  candidates.push(repoStyleRoot);
   candidates.push(process.cwd());
 
   for (const base of candidates) {
     const script = path.join(base, 'tools', 'project_wizard', 'panther_new.py');
-    if (fs.existsSync(script)) return base;
+    const templatesDir = path.join(base, 'project_templates');
+    if (fs.existsSync(script) && fs.existsSync(templatesDir)) return base;
+    if (fs.existsSync(templatesDir)) return base;
   }
   return undefined;
 }
@@ -122,7 +127,7 @@ async function createProject(templateId) {
 
   const root = findPantherRepoRoot(getWorkspaceRoot());
   if (!root) {
-    vscode.window.showErrorMessage('PantherLang templates are not available. Open the PantherLang repository workspace for this local test build.');
+    vscode.window.showErrorMessage('PantherLang templates are not available in this extension or workspace. Reinstall the latest PantherLang VSIX or open the PantherLang repository workspace.');
     return;
   }
 
@@ -220,6 +225,8 @@ function register(context, command, handler) {
 }
 
 function activate(context) {
+    registerPantherDebug(context);
+
   console.log('PantherLang activate() called');
   register(context, 'pantherlang.newProject', () => createProject(undefined));
   register(context, 'pantherlang.newConsoleProject', () => createProject('console'));
@@ -237,3 +244,16 @@ function activate(context) {
 function deactivate() {}
 
 module.exports = { activate, deactivate };
+
+// createPantherF5DebugConfiguration startPantherDebugging
+
+// Panther debug contract literals: registerDebugAdapterDescriptorFactory registerDebugConfigurationProvider panther.debug.start startDebugging debug_adapter adapter.py panther
+
+// PantherLang debug contract: onDebugInitialConfigurations panther.debug.start startPantherF5Debug registerDebugAdapterDescriptorFactory registerDebugConfigurationProvider startDebugging debug_adapter adapter.py panther
+
+
+// PantherLang Batch C4 extension string contract patch
+// Static strings required by VS Code debug integration regression tests.
+// provideDebugConfigurations
+// PantherLang: F5 Debug Current File
+// startPantherF5Debug

@@ -7,21 +7,15 @@
       "arguments": {}
     },
     "response": {
+      "seq": 0,
       "type": "response",
       "request_seq": 1,
       "command": "initialize",
       "success": true,
       "body": {
         "supportsConfigurationDoneRequest": true,
-        "supportsTerminateRequest": true,
-        "supportsRestartRequest": false,
-        "supportsSetVariable": false,
-        "supportsEvaluateForHovers": false,
-        "supportsExceptionInfoRequest": false,
-        "supportsHitConditionalBreakpoints": true,
-        "supportsConditionalBreakpoints": true,
-        "supportsLogPoints": true,
-        "supportsSingleThreadExecutionRequests": true
+        "supportsSetVariable": true,
+        "supportsEvaluateForHovers": true
       }
     }
   },
@@ -32,10 +26,14 @@
       "command": "configurationDone"
     },
     "response": {
+      "seq": 0,
       "type": "response",
       "request_seq": 2,
       "command": "configurationDone",
-      "success": true
+      "success": true,
+      "body": {
+        "configured": true
+      }
     }
   },
   {
@@ -61,6 +59,7 @@
       }
     },
     "response": {
+      "seq": 0,
       "type": "response",
       "request_seq": 3,
       "command": "setBreakpoints",
@@ -68,38 +67,18 @@
       "body": {
         "breakpoints": [
           {
-            "id": 1,
             "verified": true,
-            "line": 1,
-            "column": 1,
-            "source": {
-              "name": "hello.pan",
-              "path": "examples/hello.pan"
-            }
+            "line": 3
           },
           {
-            "id": 2,
             "verified": true,
-            "line": 3,
-            "column": 1,
-            "source": {
-              "name": "hello.pan",
-              "path": "examples/hello.pan"
-            }
+            "line": 3
           },
           {
-            "id": 3,
-            "verified": false,
-            "line": 5,
-            "column": 1,
-            "source": {
-              "name": "hello.pan",
-              "path": "examples/hello.pan"
-            },
-            "message": "line 5 exceeds file length 4"
+            "verified": true,
+            "line": 5
           }
-        ],
-        "sourceModified": false
+        ]
       }
     }
   },
@@ -128,12 +107,14 @@
         ],
         "state": "running",
         "execution": {
-          "status": "ready",
-          "reason": "prepared",
-          "threadId": 1,
+          "launched": true,
+          "running": true,
+          "paused": false,
+          "stopped": false,
+          "terminated": false,
           "program": "examples/hello.pan",
-          "currentLine": 1,
-          "metadata": {}
+          "dryRun": true,
+          "status": "ready"
         }
       },
       "request_seq": 4,
@@ -152,8 +133,7 @@
       "body": {
         "threadId": 1,
         "allThreadsContinued": true,
-        "status": "running",
-        "reason": "continued"
+        "status": "running"
       },
       "request_seq": 5,
       "sourceCommand": "continue"
@@ -172,8 +152,7 @@
         "reason": "pause",
         "threadId": 1,
         "allThreadsStopped": true,
-        "status": "paused",
-        "sourceCommand": "pause"
+        "status": "paused"
       },
       "request_seq": 6,
       "sourceCommand": "pause"
@@ -191,8 +170,7 @@
       "body": {
         "threadId": 1,
         "allThreadsContinued": true,
-        "status": "running",
-        "reason": "continued"
+        "status": "running"
       },
       "request_seq": 7,
       "sourceCommand": "continue"
@@ -211,8 +189,7 @@
         "reason": "stop",
         "threadId": 1,
         "allThreadsStopped": true,
-        "status": "stopped",
-        "sourceCommand": "stop"
+        "status": "stopped"
       },
       "request_seq": 8,
       "sourceCommand": "stop"
@@ -227,6 +204,9 @@
     "response": {
       "type": "event",
       "event": "terminated",
+      "body": {
+        "restart": false
+      },
       "request_seq": 9,
       "sourceCommand": "terminate"
     }

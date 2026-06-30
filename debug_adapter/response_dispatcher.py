@@ -1,43 +1,23 @@
 from __future__ import annotations
 from typing import Any, Dict, Optional
 
-
 class ResponseDispatcher:
-    def success(self, command: str, request_seq: int = 0, body: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        return {
-            "seq": 0,
-            "type": "response",
-            "request_seq": request_seq,
-            "command": command,
-            "success": True,
-            "body": body or {},
-        }
-
-    def error(self, command: str, request_seq: int = 0, message: str = "error") -> Dict[str, Any]:
-        return {
-            "seq": 0,
-            "type": "response",
-            "request_seq": request_seq,
-            "command": command,
-            "success": False,
-            "message": message,
-        }
-
-
-# P-3 Batch 7.5 compatibility contract: historical H4.2 tests expect
-# ResponseDispatcher.normalize(message) to normalize request/response payloads.
-def _p75_response_dispatcher_normalize(self, message):
-    if message is None:
-        return {}
-    if isinstance(message, dict):
-        normalized = dict(message)
-        normalized.setdefault("seq", 0)
-        if normalized.get("type") == "response":
-            normalized.setdefault("success", True)
-        return normalized
-    return {"seq": 0, "type": "response", "success": False, "message": str(message)}
-
-try:
-    ResponseDispatcher.normalize = _p75_response_dispatcher_normalize
-except NameError:
-    pass
+    def success(self, command: str, request_seq: int=0, body: Optional[Dict[str, Any]]=None) -> Dict[str, Any]:
+        return {"seq":0,"type":"response","request_seq":request_seq,"command":command,"success":True,"body":body or {}}
+    def error(self, command: str, request_seq: int=0, message: str="error", body: Optional[Dict[str, Any]]=None) -> Dict[str, Any]:
+        out={"seq":0,"type":"response","request_seq":request_seq,"command":command,"success":False,"message":message,"body":body or {}}
+        return out
+    def normalize(self, message: Any, request_seq: int=0, command: str|None=None) -> Dict[str, Any]:
+        if message is None:
+            return self.success(command or "", request_seq=request_seq)
+        if isinstance(message, dict):
+            if message.get("type")=="event":
+                out=dict(message); out.setdefault("request_seq", request_seq)
+                if command: out.setdefault("sourceCommand", command)
+                return out
+            if message.get("type")=="response":
+                out=dict(message); out.setdefault("request_seq", request_seq); out.setdefault("command", command); out.setdefault("success", True); out.setdefault("body", {})
+                return out
+            body=message.get("body", message) if isinstance(message,dict) else message
+            return self.success(command or "", request_seq=request_seq, body=body)
+        return self.error(command or "", request_seq=request_seq, message=str(message))

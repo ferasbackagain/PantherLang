@@ -1,0 +1,8 @@
+.panther-cache/
+build/
+dist/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.log

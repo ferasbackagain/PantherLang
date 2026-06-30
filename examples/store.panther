@@ -1,0 +1,20 @@
+app PantherStore {
+  version "0.5"
+}
+
+data Product {
+  name String required
+  price Float required
+}
+
+api GET /products {
+  return Product
+}
+
+api POST /products {
+  create Product
+}
+
+ui page Store {
+  table Product
+}

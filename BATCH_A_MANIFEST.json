@@ -1,0 +1,7 @@
+{
+  "batch": "R3 Batch A",
+  "name": "CLI Foundation",
+  "zip_layout": "flat project-root layout",
+  "entry_script": "bootstrap_R3_batchA_CLI_foundation.sh",
+  "target": "restore ./panther and CLI/project-template behavior before DAP Batch B"
+}

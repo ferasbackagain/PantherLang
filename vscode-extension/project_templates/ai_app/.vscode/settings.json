@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.panther": "pantherlang",
+    "*.pan": "pantherlang"
+  },
+  "pantherlang.project.autoDetect": true
+}

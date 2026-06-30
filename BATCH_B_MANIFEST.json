@@ -1,0 +1,27 @@
+{
+  "batch": "R3 Batch B",
+  "name": "DAP Compatibility",
+  "flat_zip": true,
+  "root_only": true,
+  "modules": [
+    "protocol.py",
+    "response_dispatcher.py",
+    "event_dispatcher.py",
+    "execution_merge.py",
+    "execution_dispatcher.py",
+    "server.py",
+    "dispatcher.py",
+    "request_dispatcher.py",
+    "variables_core.py",
+    "variable_references.py",
+    "variable_store.py",
+    "stack_frames.py",
+    "threads.py",
+    "scopes.py",
+    "evaluate.py",
+    "watch_expressions.py",
+    "variables.py",
+    "__init__.py"
+  ],
+  "targeted_validation": "141 passed on extracted project baseline"
+}

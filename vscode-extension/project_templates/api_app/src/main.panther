@@ -1,0 +1,5 @@
+panther api {
+    get "/health" {
+        return { "status": "ok", "service": "{{PROJECT_NAME}}" }
+    }
+}

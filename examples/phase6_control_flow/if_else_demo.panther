@@ -2,7 +2,7 @@ let score = 10 + 5
 let ok = score == 15
 
 if ok {
-    print "Control flow if branch passed"
+    print "Control flow then branch passed"
 }
 
 print "Phase 6.12 control flow"
