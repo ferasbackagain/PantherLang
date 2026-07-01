@@ -1,0 +1,14 @@
+{
+  "iconDefinitions": {
+    "_panther_file": {
+      "iconPath": "../assets/pantherlang-icon.png"
+    }
+  },
+  "fileExtensions": {
+    "pan": "_panther_file",
+    "panther": "_panther_file"
+  },
+  "fileNames": {
+    "panther.toml": "_panther_file"
+  }
+}

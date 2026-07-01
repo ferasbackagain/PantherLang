@@ -1,0 +1,7 @@
+{
+  "batch": "R3 Batch F1",
+  "name": "Developer Tooling Final Fixes",
+  "purpose": "Fix global Panther CLI wrapper, version/help behavior, and VS Code file icon theme before release packaging.",
+  "run_from": "/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5",
+  "release_blocker_policy": "Do not package or publish release until full pytest regression passes."
+}

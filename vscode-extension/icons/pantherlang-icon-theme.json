@@ -1,0 +1,15 @@
+{
+  "iconDefinitions": {
+    "pantherlang-file": {
+      "iconPath": "./pantherlang-icon.png"
+    }
+  },
+  "fileExtensions": {
+    "pan": "pantherlang-file",
+    "panther": "pantherlang-file"
+  },
+  "languageIds": {
+    "panther": "pantherlang-file",
+    "pantherlang": "pantherlang-file"
+  }
+}

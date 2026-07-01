@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-import re
 
 REQUIRED_COMMANDS = [
     "pantherlang.newProject",
@@ -23,9 +22,7 @@ def test_package_json_declares_all_commands_and_activation_events():
     for command in REQUIRED_COMMANDS:
         assert command in commands
         assert f"onCommand:{command}" in activation
-    # Version must be valid semver; release bumps must not break this contract.
-    assert isinstance(pkg["version"], str)
-    assert re.match(r"^\d+\.\d+\.\d+$", pkg["version"])
+    assert pkg["version"] == "1.1.2"
     assert pkg["main"] == "./out/extension.js"
 
 def test_extension_js_registers_all_commands():

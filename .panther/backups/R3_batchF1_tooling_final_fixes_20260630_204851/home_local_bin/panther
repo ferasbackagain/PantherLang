@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+REPO="/home/panther/pantherlang/PantherLang_Developer_Edition_v0_5"
+exec "$REPO/panther" "$@"

@@ -1,0 +1,6 @@
+{
+  "batch": "R3 Batch F2",
+  "name": "Release Version Contract Fix",
+  "fix": "Replace stale hardcoded 1.1.2 test expectation with semver validation.",
+  "target": "Full regression returns 442 passed while package version remains 1.1.3"
+}

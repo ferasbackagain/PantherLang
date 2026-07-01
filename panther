@@ -1,4 +1,41 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VERSION_FILE="$ROOT/vscode-extension/package.json"
+
+if [ "${1:-}" = "version" ] || [ "${1:-}" = "--version" ] || [ "${1:-}" = "-v" ]; then
+  if [ -f "$VERSION_FILE" ]; then
+    VERSION="$(python3 - <<PY
+import json
+from pathlib import Path
+p=Path("$VERSION_FILE")
+print(json.loads(p.read_text(encoding="utf-8")).get("version","unknown"))
+PY
+)"
+  else
+    VERSION="unknown"
+  fi
+  echo "PantherLang Developer Edition CLI"
+  echo "Version: $VERSION"
+  exit 0
+fi
+
+if [ "${1:-}" = "--help" ] || [ "${1:-}" = "-h" ] || [ "${1:-}" = "help" ]; then
+  cat <<'HELP'
+PantherLang Developer Edition CLI
+
+Usage:
+  panther version
+  panther doctor
+  panther check <file.pan|file.panther>
+  panther run <file.pan|file.panther>
+  panther build <file.pan|file.panther> [--out <path>]
+  panther new <console|api|web|ai> <project-name>
+
+Notes:
+  This development CLI is backed by .panther/tools/panther_cli.py.
+HELP
+  exit 0
+fi
+
 exec python3 "$ROOT/.panther/tools/panther_cli.py" "$@"
