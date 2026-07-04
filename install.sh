@@ -3,7 +3,8 @@
 # PantherLang Installer — Linux / macOS
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/feras-khatib/pantherlang/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/ferasbackagain/PantherLang/main/install.sh | bash
+#   # NOTE: This requires install.sh to be pushed to main branch root on GitHub first
 #   # or
 #   ./install.sh
 #

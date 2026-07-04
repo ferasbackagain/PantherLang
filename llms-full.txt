@@ -1,0 +1,374 @@
+# PantherLang v1.1.5 — Full AI Knowledge Pack
+
+This file contains the complete consolidated knowledge for AI agents working with PantherLang.
+
+---
+
+## AI_KNOWLEDGE_PACK_v1_1_5.md
+
+# PantherLang v1.1.5 — Complete AI Knowledge Pack
+
+**Version:** 1.1.5 (Public Release)
+**Date:** 2026-07-04
+**Language:** PantherLang (`.panther`, `.pan`)
+**Runtime:** Tree-walking interpreter on Python 3.10+
+
+---
+
+### Quick Facts
+
+- **Package:** `pip install pantherlang`
+- **CLI:** `panther run/build/check/new/doctor/fmt/version`
+- **Tests:** `python -m pytest` (1039+ tests, 0 failures)
+- **Examples:** 11 verified in `examples/`
+- **Templates:** 4 project types (console, web, api, ai)
+- **VS Code:** Extension v1.1.5 with debug adapter v1.1.5
+- **Platforms:** Linux, macOS, Windows (cross-platform via pathlib)
+
+---
+
+### Architecture
+
+```
+Source Code
+  → Lexer (compiler/lexer/) — Pratt lexer + tokens
+  → Token Stream
+  → Parser (compiler/parser/) — Pratt expressions + recursive descent statements
+  → AST (compiler/ast/) — Frozen dataclass nodes
+  → Semantic Analysis (compiler/semantic/) — Symbol tables, scope, diagnostics (E001-E008)
+  → Type Checker (compiler/types/) — Primitive types, inference, compatibility (T001)
+  → Runtime (compiler/runtime/) — Tree-walking interpreter
+  → Output / Side Effects
+```
+
+Two pipelines co-exist:
+1. **Formal Pipeline** (`compiler/parser/`, `compiler/semantic/`, `compiler/types/`, `compiler/runtime/`) — Production
+2. **Phase 6 Pipeline** (`compiler/pipeline/`) — Regex-based, legacy
+
+---
+
+### Language Features
+
+#### Variables
+```panther
+let name = "PantherLang";      // inferred string
+let year = 2026;               // inferred int
+let ratio = 3.14;              // inferred float
+let active = true;             // inferred bool
+let data = null;               // null
+
+// With type annotations
+let count: int = 42;
+let label: string = "total";
+```
+
+#### Functions
+```panther
+fn greet(msg) {
+    return "Greetings: " + msg;
+}
+
+fn add(a: int, b: int): int {
+    return a + b;
+}
+
+fn factorial(n) {
+    if n <= 1 { return 1; }
+    return n * factorial(n - 1);
+}
+
+// Closures
+fn outer() {
+    let x = 10;
+    fn inner() { return x + 5; }
+    return inner;
+}
+```
+
+#### Control Flow
+```panther
+if x > 10 { } elif x == 10 { } else { }
+
+while condition { }
+
+for i in 0..10 { }      // 0-9
+for i in 1..=10 { }     // 1-10 inclusive
+
+loop { break; continue; }
+```
+
+#### Data Types
+- **Primitives:** `int`, `float`, `string`, `bool`, `null`, `any`
+- **Collections:** Arrays `[1, 2, 3]`, Objects `{key: val}`, Indexing `arr[0]`, `obj["key"]`
+- **Structs:** `struct Point { x y }` → `Point(10, 20)`
+- **Enums/Traits:** Parsed, limited runtime
+
+#### Type Conversion (CRITICAL: NO IMPLICIT CONVERSION)
+```panther
+// ERROR - type mismatch (T001/PT001):
+10 + "5"
+"hello" + 42
+10 == "10"
+true == 1
+
+// CORRECT - explicit conversion:
+10 + int("5")
+"hello" + string(42)
+10 == int("10")
+```
+
+Conversion functions: `int()`, `float()`, `string()`, `to_string()`, `to_int()`, `to_number()`, `to_bool()`
+
+---
+
+### Standard Library (43 Functions)
+
+**String (11):** `len`, `substring`, `contains`, `starts_with`, `ends_with`, `upper`, `lower`, `trim`, `replace`, `split`, `join`
+
+**Math (10):** `abs`, `max`, `min`, `pow`, `sqrt`, `floor`, `ceil`, `round`, `random`, `randint`
+
+**JSON (2):** `json_encode`, `json_decode`
+
+**Time (2):** `time`, `sleep`
+
+**Type Conversion (3):** `int`, `float`, `string`
+
+**Crypto (4):** `sha256`, `hmac_sha256`, `secure_token`, `secure_compare`
+
+**Security (2):** `sanitize_path`, `sanitize_html`
+
+**Filesystem (6):** `read_file`, `write_file`, `file_exists`, `mkdir`, `list_dir`, `remove_file`
+
+**HTTP (2):** `http_get`, `http_post`
+
+**Regex (3):** `regex_match`, `regex_replace`, `regex_split`
+
+**Collections (4):** `array_push`, `array_pop`, `array_sort`, `array_reverse`
+
+**SQLite (4):** `db_open`, `db_close`, `db_execute`, `db_query`
+
+---
+
+### Security-Native Features
+
+| Diagnostic | Detection |
+|------------|-----------|
+| S001 | Hardcoded secrets (API keys, passwords, tokens) in string literals |
+| S002 | Dangerous function names (exec, eval, system) |
+| S003 | Dangerous function calls |
+| S004 | Dangerous shell command patterns |
+| S005 | Secret patterns in string values |
+
+**Runtime Sandbox:** `compiler.security.Sandbox` — time/memory/file/network limits
+**Prompt Injection Detection:** `compiler.security.PromptInjectionDetector` — 12 patterns
+**Output Validator:** `compiler.security.OutputValidator` — sensitive data redaction
+**Web Security Middleware:** CORS, CSRF, Rate Limiting, Security Headers, JWT Validation
+
+**Rules:**
+1. Never hardcode API keys — use environment variables
+2. Always sanitize paths with `sanitize_path()`
+3. Use `SecureAgent` instead of `Agent` in production
+4. Enable sandbox for untrusted code
+5. Run `panther check` for security diagnostics
+
+---
+
+### Platforms
+
+#### Web (Python API)
+```python
+from compiler.web.server import HttpServer
+from compiler.web.security import SecureRequestHandler
+
+server = HttpServer(host="0.0.0.0", port=8080)
+server.get("/", lambda req: {"message": "Hello!"})
+server.post("/api", lambda req: {"received": req.body})
+server.use(SecureRequestHandler())  # Rate limit, CORS, headers, CSRF, XSS
+server.start()
+```
+
+#### Database (SQLite)
+```panther
+// PantherLang stdlib
+let conn = db_open(":memory:");
+db_execute(conn, "CREATE TABLE users (id INTEGER, name TEXT)");
+db_execute(conn, "INSERT INTO users VALUES (1, 'Alice')");
+let rows = db_query(conn, "SELECT * FROM users");
+print rows[0]["name"];  // "Alice"
+db_close(conn);
+```
+
+```python
+// Python ORM
+from compiler.database.orm import SqliteEngine, Model, Column
+engine = SqliteEngine(":memory:")
+class User(Model):
+    name = Column(str)
+    age = Column(int)
+engine.create_table(User)
+engine.insert(User(name="Alice", age=30))
+```
+
+#### AI Platform
+```python
+from compiler.ai.providers import (
+    OpenAIProvider, AnthropicProvider, GeminiProvider,
+    OllamaProvider, OpenRouterProvider
+)
+from compiler.ai.agents import Agent
+from compiler.ai.secure_agent import SecureAgent
+from compiler.ai.rag import RAGEngine
+
+# All providers support mock mode (no API key needed)
+agent = SecureAgent("assistant")
+agent.register_tool("get_weather", weather_fn)
+response = agent.complete(user_input)  # injection detection + audit
+
+engine = RAGEngine(embedding_provider)
+engine.add_document("PantherLang is a programming language.")
+results = engine.query("What is PantherLang?", top_k=3)
+```
+
+---
+
+### CLI Commands
+
+```bash
+panther run <file>              # Execute
+panther run --serve <file>      # Execute with HTTP server
+panther build <file>            # Build to shell artifact
+panther check <file>            # Syntax validation (no execution)
+panther fmt <file>              # Validate and print formatted
+panther new console <name>      # Scaffold console project
+panther new web <name>          # Scaffold web project
+panther new api <name>          # Scaffold API project
+panther new ai <name>           # Scaffold AI project
+panther doctor                  # Verify 11 components
+panther version                 # Show version
+panther help                    # Command summary
+```
+
+---
+
+### Project Structure
+
+```
+my-project/
+├── panther.toml          # Manifest
+├── README.md
+├── .gitignore
+├── src/
+│   └── main.panther      # Entry point
+├── tests/
+├── docs/
+└── .vscode/
+    ├── settings.json
+    ├── tasks.json
+    └── launch.json
+```
+
+---
+
+### Error Codes Reference
+
+| Code | Category | Description |
+|------|----------|-------------|
+| E001 | Control | `break` outside loop |
+| E002 | Control | `continue` outside loop |
+| E003 | Semantic | Duplicate function declaration |
+| E005 | Semantic | Duplicate variable declaration |
+| E006 | Semantic | Duplicate import |
+| E007 | Semantic | Undefined variable |
+| E008 | Semantic | Undefined function/symbol |
+| T001 | Type | Type mismatch / incompatibility |
+| PT001 | Type | Comparison type mismatch (strict) |
+| PR001 | Runtime | Division by zero |
+| S001 | Security | Hardcoded secret in string |
+| S002 | Security | Dangerous function name |
+| S003 | Security | Dangerous function call |
+| S004 | Security | Dangerous shell pattern |
+| S005 | Security | Secret pattern in string value |
+
+---
+
+### Verification Commands
+
+```bash
+# Full regression (REQUIRED before any release)
+python -m pytest
+
+# Targeted tests
+python -m pytest tests/security/test_web_security.py -v
+python -m pytest tests/test_array_dict_support.py -v
+python -m pytest tests/test_stdlib_phase6.py -v
+python -m pytest tests/test_web_api_ai_runtime.py -v
+
+# Examples
+bash scripts/run_examples.sh
+
+# System health
+panther doctor
+
+# Build
+python -m build
+```
+
+---
+
+### Version Identity (v1.1.5)
+
+| Component | Version |
+|-----------|---------|
+| Core Package | 1.1.5 |
+| panther_core | 1.1.5 |
+| CLI | 1.1.5 |
+| Compiler | 1.1.5 |
+| Debug Adapter | 1.1.5 |
+| VS Code Extension | 1.1.5 |
+| Release Channel | stable |
+
+---
+
+### Release Status Summary
+
+| Area | Status |
+|------|--------|
+| Tests | 1039 passed |
+| Examples | 11/11 passed |
+| Templates | 4/4 create & run |
+| Build | wheel + sdist |
+| VS Code | Extension v1.1.5 |
+| Academy | Lessons 01-05 complete (5/10) |
+| Book | 15 chapters (12 substantive) |
+| Cookbook | 11 verified examples (roadmap: 500) |
+| AI Knowledge | Pack unified in docs/ai/ |
+| Git | Clean (backups ignored) |
+
+---
+
+### Key Files for AI Agents
+
+| File | Purpose |
+|------|---------|
+| `AGENTS.md` | Quick reference |
+| `docs/agent_knowledge/PANTHERLANG_AGENT_GUIDE.md` | How to work in PantherLang |
+| `docs/agent_knowledge/PANTHERLANG_GRAMMAR_QUICK_REFERENCE.md` | Syntax cheat sheet |
+| `docs/agent_knowledge/PANTHERLANG_PROJECT_CONVENTIONS.md` | Project layout |
+| `docs/ai/AI_KNOWLEDGE_PACK_v1_1_5.md` | This consolidated pack |
+| `docs/book/chapters/14-language-reference.md` | Complete reference |
+| `docs/book/chapters/07-standard-library.md` | Stdlib API |
+| `docs/specification/` | 8 formal specs |
+
+---
+
+### Important Notes
+
+1. **Local docs improve AI understanding** but do NOT guarantee external AI model recognition until published/indexed
+2. **All examples in this pack are verified** against v1.1.5 runtime
+3. **No implicit type conversion** — this is the #1 gotcha for new users
+4. **Security diagnostics run on `panther check`** — not just at runtime
+5. **VS Code extension** requires `npm install && npm run package` in `vscode-extension/`
+
+---
+
+*PantherLang v1.1.5 — Modern, Secure, AI-Native, Cross-Platform*

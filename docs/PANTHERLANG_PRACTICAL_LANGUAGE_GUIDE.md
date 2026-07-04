@@ -258,7 +258,7 @@ panther new ai myapp        # AI application
 
 ## Resources
 
-- GitHub: https://github.com/feras-khatib/pantherlang
+- GitHub: https://github.com/ferasbackagain/PantherLang
 - CLI: `panther help`
 - Examples: `examples/` directory
 - Docs: `docs/` directory

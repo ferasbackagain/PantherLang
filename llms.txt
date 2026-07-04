@@ -1,0 +1,50 @@
+# PantherLang AI Context Files
+
+This directory contains structured knowledge for AI agents working with PantherLang.
+
+## Core Reference
+
+- [AI Knowledge Pack v1.1.5](docs/ai/AI_KNOWLEDGE_PACK_v1_1_5.md) — Complete consolidated reference
+- [Agent Guide](docs/agent_knowledge/PANTHERLANG_AGENT_GUIDE.md) — How AI agents should work in PantherLang projects
+- [Grammar Quick Reference](docs/agent_knowledge/PANTHERLANG_GRAMMAR_QUICK_REFERENCE.md) — Syntax cheat sheet
+- [Project Conventions](docs/agent_knowledge/PANTHERLANG_PROJECT_CONVENTIONS.md) — Standard project layout
+- [Agent Prompts](docs/agent_knowledge/PANTHERLANG_AGENT_PROMPTS.md) — Prompt templates
+
+## Language Documentation
+
+- [The Panther Programming Language](docs/book/THE_PANTHER_PROGRAMMING_LANGUAGE.md) — Full language guide
+- [Language Reference](docs/book/chapters/14-language-reference.md) — Complete syntax reference
+- [Standard Library](docs/book/chapters/07-standard-library.md) — 43 built-in functions
+- [Security](docs/book/chapters/08-security.md) — Security-native features
+- [Web Platform](docs/book/chapters/09-web-platform.md) — HTTP server, routing, middleware
+- [Database](docs/book/chapters/10-database-platform.md) — SQLite CRUD, ORM, Query Builder
+- [AI Platform](docs/book/chapters/11-ai-platform.md) — 5 providers, Agent, SecureAgent, RAG
+- [CLI & Tooling](docs/book/chapters/12-cli-and-tooling.md) — Commands, VS Code extension
+
+## Formal Specifications
+
+- [Lexical Specification](docs/specification/01_LEXICAL_SPECIFICATION.md)
+- [Grammar EBNF](docs/specification/02_GRAMMAR_EBNF.md)
+- [Keywords](docs/specification/03_KEYWORDS.md)
+- [Operators](docs/specification/04_OPERATORS.md)
+- [Type System](docs/specification/05_TYPE_SYSTEM_SPECIFICATION.md)
+- [Runtime](docs/specification/06_RUNTIME_SPECIFICATION.md)
+- [Module](docs/specification/07_MODULE_SPECIFICATION.md)
+- [Error](docs/specification/08_ERROR_SPECIFICATION.md)
+- [Comparison Semantics](docs/specification/PDL_005_COMPARISON_SEMANTICS.md)
+
+## Academy & Examples
+
+- [Academy Status](docs/academy/ACADEMY_RELEASE_STATUS_v1_1_5.md) — Lessons 01-05 complete, 06-10 in progress
+- [Book Status](docs/book/BOOK_RELEASE_STATUS_v1_1_5.md) — 15 chapters, 12 substantive
+- [Cookbook Status](docs/cookbook/COOKBOOK_RELEASE_STATUS_v1_1_5.md) — 11 verified examples
+- [Examples](examples/) — 11 runnable programs
+
+## Verification
+
+```bash
+panther doctor                    # System health
+panther run examples/console_hello/main.pan  # Test run
+python -m pytest                  # Full test suite (1039 tests)
+bash scripts/run_examples.sh      # All examples
+```

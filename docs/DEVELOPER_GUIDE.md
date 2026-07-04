@@ -3,7 +3,7 @@
 ## Development Setup
 
 ```bash
-git clone https://github.com/feras-khatib/pantherlang.git
+git clone https://github.com/ferasbackagain/PantherLang.git
 cd pantherlang
 pip install -e ".[dev]"
 ```

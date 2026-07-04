@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pantherlang"
-version = "1.1.5"
+version = "1.1.6"
 description = "PantherLang — The official Panther Ecosystem programming language"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -29,9 +29,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/feras-khatib/pantherlang"
-Repository = "https://github.com/feras-khatib/pantherlang"
-Documentation = "https://github.com/feras-khatib/pantherlang/docs"
+Homepage = "https://github.com/ferasbackagain/PantherLang"
+Repository = "https://github.com/ferasbackagain/PantherLang"
+Documentation = "https://github.com/ferasbackagain/PantherLang/docs"
 
 [project.scripts]
 panther = "cli.panther_cli:main_entry"

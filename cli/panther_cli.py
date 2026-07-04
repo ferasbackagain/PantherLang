@@ -55,8 +55,8 @@ def _print_help() -> int:
     print("    panther new api myapi && cd myapi && panther run src/main.panther")
     print()
     print("  RESOURCES")
-    print("    GitHub:  https://github.com/feras-khatib/pantherlang")
-    print("    Docs:    https://github.com/feras-khatib/pantherlang/docs")
+    print("    GitHub:  https://github.com/ferasbackagain/PantherLang")
+    print("    Docs:    https://github.com/ferasbackagain/PantherLang/docs")
     print("    Website: https://pantherlang.dev")
     print()
     return 0
