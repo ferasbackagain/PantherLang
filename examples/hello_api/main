@@ -1,0 +1,78 @@
+panther main {
+
+    print "======================================";
+    print "     Panther Academy - Lesson 01";
+    print "======================================";
+
+    print "";
+    print "HELLO";
+    print "----------------------";
+    print "Hello PantherLang";
+
+    print "";
+    print "VARIABLES";
+    print "----------------------";
+
+    let name = "Feras";
+    let project = "PantherLang";
+    let year = 2026;
+
+    print name;
+    print project;
+    print year;
+
+    print "";
+    print "NUMBERS";
+    print "----------------------";
+
+    let a = 10;
+    let b = 5;
+
+    print a;
+    print b;
+    print a + b;
+    print a - b;
+    print a * b;
+    print a / b;
+
+    print "";
+    print "COMPARISON";
+    print "----------------------";
+
+    let score = 95;
+
+    if score >= 60 {
+        print "PASS";
+    } else {
+        print "FAIL";
+    }
+
+    print "";
+    print "ARRAYS";
+    print "----------------------";
+
+    let nums = [10, 20, 30];
+
+    print nums[0];
+    print nums[1];
+    print nums[2];
+
+    print "";
+    print "OBJECTS";
+    print "----------------------";
+
+    let user = {
+        name: "Feras",
+        role: "Founder",
+        language: "PantherLang"
+    };
+
+    print user["name"];
+    print user["role"];
+    print user["language"];
+
+    print "";
+    print "======================================";
+    print " Lesson 01 Complete";
+    print "======================================";
+}

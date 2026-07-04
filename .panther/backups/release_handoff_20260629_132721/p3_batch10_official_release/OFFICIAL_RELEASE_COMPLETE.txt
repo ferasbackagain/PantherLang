@@ -1,3 +1,0 @@
-PantherLang Debug Adapter Official Release
-Completed: 20260629_131648
-Package: /home/panther/pantherlang/PantherLang_Developer_Edition_v0_5/releases/P3_OFFICIAL/PantherLang_Debug_Adapter_v0.9.10-debug-adapter-official_20260629_131518.tar.gz

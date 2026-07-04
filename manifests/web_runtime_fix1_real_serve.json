@@ -1,0 +1,13 @@
+{
+  "title": "Web Runtime Fix 1 — Real --serve HTTP Server",
+  "status": "ready",
+  "modified_files": [
+    "compiler/runtime/execution_pipeline.py",
+    "compiler/web/server.py",
+    "examples/hello_web/main.pan",
+    "examples/hello_api/main.pan"
+  ],
+  "tests_added": [
+    "tests/test_web_runtime_real_serve.py"
+  ]
+}

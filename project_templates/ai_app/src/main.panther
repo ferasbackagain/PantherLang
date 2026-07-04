@@ -1,4 +1,9 @@
-panther ai {
-    prompt = "Build safely with PantherLang"
-    print("AI-ready Panther project: {{PROJECT_NAME}}")
+panther main {
+    print("PantherLang AI Template");
+    print("AI Providers: OpenAI, Anthropic, Gemini, Ollama, OpenRouter");
+    print("Security: Prompt injection detection enabled");
+    print("Mock mode: Active (no API keys required for demo)");
+    print("");
+    print("API keys are read from environment variables only.");
+    print("Never hardcode secrets in source code.");
 }

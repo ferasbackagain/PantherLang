@@ -1,3 +1,0 @@
-panther test "ai app configuration" {
-    assert true
-}

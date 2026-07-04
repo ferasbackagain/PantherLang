@@ -1,8 +1,0 @@
-{
-  "templates": [
-    {"id": "console", "label": "Console App", "description": "A minimal PantherLang command-line application.", "folder": "console_app"},
-    {"id": "web", "label": "Web App", "description": "A PantherLang web application starter.", "folder": "web_app"},
-    {"id": "api", "label": "API App", "description": "A PantherLang REST/API service starter.", "folder": "api_app"},
-    {"id": "ai", "label": "AI App", "description": "A PantherLang AI-ready application starter.", "folder": "ai_app"}
-  ]
-}

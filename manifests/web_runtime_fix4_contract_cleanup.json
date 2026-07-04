@@ -1,0 +1,11 @@
+{
+  "title": "Web Runtime Fix 4 — Contract Cleanup",
+  "scope": "release-validation",
+  "files": [
+    "compiler/runtime/execution_pipeline.py",
+    "examples/hello_web/main.pan",
+    "examples/hello_api/main.pan",
+    "tests/test_web_runtime_fix2_nonserve_output.py",
+    "tests/test_web_runtime_fix4_contract.py"
+  ]
+}

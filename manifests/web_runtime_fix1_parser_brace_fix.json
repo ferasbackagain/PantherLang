@@ -1,0 +1,9 @@
+{
+  "title": "Web Runtime Fix 1 Parser Brace Fix",
+  "type": "runtime-parser-fix",
+  "files": [
+    "compiler/parser/statement_parser.py",
+    "tests/test_web_runtime_fix1_parser_brace.py"
+  ],
+  "expected": "route return object/array literals parse successfully"
+}

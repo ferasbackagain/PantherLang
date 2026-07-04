@@ -1,0 +1,4 @@
+panther main {
+
+    print 100;
+}

@@ -25,6 +25,23 @@ class TokenKind(str, Enum):
     FALSE = "FALSE"
     ASSERT = "ASSERT"
     PROMPT = "PROMPT"
+    LET = "LET"
+    IF = "IF"
+    ELIF = "ELIF"
+    ELSE = "ELSE"
+    WHILE = "WHILE"
+    FOR = "FOR"
+    LOOP = "LOOP"
+    BREAK = "BREAK"
+    CONTINUE = "CONTINUE"
+    FN = "FN"
+    STRUCT = "STRUCT"
+    ENUM = "ENUM"
+    TRAIT = "TRAIT"
+    IMPORT = "IMPORT"
+    MATCH = "MATCH"
+    NULL = "NULL"
+    IN = "IN"
     LEFT_BRACE = "LEFT_BRACE"
     RIGHT_BRACE = "RIGHT_BRACE"
     LEFT_PAREN = "LEFT_PAREN"
@@ -35,11 +52,13 @@ class TokenKind(str, Enum):
     COLON = "COLON"
     SEMICOLON = "SEMICOLON"
     DOT = "DOT"
+    DOT_DOT = "DOT_DOT"
     EQUAL = "EQUAL"
     PLUS = "PLUS"
     MINUS = "MINUS"
     STAR = "STAR"
     SLASH = "SLASH"
+    PERCENT = "PERCENT"
     BANG = "BANG"
     EQUAL_EQUAL = "EQUAL_EQUAL"
     BANG_EQUAL = "BANG_EQUAL"
@@ -48,6 +67,16 @@ class TokenKind(str, Enum):
     LESS = "LESS"
     LESS_EQUAL = "LESS_EQUAL"
     ARROW = "ARROW"
+    STAR_STAR = "STAR_STAR"
+    PIPE_PIPE = "PIPE_PIPE"
+    AMP_AMP = "AMP_AMP"
+    PLUS_EQUAL = "PLUS_EQUAL"
+    MINUS_EQUAL = "MINUS_EQUAL"
+    STAR_EQUAL = "STAR_EQUAL"
+    SLASH_EQUAL = "SLASH_EQUAL"
+    PERCENT_EQUAL = "PERCENT_EQUAL"
+    AMPERSAND = "AMPERSAND"
+    PIPE = "PIPE"
 
 
 KEYWORDS = {
@@ -66,6 +95,23 @@ KEYWORDS = {
     "false": TokenKind.FALSE,
     "assert": TokenKind.ASSERT,
     "prompt": TokenKind.PROMPT,
+    "let": TokenKind.LET,
+    "if": TokenKind.IF,
+    "elif": TokenKind.ELIF,
+    "else": TokenKind.ELSE,
+    "while": TokenKind.WHILE,
+    "for": TokenKind.FOR,
+    "loop": TokenKind.LOOP,
+    "break": TokenKind.BREAK,
+    "continue": TokenKind.CONTINUE,
+    "fn": TokenKind.FN,
+    "struct": TokenKind.STRUCT,
+    "enum": TokenKind.ENUM,
+    "trait": TokenKind.TRAIT,
+    "import": TokenKind.IMPORT,
+    "match": TokenKind.MATCH,
+    "null": TokenKind.NULL,
+    "in": TokenKind.IN,
 }
 
 

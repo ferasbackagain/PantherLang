@@ -1,0 +1,100 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pantherlang"
+version = "1.1.5"
+description = "PantherLang — The official Panther Ecosystem programming language"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Feras Khatib"},
+    {name = "PantherLang Core Team"},
+]
+keywords = ["panther", "pantherlang", "language", "compiler", "programming"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/feras-khatib/pantherlang"
+Repository = "https://github.com/feras-khatib/pantherlang"
+Documentation = "https://github.com/feras-khatib/pantherlang/docs"
+
+[project.scripts]
+panther = "cli.panther_cli:main_entry"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+lsp = [
+    "panther-lsp>=0.6.8",
+]
+ai = [
+    "openai>=1.0",
+    "anthropic>=0.30",
+    "google-generativeai>=0.3",
+    "requests>=2.31",
+]
+web = [
+    "requests>=2.31",
+]
+database = [
+    "sqlite3",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "compiler*",
+    "cli*",
+    "panther_core*",
+    "package_manager*",
+    "tools*",
+]
+exclude = [
+    "tests*",
+    "docs*",
+    "examples*",
+    "build*",
+    "dist*",
+    "*.panther_backups*",
+    "*.phase_backups*",
+]
+
+[tool.setuptools.package-data]
+compiler = ["py.typed"]
+cli = ["py.typed"]
+panther_core = ["py.typed"]
+package_manager = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["compiler", "cli", "panther_core", "package_manager"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

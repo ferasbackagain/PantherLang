@@ -1,7 +1,0 @@
-{
-  "name": "PantherLang Runtime",
-  "phase": "6.18",
-  "kind": "deterministic-shell-artifact-runtime",
-  "external_api_required": false,
-  "network_required": false
-}

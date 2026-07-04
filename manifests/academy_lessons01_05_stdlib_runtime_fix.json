@@ -1,0 +1,19 @@
+{
+  "phase": "Panther Academy",
+  "batch": "Lessons 01-05 Runtime + Stdlib Fix",
+  "status": "ready_for_kali_verification",
+  "files": [
+    "compiler/runtime/expression_evaluator.py",
+    "compiler/stdlib/functions.py",
+    "tests/academy/test_lesson05_runtime_polish.py",
+    "examples/academy/lesson05_conversions.pan",
+    "docs/academy/LESSONS_01_05_FIX_REPORT.md"
+  ],
+  "features": [
+    "PR001 division by zero error",
+    "PT001 mixed type binary operation error",
+    "explicit conversion helpers",
+    "io foundation helpers",
+    "academy lesson 05 conversion example"
+  ]
+}

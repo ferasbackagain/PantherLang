@@ -1,7 +1,0 @@
-[ ] Map public API
-[ ] Compare signatures
-[ ] Build compatibility layer
-[ ] Dry-run import swap
-[ ] Execute H4 regression
-[ ] Atomic switch
-[ ] Rollback validation

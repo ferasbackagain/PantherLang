@@ -1,0 +1,6 @@
+{
+  "title": "PantherLang Stdlib S1-S6 All Batches",
+  "status": "generated",
+  "batches": ["S1", "S2", "S3", "S4", "S5", "S6"],
+  "security": "defensive-only safe defaults"
+}

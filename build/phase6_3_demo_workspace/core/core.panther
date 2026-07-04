@@ -1,3 +1,0 @@
-fn normalize(value) {
-  return value
-}

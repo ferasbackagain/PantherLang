@@ -1,1 +1,0 @@
-{"scopeName":"source.panther","patterns":[{"match":"\\b(print|module|fn|let)\\b","name":"keyword.control.panther"}]}

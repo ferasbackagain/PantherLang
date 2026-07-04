@@ -1,3 +1,0 @@
-panther test "web app routes" {
-    assert true
-}

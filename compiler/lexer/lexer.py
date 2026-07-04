@@ -27,18 +27,65 @@ class PantherLexer:
 
     def _scan_token(self) -> None:
         ch = self._advance()
-        single = {
-            "{": TokenKind.LEFT_BRACE, "}": TokenKind.RIGHT_BRACE,
-            "(": TokenKind.LEFT_PAREN, ")": TokenKind.RIGHT_PAREN,
-            "[": TokenKind.LEFT_BRACKET, "]": TokenKind.RIGHT_BRACKET,
-            ",": TokenKind.COMMA, ":": TokenKind.COLON,
-            ";": TokenKind.SEMICOLON, ".": TokenKind.DOT,
-            "+": TokenKind.PLUS, "*": TokenKind.STAR,
-        }
-        if ch in single:
-            self._add_token(single[ch])
+        if ch == "(":
+            self._add_token(TokenKind.LEFT_PAREN)
+        elif ch == ")":
+            self._add_token(TokenKind.RIGHT_PAREN)
+        elif ch == "{":
+            self._add_token(TokenKind.LEFT_BRACE)
+        elif ch == "}":
+            self._add_token(TokenKind.RIGHT_BRACE)
+        elif ch == "[":
+            self._add_token(TokenKind.LEFT_BRACKET)
+        elif ch == "]":
+            self._add_token(TokenKind.RIGHT_BRACKET)
+        elif ch == ",":
+            self._add_token(TokenKind.COMMA)
+        elif ch == ":":
+            self._add_token(TokenKind.COLON)
+        elif ch == ";":
+            self._add_token(TokenKind.SEMICOLON)
+        elif ch == ".":
+            if self._match("."):
+                self._add_token(TokenKind.DOT_DOT)
+            else:
+                self._add_token(TokenKind.DOT)
+        elif ch == "+":
+            if self._match("="):
+                self._add_token(TokenKind.PLUS_EQUAL)
+            elif self._match("+"):
+                self._add_token(TokenKind.PLUS, "+")
+            else:
+                self._add_token(TokenKind.PLUS)
         elif ch == "-":
-            self._add_token(TokenKind.ARROW if self._match(">") else TokenKind.MINUS)
+            if self._match("="):
+                self._add_token(TokenKind.MINUS_EQUAL)
+            elif self._match("-"):
+                self._add_token(TokenKind.MINUS, "-")
+            elif self._match(">"):
+                self._add_token(TokenKind.ARROW)
+            else:
+                self._add_token(TokenKind.MINUS)
+        elif ch == "*":
+            if self._match("="):
+                self._add_token(TokenKind.STAR_EQUAL)
+            elif self._match("*"):
+                self._add_token(TokenKind.STAR_STAR)
+            else:
+                self._add_token(TokenKind.STAR)
+        elif ch == "/":
+            if self._match("="):
+                self._add_token(TokenKind.SLASH_EQUAL)
+            elif self._match("/"):
+                while self._peek() != "\n" and not self._is_at_end():
+                    self._advance()
+            else:
+                self._add_token(TokenKind.SLASH)
+        elif ch == "%":
+            if self._match("="):
+                self._add_token(TokenKind.PERCENT_EQUAL)
+            else:
+                self._add_token(TokenKind.PERCENT)
         elif ch == "!":
             self._add_token(TokenKind.BANG_EQUAL if self._match("=") else TokenKind.BANG)
         elif ch == "=":
@@ -47,12 +94,16 @@ class PantherLexer:
             self._add_token(TokenKind.LESS_EQUAL if self._match("=") else TokenKind.LESS)
         elif ch == ">":
             self._add_token(TokenKind.GREATER_EQUAL if self._match("=") else TokenKind.GREATER)
-        elif ch == "/":
-            if self._match("/"):
-                while self._peek() != "\n" and not self._is_at_end():
-                    self._advance()
+        elif ch == "&":
+            if self._match("&"):
+                self._add_token(TokenKind.AMP_AMP)
             else:
-                self._add_token(TokenKind.SLASH)
+                self._add_token(TokenKind.AMPERSAND)
+        elif ch == "|":
+            if self._match("|"):
+                self._add_token(TokenKind.PIPE_PIPE)
+            else:
+                self._add_token(TokenKind.PIPE)
         elif ch in (" ", "\r", "\t"):
             return
         elif ch == "\n":

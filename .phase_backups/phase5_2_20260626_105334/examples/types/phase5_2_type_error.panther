@@ -1,3 +1,0 @@
-# Expected to produce one type error
-
-let age: Int = "not an int"

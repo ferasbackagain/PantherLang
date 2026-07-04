@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# PantherLang artifacts
+.panther/
+.panther_backups/
+.phase_backups/
+.panther_tmp/
+*.tar.gz
+*.zip
+*.vsix
+
+# Build / test artifacts
+*.vsix
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Test / generated projects (local only)
+TestApp/
+hello-api/
+config.json
+demo_files/
+test_console/
+test_web/
+test_api/
+test_ai/
+
+# Packaging / payloads / generated
+payload/
+backups/
+.aider*
+BATCH_*_MANIFEST.json
+bootstrap_*.sh
+
+# VS Code extension package (generated)
+vscode-extension/*.vsix

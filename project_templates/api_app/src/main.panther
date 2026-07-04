@@ -1,5 +1,17 @@
-panther api {
-    get "/health" {
-        return { "status": "ok", "service": "{{PROJECT_NAME}}" }
+panther main {
+    print("PantherLang API Template");
+    print("Server: localhost:8080");
+    print("Routes:");
+    print("  GET /health  -> API health check");
+    print("  GET /api  -> API root");
+    print("PantherLang API platform ready");
+}
+
+api {
+    route GET "/health" {
+        return { status: "ok", service: "{{PROJECT_NAME}}" };
+    }
+    route GET "/api" {
+        return { message: "hello from PantherLang API" };
     }
 }

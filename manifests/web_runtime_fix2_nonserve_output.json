@@ -1,0 +1,12 @@
+{
+  "name": "web_runtime_fix2_nonserve_output",
+  "phase": "Runtime Fix",
+  "title": "Web/API non-serve output compatibility",
+  "files": [
+    "compiler/runtime/execution_pipeline.py",
+    "tests/test_web_runtime_fix2_nonserve_output.py",
+    "engineering/web_runtime_fix2_nonserve_output.md",
+    "manifests/web_runtime_fix2_nonserve_output.json"
+  ],
+  "expected": "Web/API execute_source outputs non-empty placeholder text; --serve remains real server path"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "PantherLang v1.1.5 RC1b — Equality Comparison PT002 Patch",
+  "phase": "v1.1.5 RC1b",
+  "target": "comparison runtime stabilization",
+  "tests": [
+    "tests/academy/test_lesson06_comparison_runtime_fix1b.py",
+    "tests/academy/test_lesson06_comparison_runtime_fix1_v2.py"
+  ],
+  "regression_required": true
+}

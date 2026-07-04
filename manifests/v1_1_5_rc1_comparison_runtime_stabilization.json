@@ -1,0 +1,12 @@
+{
+  "title": "PantherLang v1.1.5 RC1 — Comparison Runtime Stabilization",
+  "version": "1.1.5-rc1",
+  "scope": [
+    "comparison runtime",
+    "PT002",
+    "academy lesson 06",
+    "book specification",
+    "regression tests"
+  ],
+  "policy": "PDL-005"
+}

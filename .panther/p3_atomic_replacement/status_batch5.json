@@ -1,9 +1,0 @@
-{
-  "ok": true,
-  "phase": "P-3",
-  "batch": "5",
-  "status": "PASSED",
-  "runtime_modified": false,
-  "mode": "sandbox_atomic_switch_validation",
-  "next": "P-3 Batch 6 - Production Atomic Switch with rollback gate"
-}

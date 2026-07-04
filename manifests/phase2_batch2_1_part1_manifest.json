@@ -1,0 +1,18 @@
+{
+  "phase": 2,
+  "batch": "2.1",
+  "part": 1,
+  "title": "Expression AST Foundation",
+  "status": "implementation-ready",
+  "touches": [
+    "compiler/ast/expressions.py",
+    "compiler/ast/__init__.py",
+    "tests/phase2_batch2_1/test_expression_ast_foundation.py",
+    "docs/phase2/expression_ast_foundation.md",
+    "manifests/phase2_batch2_1_part1_manifest.json"
+  ],
+  "verification": [
+    "python3 -m pytest -q tests/phase2_batch2_1/test_expression_ast_foundation.py",
+    "python3 -m pytest -q"
+  ]
+}

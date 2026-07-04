@@ -1,6 +1,0 @@
-import core
-let x = 2
-let answer = 42
-let title = "Panther" + "Lang"
-let ready: Bool = true
-fn main() -> Int { return 42 }

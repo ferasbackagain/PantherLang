@@ -1,8 +1,0 @@
-{
- "ok":true,
- "phase":"P-3",
- "batch":"1",
- "status":"PASSED",
- "runtime_modified":false,
- "next":"P-3 Batch 2 - Compatibility Bridge"
-}

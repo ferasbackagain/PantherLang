@@ -1,0 +1,27 @@
+include LICENSE
+include README.md
+include CHANGELOG.md
+include pyproject.toml
+recursive-include project_templates *.panther *.toml *.md *.json *.html *.css *.js
+recursive-include templates *.panther *.md
+recursive-include docs *.md
+recursive-include compiler *.py
+recursive-include cli *.py
+recursive-include panther_core *.py
+recursive-include package_manager *.py
+recursive-include tools/project_wizard *.py *.json
+prune tests
+prune examples
+prune build
+prune dist
+prune __pycache__
+prune .pytest_cache
+prune .git
+prune .github
+prune vscode-extension
+prune installers
+prune installer
+prune .panther_backups
+prune .phase_backups
+global-exclude *.pyc
+global-exclude __pycache__

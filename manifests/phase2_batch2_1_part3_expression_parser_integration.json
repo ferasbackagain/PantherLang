@@ -1,0 +1,20 @@
+{
+  "phase": 2,
+  "batch": "2.1",
+  "part": 3,
+  "title": "Expression Parser Integration",
+  "status": "ready",
+  "package": "pantherlang_phase2_batch2_1_part3_expression_parser_integration.zip",
+  "touches": [
+    "compiler/parser/expression_parser.py",
+    "compiler/parser/__init__.py",
+    "tests/phase2_batch2_1/test_expression_parser_integration.py"
+  ],
+  "next": {
+    "phase": 2,
+    "batch": "2.1",
+    "part": 4,
+    "title": "Expression Parser Hardening",
+    "package": "pantherlang_phase2_batch2_1_part4_expression_parser_hardening.zip"
+  }
+}

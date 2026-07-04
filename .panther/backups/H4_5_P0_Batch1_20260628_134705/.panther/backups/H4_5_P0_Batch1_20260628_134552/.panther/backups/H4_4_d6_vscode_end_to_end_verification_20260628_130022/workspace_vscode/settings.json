@@ -1,7 +1,0 @@
-{
-  "files.associations": {
-    "*.pan": "panther",
-    "*.panther": "panther"
-  },
-  "debug.allowBreakpointsEverywhere": true
-}

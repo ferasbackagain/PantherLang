@@ -1,0 +1,14 @@
+{
+  "phase": 2,
+  "batch": "2.2",
+  "part": 2,
+  "title": "Literal Parsing Integration",
+  "status": "ready",
+  "next": {
+    "phase": 2,
+    "batch": "2.3",
+    "part": 1,
+    "title": "Variables Foundation",
+    "output_package": "pantherlang_phase2_batch2_3_part1_variables_foundation.zip"
+  }
+}

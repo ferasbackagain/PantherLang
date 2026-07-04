@@ -1,0 +1,14 @@
+{
+  "phase": 2,
+  "batch": "2.2",
+  "part": 1,
+  "title": "Literal Parsing Foundation",
+  "output_package": "pantherlang_phase2_batch2_2_part1_literal_parsing_foundation.zip",
+  "next": {
+    "phase": 2,
+    "batch": "2.2",
+    "part": 2,
+    "title": "Literal Parsing Integration",
+    "output_package": "pantherlang_phase2_batch2_2_part2_literal_parsing_integration.zip"
+  }
+}

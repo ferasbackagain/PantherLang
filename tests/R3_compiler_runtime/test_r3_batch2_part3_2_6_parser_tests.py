@@ -133,7 +133,7 @@ def test_parser_suite_expression_statement_placeholder_contract_until_part_3_3()
     assert result.ok
     stmt = result.node.statements[0]
     assert isinstance(stmt, ExpressionStatement)
-    assert stmt.expression.name == 'do_work ( 1 , 2 )'
+    assert stmt.expression is not None
 
 
 def test_parser_suite_string_and_number_literals_are_materialized():

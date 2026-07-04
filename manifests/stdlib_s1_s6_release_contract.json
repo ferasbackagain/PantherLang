@@ -1,0 +1,14 @@
+{
+  "title": "Stdlib S1-S6 Release Contract",
+  "status": "applied",
+  "requirements": [
+    "stable API names",
+    "documentation",
+    "examples",
+    "tests",
+    "Linux/Kali runner",
+    "Windows PowerShell runner",
+    "Windows CMD runner",
+    "regression coverage"
+  ]
+}

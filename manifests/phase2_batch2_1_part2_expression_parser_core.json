@@ -1,0 +1,15 @@
+{
+  "phase": 2,
+  "batch": "2.1",
+  "part": 2,
+  "title": "Expression Parser Core",
+  "status": "bootstrap-ready",
+  "output": "pantherlang_phase2_batch2_1_part2_expression_parser_core.zip",
+  "next": {
+    "phase": 2,
+    "batch": "2.1",
+    "part": 3,
+    "title": "Expression Parser Integration",
+    "output": "pantherlang_phase2_batch2_1_part3_expression_parser_integration.zip"
+  }
+}

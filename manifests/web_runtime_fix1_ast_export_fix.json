@@ -1,0 +1,12 @@
+{
+  "phase": "release-validation",
+  "batch": "web-runtime-fix1",
+  "part": "ast-export-repair",
+  "title": "Restore compiler.ast statement exports",
+  "files": [
+    "compiler/ast/__init__.py"
+  ],
+  "targeted_tests": [
+    "tests/test_web_api_ai_runtime.py"
+  ]
+}
