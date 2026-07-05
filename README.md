@@ -40,7 +40,7 @@ PantherLang is designed as a modern addition to the programming-language ecosyst
 - A replacement for Python, JavaScript, Rust, Go, or any existing language
 - A compiled-to-native language (currently interpreted)
 - A language claiming universal production readiness without qualification
-- A language with 500 verified cookbook examples (roadmap target, not current reality)
+- A language with 20 verified cookbook recipes (79 checks across 19 categories)
 - A language claiming external LLM recognition without training/indexing
 
 ---
@@ -53,15 +53,15 @@ panther main {
     let version = "1.1.6";
     let features = ["secure", "ai-native", "cross-platform"];
     
-    fn greet(lang: string): string {
+    fn greet(lang) {
         return "Welcome to " + lang + "!";
     }
     
     print greet(name);
     print "Version: " + version;
     
-    for feature in features {
-        print "- " + feature;
+    for i in 0..len(features) {
+        print "- " + features[i];
     }
 }
 ```
@@ -228,7 +228,7 @@ print file_exists("README.md"); // true
 
 **The Panther Programming Language** — A comprehensive guide covering all language features, platforms, and tooling.
 
-**Location:** `docs/book/` (15 chapters)
+**Location:** `docs/book/` (18 chapters)
 
 | Chapter | Title | Status |
 |---------|-------|--------|
@@ -247,69 +247,98 @@ print file_exists("README.md"); // true
 | 13 | Cross-Platform Development | ✅ Complete |
 | 14 | Language Reference | ✅ Complete |
 | 15 | Comparison Semantics | ✅ Complete |
+| 16 | Contributing | ✅ Complete |
+| 17 | Ecosystem | ✅ Complete |
+| 18 | Appendix | ✅ Complete |
 
 **Additional references:**
 - [Formal Specification](docs/specification/) — 8 specification documents
 - [Language Reference](docs/book/chapters/14-language-reference.md) — Complete syntax and error codes
+- [Glossary & Index](docs/book/chapters/18-appendix.md) — Full cross-reference
 
 ---
 
 ## Panther Academy
 
-Structured learning platform with progressive lessons from beginner to advanced.
+Structured learning platform with 18 progressive lessons from beginner to advanced.
 
-**Status:** Foundation Track (Lessons 01–05) complete; Advanced Track (Lessons 06–10) in development.
+**Status:** All 18 lessons complete with runnable code and verification.
 
 | Lesson | Title | Track | Status |
 |--------|-------|-------|--------|
-| 01 | Expressions & Operators | Foundation | ✅ Complete |
+| 01 | Getting Started | Foundation | ✅ Complete |
 | 02 | Variables & Types | Foundation | ✅ Complete |
 | 03 | Control Flow | Foundation | ✅ Complete |
 | 04 | Functions | Foundation | ✅ Complete |
-| 05 | Conversions & IO | Foundation | ✅ Complete |
-| 06 | Comparison Policy | Advanced | 🔄 Preview |
-| 07 | Modules & Packages | Advanced | 🔄 In Development |
-| 08 | Web Development | Advanced | 🔄 In Development |
-| 09 | AI & Machine Learning | Advanced | 🔄 In Development |
-| 10 | Advanced Security | Advanced | 🔄 In Development |
+| 05 | Type Conversions & IO | Foundation | ✅ Complete |
+| 06 | Data Structures: Arrays, Objects, Structs | Developer | ✅ Complete |
+| 07 | Standard Library | Developer | ✅ Complete |
+| 08 | Security | Developer | ✅ Complete |
+| 09 | Web Platform | Developer | ✅ Complete |
+| 10 | Database Platform | Developer | ✅ Complete |
+| 11 | AI Platform | Advanced | ✅ Complete |
+| 12 | CLI & Tooling | Advanced | ✅ Complete |
+| 13 | Cross-Platform | Advanced | ✅ Complete |
+| 14 | Language Reference | Advanced | ✅ Complete |
+| 15 | Comparison Semantics | Advanced | ✅ Complete |
+| 16 | Contributing | Advanced | ✅ Complete |
+| 17 | Ecosystem | Advanced | ✅ Complete |
+| 18 | Capstone: Task Manager | Advanced | ✅ Complete |
 
 **Learning paths:**
-- **Foundation Certificate** — Lessons 01–05
-- **Developer Certificate** — Lessons 01–08 (planned)
-- **Professional Certificate** — Lessons 01–10 (planned)
+- **Foundations** — Lessons 01–05
+- **Developer** — Lessons 01–10
+- **Professional** — Lessons 01–18
 
-**Verify:** `bash scripts/verify_academy_lessons_01_05.sh`
+**Validate:** `python scripts/validate_education.py`
 
 ---
 
 ## Cookbook
 
-Practical, verified examples for common programming tasks.
+**79 verified examples** across 20 recipe files (19 categories + master runner).
 
-**Current Status:** 11 verified examples in `examples/` directory.
+**Location:** `docs/cookbook/recipes/`
 
-**Roadmap Target:** 500 verified recipes across 16 categories.
+| # | Category | File | Functions |
+|---|----------|------|-----------|
+| 01 | Basics | `01-basics.pan` | print, string concat, variables |
+| 02 | Types | `02-types.pan` | int(), float(), string(), null, bool |
+| 03 | Arithmetic | `03-arithmetic.pan` | + - * / %, pow, sqrt, abs, floor, ceil, round |
+| 04 | Control Flow | `04-control-flow.pan` | if/elif/else, for, while, loop, break/continue |
+| 05 | Functions | `05-functions.pan` | fn, params, return, recursion |
+| 06 | Arrays | `06-arrays.pan` | arrays, indexing, push, pop, sort, reverse |
+| 07 | Objects | `07-objects.pan` | objects, key access, JSON round-trip |
+| 08 | Strings | `08-strings.pan` | len, upper, lower, trim, contains, replace, split, join |
+| 09 | Filesystem | `09-filesystem.pan` | mkdir, write/read_file, file_exists, list_dir |
+| 10 | JSON | `10-json.pan` | json_encode, json_decode |
+| 11 | Security | `11-security.pan` | sha256, hmac, token, sanitize_path, sanitize_html |
+| 12 | Math | `12-math.pan` | random, randint, time, sleep, abs, pow, sqrt |
+| 13 | Regex | `13-regex.pan` | regex_match, regex_replace, regex_split |
+| 14 | HTTP | `14-http.pan` | http_get, http_post |
+| 15 | Collections | `15-collections.pan` | push, pop, sort, reverse |
+| 16 | SQLite | `16-sqlite.pan` | db_open, db_execute, db_query, db_close |
+| 17 | Comparisons | `17-comparisons.pan` | == != > < >= <= across types |
+| 18 | CLI | `18-cli.pan` | CLI command reference |
+| 19 | Web | `19-web.pan` | route GET/POST, params, body |
+| — | All Recipes | `cookbook_all.pan` | Master runner (all 19 categories) |
 
-**Categories (Planned):**
-- Console Applications, Variables & Types, Arithmetic, Comparisons
-- Control Flow, Functions, Arrays, Objects
-- Files, JSON, Networking, Web, API, SQLite
-- Security, AI
+**Run all:** `python -m cli.panther_cli run docs/cookbook/recipes/cookbook_all.pan`
 
-**Examples Available:**
-| Example | Path | Domain |
-|---------|------|--------|
-| Console Hello | `examples/console_hello/` | Basics |
-| Calculator | `examples/calculator/` | Math/Recursion |
-| File Manager | `examples/file_manager/` | Filesystem |
-| JSON Parser | `examples/json_parser/` | Data Processing |
-| HTTP Client | `examples/http_client/` | Networking |
-| SQLite CRUD | `examples/sqlite_crud/` | Database |
-| Security Audit | `examples/security_audit_demo/` | Security |
-| Web Template | `examples/hello_web/` | Web |
-| API Template | `examples/hello_api/` | API |
-| AI Template | `examples/hello_ai/` | AI |
-| Config Loader | `examples/config_loader/` | Configuration |
+Also available: 11 project examples in `examples/` directory:
+| Example | Domain |
+|---------|--------|
+| `examples/console_hello/` | Basics |
+| `examples/calculator/` | Math/Recursion |
+| `examples/file_manager/` | Filesystem |
+| `examples/json_parser/` | JSON |
+| `examples/http_client/` | HTTP |
+| `examples/sqlite_crud/` | Database |
+| `examples/security_audit_demo/` | Security |
+| `examples/hello_web/` | Web |
+| `examples/hello_api/` | API |
+| `examples/hello_ai/` | AI |
+| `examples/config_loader/` | Configuration |
 
 ---
 
@@ -581,9 +610,13 @@ All filesystem functions use Python's `pathlib` for correct path handling.
 | **Language Reference** | `docs/LANGUAGE_REFERENCE.md` | Syntax, operators, keywords |
 | **Security Guide** | `docs/SECURITY_GUIDE.md` | Security model, best practices |
 | **Developer Guide** | `docs/DEVELOPER_GUIDE.md` | Development setup, testing, building |
-| **Official Book** | `docs/book/` | 15-chapter comprehensive guide |
-| **Academy** | `docs/academy/` | Structured lessons |
-| **Cookbook** | `docs/cookbook/` | Practical recipes |
+| **Official Book** | `docs/book/` | 18-chapter comprehensive guide |
+| **Academy** | `academy/` | 18 structured lessons |
+| **Cookbook** | `docs/cookbook/` | 20 verified recipe files |
+| **Labs** | `docs/labs/` | 21 hands-on labs |
+| **Capstones** | `docs/capstones/` | 7 capstone projects |
+| **Certification** | `docs/certification/` | 7 certification tracks |
+| **Knowledge Base** | `knowledge/` | Machine-readable metadata |
 | **Formal Specification** | `docs/specification/` | 8 formal spec documents |
 
 ---
@@ -633,18 +666,25 @@ Source Code
 
 ### Current (v1.1.6)
 - ✅ Language core complete
-- ✅ Standard library (43 functions)
+- ✅ Standard library (52 functions)
 - ✅ Web, Database, AI platforms
 - ✅ Security-native tooling
 - ✅ VS Code extension with debug adapter
 - ✅ Cross-platform support
+- ✅ Academy: 18 lessons with runnable code + verification
+- ✅ Book: 18 chapters including Appendix
+- ✅ Cookbook: 20 verified recipe files (79 checks)
+- ✅ Labs: 21 hands-on labs with solutions
+- ✅ Capstones: 7 projects across all tracks
+- ✅ Certification: 7 tracks defined
+- ✅ Education validation tooling
+- ✅ Machine-readable metadata (knowledge/)
 
 ### Next (v1.2 — Target Q3 2026)
-- 🔄 Academy Advanced Track (Lessons 06–10)
-- 🔄 Cookbook expansion toward 500 recipes
-- 🔄 Book chapters 16–18 (Contributing, Ecosystem, Appendix)
 - 🔄 Full module/import system resolution
 - 🔄 Enhanced LSP features
+- 🔄 Native compilation target
+- 🔄 Package registry (Panther Hub)
 
 ### Long-Term Panther Ecosystem Vision
 | Project | Description | Status |
@@ -669,9 +709,12 @@ Source Code
 | **PantherLang** | Core programming language | ✅ v1.1.6 |
 | **Panther Core** | Runtime & standard library | ✅ v1.1.6 |
 | **VS Code Extension** | Editor integration | ✅ v1.1.6 |
-| **Panther Academy** | Learning platform | 🔄 Foundation Complete |
-| **Panther Book** | Documentation | ✅ 15 Chapters |
-| **Panther Cookbook** | Recipe collection | 🔄 11 Verified Examples |
+| **Panther Academy** | Learning platform | ✅ 18 Lessons |
+| **Panther Book** | Documentation | ✅ 18 Chapters |
+| **Panther Cookbook** | Recipe collection | ✅ 20 Recipe Files |
+| **Panther Labs** | Hands-on exercises | ✅ 21 Labs |
+| **Panther Capstones** | Projects | ✅ 7 Capstones |
+| **Panther Certification** | Tracks | ✅ 7 Tracks |
 
 ---
 
@@ -718,7 +761,7 @@ Use [GitHub Issues](https://github.com/ferasbackagain/PantherLang/issues) for:
 
 **Maturity Notes:**
 - Core language, stdlib, and platforms are tested and verified
-- Academy Advanced Track, Cookbook 500 target, Book chapters 16–18 are in development
+- Academy (18 lessons), Book (18 chapters), Cookbook (20 recipes), Labs (21), Capstones (7) are complete
 - External AI model recognition requires training/indexing on PantherLang content
 - Production use should include thorough application-level testing
 - Security features are defense-in-depth; no system is completely immune

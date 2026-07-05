@@ -1,0 +1,1 @@
+{"data": "This is a top secret PantherLang document.", "hash": "9f2a4d5df576052221dddf4472bd762464c85b2cec0f70efd42eda0745c56224", "hmac": "b1b647ab140705c2357f68e3381633a0e84bcdda48118161b3422a18b3247a6d", "token": "32b774aefec3d0ef8ecc8abb049b36ae726fa622fb1e40201543bbf8b7cd8a35"}

@@ -1,21 +1,37 @@
 # Hello API Example
 
-Demonstrates the API template direction in PantherLang.
-
-**Current behavior:** Placeholder output via print statements.
-**Planned:** Full HTTP server with route-based dispatch.
+Real PantherLang JSON API with GET, POST, PUT, and DELETE endpoints.
 
 ## Run
 
 ```bash
-panther run examples/hello_api/main.pan
+panther run --serve examples/hello_api/main.pan
 ```
 
-## Roadmap
+Open http://localhost:8080/api in your browser or use curl.
 
-| Feature | Status |
-|---------|--------|
-| API template structure | ✓ Done |
-| Route declarations | Planned |
-| HTTP server integration | Planned |
-| JSON response helpers | Planned |
+## Routes
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/api` | API root with endpoint list |
+| GET | `/api/health` | Health check |
+| POST | `/api/data` | Create data |
+| PUT | `/api/data/{id}` | Update data by ID |
+| DELETE | `/api/data/{id}` | Delete data by ID |
+
+## Example requests
+
+```bash
+# GET
+curl http://localhost:8080/api
+
+# POST
+curl -X POST http://localhost:8080/api/data
+
+# PUT
+curl -X PUT http://localhost:8080/api/data/42
+
+# DELETE
+curl -X DELETE http://localhost:8080/api/data/42
+```

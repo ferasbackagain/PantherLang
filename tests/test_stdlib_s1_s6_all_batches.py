@@ -86,3 +86,18 @@ panther main {
     assert out[0] == "array"
     assert out[1] == "bool"
     assert "hello" in out[2]
+
+
+def test_s6_ai_chat():
+    out = run('''
+panther main {
+    print type_of(ai_chat("hello"));
+    print type_of(ai_available_providers());
+    print ai_chat("test", "mock");
+    print ai_chat("test", "nonexistent");
+}
+''')
+    assert out[0] == "string"
+    assert out[1] == "array"
+    assert "PantherAI" in out[2]
+    assert "nonexistent" in out[3] or "mock" in out[3]

@@ -1,0 +1,1 @@
+Explored the type system. Explicit conversion between types works well.

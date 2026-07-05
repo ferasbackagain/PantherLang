@@ -155,6 +155,11 @@ class TypeChecker:
     def check_variable_declaration(self, stmt: VariableDeclaration) -> None:
         declared = self.resolve_type_name(stmt.var_type)
         if stmt.var_type is not None:
+            if stmt.var_type not in _TYPE_NAME_MAP:
+                self._error(
+                    f"Unknown type '{stmt.var_type}' in declaration of '{stmt.name}'",
+                    stmt,
+                )
             self.declare(stmt.name, declared)
         if stmt.initializer is not None:
             actual = self.infer_type(stmt.initializer)
@@ -174,7 +179,19 @@ class TypeChecker:
 
     def check_function_declaration(self, stmt: FunctionDeclaration) -> None:
         self.declare_function(stmt.name, stmt.param_types, stmt.return_type)
+        for i, pt in enumerate(stmt.param_types):
+            if pt is not None and pt not in _TYPE_NAME_MAP:
+                pname = stmt.params[i] if i < len(stmt.params) else f"param#{i}"
+                self._error(
+                    f"Unknown type '{pt}' for parameter '{pname}' in function '{stmt.name}'",
+                    stmt,
+                )
         if stmt.return_type is not None:
+            if stmt.return_type not in _TYPE_NAME_MAP:
+                self._error(
+                    f"Unknown return type '{stmt.return_type}' in function '{stmt.name}'",
+                    stmt,
+                )
             expected_ret = self.resolve_type_name(stmt.return_type)
             if stmt.body is not None:
                 for s in stmt.body.statements:

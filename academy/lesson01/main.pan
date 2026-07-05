@@ -2,19 +2,19 @@ panther main {
     print "=== Lesson 01: Expressions & Operators ===";
     
     // Arithmetic
-    print 10 + 5 * 2;      // 20 (precedence)
-    print (10 + 5) * 2;    // 30
-    print 2 ** 10;         // 1024
+    print string(10 + 5 * 2);
+    print string((10 + 5) * 2);
+    print string(pow(2, 10));
     
     // Comparison
-    print 10 > 5;          // true
-    print 10 == 10;        // true
-    print "a" < "b";       // true
+    print string(10 > 5);
+    print string(10 == 10);
+    print string("a" < "b");
     
     // Logical
-    print true && false;   // false
-    print true || false;   // true
-    print !true;           // false
+    print string(true && false);
+    print string(true || false);
+    print string(!true);
     
     // String concat
     print "Hello " + "World";

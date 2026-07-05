@@ -1,22 +1,21 @@
 # Hello Web Example
 
-Demonstrates the Web template direction in PantherLang.
-
-**Current behavior:** Placeholder output via print statements.
-**Planned:** Full HTTP server via `compiler.web.server.HttpServer` with route dispatch.
+Real PantherLang web application serving HTML pages with forms.
 
 ## Run
 
 ```bash
-panther run examples/hello_web/main.pan
+panther run --serve examples/hello_web/main.pan
 ```
 
-## Roadmap
+Open http://localhost:8080 in your browser.
 
-| Feature | Status |
-|---------|--------|
-| Web template structure | ✓ Done |
-| Route declarations | Planned |
-| HTTP server integration | Planned |
-| Static file serving | Planned |
-| Template rendering | Planned |
+## Routes
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Home page with navigation and form |
+| GET | `/about` | About page |
+| POST | `/submit` | Form submission handler |
+| GET | `/users/{name}` | Path parameter demo |
+| GET | `/health` | Health check (JSON) |

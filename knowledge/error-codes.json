@@ -1,0 +1,18 @@
+[
+  {"code": "E001", "severity": "error", "message": "break outside loop", "lesson": 3, "phase": "semantic"},
+  {"code": "E002", "severity": "error", "message": "continue outside loop", "lesson": 3, "phase": "semantic"},
+  {"code": "E003", "severity": "error", "message": "duplicate function", "lesson": 4, "phase": "semantic"},
+  {"code": "E005", "severity": "error", "message": "duplicate variable", "lesson": 2, "phase": "semantic"},
+  {"code": "E006", "severity": "error", "message": "duplicate import", "lesson": 14, "phase": "semantic"},
+  {"code": "E007", "severity": "error", "message": "undefined variable", "lesson": 2, "phase": "semantic"},
+  {"code": "E008", "severity": "error", "message": "undefined function", "lesson": 4, "phase": "semantic"},
+  {"code": "T001", "severity": "error", "message": "type mismatch", "lesson": 2, "phase": "type checker"},
+  {"code": "PT001", "severity": "error", "message": "implicit type conversion blocked", "lesson": 15, "phase": "runtime"},
+  {"code": "PT002", "severity": "error", "message": "cross-type comparison blocked", "lesson": 15, "phase": "runtime"},
+  {"code": "PR001", "severity": "error", "message": "division by zero", "lesson": 3, "phase": "runtime"},
+  {"code": "S001", "severity": "warning", "message": "hardcoded secret", "lesson": 8, "phase": "security"},
+  {"code": "S002", "severity": "warning", "message": "dangerous function name", "lesson": 8, "phase": "security"},
+  {"code": "S003", "severity": "warning", "message": "dangerous function call", "lesson": 8, "phase": "security"},
+  {"code": "S004", "severity": "warning", "message": "dangerous shell pattern", "lesson": 8, "phase": "security"},
+  {"code": "S005", "severity": "warning", "message": "secret pattern in string", "lesson": 8, "phase": "security"}
+]

@@ -941,8 +941,26 @@ def _ai_mock_chat(prompt: str) -> str:
     return "PantherAI mock response: " + str(prompt)
 
 
+def _ai_available_providers() -> list[str]:
+    """Return only providers whose environment variables are set."""
+    all_providers = _ai_supported_providers()
+    return [p for p in all_providers if _ai_provider_available(p)]
+
+
+def _ai_chat(prompt: str, provider: str = "mock") -> str:
+    """Chat with an AI provider. Defaults to mock (offline)."""
+    provider = str(provider).lower()
+    if provider == "mock":
+        return _ai_mock_chat(prompt)
+    if _ai_provider_available(provider):
+        return f"[PantherAI {provider}] response to: " + str(prompt)
+    return f"[PantherAI] Provider '{provider}' unavailable (set env var). Falling back to mock: " + str(prompt)
+
+
 _register(StdlibFunction("ai_supported_providers", (0, 0), _ai_supported_providers, "ai_supported_providers() -> array"))
 _register(StdlibFunction("ai_provider_available", (1, 1), _ai_provider_available, "ai_provider_available(provider) -> bool"))
 _register(StdlibFunction("ai_mock_chat", (1, 1), _ai_mock_chat, "ai_mock_chat(prompt) -> string"))
+_register(StdlibFunction("ai_available_providers", (0, 0), _ai_available_providers, "ai_available_providers() -> array"))
+_register(StdlibFunction("ai_chat", (1, 2), _ai_chat, "ai_chat(prompt[, provider]) -> string"))
 
 # === End PantherLang Stdlib S1-S6 Expansion ===

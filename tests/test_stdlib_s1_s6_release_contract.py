@@ -124,6 +124,19 @@ panther main {
     assert "PantherAI mock response" in out[2]
 
 
+def test_s6_ai_chat_contract():
+    out = run(r'''
+panther main {
+    print type_of(ai_chat("Hello Panther"));
+    print type_of(ai_available_providers());
+    print ai_chat("Hello", "mock");
+}
+''')
+    assert out[0] == "string"
+    assert out[1] == "array"
+    assert "PantherAI" in out[2]
+
+
 def test_contract_docs_and_scripts_exist():
     required = [
         "docs/stdlib/STDLIB_S1_S6_API_CONTRACT.md",

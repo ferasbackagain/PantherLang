@@ -95,7 +95,7 @@ panther main {
 
 
 def test_comparison_policy_example_runs():
-    source = open("academy/lesson06/comparison_policy.pan", encoding="utf-8").read()
+    source = open("academy/lesson06_comparisons/comparison_policy.pan", encoding="utf-8").read()
     out = run_ok(source)
     joined = " ".join(out)
     assert "Comparison policy verified" in joined

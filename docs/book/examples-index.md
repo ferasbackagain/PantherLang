@@ -46,12 +46,12 @@ Demonstrates:
 **README:** `examples/hello_api/README.md`
 
 Demonstrates:
-- API template project structure
-- `fn` with parameters and return values
-- String concatenation in return values
-- Placeholder route pattern
+- `api {}` block with GET, POST, PUT, DELETE routes
+- Automatic JSON serialization of object return values
+- Path parameter extraction via `{id}` syntax
+- `panther run --serve` for HTTP serving
 
-**Current behavior:** Prints API readiness info and mock route responses.
+**Current behavior:** Real API server. Start with `panther run --serve examples/hello_api/main.pan`.
 
 ---
 
@@ -61,11 +61,13 @@ Demonstrates:
 **README:** `examples/hello_web/README.md`
 
 Demonstrates:
-- Web template project structure
-- `fn` returning HTML strings
-- String concatenation with `+`
+- `web {}` block with GET and POST routes
+- HTML page serving with auto-detected Content-Type
+- HTML form with POST handler
+- Path parameter extraction via `{name}` syntax
+- `panther run --serve` for HTTP serving
 
-**Current behavior:** Prints web server route info as placeholder output.
+**Current behavior:** Real web server. Start with `panther run --serve examples/hello_web/main.pan`.
 
 ---
 

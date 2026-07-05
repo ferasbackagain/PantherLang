@@ -1,0 +1,182 @@
+[
+  {
+    "id": "lesson01",
+    "title": "Getting Started",
+    "topics": ["Hello World", "print", "expressions", "operators"],
+    "stdlib": ["print"],
+    "difficulty": "beginner",
+    "book_chapter": 1,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson02",
+    "title": "Variables & Types",
+    "topics": ["let", "type inference", "annotations", "int", "float", "string", "bool", "null"],
+    "stdlib": ["string", "int", "float"],
+    "difficulty": "beginner",
+    "book_chapter": 2,
+    "duration_minutes": 60,
+    "exercises": 4
+  },
+  {
+    "id": "lesson03",
+    "title": "Control Flow",
+    "topics": ["if", "elif", "else", "while", "for", "loop", "break", "continue"],
+    "stdlib": [],
+    "difficulty": "beginner",
+    "book_chapter": 4,
+    "duration_minutes": 60,
+    "exercises": 5
+  },
+  {
+    "id": "lesson04",
+    "title": "Functions",
+    "topics": ["fn", "parameters", "return", "recursion", "typed params", "closures"],
+    "stdlib": [],
+    "difficulty": "beginner",
+    "book_chapter": 5,
+    "duration_minutes": 60,
+    "exercises": 4
+  },
+  {
+    "id": "lesson05",
+    "title": "Type Conversions & IO",
+    "topics": ["int()", "float()", "string()", "file I/O"],
+    "stdlib": ["int", "float", "string"],
+    "difficulty": "beginner",
+    "book_chapter": 2,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson06",
+    "title": "Data Structures: Arrays, Objects, Structs",
+    "topics": ["arrays", "objects", "structs", "indexing", "nested access"],
+    "stdlib": ["len", "array_push", "array_pop", "array_sort", "array_reverse"],
+    "difficulty": "beginner",
+    "book_chapter": 6,
+    "duration_minutes": 60,
+    "exercises": 4
+  },
+  {
+    "id": "lesson07",
+    "title": "Standard Library",
+    "topics": ["string functions", "math", "JSON", "time", "type conversion", "crypto", "security", "filesystem", "HTTP", "regex", "collections", "SQLite"],
+    "stdlib": ["len", "upper", "lower", "trim", "contains", "starts_with", "ends_with", "replace", "split", "join", "substring", "abs", "max", "min", "pow", "sqrt", "floor", "ceil", "round", "random", "randint", "json_encode", "json_decode", "time", "sleep", "int", "float", "string", "sha256", "hmac_sha256", "secure_token", "secure_compare", "sanitize_path", "sanitize_html", "read_file", "write_file", "file_exists", "mkdir", "list_dir", "remove_file", "http_get", "http_post", "regex_match", "regex_replace", "regex_split", "array_push", "array_pop", "array_sort", "array_reverse", "db_open", "db_close", "db_execute", "db_query"],
+    "difficulty": "intermediate",
+    "book_chapter": 7,
+    "duration_minutes": 90,
+    "exercises": 9
+  },
+  {
+    "id": "lesson08",
+    "title": "Security",
+    "topics": ["S001-S005", "path sanitization", "HTML sanitization", "SHA-256", "HMAC", "secure tokens", "constant-time comparison"],
+    "stdlib": ["sha256", "hmac_sha256", "secure_token", "secure_compare", "sanitize_path", "sanitize_html"],
+    "difficulty": "intermediate",
+    "book_chapter": 8,
+    "duration_minutes": 60,
+    "exercises": 4
+  },
+  {
+    "id": "lesson09",
+    "title": "Web Platform",
+    "topics": ["web block", "route", "GET", "POST", "params", "body", "security middleware"],
+    "stdlib": [],
+    "difficulty": "intermediate",
+    "book_chapter": 9,
+    "duration_minutes": 60,
+    "exercises": 3
+  },
+  {
+    "id": "lesson10",
+    "title": "Database Platform",
+    "topics": ["SQLite", "db_open", "db_execute", "db_query", "parameterized queries", "ORM", "migrations"],
+    "stdlib": ["db_open", "db_close", "db_execute", "db_query"],
+    "difficulty": "intermediate",
+    "book_chapter": 10,
+    "duration_minutes": 75,
+    "exercises": 5
+  },
+  {
+    "id": "lesson11",
+    "title": "AI Platform",
+    "topics": ["AI providers", "OpenAI", "Anthropic", "Gemini", "Ollama", "OpenRouter", "Agent", "SecureAgent", "RAG"],
+    "stdlib": [],
+    "difficulty": "advanced",
+    "book_chapter": 11,
+    "duration_minutes": 75,
+    "exercises": 4
+  },
+  {
+    "id": "lesson12",
+    "title": "CLI & Tooling",
+    "topics": ["panther CLI", "run", "build", "check", "new", "doctor", "VS Code extension", "debugger", "LSP"],
+    "stdlib": [],
+    "difficulty": "intermediate",
+    "book_chapter": 12,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson13",
+    "title": "Cross-Platform",
+    "topics": ["Linux", "macOS", "Windows", "runner scripts", "pathlib", "CI/CD"],
+    "stdlib": ["sanitize_path"],
+    "difficulty": "intermediate",
+    "book_chapter": 13,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson14",
+    "title": "Language Reference",
+    "topics": ["lexical structure", "keywords", "operators", "blocks", "statements", "error codes"],
+    "stdlib": [],
+    "difficulty": "advanced",
+    "book_chapter": 14,
+    "duration_minutes": 60,
+    "exercises": 3
+  },
+  {
+    "id": "lesson15",
+    "title": "Comparison Semantics",
+    "topics": ["same-type comparisons", "cross-type blocked", "explicit conversion", "null semantics"],
+    "stdlib": [],
+    "difficulty": "intermediate",
+    "book_chapter": 15,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson16",
+    "title": "Contributing",
+    "topics": ["dev setup", "code style", "testing", "PR process", "contribution areas"],
+    "stdlib": [],
+    "difficulty": "advanced",
+    "book_chapter": 16,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson17",
+    "title": "Ecosystem",
+    "topics": ["project templates", "package registry", "VS Code extension", "CI/CD", "documentation", "distribution"],
+    "stdlib": [],
+    "difficulty": "advanced",
+    "book_chapter": 17,
+    "duration_minutes": 45,
+    "exercises": 3
+  },
+  {
+    "id": "lesson18",
+    "title": "Capstone: Task Manager",
+    "topics": ["project structure", "file persistence", "JSON storage", "CLI interface"],
+    "stdlib": ["json_encode", "json_decode", "write_file", "read_file", "file_exists"],
+    "difficulty": "advanced",
+    "book_chapter": 18,
+    "duration_minutes": 120,
+    "exercises": 1
+  }
+]

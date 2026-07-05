@@ -108,7 +108,7 @@ panther main {
 
 
 def test_comparison_policy_program_runs():
-    source = open("academy/lesson06/comparison_policy.pan", encoding="utf-8").read()
+    source = open("academy/lesson06_comparisons/comparison_policy.pan", encoding="utf-8").read()
     result = execute_source(source)
     assert result.error is None, result.error
     joined = " ".join(result.captured_output)

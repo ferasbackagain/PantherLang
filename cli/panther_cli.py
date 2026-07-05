@@ -27,7 +27,7 @@ def _get_version() -> str:
         info = get_release_info()
         return f"{info['version']} ({info['release_name']})"
     except Exception:
-        return "1.0.0"
+        return "1.1.6"
 
 
 def _print_help() -> int:
@@ -227,16 +227,37 @@ def _check(args: list[str]) -> int:
     from compiler.lexer import lex_source
     from compiler.parser import ProgramParser
     from compiler.parser.token_stream import TokenStream
+    from compiler.semantic import analyze as semantic_analyze
+    from compiler.security import SecurityAnalyzer
     tokens = lex_source(source_text)
     stream = TokenStream(tokens)
     parser = ProgramParser(stream)
     parse_result = parser.parse()
-    if parse_result.ok:
-        print(f"check passed: {args[0]}")
-        return 0
-    for d in parse_result.diagnostics:
-        print(f"  {d}", file=sys.stderr)
-    return 1
+
+    all_issues: list[str] = []
+
+    if parse_result.diagnostics:
+        for d in parse_result.diagnostics:
+            all_issues.append(f"  [SYNTAX] {d}")
+
+    if parse_result.node is not None:
+        diagnostics = semantic_analyze(parse_result.node)
+        for d in diagnostics:
+            all_issues.append(f"  [SEMANTIC] {d}")
+
+        sec = SecurityAnalyzer()
+        sec_diags = sec.analyze(parse_result.node)
+        for d in sec_diags:
+            all_issues.append(f"  [SECURITY] {d}")
+
+    if all_issues:
+        print(f"check: {args[0]}")
+        for issue in all_issues:
+            print(issue, file=sys.stderr)
+        return 1
+
+    print(f"check passed: {args[0]}")
+    return 0
 
 
 def _new(args: list[str]) -> int:

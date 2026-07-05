@@ -19,7 +19,12 @@ The `SecurityAnalyzer` detects:
 - **S004**: String literals containing dangerous shell patterns
 - **S005**: Hardcoded credentials in string literals
 
-Usage:
+Usage (CLI):
+```bash
+panther check myfile.pan   # Runs syntax, semantic, AND security analysis
+```
+
+Usage (Python API):
 ```python
 from compiler.security import SecurityAnalyzer
 analyzer = SecurityAnalyzer()

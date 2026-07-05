@@ -211,7 +211,15 @@ Maps every verified language feature to examples that demonstrate it.
 | Router (method + path dispatch) | `compiler.web.server.Router` | tests/ |
 | Route registration (get/post/put/delete) | `compiler.web.server.Router` | tests/ |
 | JSON responses | `compiler.web.server` | tests/ |
-| Static file serving | `compiler.web.server` | tests/ |
+| HTML response auto-detection | `compiler.web.server` | tests/ |
+| Query string parsing | `compiler.web.server` | tests/ |
+| Path parameters `{id}` | `compiler.web.server` | tests/ |
+| 404 handling | `compiler.web.server` | tests/ |
+| Web block `web {}` | `compiler.parser` | tests/ |
+| API block `api {}` | `compiler.parser` | tests/ |
+| Route statement `route GET/POST/PUT/DELETE` | `compiler.parser` | tests/ |
+| `panther run --serve` | `compiler.runtime` | tests/ |
+| Static file serving | Not implemented | -- |
 
 ---
 

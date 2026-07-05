@@ -74,7 +74,7 @@ The `panther` CLI tool provides these commands:
 | `run` | `panther run <file>` | Execute a `.panther` or `.pan` file |
 | `run --serve` | `panther run --serve <file>` | Execute with HTTP server for web blocks |
 | `build` | `panther build <file>` | Build source into a shell artifact script |
-| `check` | `panther check <file>` | Validate syntax (lex + parse, no execution) |
+| `check` | `panther check <file>` | Syntax, semantic, and security analysis (S001-S005) |
 | `fmt` | `panther fmt <file>` | Validate and print formatted source |
 | `new` | `panther new <type> <name>` | Scaffold a new project (`console`, `web`, `api`, `ai`) |
 | `doctor` | `panther doctor` | Verify all 11 system components |
@@ -439,23 +439,27 @@ array_sort(arr);                // sorts ascending
 
 ## Web / API / AI Examples
 
-### Web Template (Placeholder)
+### Web Application
 
-The `hello_web` example demonstrates the web template structure. Full HTTP server with route dispatch is available via `panther run --serve`.
+`examples/hello_web/` is a real PantherLang web application. Serve it with:
+
+```bash
+panther run --serve examples/hello_web/main.pan
+```
+
+It uses the `web {}` top-level block with route declarations:
 
 ```panther
-panther main {
-    print "PantherLang Web Template";
-    print "Server: localhost:8080";
-    // Route definitions available: route GET "/path" { ... }
+web {
+    route GET "/" {
+        return "<html><body><h1>Hello</h1></body></html>";
+    }
 }
 ```
 
-The `compiler.web.server.HttpServer` class provides full HTTP serving with `route()`, `get()`, `post()`, `put()`, `delete()` methods. Security middleware (CORS, rate limiting, CSRF, security headers) is available in `compiler.web.security`.
+### API Application
 
-### API Template (Placeholder)
-
-The `hello_api` example demonstrates the API template direction.
+`examples/hello_api/` is a real PantherLang JSON API serving GET, POST, PUT, and DELETE endpoints with automatic JSON serialization for object return values.
 
 ```panther
 panther main {

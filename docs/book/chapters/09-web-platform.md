@@ -1,42 +1,95 @@
 # Chapter 9: Web Platform
 
-PantherLang includes a full HTTP server with routing and security middleware.
+PantherLang includes a full HTTP server with routing, web blocks, and API blocks.
 
-## HTTP Server (Python API)
+## Running a Web Server
 
-```python
-from compiler.web.server import HttpServer
+Use `panther run --serve` to start an HTTP server from `.pan` files:
 
-server = HttpServer(host="0.0.0.0", port=8080)
-server.get("/", lambda req: {"message": "Hello, Panther!"})
-server.post("/data", lambda req: {"received": req.body})
-server.start()
+```bash
+panther run --serve examples/hello_web/main.pan
 ```
 
-## Route Registration
+## Web Block
 
-```python
-server.route("GET", "/users", handler)
-server.get("/users", handler)
-server.post("/users", create_handler)
-server.put("/users/1", update_handler)
-server.delete("/users/1", delete_handler)
-```
-
-## Route Syntax in .pan Files
-
-Route statements can appear in programs:
+The `web {}` top-level block contains route declarations. Routes inside `web {}`
+serve HTML pages:
 
 ```panther
-route GET "/" {
-    return "{ status: ok }";
+panther main {
+    print "Starting web server...";
 }
-route POST "/api/data" {
-    return "{ received: true }";
+
+web {
+    route GET "/" {
+        return "<html><body><h1>Hello, PantherLang!</h1></body></html>";
+    }
+    route GET "/about" {
+        return "<html><body><h1>About</h1></body></html>";
+    }
 }
 ```
 
-## Security Middleware
+## API Block
+
+The `api {}` top-level block is identical to `web {}` in structure. Routes return
+JSON automatically when handlers return objects:
+
+```panther
+api {
+    route GET "/api" {
+        return { message: "Hello", version: "1.0" };
+    }
+    route POST "/api/data" {
+        return { ok: true };
+    }
+}
+```
+
+## Route Methods
+
+| Method | Support | Notes |
+|--------|---------|-------|
+| GET | Supported | Body not read |
+| POST | Supported | Body passed as `body` parameter |
+| PUT | Supported | Body passed as `body` parameter |
+| DELETE | Supported | Body not read |
+
+## Route Path Parameters
+
+Use `{name}` syntax for dynamic path segments:
+
+```panther
+route GET "/users/{id}" {
+    return { user_id: id };
+}
+```
+
+## Query Parameters
+
+Query string parameters are automatically available as variables in route
+handlers:
+
+```panther
+route GET "/search" {
+    return { query: q, page: page };
+}
+```
+
+Request to `GET /search?q=panther&page=2` makes `q` and `page` available.
+
+## Response Types
+
+| Handler return type | Content-Type | Status |
+|--------------------|--------------|--------|
+| `dict` or `list` | `application/json` | 200 |
+| `str` starting with `<html` or containing `<body` | `text/html` | 200 |
+| `str` (other) | `text/plain` | 200 |
+| `None` (no matching route) | `application/json` | 404 |
+
+## Security Middleware (Python API)
+
+Available but not yet wired into the main server pipeline:
 
 ```python
 from compiler.web.security import (
@@ -47,5 +100,3 @@ from compiler.web.security import (
     SecureRequestHandler,
 )
 ```
-
-The `SecureRequestHandler` combines rate limiting, CORS, security headers, CSRF, and XSS sanitization.

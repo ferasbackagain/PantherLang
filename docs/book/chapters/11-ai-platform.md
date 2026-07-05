@@ -12,7 +12,55 @@ Five providers, all with mock fallback (no API keys required for testing):
 | Ollama | Llama 3, Mistral (local) | None |
 | OpenRouter | Various models | `OPENROUTER_API_KEY` |
 
-## Agent
+## AI Chat
+
+`ai_chat(prompt, provider)` sends a prompt to an AI provider and returns the response.
+
+```panther
+panther main {
+    let response = ai_chat("What is PantheLang?");
+    print "AI: " + response;
+}
+```
+
+By default, `ai_chat` uses the mock provider (offline, no API key required). Pass a
+provider name for explicit selection:
+
+```panther
+panther main {
+    let resp = ai_chat("Hello", "mock");
+    print resp;
+}
+```
+
+## AI Top-Level Block
+
+The `ai {}` block is a top-level block that executes its body during program
+execution, alongside `panther main {}`:
+
+```panther
+panther main {
+    print "This runs in the main block.";
+}
+
+ai {
+    print "This runs in the AI block.";
+}
+```
+
+## AI Functions
+
+| Function | Description |
+|----------|-------------|
+| `ai_chat(prompt[, provider])` | Chat with an AI provider (default: mock) |
+| `ai_mock_chat(prompt)` | Quick mock chat (always offline) |
+| `ai_supported_providers()` | List all supported provider names |
+| `ai_provider_available(name)` | Check if a provider's env var is set |
+| `ai_available_providers()` | List providers with env vars configured |
+
+## Agent (Python API)
+
+For advanced agent workflows, use the Python API:
 
 ```python
 from compiler.ai.agents import Agent
@@ -22,7 +70,7 @@ agent.register_tool("get_weather", get_weather_fn)
 response = agent.complete("What is the weather in Paris?")
 ```
 
-## SecureAgent
+## SecureAgent (Python API)
 
 ```python
 from compiler.ai.secure_agent import SecureAgent
@@ -31,7 +79,7 @@ agent = SecureAgent("assistant")
 agent.complete(user_input)  # injection detection + output sanitization + audit
 ```
 
-## RAG Engine
+## RAG Engine (Python API)
 
 ```python
 from compiler.ai.rag import RAGEngine

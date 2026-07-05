@@ -7,7 +7,7 @@
 | `panther run <file>` | Execute a .panther/.pan file |
 | `panther run --serve <file>` | Execute with HTTP server |
 | `panther build <file>` | Build to shell artifact script |
-| `panther check <file>` | Syntax validation (no execution) |
+| `panther check <file>` | Syntax, semantic, and security analysis (S001-S005) |
 | `panther fmt <file>` | Validate and print source |
 | `panther new console <name>` | Scaffold console project |
 | `panther new web <name>` | Scaffold web project |

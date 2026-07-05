@@ -167,6 +167,49 @@ def _check(args: list[str]) -> int:
     if not src.exists():
         print(f'Source file not found: {args[0]}')
         return 2
+    source_text = src.read_text(encoding='utf-8')
+    from compiler.lexer import lex_source
+    from compiler.parser import ProgramParser
+    from compiler.parser.token_stream import TokenStream
+    from compiler.semantic import analyze as semantic_analyze
+    from compiler.security import SecurityAnalyzer
+    try:
+        tokens = lex_source(source_text)
+        stream = TokenStream(tokens)
+        parser = ProgramParser(stream)
+        parse_result = parser.parse()
+    except Exception as exc:
+        print(f'{args[0]}: internal error during parsing: {exc}', file=sys.stderr)
+        return 1
+
+    all_issues: list[str] = []
+
+    if parse_result.diagnostics:
+        for d in parse_result.diagnostics:
+            all_issues.append(f'  [SYNTAX] {d}')
+
+    if parse_result.node is not None:
+        try:
+            diagnostics = semantic_analyze(parse_result.node)
+            for d in diagnostics:
+                all_issues.append(f'  [SEMANTIC] {d}')
+        except Exception as exc:
+            all_issues.append(f'  [SEMANTIC] internal error: {exc}')
+
+        try:
+            sec = SecurityAnalyzer()
+            sec_diags = sec.analyze(parse_result.node)
+            for d in sec_diags:
+                all_issues.append(f'  [SECURITY] {d}')
+        except Exception as exc:
+            all_issues.append(f'  [SECURITY] internal error: {exc}')
+
+    if all_issues:
+        print(f'check: {args[0]}')
+        for issue in all_issues:
+            print(issue, file=sys.stderr)
+        return 1
+
     print(f'check passed: {args[0]}')
     return 0
 
