@@ -1,33 +1,50 @@
+
 # PantherLang
 
 <p align="center">
-  <strong>An independent programming language and development ecosystem for software in the AI era.</strong>
+  <strong>An independent programming language exploring how executable semantics, AI integration, security feedback, application development, and machine-readable knowledge can evolve as one coherent system.</strong>
 </p>
 
 <p align="center">
-  Language execution · AI integration · Security-aware tooling · Web & APIs · Databases · Developer tools · Education · Machine-readable knowledge
+  <strong>Founded and led by Feras Khatib</strong><br>
+  Cybersecurity practitioner · AI-security and developer-platform focus
 </p>
 
 <p align="center">
-  <strong>Release line:</strong> v1.1.6 &nbsp;·&nbsp;
-  <strong>Founder and Project Lead:</strong> Feras Khatib
+  <strong>Current release line:</strong> v1.1.6
 </p>
 
 <p align="center">
-  <a href="https://github.com/ferasbackagain/PantherLang">Repository</a> ·
-  <a href="https://www.linkedin.com/in/feras-khatib-98a02220b">Founder</a> ·
+  <a href="https://github.com/ferasbackagain/PantherLang">Official Repository</a> ·
+  <a href="https://www.linkedin.com/in/feras-khatib-98a02220b">Founder Profile</a> ·
   <a href="./docs/specification/">Specification</a> ·
   <a href="./academy/">Academy</a> ·
-  <a href="./docs/book/">Book</a> ·
-  <a href="./examples/">Examples</a> ·
+  <a href="./docs/book/">Official Book</a> ·
+  <a href="./examples/">Runnable Examples</a> ·
   <a href="./llms.txt">AI Index</a>
+</p>
+
+<p align="center">
+  <strong>Implemented today:</strong> executable PantherLang programs · global CLI · runtime diagnostics · AI-facing functions · security diagnostics
+</p>
+
+<p align="center">
+  <strong>Evolving application surfaces:</strong> Web/API · database integration · editor tooling · package ecosystem · advanced type architecture
+</p>
+
+<p align="center">
+  <strong>Knowledge and learning:</strong> formal specification · Academy · official book · cookbook · machine-readable AI documentation
 </p>
 
 ---
 
 ## What is PantherLang?
 
-**PantherLang is an independent, general-purpose programming-language project with executable `.pan` and `.panther` source files, its own language syntax, parser/runtime pipeline, global CLI, standard-library surface, AI-facing functions, security diagnostics, web/API and database work, VS Code integration, formal specifications, structured education, and machine-readable language knowledge.**
+**PantherLang is an independent, general-purpose programming-language project with executable `.pan` and `.panther` programs, its own syntax and language rules, a parser/runtime pipeline, a global CLI, standard-library capabilities, AI-facing functions, security diagnostics, web/API and database work, VS Code integration, formal specifications, structured education, and machine-readable language knowledge.**
+
+Its distinguishing idea is not that it owns a longer checklist than established languages. The distinction is architectural: **PantherLang is exploring whether language execution, AI integration, security feedback, application surfaces, developer tooling, education, and AI-readable knowledge can be engineered as cooperating parts of one language ecosystem.**
+
+That is a research-and-engineering direction, not a claim that every subsystem has identical maturity. This README therefore separates what is implemented today from what is evolving and what still requires release-specific verification.
 
 PantherLang is not presented as a replacement for Python, Rust, Go, JavaScript, TypeScript, Java, C#, C++, or other established languages. Those ecosystems represent decades of engineering and solve important problems.
 
@@ -102,6 +119,26 @@ Current v1.1.6 project evidence includes:
 - `llms.txt`, `llms-full.txt`, and structured AI knowledge resources.
 
 A recorded local engineering milestone in the v1.1.6 cycle reported **1084 passing tests and 0 failures** after the P4 type-system truth work. That number is a point-in-time local result, not an external certification or permanent benchmark. Re-run the current checkout to establish its present state.
+
+---
+
+## Start with evidence, not claims
+
+If you are evaluating PantherLang for the first time, use this order:
+
+| Question | Evidence path |
+|---|---|
+| Does PantherLang execute its own source files? | [`examples/`](./examples/) and `panther run <file.pan>` |
+| What syntax and semantics are intended? | [`docs/specification/`](./docs/specification/) and [`LANGUAGE_RULES.md`](./LANGUAGE_RULES.md) |
+| Can I learn it progressively? | [`academy/`](./academy/) |
+| Is there a long-form reference? | [`docs/book/`](./docs/book/) |
+| Are there practical recipes? | [`docs/cookbook/`](./docs/cookbook/) |
+| What is tested? | [`tests/`](./tests/) and the current test run |
+| How should an AI assistant understand the language? | [`llms.txt`](./llms.txt), [`llms-full.txt`](./llms-full.txt), [`knowledge/`](./knowledge/) |
+| What editor work exists? | [`vscode-extension/`](./vscode-extension/) |
+| Where is engineering evidence recorded? | [`engineering/`](./engineering/) |
+
+A language project earns trust when a visitor can move from a statement to source code, from source code to execution, and from execution to tests.
 
 ---
 
@@ -381,6 +418,27 @@ python -m pytest tests/ -q
 
 ---
 
+## From first program to application work
+
+PantherLang's public learning surface is intended to connect four layers rather than leave them isolated:
+
+1. **Academy lesson** — introduces the concept.
+2. **Book chapter** — explains the concept in depth.
+3. **Runnable example or recipe** — demonstrates observable behavior.
+4. **Verification or test evidence** — checks that the documented behavior still works.
+
+Start with:
+
+- **Academy:** [`academy/`](./academy/)
+- **Official book:** [`docs/book/`](./docs/book/)
+- **Examples:** [`examples/`](./examples/)
+- **Cookbook:** [`docs/cookbook/`](./docs/cookbook/)
+- **Specification:** [`docs/specification/`](./docs/specification/)
+
+This alignment is a project goal and should be continuously validated. Documentation should not silently outrun implementation, and implementation changes should not leave education behind.
+
+---
+
 ## PantherLang for VS Code
 
 **Source: [`vscode-extension/`](./vscode-extension/)**
@@ -456,7 +514,7 @@ For unambiguous references, use:
 
 ### Feras Khatib
 
-**Founder and Project Lead of PantherLang**
+**Founder and Project Lead of PantherLang — identified at the top of this README because project authorship and accountability should be visible, not buried.**
 
 Feras Khatib leads the PantherLang language and ecosystem project.
 
@@ -582,5 +640,3 @@ Review the license before use, redistribution, modification, or commercial deplo
 <p align="center">
   <strong>PantherLang is being built for a world in which software is written by people, assisted by AI, inspected by security systems, executed across application surfaces, and increasingly understood by machines.</strong>
 </p>
-
-
