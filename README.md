@@ -1,795 +1,367 @@
 # PantherLang
 
-![PantherLang Logo](pantherlang-icon.png)
+> **A modern programming language and development platform designed in the AI era.**
 
-**PantherLang** is a modern, secure, AI-native programming language with a tree-walking interpreter, built-in standard library, and cross-platform tooling.
-
-**Version:** 1.1.6 (Stable)  
-**Repository:** https://github.com/ferasbackagain/PantherLang  
-**License:** Proprietary — See [LICENSE](LICENSE)
-
----
-
-## Why PantherLang
-
-PantherLang is designed as a modern addition to the programming-language ecosystem, not as a rejection of the languages and communities that made modern software possible. It contributes additional ideas and capabilities in:
-
-- **Developer experience** — Clear syntax, fast feedback, integrated tooling
-- **Language design** — Explicit type conversion, security-native semantics, modern primitives
-- **AI-aware tooling** — First-class AI provider abstraction, secure agents, RAG engine
-- **Secure development** — Built-in secret detection, sandbox execution, path traversal prevention
-- **Modern application development** — Web, database, and AI platforms included
-- **Education** — Structured Academy curriculum with runnable examples
-- **Tooling** — CLI, VS Code extension, package manager, language server
+**Version:** `v1.1.6`  
+**Founder and Project Lead:** **Feras Khatib**  
+**Official repository:** `https://github.com/ferasbackagain/PantherLang`  
+**Founder profile:** `https://www.linkedin.com/in/feras-khatib-98a02220b`
 
 ---
 
-## What PantherLang Is
+## What is PantherLang?
 
-- A general-purpose programming language with `.panther` and `.pan` source files
-- A tree-walking interpreter implemented in Python 3.10+
-- A language with explicit type conversion (no implicit coercion)
-- A platform with built-in web server, SQLite ORM, and AI provider abstraction
-- A security-native runtime with sandbox and audit capabilities
-- A cross-platform toolchain (Linux, macOS, Windows via Python)
+PantherLang is an independent, general-purpose programming language project with `.pan` and `.panther` source files, its own syntax, parser/runtime pipeline, command-line interface, standard-library surface, developer tooling, educational system, and formal specification work.
 
----
+It is being developed around a practical reality of modern software engineering: developers increasingly work across disconnected layers for language execution, AI integration, web services, security analysis, databases, editor tooling, documentation, and AI coding agents.
 
-## What PantherLang Is Not
+PantherLang explores a more coherent model in which these concerns evolve as parts of one ecosystem.
 
-- A replacement for Python, JavaScript, Rust, Go, or any existing language
-- A compiled-to-native language (currently interpreted)
-- A language claiming universal production readiness without qualification
-- A language with 20 verified cookbook recipes (79 checks across 19 categories)
-- A language claiming external LLM recognition without training/indexing
+The project does **not** exist to declare Python, Rust, Go, JavaScript, TypeScript, Java, C#, C++, or other established languages obsolete. PantherLang is an additional design direction: a language being built after AI-assisted development, agentic systems, software supply-chain risk, and machine-readable documentation became first-class engineering concerns.
 
----
+## Why PantherLang is different
 
-## Quick Example
+Many languages can call an AI API. Many frameworks can host HTTP services. Many tools can scan code. PantherLang's distinguishing idea is not any one feature in isolation; it is the attempt to develop language semantics, runtime behavior, AI integration, security diagnostics, web/API execution, CLI workflows, editor tooling, education, and machine-readable language knowledge as one coordinated platform.
+
+### AI-era integration
+
+PantherLang v1.1.6 includes AI-facing language/runtime functions such as:
+
+```panther
+panther main {
+    print ai_available_providers();
+
+    let answer = ai_chat(
+        "Explain the security boundary of this service."
+    );
+
+    print answer;
+}
+```
+
+The project includes real `.pan` execution paths for AI-facing functions, provider integration surfaces, and deterministic test/mock modes. External provider execution depends on configuration, credentials, and the installed release.
+
+### Security-aware development
+
+Security analysis is intended to participate in the normal developer workflow:
+
+```bash
+panther check app.pan
+```
+
+Current project work includes the `S001`-`S005` security-diagnostic family and related security-oriented tooling. PantherLang does not claim vulnerability immunity, formal verification, or automatic compliance.
+
+### Web and API execution
+
+Current project evidence includes HTTP runtime behavior for:
+
+- `GET`, `POST`, `PUT`, and `DELETE`
+- JSON responses
+- HTML responses
+- query parameters
+- path parameters
+
+Example:
+
+```panther
+web {
+    route GET "/" {
+        return "<h1>Hello from PantherLang</h1>";
+    }
+}
+
+api {
+    route GET "/api/status" {
+        return {
+            "language": "PantherLang",
+            "version": "1.1.6",
+            "status": "running"
+        };
+    }
+}
+```
+
+The web platform is evolving. Production concerns must be evaluated feature by feature.
+
+### Human-readable and machine-readable language knowledge
+
+PantherLang is documented for both people and AI systems. The repository includes formal specifications, language references, examples, `llms.txt`, `llms-full.txt`, structured knowledge resources, Panther Academy, an official book, and cookbook material.
+
+The objective is explicit: AI coding systems should be able to inspect versioned syntax, semantics, diagnostics, examples, and capability boundaries rather than guess what PantherLang is from its name.
+
+## Quick start
+
+Create `hello.pan`:
 
 ```panther
 panther main {
     let name = "PantherLang";
-    let version = "1.1.6";
-    let features = ["secure", "ai-native", "cross-platform"];
-    
-    fn greet(lang) {
-        return "Welcome to " + lang + "!";
+
+    fn greet(language) {
+        return "Hello from " + language + "!";
     }
-    
+
     print greet(name);
-    print "Version: " + version;
-    
-    for i in 0..len(features) {
-        print "- " + features[i];
-    }
 }
 ```
 
-**Output:**
-```
-Welcome to PantherLang!
-Version: 1.1.6
-- secure
-- ai-native
-- cross-platform
+Run:
+
+```bash
+panther run hello.pan
 ```
 
----
+Expected output:
 
-## Key Capabilities
-
-| Capability | Status | Details |
-|------------|--------|---------|
-| **Core Language** | ✅ Verified | Variables, functions, control flow, types, collections, structs |
-| **Standard Library** | ✅ Verified | 43 functions: string, math, JSON, time, crypto, filesystem, HTTP, regex, collections, SQLite |
-| **Type System** | ✅ Verified | Static with inference, explicit conversion only, no implicit coercion |
-| **Security** | ✅ Verified | Secret detection (S001–S005), sandbox, prompt injection detection, path sanitization |
-| **Web Platform** | ✅ Verified | HTTP server, routing, CORS, CSRF, rate limiting, security headers, JWT |
-| **Database** | ✅ Verified | SQLite stdlib + Python ORM (Model, Column, QueryBuilder, Migrations) |
-| **AI Platform** | ✅ Verified | 5 providers (OpenAI, Anthropic, Gemini, Ollama, OpenRouter), SecureAgent, RAG |
-| **Package Manager** | ✅ Verified | Dependency resolution, lock files, integrity checks, typosquat detection |
-| **CLI Tooling** | ✅ Verified | run, build, check, fmt, new, doctor, version |
-| **VS Code Extension** | ✅ Verified | Syntax highlighting, project wizard, debug adapter, LSP, .pan/.panther support |
-| **Cross-Platform** | ✅ Verified | Linux, macOS, Windows (via Python 3.10+) |
-
----
+```text
+Hello from PantherLang!
+```
 
 ## Installation
 
-### Verified Public Paths (Available Now)
+### GitHub installer
 
-#### Source Install (Linux/macOS/Windows)
-```bash
-git clone https://github.com/ferasbackagain/PantherLang.git
-cd PantherLang
-pip install -e ".[dev]"
-```
-
-**Requirements:** Python 3.10+, pip
-
-#### PyPI Install (After Publication)
-```bash
-pip install pantherlang==1.1.6
-```
-*Status: EXTERNAL_ACTION_REQUIRED — Not yet published*
-
-#### Curl Installer (After install.sh Pushed to Main)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ferasbackagain/PantherLang/main/install.sh | bash
 ```
-*Status: EXTERNAL_ACTION_REQUIRED — install.sh not at repository root on main branch*
 
-### Windows PowerShell (Source)
-```powershell
-git clone https://github.com/ferasbackagain/PantherLang.git
-cd PantherLang
-pip install -e ".[dev]"
-```
-*Note: Add Python Scripts directory to PATH if `panther` command not found*
-
----
-
-## 5-Minute Quick Start
+Verify:
 
 ```bash
-# 1. Clone and install
+panther version
+panther doctor
+```
+
+### Source installation
+
+```bash
 git clone https://github.com/ferasbackagain/PantherLang.git
 cd PantherLang
-pip install -e ".[dev]"
 
-# 2. Verify installation
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install .
+```
+
+For repository development:
+
+```bash
+python -m pip install -e .
+```
+
+> Local `pip install` success does not by itself mean PantherLang is published on PyPI. Use the GitHub installer or source installation unless an official package-registry release is announced.
+
+## The `panther` CLI
+
+The CLI is the primary developer entry point:
+
+```bash
+panther version
 panther doctor
-# All 11 components should report OK
-
-# 3. Run your first program
-panther run examples/console_hello/main.pan
-
-# 4. Create a project
+panther run hello.pan
+panther check hello.pan
+panther build hello.pan
 panther new console myapp
-cd myapp
-panther run src/main.panther
 ```
 
----
+Use `panther` to inspect the command surface available in the installed build.
 
-## CLI Commands
+A v1.1.6 installation has been demonstrated running PantherLang programs from arbitrary Linux directories outside the repository root.
 
-| Command | Description |
-|---------|-------------|
-| `panther run <file>` | Execute a `.panther` or `.pan` file |
-| `panther run --serve <file>` | Execute with HTTP server for web blocks |
-| `panther build <file>` | Build source into a shell artifact script |
-| `panther check <file>` | Validate syntax (lex + parse, no execution) |
-| `panther fmt <file>` | Validate and print formatted source |
-| `panther new console <name>` | Scaffold console project |
-| `panther new web <name>` | Scaffold web project |
-| `panther new api <name>` | Scaffold API project |
-| `panther new ai <name>` | Scaffold AI project |
-| `panther doctor` | Verify all 11 system components |
-| `panther version` | Show version and build info |
-| `panther help` | Print command summary |
+## Capability map
 
----
+| Area | v1.1.6 status | Meaning |
+|---|---|---|
+| Core language | **Available** | Executable language semantics, functions, control flow, collections, parser/runtime work |
+| CLI | **Verified** | Global `panther` workflow and health checks |
+| Runtime | **Verified / evolving** | Executable `.pan` and `.panther` programs |
+| Type system | **Available / evolving** | Static diagnostics and runtime enforcement coexist |
+| Standard library | **Available** | Built-in application-oriented functionality |
+| Web runtime | **Available / evolving** | Real HTTP and routing work |
+| API development | **Available / evolving** | HTTP methods, JSON and parameter handling |
+| Database | **Available / evolving** | SQLite/database functionality; maturity varies by layer |
+| AI integration | **Available / evolving** | PantherLang-native AI functions and provider surfaces |
+| Security diagnostics | **Available** | Security-checking work including `S001`-`S005` |
+| Package management | **Evolving** | Architecture exists; public-registry maturity is separate |
+| VS Code extension | **Released component / revalidation cycle** | Existing extension component; v1.1.6 alignment is being revalidated |
+| LSP | **Evolving** | Maturity is version-specific |
+| Debug adapter | **Evolving** | Debugging/DAP work exists; maturity is version-specific |
+| Academy | **Available** | Structured learning system |
+| Official book | **Available** | Multi-chapter PantherLang book |
+| Formal specification | **Available** | Formal language documents |
+| Cookbook | **Available / expanding** | Recipe-oriented material |
+| AI-readable knowledge | **Available** | LLM-oriented and structured language knowledge |
+| Cross-platform | **Targeted / verify per release** | Linux is directly exercised; other platforms require release-specific verification |
 
-## Language Examples
+## Type-system status
 
-### Variables & Types
-```panther
-let name = "PantherLang";      // string (inferred)
-let year = 2026;               // int (inferred)
-let ratio = 3.14;              // float (inferred)
-let active = true;             // bool (inferred)
-let count: int = 42;           // explicit annotation
-```
+PantherLang v1.1.6 is not presented as having a perfectly unified advanced static type system.
 
-### Functions & Recursion
-```panther
-fn factorial(n) {
-    if n <= 1 { return 1; }
-    return n * factorial(n - 1);
-}
+Current engineering evidence shows:
 
-print factorial(5);  // 120
-```
+- static checking and runtime type enforcement coexist;
+- `T001` static diagnostics are part of current type-checking work;
+- `PT001` and `PT002` runtime diagnostics exist;
+- unknown explicit type names are rejected;
+- null equality semantics have dedicated runtime behavior and regression coverage;
+- some advanced type representations remain partial or evolving.
 
-### Control Flow
-```panther
-let x = 10;
-if x > 10 { print "greater"; }
-elif x == 10 { print "equal"; }
-else { print "less"; }
+Capability boundaries are documented rather than hidden.
 
-for i in 1..5 { print i; }  }  }  // 1,2,3,4,5
-```
+## PantherLang for VS Code
 
-### Collections
-```panther
-let arr = [10, 20, 30];
-print arr[0];              // 10
-print len(arr);            // 3
+PantherLang includes a released VS Code extension component in the project history. The extension is part of the PantherLang ecosystem, and the v1.1.6-aligned package is undergoing final release validation.
 
-let obj = {name: "Panther", version: "1.1.6"};
-print obj["name"];         // "Panther"
-```
+Repository work covers areas including PantherLang file recognition, `.pan` / `.panther` association, syntax highlighting, developer commands, language tooling integration, and debugging work. LSP and DAP capabilities must be described according to the exact extension build shipped.
 
-### Standard Library
-```panther
-print upper("hello");           // "HELLO"
-print sqrt(16);                 // 4.0
-print json_encode({x: 1});      // '{"x":1}'
-print sha256("data");           // hex hash
-print file_exists("README.md"); // true
-```
-
----
-
-## Official Book
-
-**The Panther Programming Language** — A comprehensive guide covering all language features, platforms, and tooling.
-
-**Location:** `docs/book/` (18 chapters)
-
-| Chapter | Title | Status |
-|---------|-------|--------|
-| 01 | Getting Started | ✅ Complete |
-| 02 | Variables and Types | ✅ Complete |
-| 03 | Expressions and Operators | ✅ Complete |
-| 04 | Control Flow | ✅ Complete |
-| 05 | Functions | ✅ Complete |
-| 06 | Data Structures | ✅ Complete |
-| 07 | Standard Library | ✅ Complete |
-| 08 | Security | ✅ Complete |
-| 09 | Web Platform | ✅ Complete |
-| 10 | Database Platform | ✅ Complete |
-| 11 | AI Platform | ✅ Complete |
-| 12 | CLI and Tooling | ✅ Complete |
-| 13 | Cross-Platform Development | ✅ Complete |
-| 14 | Language Reference | ✅ Complete |
-| 15 | Comparison Semantics | ✅ Complete |
-| 16 | Contributing | ✅ Complete |
-| 17 | Ecosystem | ✅ Complete |
-| 18 | Appendix | ✅ Complete |
-
-**Additional references:**
-- [Formal Specification](docs/specification/) — 8 specification documents
-- [Language Reference](docs/book/chapters/14-language-reference.md) — Complete syntax and error codes
-- [Glossary & Index](docs/book/chapters/18-appendix.md) — Full cross-reference
-
----
+This README does not invent a Marketplace URL, publisher ID, download count, or rating.
 
 ## Panther Academy
 
-Structured learning platform with 18 progressive lessons from beginner to advanced.
+Panther Academy is the structured learning path for PantherLang. Its curriculum spans foundations and progresses through language features, data structures, standard-library use, security, web development, database programming, AI integration, CLI/tooling, ecosystem work, and capstone development.
 
-**Status:** All 18 lessons complete with runnable code and verification.
+The Academy sources and validation scripts are the source of truth for lesson completeness.
 
-| Lesson | Title | Track | Status |
-|--------|-------|-------|--------|
-| 01 | Getting Started | Foundation | ✅ Complete |
-| 02 | Variables & Types | Foundation | ✅ Complete |
-| 03 | Control Flow | Foundation | ✅ Complete |
-| 04 | Functions | Foundation | ✅ Complete |
-| 05 | Type Conversions & IO | Foundation | ✅ Complete |
-| 06 | Data Structures: Arrays, Objects, Structs | Developer | ✅ Complete |
-| 07 | Standard Library | Developer | ✅ Complete |
-| 08 | Security | Developer | ✅ Complete |
-| 09 | Web Platform | Developer | ✅ Complete |
-| 10 | Database Platform | Developer | ✅ Complete |
-| 11 | AI Platform | Advanced | ✅ Complete |
-| 12 | CLI & Tooling | Advanced | ✅ Complete |
-| 13 | Cross-Platform | Advanced | ✅ Complete |
-| 14 | Language Reference | Advanced | ✅ Complete |
-| 15 | Comparison Semantics | Advanced | ✅ Complete |
-| 16 | Contributing | Advanced | ✅ Complete |
-| 17 | Ecosystem | Advanced | ✅ Complete |
-| 18 | Capstone: Task Manager | Advanced | ✅ Complete |
+## Official PantherLang book
 
-**Learning paths:**
-- **Foundations** — Lessons 01–05
-- **Developer** — Lessons 01–10
-- **Professional** — Lessons 01–18
+The repository includes a multi-chapter official book connecting language concepts, syntax, runtime behavior, application development, security, web/API work, databases, AI, tooling, and ecosystem guidance.
 
-**Validate:** `python scripts/validate_education.py`
+Chapter presence and chapter completeness are separate facts; release documentation should preserve that distinction.
 
----
+## Formal specification
 
-## Cookbook
+PantherLang includes formal specification work covering core language concerns such as lexical structure, grammar, syntax, semantics, types, runtime behavior, diagnostics, and errors.
 
-**79 verified examples** across 20 recipe files (19 categories + master runner).
+For implementers, tool authors, researchers, and AI coding systems, the specification should be preferred over inference from isolated examples.
 
-**Location:** `docs/cookbook/recipes/`
+## Machine-readable knowledge for AI systems
 
-| # | Category | File | Functions |
-|---|----------|------|-----------|
-| 01 | Basics | `01-basics.pan` | print, string concat, variables |
-| 02 | Types | `02-types.pan` | int(), float(), string(), null, bool |
-| 03 | Arithmetic | `03-arithmetic.pan` | + - * / %, pow, sqrt, abs, floor, ceil, round |
-| 04 | Control Flow | `04-control-flow.pan` | if/elif/else, for, while, loop, break/continue |
-| 05 | Functions | `05-functions.pan` | fn, params, return, recursion |
-| 06 | Arrays | `06-arrays.pan` | arrays, indexing, push, pop, sort, reverse |
-| 07 | Objects | `07-objects.pan` | objects, key access, JSON round-trip |
-| 08 | Strings | `08-strings.pan` | len, upper, lower, trim, contains, replace, split, join |
-| 09 | Filesystem | `09-filesystem.pan` | mkdir, write/read_file, file_exists, list_dir |
-| 10 | JSON | `10-json.pan` | json_encode, json_decode |
-| 11 | Security | `11-security.pan` | sha256, hmac, token, sanitize_path, sanitize_html |
-| 12 | Math | `12-math.pan` | random, randint, time, sleep, abs, pow, sqrt |
-| 13 | Regex | `13-regex.pan` | regex_match, regex_replace, regex_split |
-| 14 | HTTP | `14-http.pan` | http_get, http_post |
-| 15 | Collections | `15-collections.pan` | push, pop, sort, reverse |
-| 16 | SQLite | `16-sqlite.pan` | db_open, db_execute, db_query, db_close |
-| 17 | Comparisons | `17-comparisons.pan` | == != > < >= <= across types |
-| 18 | CLI | `18-cli.pan` | CLI command reference |
-| 19 | Web | `19-web.pan` | route GET/POST, params, body |
-| — | All Recipes | `cookbook_all.pan` | Master runner (all 19 categories) |
+Relevant assets include:
 
-**Run all:** `python -m cli.panther_cli run docs/cookbook/recipes/cookbook_all.pan`
+- `llms.txt`
+- `llms-full.txt`
+- structured knowledge resources
+- language rules
+- AI context material
+- examples
+- diagnostics references
+- formal specifications
 
-Also available: 11 project examples in `examples/` directory:
-| Example | Domain |
-|---------|--------|
-| `examples/console_hello/` | Basics |
-| `examples/calculator/` | Math/Recursion |
-| `examples/file_manager/` | Filesystem |
-| `examples/json_parser/` | JSON |
-| `examples/http_client/` | HTTP |
-| `examples/sqlite_crud/` | Database |
-| `examples/security_audit_demo/` | Security |
-| `examples/hello_web/` | Web |
-| `examples/hello_api/` | API |
-| `examples/hello_ai/` | AI |
-| `examples/config_loader/` | Configuration |
+This does not mean every AI model automatically knows PantherLang. Model knowledge depends on indexing, retrieval, training data, browsing access, and source freshness.
 
----
+## Verification and engineering evidence
 
-## Standard Library (43 Functions)
+The v1.1.6 engineering cycle uses regression testing and explicit capability audits.
 
-| Category | Functions | Count |
-|----------|-----------|-------|
-| **String** | len, substring, contains, starts_with, ends_with, upper, lower, trim, replace, split, join | 11 |
-| **Math** | abs, max, min, pow, sqrt, floor, ceil, round, random, randint | 10 |
-| **JSON** | json_encode, json_decode | 2 |
-| **Time** | time, sleep | 2 |
-| **Type Conversion** | int, float, string | 3 |
-| **Crypto** | sha256, hmac_sha256, secure_token, secure_compare | 4 |
-| **Security** | sanitize_path, sanitize_html | 2 |
-| **Filesystem** | read_file, write_file, file_exists, mkdir, list_dir, remove_file | 6 |
-| **HTTP** | http_get, http_post | 2 |
-| **Regex** | regex_match, regex_replace, regex_split | 3 |
-| **Collections** | array_push, array_pop, array_sort, array_reverse | 4 |
-| **SQLite** | db_open, db_close, db_execute, db_query | 4 |
+A recorded local milestone after the P4 type-system truth work reported:
 
-**All available without imports.**
-
----
-
-## AI Readiness
-
-PantherLang includes first-class AI integration designed for secure, auditable AI applications.
-
-### AI Provider Abstraction
-```python
-from compiler.ai.providers import (
-    OpenAIProvider,      # OPENAI_API_KEY
-    AnthropicProvider,   # ANTHROPIC_API_KEY
-    GeminiProvider,      # GEMINI_API_KEY
-    OllamaProvider,      # Local, no key needed
-    OpenRouterProvider   # OPENROUTER_API_KEY
-)
-```
-All providers support **mock mode** (no API keys required for testing).
-
-### Secure Agents
-```python
-from compiler.ai.secure_agent import SecureAgent
-
-agent = SecureAgent("assistant")
-agent.register_tool("get_weather", weather_fn)
-response = agent.complete(user_input)  # Injection detection + audit
+```text
+1084 passed
+0 failed
 ```
 
-### RAG Engine
-```python
-from compiler.ai.rag import RAGEngine
+That count is a point-in-time result, not a permanent promise. Reproduce the current repository state with:
 
-engine = RAGEngine(embedding_provider)
-engine.add_document("PantherLang is a programming language.")
-results = engine.query("What is PantherLang?", top_k=3)
-```
-
-### Security Rules
-- **Never hardcode API keys** — read from environment variables
-- **Use `SecureAgent`** in production (includes prompt injection detection)
-- **Enable sandbox** for untrusted code execution
-- **Run `panther check`** — security diagnostics (S001–S005) run during linting
-
----
-
-## AI-Agent Integration
-
-PantherLang provides structured knowledge files for AI coding agents:
-
-| File | Purpose |
-|------|---------|
-| `llms.txt` | Quick reference index |
-| `llms-full.txt` | Complete knowledge pack |
-| `AI_CONTEXT.md` | AI context |
-| `LANGUAGE_RULES.md` | Language rules |
-| `PANTHER_PROMPT.md` | Prompt template |
-| `LLM_REFERENCE.md` | LLM reference |
-| `docs/ai/AI_KNOWLEDGE_PACK_v1_1_5.md` | Consolidated reference |
-| `docs/agent_knowledge/` | 4 agent guide files |
-
-**Note:** These improve **local** AI agent understanding. They do **not** guarantee external public LLMs (ChatGPT, Claude, etc.) know PantherLang until trained/indexed on this content.
-
----
-
-## VS Code / Editor Tooling
-
-**Extension:** `vscode-extension/` (Version 1.1.6)
-
-### Features
-- ✅ Syntax highlighting for `.panther` and `.pan`
-- ✅ Code snippets (`pn-main`, `pn-fn`, `pn-let`, `pn-if`, `pn-while`, `pn-for`)
-- ✅ Debug adapter protocol support
-- ✅ Language server protocol integration
-- ✅ Project wizard (New Project commands)
-- ✅ Run/Build/Debug/Doctor commands in Command Palette
-- ✅ File icons for `.pan`, `.panther`, `panther.toml` (requires PantherLang icon theme)
-
-### Install from Source
 ```bash
-cd vscode-extension
-npm install && npm run package
-code --install-extension pantherlang-1.1.6.vsix
+python -m pytest tests/ -q
+panther doctor
+python -m build
 ```
 
-### Marketplace Install (After Publication)
-Search "PantherLang" in VS Code Extensions marketplace.
-*Status: EXTERNAL_ACTION_REQUIRED*
+> **A capability claim should be backed by executable evidence, a test, or an explicit maturity label.**
 
----
+## Repository guide
 
-## Web Capabilities
+| Need | Location |
+|---|---|
+| Language implementation | `compiler/`, `runtime/`, related language source trees |
+| CLI | `cli/` and the installed `panther` entry point |
+| Tests | `tests/` |
+| Examples | `examples/` |
+| Academy | `academy/` |
+| Documentation | `docs/` |
+| Formal specification | `docs/specification/` |
+| Official book | `docs/book/` |
+| Cookbook | `docs/cookbook/` |
+| VS Code extension | `vscode-extension/` |
+| Machine-readable knowledge | `knowledge/`, `llms.txt`, `llms-full.txt` |
+| Engineering evidence | `engineering/` |
 
-```python
-from compiler.web.server import HttpServer
-from compiler.web.security import SecureRequestHandler
+Some historical engineering artifacts may remain visible while the public repository is consolidated. Their presence should not be interpreted as separate PantherLang products.
 
-server = HttpServer(host="0.0.0.0", port=8080)
-server.get("/", lambda req: {"message": "Hello, Panther!"})
-server.post("/api/data", lambda req: {"received": req.body})
-server.use(SecureRequestHandler())  # Rate limit, CORS, headers, CSRF, XSS
-server.start()
-```
+## Project maturity
 
-### Security Middleware Included
-- **SecurityHeaders** — CSP, HSTS, X-Content-Type-Options, X-Frame-Options
-- **CSRFProtection** — HMAC-based token generation/validation
-- **RateLimiter** — Sliding window per-key rate limiting
-- **CORSValidator** — Origin validation with wildcard support
-- **XSSProtection** — HTML sanitization
-- **CookieSecurity** — Secure cookie builder (HttpOnly, Secure, SameSite)
-- **JWTSafety** — JWT structure validation and expiration checking
+PantherLang is a serious, active language project. Maturity is described precisely.
 
----
+**Available today:** executable language/runtime work, CLI tooling, testing infrastructure, standard-library capabilities, AI-facing functions, security diagnostics, web/API work, database work, VS Code integration, formal documentation, Academy material, book material, examples, and machine-readable knowledge.
 
-## Database Capabilities
+**Still evolving:** type-system unification, production hardening, platform depth, protocol/tooling maturity, cross-platform release verification, package distribution, extension release alignment, ecosystem growth, and broader real-world adoption.
 
-### PantherLang Stdlib
-```panther
-let conn = db_open(":memory:");
-db_execute(conn, "CREATE TABLE users (id INTEGER, name TEXT)");
-db_execute(conn, "INSERT INTO users VALUES (1, 'Alice')");
-let rows = db_query(conn, "SELECT * FROM users");
-print rows[0]["name"];  // "Alice"
-db_close(conn);
-```
+## Who PantherLang is for
 
-### Python ORM
-```python
-from compiler.database.orm import SqliteEngine, Model, Column
+PantherLang may be relevant to:
 
-engine = SqliteEngine(":memory:")
-class User(Model):
-    name = Column(str)
-    age = Column(int)
+- developers exploring AI-era language design;
+- application developers who value integrated tooling;
+- security engineers interested in security-aware workflows;
+- AI engineers building model- or agent-assisted applications;
+- web/API developers evaluating a new language ecosystem;
+- language implementers and compiler engineers;
+- educators and learners;
+- AI coding-agent researchers;
+- contributors interested in an early public programming-language ecosystem.
 
-engine.create_table(User)
-user = User(name="Alice", age=30)
-engine.insert(user)
+## Naming and disambiguation
 
-# Query Builder
-from compiler.database.orm import QueryBuilder
-qb = QueryBuilder(engine.table("users"))
-qb.where("age > ?", [25]).order("name ASC").limit(10).select()
-```
+**PantherLang** is the programming language and development-platform project in this repository.
 
-### Migrations
-```python
-from compiler.database.orm import Migration, migrate
-Migration("001_create_users", "CREATE TABLE users (...)")
-migrate(engine, migrations)
-```
+It is not the same as unrelated products, companies, security platforms, AI products, or projects using the word **Panther**.
 
----
+For unambiguous references, use:
 
-## Security Model
+- **PantherLang**
+- **PantherLang programming language**
+- **PantherLang by Feras Khatib**
+- `github.com/ferasbackagain/PantherLang`
 
-PantherLang is **security-native** — security analysis runs during compilation.
+## Founder and project leadership
 
-### Compile-Time Diagnostics
-| Code | Detection |
-|------|-----------|
-| S001 | Hardcoded secrets (API keys, passwords, tokens) in string literals |
-| S002 | Dangerous function names (exec, eval, system) |
-| S003 | Dangerous function calls |
-| S004 | Dangerous shell command patterns |
-| S005 | Secret patterns in string values |
+### Feras Khatib
 
-Run `panther check` to execute security analysis.
+**Founder and Project Lead, PantherLang**
 
-### Runtime Sandbox
-```python
-from compiler.security import Sandbox
-sandbox = Sandbox(max_exec_time=5, max_memory_mb=100)
-sandbox.check_file_read("/etc/passwd")     # Blocked
-sandbox.check_file_write("/tmp/test.txt")  # Allowed
-```
+Feras Khatib leads the PantherLang language and ecosystem project.
 
-### Prompt Injection Detection
-```python
-from compiler.security import PromptInjectionDetector
-detector = PromptInjectionDetector()
-result = detector.detect("Ignore all previous instructions")
-# result.is_injection == True
-```
+- LinkedIn: `https://www.linkedin.com/in/feras-khatib-98a02220b`
+- Repository: `https://github.com/ferasbackagain/PantherLang`
 
----
-
-## Package / Project Tooling
-
-### Project Manifest (`panther.toml`)
-```toml
-[project]
-name = "my-app"
-type = "console"   # console, web, api, ai
-version = "0.1.0"
-language = "panther"
-
-[run]
-main = "src/main.panther"
-```
-
-### Project Templates
-```bash
-panther new console my_app     # Console application
-panther new web my_web_app     # Web application
-panther new api my_api         # REST API structure
-panther new ai my_ai_app       # AI-integrated application
-```
-
-### Package Manager
-- Dependency resolution with version constraints (`>=`, `^`, `~`, `*`, `latest`)
-- Lock files for reproducible builds
-- Package integrity verification
-- Typosquat detection
-
----
-
-## Cross-Platform Status
-
-| Platform | Support | Install Method |
-|----------|---------|----------------|
-| **Linux** (Ubuntu, Debian, Fedora, Arch, etc.) | ✅ Verified | Source, pip, installer scripts |
-| **macOS** (10.15+) | ✅ Verified | Source, pip |
-| **Windows** (10/11) | ✅ Verified | Source, pip, PowerShell/Batch scripts |
-
-**Cross-platform runner scripts:**
-```bash
-# Linux / macOS
-bash scripts/run_examples.sh
-
-# Windows PowerShell
-.\scripts\run_examples.ps1
-
-# Windows CMD
-scripts\run_examples.bat
-```
-
-All filesystem functions use Python's `pathlib` for correct path handling.
-
----
-
-## Documentation
-
-| Document | Location | Description |
-|----------|----------|-------------|
-| **Architecture Guide** | `docs/ARCHITECTURE.md` | Compiler pipeline, runtime, platforms |
-| **CLI Guide** | `docs/CLI_GUIDE.md` | Complete command reference |
-| **Language Reference** | `docs/LANGUAGE_REFERENCE.md` | Syntax, operators, keywords |
-| **Security Guide** | `docs/SECURITY_GUIDE.md` | Security model, best practices |
-| **Developer Guide** | `docs/DEVELOPER_GUIDE.md` | Development setup, testing, building |
-| **Official Book** | `docs/book/` | 18-chapter comprehensive guide |
-| **Academy** | `academy/` | 18 structured lessons |
-| **Cookbook** | `docs/cookbook/` | 20 verified recipe files |
-| **Labs** | `docs/labs/` | 21 hands-on labs |
-| **Capstones** | `docs/capstones/` | 7 capstone projects |
-| **Certification** | `docs/certification/` | 7 certification tracks |
-| **Knowledge Base** | `knowledge/` | Machine-readable metadata |
-| **Formal Specification** | `docs/specification/` | 8 formal spec documents |
-
----
-
-## Architecture
-
-```
-Source Code
-  → Lexer (compiler/lexer/) — Pratt lexer + tokens
-  → Token Stream
-  → Parser (compiler/parser/) — Pratt expressions + recursive descent statements
-  → AST (compiler/ast/) — Frozen dataclass nodes
-  → Semantic Analysis (compiler/semantic/) — Symbol tables, scope, diagnostics (E001–E008)
-  → Type Checker (compiler/types/) — Primitive types, inference, compatibility (T001, PT001)
-  → Runtime (compiler/runtime/) — Tree-walking interpreter
-  → Output / Side Effects
-```
-
-**Two pipelines co-exist:**
-1. **Formal Pipeline** (`compiler/parser/`, `compiler/semantic/`, `compiler/types/`, `compiler/runtime/`) — Production
-2. **Phase 6 Pipeline** (`compiler/pipeline/`) — Regex-based, legacy support
-
----
-
-## Testing & Quality
-
-### Verification Evidence (v1.1.6)
-| Check | Result | Command |
-|-------|--------|---------|
-| **Full Regression** | 1039 passed | `python -m pytest tests/ -q` |
-| **Examples** | 11/11 passed | `bash scripts/run_examples.sh` |
-| **Project Templates** | 4/4 create & run | `panther new <type> test && panther run test/src/main.panther` |
-| **System Health** | All 11 OK | `panther doctor` |
-| **Build** | wheel + sdist | `python -m build` |
-| **VS Code Extension** | Source builds | `cd vscode-extension && npm run package` |
-
-### Test Structure
-- `tests/` — 48 subdirectories, 1039+ tests
-- `tests/academy/` — Academy lesson tests
-- `tests/conformance/` — Language conformance
-- `tests/security/` — Security platform tests
-- `tests/R1_product_unification/` — Version alignment tests
-
----
-
-## Roadmap
-
-### Current (v1.1.6)
-- ✅ Language core complete
-- ✅ Standard library (52 functions)
-- ✅ Web, Database, AI platforms
-- ✅ Security-native tooling
-- ✅ VS Code extension with debug adapter
-- ✅ Cross-platform support
-- ✅ Academy: 18 lessons with runnable code + verification
-- ✅ Book: 18 chapters including Appendix
-- ✅ Cookbook: 20 verified recipe files (79 checks)
-- ✅ Labs: 21 hands-on labs with solutions
-- ✅ Capstones: 7 projects across all tracks
-- ✅ Certification: 7 tracks defined
-- ✅ Education validation tooling
-- ✅ Machine-readable metadata (knowledge/)
-
-### Next (v1.2 — Target Q3 2026)
-- 🔄 Full module/import system resolution
-- 🔄 Enhanced LSP features
-- 🔄 Native compilation target
-- 🔄 Package registry (Panther Hub)
-
-### Long-Term Panther Ecosystem Vision
-| Project | Description | Status |
-|---------|-------------|--------|
-| **PantherLang** | Core language & platforms | ✅ Active |
-| **Panther Core** | Language runtime & stdlib | ✅ Active |
-| **Panther Studio** | Native IDE | 🔄 Planned |
-| **PantherAI** | AI-native application framework | 🔄 Planned |
-| **Panther Academy** | Structured learning platform | 🔄 In Development |
-| **Panther Cloud** | Managed hosting & deployment | 🔄 Conceptual |
-| **Panther Enterprise** | Enterprise features & support | 🔄 Conceptual |
-| **Panther Hub** | Package/module registry | 🔄 Conceptual |
-
-**Note:** Future systems are clearly labeled. They are not presented as shipped products.
-
----
-
-## Panther Ecosystem
-
-| Component | Description | Status |
-|-----------|-------------|--------|
-| **PantherLang** | Core programming language | ✅ v1.1.6 |
-| **Panther Core** | Runtime & standard library | ✅ v1.1.6 |
-| **VS Code Extension** | Editor integration | ✅ v1.1.6 |
-| **Panther Academy** | Learning platform | ✅ 18 Lessons |
-| **Panther Book** | Documentation | ✅ 18 Chapters |
-| **Panther Cookbook** | Recipe collection | ✅ 20 Recipe Files |
-| **Panther Labs** | Hands-on exercises | ✅ 21 Labs |
-| **Panther Capstones** | Projects | ✅ 7 Capstones |
-| **Panther Certification** | Tracks | ✅ 7 Tracks |
-
----
+No invented credentials, adoption figures, partnerships, or affiliations are implied.
 
 ## Contributing
 
-We welcome contributions. Please read:
+Before proposing a change:
 
-- [Contributing Guide](CONTRIBUTING.md) — Development workflow, coding standards
-- [Code of Conduct](CODE_OF_CONDUCT.md) — Community standards
-- [Security Policy](SECURITY.md) — Responsible disclosure
-- [Governance](GOVERNANCE.md) — Project governance
-
-### Development Setup
-```bash
-git clone https://github.com/ferasbackagain/PantherLang.git
-cd PantherLang
-pip install -e ".[dev]"
-python -m pytest tests/ -q
-```
-
-### Reporting Issues
-Use [GitHub Issues](https://github.com/ferasbackagain/PantherLang/issues) for:
-- Bug reports
-- Feature requests
-- Documentation improvements
-- Language proposals
-
----
-
-## Release Status & Maturity Disclaimer
-
-**Current Release:** v1.1.6 (Stable)
-
-| Artifact | Status |
-|----------|--------|
-| Source Code (GitHub) | ✅ **VERIFIED_PUBLIC** |
-| Git Clone Install | ✅ **VERIFIED_PUBLIC** |
-| Source Dev Install | ✅ **VERIFIED_PUBLIC** |
-| PyPI Package | ⏳ **READY_AFTER_PYPI** — Not published |
-| Curl Installer | ⏳ **READY_AFTER_PUSH** — Requires install.sh at repo root |
-| VS Code Marketplace | ⏳ **READY_AFTER_VSCODE_MARKETPLACE** — Not published |
-| GitHub Release | ⏳ **READY_AFTER_GITHUB_RELEASE** — Tag not created |
-| Website/Docs | ⏳ **READY_AFTER_WEBSITE_DEPLOY** — Not deployed |
-
-**Maturity Notes:**
-- Core language, stdlib, and platforms are tested and verified
-- Academy (18 lessons), Book (18 chapters), Cookbook (20 recipes), Labs (21), Capstones (7) are complete
-- External AI model recognition requires training/indexing on PantherLang content
-- Production use should include thorough application-level testing
-- Security features are defense-in-depth; no system is completely immune
-
----
+1. inspect current language rules and specifications;
+2. run relevant tests;
+3. preserve existing semantics unless a change is explicitly designed;
+4. add executable evidence for new capability claims;
+5. update documentation when behavior changes.
 
 ## License
 
-Copyright (c) Feras Khatib. All rights reserved.
+PantherLang is distributed under the license contained in the repository's `LICENSE` file. Review that file before use, redistribution, modification, or commercial deployment.
 
-See [LICENSE](LICENSE) for full terms.
+## Citation and discovery
 
----
+**Project:** PantherLang programming language  
+**Founder:** Feras Khatib  
+**Repository:** `https://github.com/ferasbackagain/PantherLang`  
+**Current release line:** `v1.1.6`
 
-## Project Links
+## Final note
 
-| Resource | Link |
-|----------|------|
-| **Repository** | https://github.com/ferasbackagain/PantherLang |
-| **Issues** | https://github.com/ferasbackagain/PantherLang/issues |
-| **Releases** | https://github.com/ferasbackagain/PantherLang/releases |
-| **Documentation** | https://github.com/ferasbackagain/PantherLang/tree/main/docs |
-| **Official Book** | https://github.com/ferasbackagain/PantherLang/tree/main/docs/book |
-| **Academy** | https://github.com/ferasbackagain/PantherLang/tree/main/docs/academy |
-| **Cookbook** | https://github.com/ferasbackagain/PantherLang/tree/main/docs/cookbook |
-| **Specification** | https://github.com/ferasbackagain/PantherLang/tree/main/docs/specification |
-| **Security Policy** | https://github.com/ferasbackagain/PantherLang/security |
+PantherLang is being built around a demanding premise: a modern programming language should be understandable not only by its runtime and human developers, but also by the security tools, AI systems, editors, educational systems, and automation workflows that now participate in software development.
 
----
+That premise is ambitious. The project does not need inflated claims to make it interesting. The work should be judged by executable programs, tests, specifications, tooling, and the quality of the ecosystem built around them.
 
-*PantherLang v1.1.6 — Modern, Secure, AI-Native, Cross-Platform Programming Language*
