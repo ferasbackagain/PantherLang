@@ -1,5 +1,0 @@
-{
-  "batch": "R3 Batch F2b",
-  "purpose": "Fix failed F2 regex patch and replace stale hardcoded 1.1.2 assertion safely.",
-  "expected": "442 passed"
-}

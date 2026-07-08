@@ -51,3 +51,15 @@ bootstrap_*.sh
 
 # VS Code extension package (generated)
 vscode-extension/*.vsix
+
+# Public repository hygiene
+.panther/
+.panther_backups/
+.panther_cache/
+*.db
+*.zip
+bootstrap_*.sh
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/

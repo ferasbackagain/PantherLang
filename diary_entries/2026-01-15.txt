@@ -1,1 +1,0 @@
-Started learning PantherLang today. The syntax is clean and intuitive.

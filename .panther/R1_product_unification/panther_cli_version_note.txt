@@ -1,2 +1,0 @@
-Existing panther CLI file was not rewritten. Unified version is available from panther_core.version and cli.version.
-Future R1 parts may wire this into the CLI command surface after command contract inspection.

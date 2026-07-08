@@ -1,5 +1,0 @@
-Run from PantherLang project root:
-
-unzip pantherlang_phase2_batch2_1_part1_expression_ast_foundation.zip
-chmod +x bootstrap_phase2_batch2_1_part1_expression_ast_foundation.sh
-./bootstrap_phase2_batch2_1_part1_expression_ast_foundation.sh

@@ -125,7 +125,7 @@ class OllamaProvider(AIProvider):
             resp = requests.post(f"{self.base_url}/api/chat", json=payload, timeout=5)
             data = resp.json()
             return CompletionResult(content=data.get("message", {}).get("content", ""), model=self.model)
-        except (ImportError, requests.exceptions.ConnectionError, Exception):
+        except Exception:
             return CompletionResult(content="[mock] Ollama response: " + messages[-1].content if messages else "", model=self.model)
 
 

@@ -1,4 +1,0 @@
-[project]
-name = "TestApp"
-template = "console"
-entry = "src/main.panther"

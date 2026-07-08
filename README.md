@@ -640,3 +640,15 @@ Review the license before use, redistribution, modification, or commercial deplo
 <p align="center">
   <strong>PantherLang is being built for a world in which software is written by people, assisted by AI, inspected by security systems, executed across application surfaces, and increasingly understood by machines.</strong>
 </p>
+
+
+## Quick Start
+
+Install from the repository:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ferasbackagain/PantherLang/main/install.sh | bash
+```
+
+For Python package workflows, editable development installs use `pip install` through the project packaging configuration.
+

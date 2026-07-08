@@ -1,9 +1,0 @@
-{
-  "ok": true,
-  "phase":"P-2",
-  "batch":"9",
-  "status":"PASSED",
-  "runtime_modified":false,
-  "release_readiness":"RC",
-  "next":"P-2 Batch 10 - Freeze + Release Candidate"
-}

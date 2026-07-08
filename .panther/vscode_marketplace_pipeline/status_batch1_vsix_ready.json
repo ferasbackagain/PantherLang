@@ -1,9 +1,0 @@
-{
-  "ok": true,
-  "pipeline": "VS Code Marketplace Publisher Pipeline",
-  "batch": "1",
-  "status": "PASSED",
-  "vsix": "releases/vscode_marketplace/pantherlang-0.8.8.vsix",
-  "runtime_modified": false,
-  "next": "Batch 2 - Marketplace Publisher Validation + Publish Gate"
-}

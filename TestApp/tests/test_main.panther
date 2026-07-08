@@ -1,3 +1,0 @@
-panther test "console app boots" {
-    assert true
-}

@@ -1,9 +1,0 @@
-{
-  "batch": "4-v3",
-  "next": "P-1 Batch 4 v4 - Contract Reconstruction",
-  "ok": false,
-  "phase": "P-1",
-  "report": "reports/recovery/P1_BATCH4_V3_SAFE_CANDIDATE_SELECTOR.md",
-  "status": "NEEDS_CONTRACT_RECONSTRUCTION",
-  "summary": ".panther/recovery/candidate_regression_results_v3.json"
-}

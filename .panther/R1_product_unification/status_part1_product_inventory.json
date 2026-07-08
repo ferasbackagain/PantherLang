@@ -1,9 +1,0 @@
-{
-  "ok": true,
-  "phase": "R1",
-  "part": "1",
-  "status": "PASSED",
-  "name": "Official Product Inventory",
-  "runtime_modified": false,
-  "next": "R1 Part 2 - Unified Version Contract"
-}

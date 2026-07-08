@@ -1,9 +1,0 @@
-{
-  "batch": "Batch 4 v3",
-  "engineering_report": "reports/H4_5/P0/H4_5_P0_Batch4_v3_ENGINEERING_REPORT.md",
-  "milestone": "P0",
-  "next": "Inspect Batch 4 v3 regression output",
-  "ok": false,
-  "phase": "H4.5",
-  "runtime_validation": ".panther/h4_5_p0/runtime_validation_batch4_v3.json"
-}
