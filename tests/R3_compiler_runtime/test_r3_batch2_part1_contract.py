@@ -27,8 +27,8 @@ def test_contract_json_exists_and_matches():
 
 def test_runtime_vm_scaffold_contract():
     vm = PantherVM()
-    result = vm.execute_source('panther main { print("hi") }')
+    result = vm.execute_source('panther main { print("hi"); }')
     assert isinstance(result, PantherRuntimeResult)
     assert result.ok is True
     assert result.exit_code == 0
-    assert "accepted source" in result.output
+    assert result.output == "hi"

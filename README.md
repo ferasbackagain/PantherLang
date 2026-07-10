@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <strong>Current release line:</strong> v1.1.6
+  <strong>Current release line:</strong> v1.1.7
 </p>
 
 <p align="center">
@@ -631,7 +631,7 @@ Review the license before use, redistribution, modification, or commercial deplo
 
 **Project:** PantherLang programming language  
 **Founder:** Feras Khatib  
-**Current release line:** v1.1.6  
+**Current release line:** v1.1.7  
 **Repository:** https://github.com/ferasbackagain/PantherLang  
 **Founder profile:** https://www.linkedin.com/in/feras-khatib-98a02220b
 

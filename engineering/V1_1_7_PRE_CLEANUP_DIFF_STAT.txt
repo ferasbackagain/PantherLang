@@ -1,0 +1,404 @@
+ .gitignore                                         |   5 +
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 748 -> 803 bytes
+ .../__pycache__/breakpoint_store.cpython-313.pyc   | Bin 2393 -> 0 bytes
+ .../__pycache__/breakpoints.cpython-313.pyc        | Bin 10676 -> 0 bytes
+ .../__pycache__/dispatcher.cpython-313.pyc         | Bin 4502 -> 4557 bytes
+ .../dispatcher_contract.cpython-313.pyc            | Bin 2058 -> 0 bytes
+ .../__pycache__/evaluate.cpython-313.pyc           | Bin 5490 -> 5545 bytes
+ .../__pycache__/event_bus.cpython-313.pyc          | Bin 2033 -> 2088 bytes
+ .../__pycache__/event_dispatcher.cpython-313.pyc   | Bin 4713 -> 4768 bytes
+ .../__pycache__/event_merge.cpython-313.pyc        | Bin 4896 -> 0 bytes
+ .../execution_controller.cpython-313.pyc           | Bin 6227 -> 0 bytes
+ .../execution_dispatcher.cpython-313.pyc           | Bin 2177 -> 2232 bytes
+ .../__pycache__/execution_merge.cpython-313.pyc    | Bin 4506 -> 4561 bytes
+ .../__pycache__/execution_state.cpython-313.pyc    | Bin 2865 -> 0 bytes
+ .../__pycache__/finalize_v2_guard.cpython-313.pyc  | Bin 2166 -> 0 bytes
+ .../__pycache__/finalize_v2_status.cpython-313.pyc | Bin 379 -> 0 bytes
+ .../__pycache__/launcher.cpython-313.pyc           | Bin 2680 -> 0 bytes
+ .../__pycache__/legacy_cleanup.cpython-313.pyc     | Bin 982 -> 0 bytes
+ .../__pycache__/locations.cpython-313.pyc          | Bin 3571 -> 0 bytes
+ .../__pycache__/protocol.cpython-313.pyc           | Bin 5147 -> 5202 bytes
+ .../__pycache__/request_dispatcher.cpython-313.pyc | Bin 4510 -> 0 bytes
+ .../response_dispatcher.cpython-313.pyc            | Bin 2571 -> 2626 bytes
+ .../__pycache__/response_merge.cpython-313.pyc     | Bin 4502 -> 0 bytes
+ .../__pycache__/scopes.cpython-313.pyc             | Bin 5640 -> 5695 bytes
+ .../__pycache__/server.cpython-313.pyc             | Bin 4823 -> 4878 bytes
+ .../__pycache__/session.cpython-313.pyc            | Bin 2335 -> 0 bytes
+ .../__pycache__/source_map.cpython-313.pyc         | Bin 6842 -> 0 bytes
+ .../__pycache__/stack_frames.cpython-313.pyc       | Bin 7060 -> 7115 bytes
+ .../__pycache__/state_machine.cpython-313.pyc      | Bin 2761 -> 0 bytes
+ .../__pycache__/threads.cpython-313.pyc            | Bin 5096 -> 5151 bytes
+ .../__pycache__/validation.cpython-313.pyc         | Bin 3553 -> 0 bytes
+ .../variable_references.cpython-313.pyc            | Bin 6565 -> 6620 bytes
+ .../__pycache__/variable_store.cpython-313.pyc     | Bin 6762 -> 6817 bytes
+ .../__pycache__/variables.cpython-313.pyc          | Bin 1173 -> 1228 bytes
+ .../__pycache__/variables_core.cpython-313.pyc     | Bin 6432 -> 6487 bytes
+ .../__pycache__/watch_expressions.cpython-313.pyc  | Bin 5493 -> 5548 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 748 -> 0 bytes
+ .../__pycache__/breakpoint_store.cpython-313.pyc   | Bin 2393 -> 0 bytes
+ .../__pycache__/breakpoints.cpython-313.pyc        | Bin 10676 -> 0 bytes
+ .../__pycache__/dispatcher.cpython-313.pyc         | Bin 4502 -> 0 bytes
+ .../dispatcher_contract.cpython-313.pyc            | Bin 2058 -> 0 bytes
+ .../__pycache__/evaluate.cpython-313.pyc           | Bin 5490 -> 0 bytes
+ .../__pycache__/event_bus.cpython-313.pyc          | Bin 2033 -> 0 bytes
+ .../__pycache__/event_dispatcher.cpython-313.pyc   | Bin 4713 -> 0 bytes
+ .../__pycache__/event_merge.cpython-313.pyc        | Bin 4896 -> 0 bytes
+ .../execution_controller.cpython-313.pyc           | Bin 6227 -> 0 bytes
+ .../execution_dispatcher.cpython-313.pyc           | Bin 2177 -> 0 bytes
+ .../__pycache__/execution_merge.cpython-313.pyc    | Bin 4506 -> 0 bytes
+ .../__pycache__/execution_state.cpython-313.pyc    | Bin 2865 -> 0 bytes
+ .../__pycache__/finalize_v2_guard.cpython-313.pyc  | Bin 2166 -> 0 bytes
+ .../__pycache__/finalize_v2_status.cpython-313.pyc | Bin 379 -> 0 bytes
+ .../__pycache__/launcher.cpython-313.pyc           | Bin 2680 -> 0 bytes
+ .../__pycache__/legacy_cleanup.cpython-313.pyc     | Bin 982 -> 0 bytes
+ .../__pycache__/locations.cpython-313.pyc          | Bin 3571 -> 0 bytes
+ .../__pycache__/protocol.cpython-313.pyc           | Bin 5147 -> 0 bytes
+ .../__pycache__/request_dispatcher.cpython-313.pyc | Bin 4510 -> 0 bytes
+ .../response_dispatcher.cpython-313.pyc            | Bin 2571 -> 0 bytes
+ .../__pycache__/response_merge.cpython-313.pyc     | Bin 4502 -> 0 bytes
+ .../__pycache__/scopes.cpython-313.pyc             | Bin 5640 -> 0 bytes
+ .../__pycache__/server.cpython-313.pyc             | Bin 4823 -> 0 bytes
+ .../__pycache__/session.cpython-313.pyc            | Bin 2335 -> 0 bytes
+ .../__pycache__/source_map.cpython-313.pyc         | Bin 6842 -> 0 bytes
+ .../__pycache__/stack_frames.cpython-313.pyc       | Bin 7060 -> 0 bytes
+ .../__pycache__/state_machine.cpython-313.pyc      | Bin 2761 -> 0 bytes
+ .../__pycache__/threads.cpython-313.pyc            | Bin 5096 -> 0 bytes
+ .../__pycache__/validation.cpython-313.pyc         | Bin 3553 -> 0 bytes
+ .../variable_references.cpython-313.pyc            | Bin 6565 -> 0 bytes
+ .../__pycache__/variable_store.cpython-313.pyc     | Bin 6762 -> 0 bytes
+ .../__pycache__/variables.cpython-313.pyc          | Bin 1173 -> 0 bytes
+ .../__pycache__/variables_core.cpython-313.pyc     | Bin 6432 -> 0 bytes
+ .../__pycache__/watch_expressions.cpython-313.pyc  | Bin 5493 -> 0 bytes
+ .panther/tools/panther_cli.py                      |   0
+ benchmarks/panther_benchmark.py                    |   0
+ cli/__pycache__/__init__.cpython-313.pyc           | Bin 146 -> 148 bytes
+ cli/__pycache__/version.cpython-313.pyc            | Bin 269 -> 271 bytes
+ cli/panther_cli.py                                 |  12 +-
+ cli/panther_cli_v2.py                              | 190 -----
+ compiler/__pycache__/__init__.cpython-313.pyc      | Bin 151 -> 153 bytes
+ compiler/__pycache__/version.cpython-313.pyc       | Bin 274 -> 240 bytes
+ compiler/ast/__pycache__/__init__.cpython-313.pyc  | Bin 2148 -> 2150 bytes
+ compiler/ast/__pycache__/base.cpython-313.pyc      | Bin 2537 -> 2539 bytes
+ .../ast/__pycache__/expressions.cpython-313.pyc    | Bin 10470 -> 10472 bytes
+ compiler/ast/__pycache__/program.cpython-313.pyc   | Bin 3057 -> 3059 bytes
+ .../ast/__pycache__/serializer.cpython-313.pyc     | Bin 1887 -> 1889 bytes
+ .../ast/__pycache__/statements.cpython-313.pyc     | Bin 12401 -> 12403 bytes
+ compiler/ast/__pycache__/visitor.cpython-313.pyc   | Bin 1019 -> 1021 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 164 -> 130 bytes
+ .../control_flow_engine.cpython-313.pyc            | Bin 3366 -> 3332 bytes
+ compiler/diagnostics/diagnostics.py                |  26 -
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 163 -> 129 bytes
+ .../__pycache__/expression_engine.cpython-313.pyc  | Bin 6137 -> 6103 bytes
+ compiler/expressions/expression_engine.py          |   0
+ .../functions/__pycache__/__init__.cpython-313.pyc | Bin 161 -> 127 bytes
+ .../__pycache__/functions_engine.cpython-313.pyc   | Bin 2116 -> 2082 bytes
+ compiler/incremental/incremental_compiler.py       |  32 -
+ .../lexer/__pycache__/__init__.cpython-313.pyc     | Bin 383 -> 385 bytes
+ compiler/lexer/__pycache__/lexer.cpython-313.pyc   | Bin 13708 -> 13822 bytes
+ compiler/lexer/__pycache__/tokens.cpython-313.pyc  | Bin 4958 -> 4960 bytes
+ compiler/lexer/lexer.py                            |   6 +-
+ compiler/lexer/panther_lex.py                      |   0
+ .../loops/__pycache__/__init__.cpython-313.pyc     | Bin 157 -> 123 bytes
+ .../loops/__pycache__/loops_engine.cpython-313.pyc | Bin 3022 -> 2988 bytes
+ .../modules/__pycache__/__init__.cpython-313.pyc   | Bin 159 -> 125 bytes
+ .../__pycache__/modules_engine.cpython-313.pyc     | Bin 1315 -> 1281 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 164 -> 130 bytes
+ .../__pycache__/optimizer.cpython-313.pyc          | Bin 2256 -> 2222 bytes
+ .../parser/__pycache__/__init__.cpython-313.pyc    | Bin 931 -> 933 bytes
+ .../__pycache__/block_parser.cpython-313.pyc       | Bin 8317 -> 8319 bytes
+ compiler/parser/__pycache__/cursor.cpython-313.pyc | Bin 1840 -> 1842 bytes
+ .../parser/__pycache__/diagnostics.cpython-313.pyc | Bin 5483 -> 5485 bytes
+ .../parser/__pycache__/parse_error.cpython-313.pyc | Bin 3813 -> 3815 bytes
+ .../parser/__pycache__/parser_base.cpython-313.pyc | Bin 8471 -> 8473 bytes
+ .../__pycache__/parser_context.cpython-313.pyc     | Bin 3755 -> 3757 bytes
+ .../__pycache__/parser_result.cpython-313.pyc      | Bin 1840 -> 1842 bytes
+ .../__pycache__/program_parser.cpython-313.pyc     | Bin 7957 -> 7959 bytes
+ .../__pycache__/statement_parser.cpython-313.pyc   | Bin 32630 -> 32632 bytes
+ .../__pycache__/token_stream.cpython-313.pyc       | Bin 8228 -> 8230 bytes
+ compiler/pipeline/panther_compiler.py              |   0
+ compiler/runtime/execution_pipeline.py             |  27 +-
+ compiler/runtime/statement_executor.py             |   2 +-
+ compiler/runtime_bridge/__init__.py                |   0
+ compiler/runtime_bridge/runtime_bridge.py          |  11 -
+ compiler/runtime_bridge/runtime_runner.py          |  47 --
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 348 -> 314 bytes
+ .../__pycache__/contract.cpython-313.pyc           | Bin 1497 -> 1463 bytes
+ compiler/semantic/analyzer.py                      | 143 +++-
+ compiler/semantic/symbol_table.py                  |   5 +-
+ .../stdlib/__pycache__/__init__.cpython-313.pyc    | Bin 282 -> 284 bytes
+ .../__pycache__/stdlib_engine.cpython-313.pyc      | Bin 5027 -> 4993 bytes
+ compiler/stdlib/functions.py                       | 771 ++++++++++++++++++++-
+ .../structs/__pycache__/__init__.cpython-313.pyc   | Bin 159 -> 125 bytes
+ .../__pycache__/structs_engine.cpython-313.pyc     | Bin 1401 -> 1367 bytes
+ compiler/types/checker.py                          |   6 +
+ debug_adapter/__pycache__/__init__.cpython-313.pyc | Bin 748 -> 750 bytes
+ .../__pycache__/breakpoint_store.cpython-313.pyc   | Bin 2393 -> 2395 bytes
+ .../__pycache__/breakpoints.cpython-313.pyc        | Bin 10676 -> 10678 bytes
+ .../__pycache__/dispatcher.cpython-313.pyc         | Bin 4502 -> 4504 bytes
+ .../dispatcher_contract.cpython-313.pyc            | Bin 2058 -> 2060 bytes
+ debug_adapter/__pycache__/evaluate.cpython-313.pyc | Bin 5490 -> 5492 bytes
+ .../__pycache__/event_bus.cpython-313.pyc          | Bin 2033 -> 2035 bytes
+ .../__pycache__/event_dispatcher.cpython-313.pyc   | Bin 4713 -> 4715 bytes
+ .../__pycache__/event_merge.cpython-313.pyc        | Bin 4896 -> 4898 bytes
+ .../execution_controller.cpython-313.pyc           | Bin 6227 -> 6229 bytes
+ .../execution_dispatcher.cpython-313.pyc           | Bin 2177 -> 2179 bytes
+ .../__pycache__/execution_merge.cpython-313.pyc    | Bin 4506 -> 4508 bytes
+ .../__pycache__/execution_state.cpython-313.pyc    | Bin 2865 -> 2867 bytes
+ .../__pycache__/finalize_v2_guard.cpython-313.pyc  | Bin 2166 -> 2168 bytes
+ .../__pycache__/finalize_v2_status.cpython-313.pyc | Bin 379 -> 381 bytes
+ debug_adapter/__pycache__/launcher.cpython-313.pyc | Bin 2680 -> 2682 bytes
+ .../__pycache__/legacy_cleanup.cpython-313.pyc     | Bin 982 -> 984 bytes
+ .../__pycache__/locations.cpython-313.pyc          | Bin 3571 -> 3573 bytes
+ debug_adapter/__pycache__/protocol.cpython-313.pyc | Bin 5147 -> 5149 bytes
+ .../__pycache__/request_dispatcher.cpython-313.pyc | Bin 4510 -> 4512 bytes
+ .../response_dispatcher.cpython-313.pyc            | Bin 2571 -> 2573 bytes
+ .../__pycache__/response_merge.cpython-313.pyc     | Bin 4502 -> 4504 bytes
+ debug_adapter/__pycache__/scopes.cpython-313.pyc   | Bin 5640 -> 5642 bytes
+ debug_adapter/__pycache__/server.cpython-313.pyc   | Bin 4823 -> 4825 bytes
+ debug_adapter/__pycache__/session.cpython-313.pyc  | Bin 2335 -> 2337 bytes
+ .../__pycache__/source_map.cpython-313.pyc         | Bin 6842 -> 6844 bytes
+ .../__pycache__/stack_frames.cpython-313.pyc       | Bin 7060 -> 7062 bytes
+ .../__pycache__/state_machine.cpython-313.pyc      | Bin 2761 -> 2763 bytes
+ debug_adapter/__pycache__/threads.cpython-313.pyc  | Bin 5096 -> 5098 bytes
+ .../__pycache__/validation.cpython-313.pyc         | Bin 3553 -> 3555 bytes
+ .../variable_references.cpython-313.pyc            | Bin 6565 -> 6567 bytes
+ .../__pycache__/variable_store.cpython-313.pyc     | Bin 6762 -> 6764 bytes
+ .../__pycache__/variables.cpython-313.pyc          | Bin 1173 -> 1175 bytes
+ .../__pycache__/variables_core.cpython-313.pyc     | Bin 6432 -> 6434 bytes
+ .../__pycache__/watch_expressions.cpython-313.pyc  | Bin 5493 -> 5495 bytes
+ debug_adapter_bridge/__init__.py                   |   1 -
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 163 -> 0 bytes
+ .../__pycache__/evaluate.cpython-313.pyc           | Bin 215 -> 0 bytes
+ .../__pycache__/event_bus.cpython-313.pyc          | Bin 217 -> 0 bytes
+ .../__pycache__/event_dispatcher.cpython-313.pyc   | Bin 231 -> 0 bytes
+ .../__pycache__/protocol.cpython-313.pyc           | Bin 215 -> 0 bytes
+ .../__pycache__/request_dispatcher.cpython-313.pyc | Bin 235 -> 0 bytes
+ .../__pycache__/server.cpython-313.pyc             | Bin 211 -> 0 bytes
+ .../__pycache__/session.cpython-313.pyc            | Bin 213 -> 0 bytes
+ .../__pycache__/variable_store.cpython-313.pyc     | Bin 227 -> 0 bytes
+ debug_adapter_bridge/evaluate.py                   |   1 -
+ debug_adapter_bridge/event_bus.py                  |   1 -
+ debug_adapter_bridge/event_dispatcher.py           |   1 -
+ debug_adapter_bridge/execution_dispatcher.py       |   1 -
+ debug_adapter_bridge/launcher.py                   |   1 -
+ debug_adapter_bridge/protocol.py                   |   1 -
+ debug_adapter_bridge/request_dispatcher.py         |   1 -
+ debug_adapter_bridge/response_dispatcher.py        |   1 -
+ debug_adapter_bridge/scopes.py                     |   1 -
+ debug_adapter_bridge/server.py                     |   1 -
+ debug_adapter_bridge/session.py                    |   1 -
+ debug_adapter_bridge/stack_frames.py               |   1 -
+ debug_adapter_bridge/threads.py                    |   1 -
+ debug_adapter_bridge/variable_references.py        |   1 -
+ debug_adapter_bridge/variable_store.py             |   1 -
+ debug_adapter_bridge/variables_core.py             |   1 -
+ debug_adapter_bridge/watch_expressions.py          |   1 -
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 551 -> 553 bytes
+ .../__pycache__/evaluate.cpython-313.pyc           | Bin 1764 -> 1766 bytes
+ .../__pycache__/event_bus.cpython-313.pyc          | Bin 2041 -> 2043 bytes
+ .../__pycache__/event_dispatcher.cpython-313.pyc   | Bin 3544 -> 3546 bytes
+ .../execution_dispatcher.cpython-313.pyc           | Bin 3137 -> 3139 bytes
+ .../__pycache__/launcher.cpython-313.pyc           | Bin 1079 -> 1081 bytes
+ .../__pycache__/protocol.cpython-313.pyc           | Bin 6077 -> 6079 bytes
+ .../__pycache__/request_dispatcher.cpython-313.pyc | Bin 4345 -> 4347 bytes
+ .../response_dispatcher.cpython-313.pyc            | Bin 1196 -> 1198 bytes
+ .../__pycache__/scopes.cpython-313.pyc             | Bin 1369 -> 1371 bytes
+ .../__pycache__/server.cpython-313.pyc             | Bin 1534 -> 1536 bytes
+ .../__pycache__/session.cpython-313.pyc            | Bin 2343 -> 2345 bytes
+ .../__pycache__/stack_frames.cpython-313.pyc       | Bin 1783 -> 1785 bytes
+ .../__pycache__/threads.cpython-313.pyc            | Bin 1242 -> 1244 bytes
+ .../variable_references.cpython-313.pyc            | Bin 1279 -> 1281 bytes
+ .../__pycache__/variable_store.cpython-313.pyc     | Bin 1977 -> 1979 bytes
+ .../__pycache__/variables_core.cpython-313.pyc     | Bin 1971 -> 1973 bytes
+ .../__pycache__/watch_expressions.cpython-313.pyc  | Bin 1265 -> 1267 bytes
+ examples/file_manager/main.pan                     |  89 ++-
+ fuzz_tests/panther_fuzzer.py                       |   0
+ install.sh                                         |   0
+ installers/linux/install_panther.sh                |   0
+ installers/linux/uninstall_panther.sh              |   0
+ installers/macos/install_panther.command           |   0
+ installers/native/install_native_linux.sh          |   0
+ language/agents/runtime/agent_runtime.py           |   0
+ language/ai/runtime/ai_runtime.py                  |   0
+ language/cli/panther.py                            |   0
+ language/cli/panther.py.bak                        |   0
+ .../compiler/__pycache__/__init__.cpython-313.pyc  | Bin 160 -> 162 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 717 -> 719 bytes
+ .../__pycache__/cost_model.cpython-313.pyc         | Bin 3225 -> 3227 bytes
+ .../ai_optimization/__pycache__/ir.cpython-313.pyc | Bin 3088 -> 3090 bytes
+ .../__pycache__/optimizer.cpython-313.pyc          | Bin 6754 -> 6756 bytes
+ .../__pycache__/passes.cpython-313.pyc             | Bin 6489 -> 6491 bytes
+ .../__pycache__/ai_optimizer.cpython-313.pyc       | Bin 11085 -> 11087 bytes
+ .../compiler/ai_optimizer/runtime/ai_optimizer.py  |   0
+ .../ast/__pycache__/__init__.cpython-313.pyc       | Bin 322 -> 324 bytes
+ .../ast/__pycache__/ast_builder.cpython-313.pyc    | Bin 1152 -> 1154 bytes
+ .../compiler/ast/__pycache__/nodes.cpython-313.pyc | Bin 2780 -> 2782 bytes
+ .../core/__pycache__/__init__.cpython-313.pyc      | Bin 165 -> 167 bytes
+ .../core/__pycache__/tokenizer.cpython-313.pyc     | Bin 4709 -> 4711 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 387 -> 389 bytes
+ .../incremental_compiler.cpython-313.pyc           | Bin 14694 -> 14696 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 616 -> 618 bytes
+ .../ai_optimizer_integration.cpython-313.pyc       | Bin 692 -> 694 bytes
+ .../__pycache__/async_integration.cpython-313.pyc  | Bin 4059 -> 4061 bytes
+ .../__pycache__/compiler_framework.cpython-313.pyc | Bin 14059 -> 14061 bytes
+ .../__pycache__/e2e_compiler.cpython-313.pyc       | Bin 1550 -> 1552 bytes
+ .../native_backend_integration.cpython-313.pyc     | Bin 720 -> 722 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 714 -> 716 bytes
+ .../__pycache__/backend.cpython-313.pyc            | Bin 4726 -> 4728 bytes
+ .../__pycache__/emitter.cpython-313.pyc            | Bin 3254 -> 3256 bytes
+ .../__pycache__/ir_model.cpython-313.pyc           | Bin 2907 -> 2909 bytes
+ .../__pycache__/linker.cpython-313.pyc             | Bin 3094 -> 3096 bytes
+ .../__pycache__/target.cpython-313.pyc             | Bin 3540 -> 3542 bytes
+ .../parsers/__pycache__/__init__.cpython-313.pyc   | Bin 405 -> 407 bytes
+ .../__pycache__/agent_parser.cpython-313.pyc       | Bin 1659 -> 1661 bytes
+ .../parsers/__pycache__/api_parser.cpython-313.pyc | Bin 816 -> 818 bytes
+ .../parsers/__pycache__/app_parser.cpython-313.pyc | Bin 1105 -> 1107 bytes
+ .../__pycache__/block_utils.cpython-313.pyc        | Bin 1545 -> 1547 bytes
+ .../__pycache__/model_parser.cpython-313.pyc       | Bin 1583 -> 1585 bytes
+ .../__pycache__/page_parser.cpython-313.pyc        | Bin 1243 -> 1245 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 391 -> 393 bytes
+ .../advanced_type_inference.cpython-313.pyc        | Bin 28360 -> 28362 bytes
+ .../workspace/__pycache__/__init__.cpython-313.pyc | Bin 367 -> 369 bytes
+ .../__pycache__/workspace_manager.cpython-313.pyc  | Bin 16937 -> 16939 bytes
+ .../distributed/runtime/distributed_runtime.py     |   0
+ language/memory/runtime/memory_runtime.py          |   0
+ language/nlp/runtime/intent_compiler.py            |   0
+ language/packages/runtime/package_manager.py       |   0
+ language/pkg/panther_pkg.py                        |   0
+ .../runtime/__pycache__/__init__.cpython-313.pyc   | Bin 251 -> 253 bytes
+ .../__pycache__/panther_runtime.cpython-313.pyc    | Bin 1838 -> 1840 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 564 -> 566 bytes
+ .../__pycache__/runtime.cpython-313.pyc            | Bin 5647 -> 5649 bytes
+ .../__pycache__/scheduler.cpython-313.pyc          | Bin 4874 -> 4876 bytes
+ .../async_runtime/__pycache__/task.cpython-313.pyc | Bin 7133 -> 7135 bytes
+ language/types/static_analysis/type_analyzer.py    |   0
+ native_executables/native_builder.py               | 154 ++--
+ optimizer/compiler_optimizer.py                    |   0
+ optimizer/passes/advanced_optimizer.py             |   0
+ package_manager/package_cli.py                     |   0
+ package_manager/package_manager.py                 |  52 --
+ panther_core/__pycache__/__init__.cpython-313.pyc  | Bin 406 -> 408 bytes
+ panther_core/__pycache__/version.cpython-313.pyc   | Bin 795 -> 797 bytes
+ pantherlang-icon.png                               | Bin 1833270 -> 1833270 bytes
+ project_templates/template_cli.py                  |   0
+ pyproject.toml                                     |   2 +-
+ qa/enterprise_tests/enterprise_suite.py            |   0
+ registry/registry_cli.py                           |   0
+ release_engineering/release_engine.py              |   0
+ runtime/__pycache__/__init__.cpython-313.pyc       | Bin 150 -> 116 bytes
+ runtime/__pycache__/version.cpython-313.pyc        | Bin 273 -> 239 bytes
+ .../agents/__pycache__/__init__.cpython-313.pyc    | Bin 157 -> 123 bytes
+ runtime/agents/__pycache__/agent.cpython-313.pyc   | Bin 2905 -> 3329 bytes
+ .../__pycache__/agent_context.cpython-313.pyc      | Bin 1882 -> 1848 bytes
+ .../__pycache__/agent_executor.cpython-313.pyc     | Bin 2105 -> 2071 bytes
+ .../__pycache__/agent_registry.cpython-313.pyc     | Bin 1895 -> 1861 bytes
+ runtime/agents/agent.py                            |  25 +-
+ runtime/agents/agent_api.py                        |   0
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 161 -> 127 bytes
+ .../__pycache__/ai_runtime.cpython-313.pyc         | Bin 4369 -> 4649 bytes
+ .../__pycache__/runtime_config.cpython-313.pyc     | Bin 1084 -> 1050 bytes
+ .../__pycache__/runtime_context.cpython-313.pyc    | Bin 1817 -> 1783 bytes
+ .../__pycache__/runtime_events.cpython-313.pyc     | Bin 2188 -> 2154 bytes
+ .../__pycache__/runtime_session.cpython-313.pyc    | Bin 2123 -> 2089 bytes
+ runtime/ai_runtime/ai_runtime.py                   |  23 +-
+ runtime/ai_runtime/runtime_api.py                  |   0
+ .../__pycache__/state_engine.cpython-313.pyc       | Bin 1965 -> 1931 bytes
+ .../distributed_runtime.cpython-313.pyc            | Bin 1601 -> 1567 bytes
+ .../__pycache__/final_runtime.cpython-313.pyc      | Bin 4675 -> 4641 bytes
+ .../memory/__pycache__/__init__.cpython-313.pyc    | Bin 157 -> 123 bytes
+ .../memory/__pycache__/memory_cell.cpython-313.pyc | Bin 1489 -> 1455 bytes
+ .../__pycache__/memory_store.cpython-313.pyc       | Bin 3194 -> 3160 bytes
+ runtime/memory/memory_api.py                       |   0
+ .../multi_agent/__pycache__/bus.cpython-313.pyc    | Bin 1969 -> 1935 bytes
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 269 -> 235 bytes
+ runtime/panther_vm/__pycache__/vm.cpython-313.pyc  | Bin 1435 -> 1739 bytes
+ runtime/panther_vm/vm.py                           |  20 +-
+ .../__pycache__/plugin_system.cpython-313.pyc      | Bin 1597 -> 1563 bytes
+ .../sandbox/__pycache__/sandbox.cpython-313.pyc    | Bin 1481 -> 3112 bytes
+ runtime/sandbox/sandbox.py                         |  59 +-
+ .../__pycache__/scheduler.cpython-313.pyc          | Bin 1419 -> 1385 bytes
+ scripts/run_examples.sh                            |   0
+ scripts/verify_H4_1_part1_debug_adapter_core.py    |   0
+ stress_tests/stress_runner.py                      |   0
+ templates/api/main.panther                         |   1 -
+ templates/basic_app/README.md                      |   3 -
+ templates/console/main.panther                     |   1 -
+ templates/web/main.panther                         |   1 -
+ ...p2_batch1_contract.cpython-313-pytest-9.1.1.pyc | Bin 7341 -> 7343 bytes
+ ...p2_batch2_protocol.cpython-313-pytest-9.1.1.pyc | Bin 11238 -> 11240 bytes
+ ..._p2_batch3_session.cpython-313-pytest-9.1.1.pyc | Bin 5135 -> 5137 bytes
+ ...t_p2_batch4_events.cpython-313-pytest-9.1.1.pyc | Bin 12030 -> 12032 bytes
+ ...batch5_dispatchers.cpython-313-pytest-9.1.1.pyc | Bin 12409 -> 12411 bytes
+ ...t_p2_batch6_server.cpython-313-pytest-9.1.1.pyc | Bin 3385 -> 3387 bytes
+ ..._batch7_data_model.cpython-313-pytest-9.1.1.pyc | Bin 13920 -> 13922 bytes
+ ...gration_regression.cpython-313-pytest-9.1.1.pyc | Bin 18412 -> 18414 bytes
+ ..._run_import_switch.cpython-313-pytest-9.1.1.pyc | Bin 16569 -> 16579 bytes
+ ...ch5_sandbox_switch.cpython-313-pytest-9.1.1.pyc | Bin 8276 -> 8278 bytes
+ ...tion_debug_adapter.cpython-313-pytest-9.1.1.pyc | Bin 9682 -> 9684 bytes
+ .../test_p3_batch3_dry_run_import_switch.py        |  16 +-
+ .../test_r3_batch2_part1_contract.py               |   4 +-
+ .../test_assignment_execution_pipeline.py          |   2 +-
+ tests/phase2_batch2_5/test_functions_foundation.py |   2 +-
+ .../test_struct_enum_trait_foundation.py           |   3 +
+ tests/phase4_batch4_1/test_type_inference_truth.py |   4 +-
+ ...st_phase5_manifest.cpython-313-pytest-9.1.1.pyc | Bin 5009 -> 5011 bytes
+ ...est_memory_runtime.cpython-313-pytest-9.1.1.pyc | Bin 8795 -> 8797 bytes
+ ...test_agent_runtime.cpython-313-pytest-9.1.1.pyc | Bin 9421 -> 9423 bytes
+ ...st_intent_compiler.cpython-313-pytest-9.1.1.pyc | Bin 8460 -> 8462 bytes
+ .../test_ai_optimizer.cpython-313-pytest-9.1.1.pyc | Bin 7970 -> 7972 bytes
+ ...istributed_runtime.cpython-313-pytest-9.1.1.pyc | Bin 8329 -> 8331 bytes
+ ...st_package_manager.cpython-313-pytest-9.1.1.pyc | Bin 7067 -> 7069 bytes
+ ...est_final_compiler.cpython-313-pytest-9.1.1.pyc | Bin 9763 -> 9765 bytes
+ ...expressions_engine.cpython-313-pytest-9.1.1.pyc | Bin 9010 -> 9012 bytes
+ .../test_control_flow.cpython-313-pytest-9.1.1.pyc | Bin 5748 -> 5750 bytes
+ .../test_functions.cpython-313-pytest-9.1.1.pyc    | Bin 6279 -> 6281 bytes
+ .../test_structs.cpython-313-pytest-9.1.1.pyc      | Bin 5126 -> 5128 bytes
+ .../test_modules.cpython-313-pytest-9.1.1.pyc      | Bin 7169 -> 7171 bytes
+ .../test_stdlib.cpython-313-pytest-9.1.1.pyc       | Bin 6809 -> 6811 bytes
+ ...est_runtime_bridge.cpython-313-pytest-9.1.1.pyc | Bin 8101 -> 7540 bytes
+ tests/phase6_18/test_runtime_bridge.py             |   4 +-
+ ...mental_compilation.cpython-313-pytest-9.1.1.pyc | Bin 18511 -> 18513 bytes
+ ...oduction_readiness.cpython-313-pytest-9.1.1.pyc | Bin 6284 -> 6286 bytes
+ ..._workspace_manager.cpython-313-pytest-9.1.1.pyc | Bin 11473 -> 11475 bytes
+ ...ced_type_inference.cpython-313-pytest-9.1.1.pyc | Bin 17072 -> 17074 bytes
+ ...test_async_runtime.cpython-313-pytest-9.1.1.pyc | Bin 15717 -> 15719 bytes
+ ...est_native_backend.cpython-313-pytest-9.1.1.pyc | Bin 9493 -> 9495 bytes
+ ...piler_optimization.cpython-313-pytest-9.1.1.pyc | Bin 11150 -> 11152 bytes
+ .../test_ai_runtime.cpython-313-pytest-9.1.1.pyc   | Bin 5127 -> 5129 bytes
+ ...test_final_runtime.cpython-313-pytest-9.1.1.pyc | Bin 7689 -> 7691 bytes
+ .../test_cli_run.cpython-313-pytest-9.1.1.pyc      | Bin 15012 -> 15014 bytes
+ ...test_native_memory.cpython-313-pytest-9.1.1.pyc | Bin 8072 -> 8074 bytes
+ ...st_agent_execution.cpython-313-pytest-9.1.1.pyc | Bin 4859 -> 4861 bytes
+ ...t_production_build.cpython-313-pytest-9.1.1.pyc | Bin 4439 -> 4441 bytes
+ toolchain/__pycache__/__init__.cpython-313.pyc     | Bin 152 -> 154 bytes
+ toolchain/__pycache__/version.cpython-313.pyc      | Bin 275 -> 277 bytes
+ toolchain/cache/build_cache.py                     |   0
+ toolchain/cache/cache_cli.py                       |   0
+ .../cross_platform/cross_platform_toolchain.py     |   0
+ toolchain/final/final_toolchain.py                 |   0
+ toolchain/packager/artifact_packager.py            |   0
+ toolchain/production_toolchain.py                  |   0
+ tools/debugger/panther_debugger.py                 |   0
+ tools/docgen/panther_docgen.py                     | 106 ++-
+ tools/formatter/panther_fmt.py                     |  74 +-
+ tools/lsp/panther_lsp.py                           |  55 +-
+ tools/panther-regression/panther_regression.py     |   0
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 289 -> 291 bytes
+ .../__pycache__/runner.cpython-313.pyc             | Bin 4312 -> 4314 bytes
+ tools/project_runner/panther_build.py              |   0
+ tools/project_runner/panther_debug.py              |   0
+ .../__pycache__/__init__.cpython-313.pyc           | Bin 279 -> 281 bytes
+ .../__pycache__/wizard.cpython-313.pyc             | Bin 4470 -> 4472 bytes
+ tools/project_wizard/panther_new.py                |   0
+ vscode-extension/assets/pantherlang-icon.png       | Bin 1833270 -> 1833270 bytes
+ vscode-extension/icons/pantherlang-icon.png        | Bin 1833270 -> 1833270 bytes
+ vscode-extension/package-lock.json                 |   4 +-
+ vscode-extension/package.json                      |   2 +-
+ vscode-extension/project_templates/template_cli.py |   0
+ .../tools/project_wizard/panther_new.py            |   0
+ vscode_extension/extension.js                      |  28 -
+ vscode_extension/language-configuration.json       |   1 -
+ vscode_extension/package.json                      |  17 -
+ vscode_extension/pantherlang-1.0.0.vsix            | Bin 2362 -> 0 bytes
+ vscode_extension/syntaxes/panther.tmLanguage.json  |   1 -
+ 403 files changed, 1427 insertions(+), 627 deletions(-)

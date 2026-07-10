@@ -231,7 +231,7 @@ def test_execute_source_undefined_variable():
     source = 'panther main { print(z); }'
     result = execute_source(source)
     assert result.error is not None
-    assert "Undefined variable" in result.error
+    assert "Undefined symbol" in result.error
 
 
 def test_execute_source_multiple_blocks():

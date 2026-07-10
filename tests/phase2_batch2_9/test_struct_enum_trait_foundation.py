@@ -149,6 +149,9 @@ panther main {
     assert result.captured_output == ["ok"]
 
 
+
+
+
 def test_struct_in_expression():
     source = '''
 panther main {

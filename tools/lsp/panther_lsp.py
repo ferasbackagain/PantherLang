@@ -3,42 +3,54 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 
 KEYWORDS = {
-    "module", "import", "struct", "fn", "let", "if", "for", "print",
-    "agent", "runtime", "package", "memory", "intent"
+    "module", "import", "struct", "fn", "let", "if", "else", "elif",
+    "for", "while", "loop", "break", "continue", "return", "print",
+    "assert", "trait", "enum", "const", "agent", "runtime", "memory",
+    "intent", "true", "false", "null", "and", "or", "not", "in",
 }
 
 
 def diagnostics(source: str) -> list[dict]:
-    items = []
-    stack = []
-    for lineno, line in enumerate(source.splitlines(), start=1):
+    items: list[dict] = []
+    stack: list[tuple[int, str]] = []
+    lines = source.splitlines()
+    for lineno, line in enumerate(lines, start=1):
         stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
         if stripped.endswith("{"):
             stack.append((lineno, "{"))
-        if stripped == "}":
+        if stripped == "}" or stripped.startswith("}"):
             if stack:
                 stack.pop()
             else:
                 items.append({
                     "line": lineno,
                     "severity": "error",
-                    "message": "Unexpected closing brace"
+                    "message": "Unexpected closing brace",
                 })
         if stripped.startswith("let ") and "=" not in stripped:
             items.append({
                 "line": lineno,
                 "severity": "error",
-                "message": "Invalid let statement: missing '='"
+                "message": "Invalid let statement: missing '='",
+            })
+        if stripped.startswith("fn ") and not stripped.endswith("{"):
+            items.append({
+                "line": lineno,
+                "severity": "warning",
+                "message": "Function declaration should end with '{'",
             })
     for lineno, _ in stack:
         items.append({
             "line": lineno,
             "severity": "error",
-            "message": "Unclosed block"
+            "message": "Unclosed block",
         })
     return items
 
@@ -49,20 +61,29 @@ def completions(prefix: str = "") -> list[str]:
 
 def hover(word: str) -> dict:
     docs = {
-        "module": "Declares a PantherLang module.",
+        "module": "Declares a PantherLang module. Usage: `module name;`",
         "import": "Imports another Panther module.",
-        "struct": "Declares a structured data type.",
-        "fn": "Declares a function.",
-        "let": "Declares a variable.",
-        "print": "Prints a value.",
-        "agent": "Declares an AI agent.",
-        "runtime": "Declares runtime behavior."
+        "struct": "Declares a structured data type with named fields.",
+        "fn": "Declares a function. Usage: `fn name(params) { body }`",
+        "let": "Declares a variable with optional type annotation.",
+        "if": "Conditional branch: `if cond { ... } else { ... }`",
+        "for": "Iteration: `for i in iterable { ... }`",
+        "while": "Conditional loop: `while cond { ... }`",
+        "loop": "Infinite loop with `break`/`continue` support.",
+        "return": "Returns a value from a function.",
+        "print": "Prints a value to stdout.",
+        "trait": "Declares a trait (interface).",
+        "enum": "Declares an enumeration type.",
+        "const": "Declares a compile-time constant.",
+        "true": "Boolean literal `true`.",
+        "false": "Boolean literal `false`.",
+        "null": "Null literal.",
     }
     return {"word": word, "description": docs.get(word, "PantherLang symbol")}
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(prog="panther-lsp")
+    parser = argparse.ArgumentParser(prog="panther-lsp", description="PantherLang LSP CLI")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     diag = sub.add_parser("diagnostics")

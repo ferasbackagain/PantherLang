@@ -35,9 +35,10 @@ class SymbolTable:
         return self._current.lookup_local(name)
 
     def create_function_scope(
-        self, name: str, params: tuple[str, ...]
+        self, name: str, params: tuple[str, ...], declare: bool = True
     ) -> Scope:
-        self.declare(name, SymbolKind.FUNCTION)
+        if declare:
+            self.declare(name, SymbolKind.FUNCTION)
         fn_scope = self.enter_scope()
         for param in params:
             fn_scope.declare(param, SymbolKind.PARAMETER)

@@ -116,9 +116,9 @@ def test_runtime_function_runtime_type_error():
     }
     '''
     result = execute_source(source)
-    # This should produce PT001 error during execution
+    # This should produce T001 error during semantic analysis
     assert result.error is not None
-    assert "PT001" in result.error
+    assert "Operator '+' requires numeric operands" in result.error
 
 
 def test_runtime_expression_evaluator_type_errors():

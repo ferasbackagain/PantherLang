@@ -43,6 +43,18 @@ class SemanticAnalyzer:
         self.diagnostics: list[SemanticDiagnostic] = []
         self._in_loop = 0
         self._type_checker = TypeChecker_()
+        self._register_stdlib_symbols()
+
+    def _register_stdlib_symbols(self) -> None:
+        try:
+            from compiler.stdlib import get_stdlib_functions
+            for name in get_stdlib_functions():
+                try:
+                    self.symbols.declare(name, SymbolKind.FUNCTION, location=None)
+                except Exception:
+                    pass
+        except Exception:
+            pass
 
     def analyze(self, node: ASTNode) -> None:
         if isinstance(node, BlockNode):
@@ -100,9 +112,136 @@ class SemanticAnalyzer:
 
     def _visit_block(self, block: BlockNode) -> None:
         self.symbols.enter_scope()
+
+        # Pass 1: Register all declarations in this block
         for s in block.statements:
-            self._visit_statement(s)
+            self._register_declaration(s)
+
+        # Pass 2: Visit bodies/initializers
+        for s in block.statements:
+            self._visit_statement_body(s)
+
         self.symbols.exit_scope()
+
+    def _register_declaration(self, stmt: Statement) -> None:
+        """Register a declaration without visiting its body."""
+        if isinstance(stmt, VariableDeclaration):
+            try:
+                self.symbols.declare(stmt.name, SymbolKind.VARIABLE, _loc(stmt))
+            except Exception as exc:
+                self.diagnostics.append(SemanticError(
+                    message=str(exc),
+                    code="E003",
+                    location=_loc(stmt),
+                ))
+        elif isinstance(stmt, FunctionDeclaration):
+            try:
+                # Just declare the function name in current scope, don't create function scope yet
+                self.symbols.declare(stmt.name, SymbolKind.FUNCTION, _loc(stmt))
+                # NOTE: Return type checking is deferred to pass 2 when function scope exists
+            except Exception as exc:
+                self.diagnostics.append(SemanticError(
+                    message=str(exc),
+                    code="E004",
+                    location=_loc(stmt),
+                ))
+        elif isinstance(stmt, StructDeclaration):
+            existing = self.symbols.lookup_local(stmt.name)
+            if existing is not None:
+                self.diagnostics.append(SemanticError(
+                    message=f"Duplicate type '{stmt.name}'",
+                    code="E005",
+                    location=_loc(stmt),
+                ))
+                return
+            self.symbols.declare(stmt.name, SymbolKind.TYPE, _loc(stmt))
+        elif isinstance(stmt, EnumDeclaration):
+            existing = self.symbols.lookup_local(stmt.name)
+            if existing is not None:
+                self.diagnostics.append(SemanticError(
+                    message=f"Duplicate type '{stmt.name}'",
+                    code="E005",
+                    location=_loc(stmt),
+                ))
+                return
+            self.symbols.declare(stmt.name, SymbolKind.TYPE, _loc(stmt))
+        elif isinstance(stmt, TraitDeclaration):
+            existing = self.symbols.lookup_local(stmt.name)
+            if existing is not None:
+                self.diagnostics.append(SemanticError(
+                    message=f"Duplicate type '{stmt.name}'",
+                    code="E005",
+                    location=_loc(stmt),
+                ))
+                return
+            self.symbols.declare(stmt.name, SymbolKind.TYPE, _loc(stmt))
+        elif isinstance(stmt, ImportStatement):
+            name = stmt.alias if stmt.alias is not None else stmt.module_name.split(".")[-1]
+            try:
+                self.symbols.declare(name, SymbolKind.MODULE, _loc(stmt))
+            except Exception as exc:
+                self.diagnostics.append(SemanticError(
+                    message=str(exc),
+                    code="E006",
+                    location=_loc(stmt),
+                ))
+
+    def _visit_statement_body(self, stmt: Statement) -> None:
+        """Visit the body/initializer of a statement after all declarations are registered."""
+        if isinstance(stmt, VariableDeclaration):
+            self._visit_expression(stmt.initializer)
+            self._type_checker.check_variable_declaration(stmt)
+            self.diagnostics.extend(self._type_checker.diagnostics)
+            self._type_checker.diagnostics.clear()
+        elif isinstance(stmt, FunctionDeclaration):
+            self.symbols.create_function_scope(stmt.name, stmt.params, declare=False)
+            for i, param in enumerate(stmt.params):
+                p_type = stmt.param_types[i] if i < len(stmt.param_types) else None
+                if p_type is not None:
+                    self._type_checker.declare(param, self._type_checker.resolve_type_name(p_type))
+            # Check return types now that function scope exists
+            self._type_checker.check_function_declaration(stmt)
+            self.diagnostics.extend(self._type_checker.diagnostics)
+            self._type_checker.diagnostics.clear()
+            for s in (stmt.body or BlockNode()).statements:
+                self._visit_statement(s)
+            self.symbols.exit_scope()
+        elif isinstance(stmt, AssignmentStatement):
+            self._visit_assignment(stmt)
+        elif isinstance(stmt, PrintStatement):
+            self._visit_expression(stmt.expression)
+        elif isinstance(stmt, ReturnStatement):
+            self._visit_expression(stmt.expression)
+        elif isinstance(stmt, ExpressionStatement):
+            self._visit_expression(stmt.expression)
+        elif isinstance(stmt, IfStatement):
+            self._visit_if(stmt)
+        elif isinstance(stmt, WhileStatement):
+            self._visit_while(stmt)
+        elif isinstance(stmt, ForStatement):
+            self._visit_for(stmt)
+        elif isinstance(stmt, LoopStatement):
+            self._visit_loop(stmt)
+        elif isinstance(stmt, BreakStatement):
+            if self._in_loop == 0:
+                self.diagnostics.append(SemanticError(
+                    message="'break' outside loop",
+                    code="E001",
+                    location=_loc(stmt),
+                ))
+        elif isinstance(stmt, ContinueStatement):
+            if self._in_loop == 0:
+                self.diagnostics.append(SemanticError(
+                    message="'continue' outside loop",
+                    code="E002",
+                    location=_loc(stmt),
+                ))
+        elif isinstance(stmt, BlockNode):
+            self._visit_block(stmt)
+        elif isinstance(stmt, (StructDeclaration, EnumDeclaration, TraitDeclaration, ImportStatement)):
+            pass
+        else:
+            self._visit_statement(stmt)
 
     def _visit_variable_declaration(self, stmt: VariableDeclaration) -> None:
         try:
@@ -120,7 +259,7 @@ class SemanticAnalyzer:
 
     def _visit_function_declaration(self, stmt: FunctionDeclaration) -> None:
         try:
-            self.symbols.create_function_scope(stmt.name, stmt.params)
+            self.symbols.create_function_scope(stmt.name, stmt.params, declare=False)
             self._type_checker.check_function_declaration(stmt)
             self.diagnostics.extend(self._type_checker.diagnostics)
             self._type_checker.diagnostics.clear()

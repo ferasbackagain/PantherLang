@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 from typing import Iterable
 
+from compiler.stdlib.selfhost import apply_selfhosted_stdlib
+
 ROOT = Path(__file__).resolve().parents[1]
 
 _PANTHER_BANNER = """\033[1;34m  ____        _   _      _  __ _
@@ -27,7 +29,7 @@ def _get_version() -> str:
         info = get_release_info()
         return f"{info['version']} ({info['release_name']})"
     except Exception:
-        return "1.1.6"
+        return "1.1.7"
 
 
 def _print_help() -> int:
@@ -156,7 +158,7 @@ def _run(args: list[str]) -> int:
     if not src.exists():
         print(f"Source file not found: {src_args[0]}")
         return 2
-    source_text = src.read_text(encoding="utf-8")
+    source_text = src.read_text(encoding="utf-8-sig")
     if serve_mode:
         from compiler.runtime.execution_pipeline import serve_source
         result = serve_source(source_text)
@@ -195,7 +197,7 @@ def _build(args: list[str]) -> int:
 
 
 def _run_as_artifact(src: Path, out: Path) -> int:
-    source_text = src.read_text(encoding="utf-8")
+    source_text = src.read_text(encoding="utf-8-sig")
     from compiler.runtime import execute_source
     result = execute_source(source_text)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -223,7 +225,8 @@ def _check(args: list[str]) -> int:
     if not src.exists():
         print(f"Source file not found: {args[0]}")
         return 2
-    source_text = src.read_text(encoding="utf-8")
+    source_text = src.read_text(encoding="utf-8-sig")
+    source_text = apply_selfhosted_stdlib(source_text)
     from compiler.lexer import lex_source
     from compiler.parser import ProgramParser
     from compiler.parser.token_stream import TokenStream
@@ -304,7 +307,8 @@ def _fmt(args: list[str]) -> int:
     if not src.exists():
         print(f"Source file not found: {args[0]}")
         return 2
-    source_text = src.read_text(encoding="utf-8")
+    source_text = src.read_text(encoding="utf-8-sig")
+    source_text = apply_selfhosted_stdlib(source_text)
     from compiler.lexer import lex_source
     from compiler.parser import ProgramParser
     from compiler.parser.token_stream import TokenStream

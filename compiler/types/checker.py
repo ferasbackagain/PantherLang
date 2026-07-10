@@ -95,6 +95,12 @@ class TypeChecker:
             compare_ops = {">", ">=", "<", "<=", "==", "!="}
             logical_ops = {"&&", "||"}
             if expr.operator in numeric_ops:
+                # Allow + for string concatenation
+                if expr.operator == "+" and left is StringType and right is StringType:
+                    return StringType
+                # Allow string + any and any + string (common pattern with to_string, etc.)
+                if expr.operator == "+" and (left is StringType or right is StringType) and (left is StringType or left is AnyType) and (right is StringType or right is AnyType):
+                    return StringType
                 if left not in (IntType, FloatType, AnyType):
                     self._error(f"Operator '{expr.operator}' requires numeric operands, got {left}", expr)
                 if right not in (IntType, FloatType, AnyType):

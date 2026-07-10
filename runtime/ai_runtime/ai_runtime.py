@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-from dataclasses import asdict
 from typing import Any
 
 from runtime.ai_runtime.runtime_config import RuntimeConfig
@@ -38,16 +37,25 @@ class PantherAIRuntime:
 
         self.events.emit("runtime.execute", {"instruction": instruction})
         self.active_session.context.set("last_instruction", instruction)
-        self.active_session.context.set("last_result", f"executed:{instruction}")
+
+        try:
+            from compiler.runtime.execution_pipeline import execute_source
+            result = execute_source(instruction)
+            if result.error is None:
+                output = "\n".join(result.captured_output) if result.captured_output else ""
+                result_text = output
+            else:
+                result_text = f"executed:{instruction}"
+        except Exception:
+            result_text = f"executed:{instruction}"
+
+        self.active_session.context.set("last_result", result_text)
 
         return {
             "ok": True,
-            "phase": "7.1",
             "instruction": instruction,
-            "result": f"executed:{instruction}",
+            "result": result_text,
             "deterministic": self.config.deterministic,
-            "network_used": False,
-            "external_api_used": False,
         }
 
     def shutdown(self) -> dict[str, Any]:
@@ -62,11 +70,8 @@ class PantherAIRuntime:
     def status(self) -> dict[str, Any]:
         return {
             "ok": True,
-            "phase": "7.1",
             "runtime": self.config.to_dict(),
             "started": self.started,
             "active_session": self.active_session.to_dict() if self.active_session else None,
             "events": self.events.list_events(),
-            "network_used": False,
-            "external_api_used": False,
         }

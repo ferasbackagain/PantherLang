@@ -244,7 +244,7 @@ def test_parse_fn_call_undefined_function():
     source = 'panther main { undefined_fn(); }'
     result = execute_source(source)
     assert result.error is not None
-    assert "Undefined function" in result.error
+    assert "Undefined symbol" in result.error
 
 
 def test_parse_fn_compound_assign_in_body():

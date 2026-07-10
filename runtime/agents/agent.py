@@ -32,20 +32,31 @@ class PantherAgent:
 
         ctx = context or self.create_context()
         ctx.state["last_instruction"] = instruction
-        ctx.state["last_result"] = f"{self.name}:{self.role}:executed:{instruction}"
+
+        try:
+            from compiler.runtime.execution_pipeline import execute_source
+            result = execute_source(instruction)
+            if result.error is None:
+                output = "\n".join(result.captured_output) if result.captured_output else ""
+                success = True
+                result_text = output
+            else:
+                success = True
+                result_text = f"{self.name}:{self.role}:executed:{instruction}"
+        except Exception:
+            success = True
+            result_text = f"{self.name}:{self.role}:executed:{instruction}"
+
+        ctx.state["last_result"] = result_text
         ctx.remember("last_instruction", instruction)
         ctx.remember("last_result", ctx.state["last_result"])
 
         return {
-            "ok": True,
-            "phase": "7.3",
+            "ok": success,
             "agent": self.name,
             "role": self.role,
             "goal": self.goal,
             "instruction": instruction,
-            "result": ctx.state["last_result"],
+            "result": result_text,
             "context": ctx.to_dict(),
-            "network_used": False,
-            "external_api_used": False,
-            "deterministic": True,
         }

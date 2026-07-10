@@ -1,13 +1,13 @@
 from io import StringIO, BytesIO
 
-from debug_adapter_bridge.protocol import encode_message, read_message
-from debug_adapter_bridge.session import DebugSession
-from debug_adapter_bridge.event_bus import EventBus
-from debug_adapter_bridge.event_dispatcher import EventDispatcher
-from debug_adapter_bridge.request_dispatcher import RequestDispatcher
-from debug_adapter_bridge.server import DebugServer
-from debug_adapter_bridge.variable_store import VariableStore
-from debug_adapter_bridge.evaluate import EvaluateEngine
+from debug_adapter_rebuilt.protocol import encode_message, read_message
+from debug_adapter_rebuilt.session import DebugSession
+from debug_adapter_rebuilt.event_bus import EventBus
+from debug_adapter_rebuilt.event_dispatcher import EventDispatcher
+from debug_adapter_rebuilt.request_dispatcher import RequestDispatcher
+from debug_adapter_rebuilt.server import DebugServer
+from debug_adapter_rebuilt.variable_store import VariableStore
+from debug_adapter_rebuilt.evaluate import EvaluateEngine
 
 
 def test_bridge_protocol_roundtrip_string_and_bytes():

@@ -104,7 +104,7 @@ class PantherLexer:
                 self._add_token(TokenKind.PIPE_PIPE)
             else:
                 self._add_token(TokenKind.PIPE)
-        elif ch in (" ", "\r", "\t"):
+        elif ch in (" ", "\r", "\t", "\ufeff"):
             return
         elif ch == "\n":
             return
@@ -195,4 +195,8 @@ class PantherLexer:
 
 
 def lex_source(source: str) -> list[Token]:
+    # Windows editors and PowerShell may create UTF-8 BOM-prefixed files.
+    # Treat a leading BOM as metadata, not as PantherLang source text.
+    if source.startswith("\ufeff"):
+        source = source[1:]
     return PantherLexer(source).scan_tokens()

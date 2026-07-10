@@ -278,7 +278,7 @@ class StatementExecutor:
         self._env.define_type(stmt.name, stmt)
 
     def _execute_trait_declaration(self, stmt: TraitDeclaration) -> None:
-        pass
+        self._env.define_type(stmt.name, stmt)
 
     def _execute_function_declaration(self, stmt: FunctionDeclaration) -> None:
         self._env.define_function(stmt.name, self.make_function(stmt))
