@@ -29,7 +29,7 @@ def _get_version() -> str:
         info = get_release_info()
         return f"{info['version']} ({info['release_name']})"
     except Exception:
-        return "1.1.7"
+        return "1.1.8"
 
 
 def _print_help() -> int:

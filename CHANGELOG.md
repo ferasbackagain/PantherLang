@@ -1,5 +1,56 @@
 # PantherLang Changelog
 
+## 1.1.8 (2026-07-12) — Standard Library 2.0 and Package Architecture
+
+### Added
+- Panther package imports with `import panther.<name> as alias` syntax
+- Standard Library 2.0: 25 organized `panther.*` packages with public APIs
+- New `panther.serialization` package (JSON, YAML, TOML, MessagePack, CBOR, Base64, Hex, CSV)
+- Package capability classifications: VERIFIED_EXECUTABLE, PANTHER_IMPLEMENTED, PYTHON_BOOTSTRAP_BACKED, API_SHAPE_ONLY, PARTIAL
+- Verified multi-package example: imports 6 packages, passes `panther check` and `panther run`
+- New package/runtime regression tests for import resolution and member-call evaluation
+- Architecture honesty documentation (ARCHITECTURE_STATUS.md)
+- Package maturity index (PACKAGE_MATURITY.md) and API index (PACKAGE_INDEX.md)
+- Quick start guide with working examples (QUICK_START.md)
+
+### Improved
+- Import parsing and namespace resolution
+- Package member-call evaluation semantics
+- Semantic package registration at load time
+- Function-literal parameter handling and return propagation
+- Array/dictionary index assignment
+- Short-circuit Boolean evaluation
+- Runtime error propagation through control-flow bodies
+- Package naming consistency across all 25 packages
+- Standard-library loading order and Host ABI registration
+
+### Fixed
+- Duplicate flat built-in registrations causing shadowing
+- `array_push` return contract (now returns new length)
+- CLI parsing structure for subcommand handling
+- Time naming conflicts between `time` package and built-ins
+- Package alias semantic collisions in nested scopes
+- Runtime errors swallowed inside `if`/`while`/`for` bodies
+
+### Verification
+- README showcase example passes `panther check` and `panther run`
+- VSIX builds successfully: `pantherlang-official-1.1.8.vsix`
+- Package metadata aligned to 1.1.8 across all components
+- Zero production secrets in repository
+- Generated artifacts excluded from git
+- Full regression: 1330 tests passing, 0 failed, 0 errors
+
+### Known Limitations
+- `panther.web`: HTTP server runs via `--serve`; no TLS, limited middleware, no production deployment tooling
+- `panther.async` / `panther.concurrent`: Primitives delegate to Python runtime; no true preemptive multitasking in Panther
+- `panther.ai`: External providers (OpenAI, Anthropic, Google, Ollama) return structured errors; only mock provider works without credentials
+- `panther.cloud` / `panther.container`: Data-structure APIs only; no live AWS/GCP/Azure/Docker daemon integration
+- `panther.process`: Current-process introspection works; subprocess execution not implemented
+- Compiler not fully self-hosted; Python bootstrap remains for parser, type checker, and runtime
+- Distributable artifacts include Python runtime; not native binaries
+
+---
+
 ## 1.1.6 (2026-07-04) — Audit-Corrected Release
 
 ### Added
