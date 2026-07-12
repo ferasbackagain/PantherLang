@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from functools import lru_cache
+# Removed lru_cache to ensure self-hosted stdlib is always reloaded
 from pathlib import Path
 import re
 
 
 ROOT = Path(__file__).resolve().parents[2]
 SELFHOST_DIR = ROOT / "stdlib" / "selfhost"
+PACKAGE_DIR = ROOT / "stdlib" / "panther"
 
 
 def _extract_first_block_body(source: str) -> str:
@@ -53,18 +54,26 @@ def _extract_first_block_body(source: str) -> str:
     return ""
 
 
-@lru_cache(maxsize=1)
 def load_selfhosted_stdlib_source() -> str:
-    """Return PantherLang source statements loaded from stdlib/selfhost/*.pan."""
-    if not SELFHOST_DIR.exists():
-        return ""
-
+    """Return PantherLang source statements loaded from stdlib/selfhost/*.pan and stdlib/panther/*/__init__.pan."""
     chunks: list[str] = []
-    for path in sorted(SELFHOST_DIR.glob("*.pan")):
-        text = path.read_text(encoding="utf-8-sig")
-        body = _extract_first_block_body(text)
-        if body:
-            chunks.append("// selfhost: " + path.name + "\n" + body)
+
+    if SELFHOST_DIR.exists():
+        for path in sorted(SELFHOST_DIR.glob("*.pan")):
+            text = path.read_text(encoding="utf-8-sig")
+            body = _extract_first_block_body(text)
+            if body:
+                chunks.append("// selfhost: " + path.name + "\n" + body)
+
+    if PACKAGE_DIR.exists():
+        for pkg_path in sorted(PACKAGE_DIR.iterdir()):
+            if pkg_path.is_dir():
+                init_file = pkg_path / "__init__.pan"
+                if init_file.exists():
+                    text = init_file.read_text(encoding="utf-8-sig")
+                    body = _extract_first_block_body(text)
+                    if body:
+                        chunks.append("// package: " + pkg_path.name + "\n" + body)
 
     if not chunks:
         return ""
@@ -106,15 +115,25 @@ def get_selfhosted_functions() -> dict[str, list]:
     """Get self-hosted function names grouped by module for LSP/docs."""
     import re as _re
     result = {}
-    for path in sorted(SELFHOST_DIR.glob("*.pan")):
-        text = path.read_text(encoding="utf-8-sig")
-        # Extract function names using regex
-        fn_names = _re.findall(r"fn\s+(\w+)\s*\(", text)
-        if fn_names:
-            result[path.stem] = fn_names
+    if SELFHOST_DIR.exists():
+        for path in sorted(SELFHOST_DIR.glob("*.pan")):
+            text = path.read_text(encoding="utf-8-sig")
+            fn_names = _re.findall(r"fn\s+(\w+)\s*\(", text)
+            if fn_names:
+                result[path.stem] = fn_names
+    if PACKAGE_DIR.exists():
+        for pkg_path in sorted(PACKAGE_DIR.iterdir()):
+            if pkg_path.is_dir():
+                init_file = pkg_path / "__init__.pan"
+                if init_file.exists():
+                    text = init_file.read_text(encoding="utf-8-sig")
+                    fn_names = _re.findall(r"fn\s+(\w+)\s*\(", text)
+                    if fn_names:
+                        result["panther." + pkg_path.name] = fn_names
     return result
 
 
 def clear_cache() -> None:
     """Clear all LRU caches (for testing)."""
-    load_selfhosted_stdlib_source.cache_clear()
+    from compiler.stdlib.package_loader import reset_package_loader
+    reset_package_loader()

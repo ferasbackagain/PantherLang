@@ -15,7 +15,7 @@ def test_h44_d5_package_metadata_is_valid():
     data = _package()
 
     assert data["name"]
-    assert data["displayName"] == "PantherLang"
+    assert data["displayName"] == "PantherLang Official"
     assert data["main"] == "./out/extension.js"
     assert "engines" in data
     assert "vscode" in data["engines"]

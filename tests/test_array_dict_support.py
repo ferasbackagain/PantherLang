@@ -132,10 +132,29 @@ def test_index_nested():
 # --- Assignment with Index ---
 
 def test_assign_to_index_expression():
-    """Index assignment is currently read-only. Verify it at least evaluates."""
-    result = execute_source('panther main { let a = [1, 2, 3]; print(a[0]); }')
+    """Verify array index assignment works."""
+    result = execute_source('''
+panther main {
+    let a = [1, 2, 3];
+    a[0] = 99;
+    print(a[0]);
+}
+''')
     assert result.error is None
-    assert result.captured_output == ["1"]
+    assert result.captured_output == ["99"]
+
+
+def test_assign_to_dict_index():
+    """Verify dict index assignment works."""
+    result = execute_source('''
+panther main {
+    let d = {x: 1};
+    d["y"] = 2;
+    print(d["y"]);
+}
+''')
+    assert result.error is None
+    assert result.captured_output == ["2"]
 
 
 # --- Mixed: Arrays and Objects ---

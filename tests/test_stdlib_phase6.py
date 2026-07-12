@@ -118,7 +118,22 @@ panther main {
 ''')
     assert result.error is None
     output = " ".join(result.captured_output)
-    assert "3" in output
+    assert "[1, 2, 3]" in output
+
+
+def test_array_push_returns_array():
+    """Verify array_push returns the array, not the length (regression)."""
+    result = execute_source('''
+panther main {
+    let a = [];
+    a = array_push(a, 1);
+    a = array_push(a, 2);
+    a = array_push(a, 3);
+    print(a);
+}
+''')
+    assert result.error is None
+    output = " ".join(result.captured_output)
     assert "[1, 2, 3]" in output
 
 

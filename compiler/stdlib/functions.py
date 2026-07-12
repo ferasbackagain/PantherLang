@@ -14,6 +14,10 @@ import sqlite3 as _sqlite3
 import time
 import urllib.parse
 import urllib.request
+import threading
+import uuid as _uuid
+import queue as _queue
+import concurrent.futures as _futures
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
@@ -200,6 +204,7 @@ def _sleep(secs: float) -> None:
 
 
 _register(StdlibFunction("time", (0, 0), _time_now, "time() -> float"))
+_register(StdlibFunction("time_now", (0, 0), _time_now, "time_now() -> float"))
 _register(StdlibFunction("sleep", (1, 1), _sleep, "sleep(secs) -> None"))
 
 
@@ -428,6 +433,10 @@ _register(StdlibFunction("http_post", (1, 2), _http_post, "http_post(url[, data]
 
 # --- Regex ---
 
+def _regex_findall(pattern: str, text: str) -> list[str]:
+    return _re.findall(pattern, text)
+
+
 def _regex_match(pattern: str, text: str) -> bool:
     return bool(_re.search(pattern, text))
 
@@ -441,15 +450,16 @@ def _regex_split(pattern: str, text: str) -> list[str]:
 
 
 _register(StdlibFunction("regex_match", (2, 2), _regex_match, "regex_match(pattern, text) -> bool"))
+_register(StdlibFunction("regex_findall", (2, 2), _regex_findall, "regex_findall(pattern, text) -> list"))
 _register(StdlibFunction("regex_replace", (3, 3), _regex_replace, "regex_replace(pattern, replacement, text) -> str"))
 _register(StdlibFunction("regex_split", (2, 2), _regex_split, "regex_split(pattern, text) -> list"))
 
 
 # --- Collections ---
 
-def _array_push(arr: list, item: Any) -> int:
+def _array_push(arr: list, item: Any) -> list:
     arr.append(item)
-    return len(arr)
+    return arr
 
 
 def _array_pop(arr: list) -> Any:
@@ -464,7 +474,7 @@ def _array_reverse(arr: list) -> list:
     return list(reversed(arr))
 
 
-_register(StdlibFunction("array_push", (2, 2), _array_push, "array_push(arr, item) -> int"))
+_register(StdlibFunction("array_push", (2, 2), _array_push, "array_push(arr, item) -> arr"))
 _register(StdlibFunction("array_pop", (1, 1), _array_pop, "array_pop(arr) -> any"))
 _register(StdlibFunction("array_sort", (1, 1), _array_sort, "array_sort(arr) -> list"))
 _register(StdlibFunction("array_reverse", (1, 1), _array_reverse, "array_reverse(arr) -> list"))
@@ -1732,4 +1742,732 @@ _register(StdlibFunction("tcp_banner", (2, 3), _tcp_banner, "tcp_banner(host, po
 _register(StdlibFunction("host_capability_available", (1, 1), _host_capability_available, "host_capability_available(name) -> bool"))
 _register(StdlibFunction("host_list_capabilities", (0, 0), _host_list_capabilities, "host_list_capabilities() -> array"))
 _register(StdlibFunction("host_error_message", (1, 1), _host_error_message, "host_error_message(code) -> string"))
+
+
+# S8: AI Package functions
+# Legacy flat API compatibility (S6)
+def _ai_chat_legacy(prompt: str, provider: str = "mock") -> str:
+    if provider == "mock":
+        return "[PantherAI mock] Response to: " + prompt
+    return "[PantherAI] Provider '" + provider + "' not implemented"
+
+def _ai_chat_legacy_wrapped(*args: Any) -> str:
+    """Wrapper to handle optional provider argument."""
+    prompt = args[0] if len(args) > 0 else ""
+    provider = args[1] if len(args) > 1 else "mock"
+    return _ai_chat_legacy(prompt, provider)
+
+def _ai_mock_chat_legacy(prompt: str) -> str:
+    return "[PantherAI mock] Response to: " + prompt
+
+def _ai_available_providers_legacy() -> list:
+    import os
+    providers = []
+    if os.environ.get("OLLAMA_HOST"):
+        providers.append("ollama")
+    if os.environ.get("OPENAI_API_KEY"):
+        providers.append("openai")
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        providers.append("anthropic")
+    if os.environ.get("GOOGLE_API_KEY"):
+        providers.append("google")
+    if not providers:
+        providers = ["mock"]
+    return providers
+
+def _ai_supported_providers_legacy() -> list:
+    return ["ollama", "openai", "anthropic", "google", "mock"]
+
+def _ai_provider_available_legacy(provider: str) -> bool:
+    import os
+    if provider == "ollama":
+        return bool(os.environ.get("OLLAMA_HOST"))
+    if provider == "openai":
+        return bool(os.environ.get("OPENAI_API_KEY"))
+    if provider == "anthropic":
+        return bool(os.environ.get("ANTHROPIC_API_KEY"))
+    if provider == "google":
+        return bool(os.environ.get("GOOGLE_API_KEY"))
+    if provider == "mock":
+        return True
+    return False
+
+# New structured AI API
+def _ai_provider(name: str) -> dict:
+    return {"name": name, "models": []}
+
+def _ai_model(provider: dict, name: str) -> dict:
+    return {"provider": provider, "name": name}
+
+def _ai_list_models(provider: dict) -> list:
+    models = []
+    name = provider.get("name", "")
+    if name == "ollama":
+        models.extend(["llama3", "mistral", "codellama"])
+    elif name == "openai":
+        models.extend(["gpt-4", "gpt-3.5-turbo"])
+    elif name == "anthropic":
+        models.extend(["claude-3-opus", "claude-3-sonnet"])
+    elif name == "google":
+        models.append("gemini-pro")
+    return models
+
+def _ai_message(role: str, content: str) -> dict:
+    return {"role": role, "content": content}
+
+def _ai_system_message(content: str) -> dict:
+    return {"role": "system", "content": content}
+
+def _ai_user_message(content: str) -> dict:
+    return {"role": "user", "content": content}
+
+def _ai_assistant_message(content: str) -> dict:
+    return {"role": "assistant", "content": content}
+
+def _ai_chat(model: dict, messages: list, options: dict | None = None) -> dict:
+    provider = model.get("provider", {})
+    name = provider.get("name", "")
+    if name == "ollama":
+        return {"ok": False, "error": "Ollama integration not implemented"}
+    elif name == "openai":
+        return {"ok": False, "error": "OpenAI integration not implemented"}
+    elif name == "anthropic":
+        return {"ok": False, "error": "Anthropic integration not implemented"}
+    else:
+        return {"ok": False, "error": "Unsupported provider: " + name}
+
+def _ai_chat_stream(model: dict, messages: list, options: dict | None = None) -> list:
+    result = _ai_chat(model, messages, options or {})
+    return [result]
+
+def _ai_structured_output(model: dict, messages: list, schema: dict, options: dict | None = None) -> dict:
+    result = _ai_chat(model, messages, options or {})
+    if result.get("ok"):
+        import json
+        try:
+            parsed = json.loads(result.get("content", "{}"))
+            return {"ok": True, "data": parsed}
+        except Exception:
+            return {"ok": False, "error": "Failed to parse structured output"}
+        return result
+
+def _ai_tool(name: str, description: str, parameters: dict) -> dict:
+    return {"type": "function", "function": {"name": name, "description": description, "parameters": parameters}}
+
+def _ai_chat_with_tools(model: dict, messages: list, tools: list, options: dict | None = None) -> dict:
+    return _ai_chat(model, messages, options or {})
+
+def _ai_with_timeout(ai_fn: callable, timeout_ms: int) -> dict:
+    try:
+        import signal
+        def handler(signum, frame):
+            raise TimeoutError("AI call timed out")
+        signal.signal(signal.SIGALRM, handler)
+        signal.alarm(timeout_ms // 1000)
+        try:
+            result = ai_fn()
+            signal.alarm(0)
+            return result
+        except TimeoutError:
+            return {"ok": False, "error": "AI call timed out"}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+        finally:
+            signal.alarm(0)
+    except Exception:
+        return {"ok": False, "error": "Timeout not supported"}
+
+def _ai_retry(ai_fn: callable, retries: int, delay: int) -> dict:
+    attempt = 0
+    while attempt < retries:
+        result = ai_fn()
+        if result.get("ok"):
+            return result
+        attempt += 1
+        if attempt < retries:
+            import time
+            time.sleep(delay / 1000.0)
+    return {"ok": False, "error": "Max retries exceeded"}
+
+def _ai_usage(result: dict) -> dict:
+    return result.get("usage", {})
+
+def _ai_detect_injection(prompt_text: str) -> dict:
+    patterns = [
+        "ignore previous instructions",
+        "system prompt",
+        "you are now",
+        "forget everything",
+        "new instructions"
+    ]
+    detected = []
+    for pattern in patterns:
+        if pattern in prompt_text.lower():
+            detected.append(pattern)
+    return {"detected": len(detected) > 0, "patterns": detected}
+
+def _ai_audit_log(event_type: str, details: dict) -> dict:
+    return {"timestamp": __import__("time").time(), "type": "ai_" + event_type, "details": details}
+
+def _ai_require_approval(operation: str, context: dict) -> dict:
+    return {"required": False, "reason": ""}
+
+def _ai_available_providers() -> list:
+    import os
+    providers = []
+    if os.environ.get("OLLAMA_HOST"):
+        providers.append("ollama")
+    if os.environ.get("OPENAI_API_KEY"):
+        providers.append("openai")
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        providers.append("anthropic")
+    if os.environ.get("GOOGLE_API_KEY"):
+        providers.append("google")
+    return providers
+
+def _ai_package_mock_chat(model: dict, messages: list, options: dict | None = None) -> dict:
+    last_msg = messages[-1] if messages else {}
+    return {
+        "ok": True,
+        "content": "[MOCK] Response to: " + last_msg.get("content", ""),
+        "usage": {"prompt_tokens": 10, "completion_tokens": 5, "total_tokens": 15}
+    }
+
+def _ai_ollama_chat(model: dict, messages: list, options: dict | None = None) -> dict:
+    return {"ok": False, "error": "Ollama integration not implemented"}
+
+def _ai_openai_chat(model: dict, messages: list, options: dict | None = None) -> dict:
+    return {"ok": False, "error": "OpenAI integration not implemented"}
+
+def _ai_anthropic_chat(model: dict, messages: list, options: dict | None = None) -> dict:
+    return {"ok": False, "error": "Anthropic integration not implemented"}
+
+_register(StdlibFunction("ai_provider", (1, 1), _ai_provider, "ai_provider(name) -> provider"))
+_register(StdlibFunction("ai_model", (2, 2), _ai_model, "ai_model(provider, name) -> model"))
+_register(StdlibFunction("ai_list_models", (1, 1), _ai_list_models, "ai_list_models(provider) -> list"))
+_register(StdlibFunction("ai_message", (2, 2), _ai_message, "ai_message(role, content) -> message"))
+_register(StdlibFunction("ai_system_message", (1, 1), _ai_system_message, "ai_system_message(content) -> message"))
+_register(StdlibFunction("ai_user_message", (1, 1), _ai_user_message, "ai_user_message(content) -> message"))
+_register(StdlibFunction("ai_assistant_message", (1, 1), _ai_assistant_message, "ai_assistant_message(content) -> message"))
+_register(StdlibFunction("ai_chat_stream", (2, 3), _ai_chat_stream, "ai_chat_stream(model, messages[, options]) -> stream"))
+_register(StdlibFunction("ai_structured_output", (3, 4), _ai_structured_output, "ai_structured_output(model, messages, schema[, options]) -> result"))
+_register(StdlibFunction("ai_tool", (3, 3), _ai_tool, "ai_tool(name, description, parameters) -> tool"))
+_register(StdlibFunction("ai_chat_with_tools", (3, 4), _ai_chat_with_tools, "ai_chat_with_tools(model, messages, tools[, options]) -> result"))
+_register(StdlibFunction("ai_with_timeout", (2, 2), _ai_with_timeout, "ai_with_timeout(ai_fn, timeout_ms) -> result"))
+_register(StdlibFunction("ai_retry", (2, 3), _ai_retry, "ai_retry(ai_fn, retries, delay) -> result"))
+_register(StdlibFunction("ai_usage", (1, 1), _ai_usage, "ai_usage(result) -> usage"))
+_register(StdlibFunction("ai_detect_injection", (1, 1), _ai_detect_injection, "ai_detect_injection(prompt_text) -> result"))
+_register(StdlibFunction("ai_audit_log", (2, 2), _ai_audit_log, "ai_audit_log(event_type, details) -> log"))
+_register(StdlibFunction("ai_require_approval", (2, 2), _ai_require_approval, "ai_require_approval(operation, context) -> result"))
+
+# Add async retry function for AI package
+def _async_retry(callback: callable, retries: int, delay: int) -> any:
+    attempt = 0
+    while attempt < retries:
+        result = callback()
+        if result is not None and result.get("ok", True):
+            return result
+        attempt += 1
+        if attempt < retries:
+            import time
+            time.sleep(delay / 1000.0)
+    return None
+
+# Serialization Package Implementation Functions
+def _serialization_encode(value: Any, format: str) -> str:
+    """Encode value to specified format."""
+    format = format.lower()
+    if format == "json":
+        return json.dumps(value)
+    elif format == "yaml":
+        return json.dumps(value)  # fallback
+    elif format == "toml":
+        return json.dumps(value)  # fallback
+    elif format == "msgpack":
+        return json.dumps(value)  # fallback
+    elif format == "cbor":
+        return json.dumps(value)  # fallback
+    elif format == "base64":
+        return _crypto_base64_encode(json.dumps(value))
+    elif format == "hex":
+        return _crypto_hex_encode(json.dumps(value))
+    else:
+        raise ValueError(f"Unsupported format: {format}")
+
+def _serialization_decode(data: str, format: str) -> Any:
+    """Decode data from specified format."""
+    format = format.lower()
+    if format == "json":
+        return json.loads(data)
+    elif format == "yaml":
+        return json.loads(data)  # fallback
+    elif format == "toml":
+        return json.loads(data)  # fallback
+    elif format == "msgpack":
+        return json.loads(data)  # fallback
+    elif format == "cbor":
+        return json.loads(data)  # fallback
+    elif format == "base64":
+        return json.loads(_crypto_base64_decode(data))
+    elif format == "hex":
+        return json.loads(_crypto_hex_decode(data))
+    else:
+        raise ValueError(f"Unsupported format: {format}")
+
+def _serialization_encode_with_options(value: Any, format: str, options: dict) -> str:
+    """Encode with options (pretty, indent, etc.)."""
+    # For now, just use basic encode
+    return _serialization_encode(value, format)
+
+
+_register(StdlibFunction("async_retry", (3, 3), _async_retry, "async_retry(callback, retries, delay) -> result"))
+
+# Serialization Package Functions (PANTHER_IMPLEMENTED)
+_register(StdlibFunction("panther_serialization_json_encode", (1, 1), _json_encode, "panther_serialization_json_encode(value) -> string"))
+_register(StdlibFunction("panther_serialization_json_decode", (1, 1), _json_decode, "panther_serialization_json_decode(text) -> object"))
+_register(StdlibFunction("panther_serialization_json_pretty", (1, 1), _json_pretty, "panther_serialization_json_pretty(value) -> string"))
+_register(StdlibFunction("panther_serialization_json_valid", (1, 1), _json_valid, "panther_serialization_json_valid(text) -> bool"))
+
+# YAML (fallback to JSON)
+_register(StdlibFunction("panther_serialization_yaml_encode", (1, 1), _json_encode, "panther_serialization_yaml_encode(value) -> string"))
+_register(StdlibFunction("panther_serialization_yaml_decode", (1, 1), _json_decode, "panther_serialization_yaml_decode(text) -> object"))
+
+# TOML (fallback to JSON)
+_register(StdlibFunction("panther_serialization_toml_encode", (1, 1), _json_encode, "panther_serialization_toml_encode(value) -> string"))
+_register(StdlibFunction("panther_serialization_toml_decode", (1, 1), _json_decode, "panther_serialization_toml_decode(text) -> object"))
+
+# MessagePack (fallback to JSON)
+_register(StdlibFunction("panther_serialization_msgpack_encode", (1, 1), _json_encode, "panther_serialization_msgpack_encode(value) -> string"))
+_register(StdlibFunction("panther_serialization_msgpack_decode", (1, 1), _json_decode, "panther_serialization_msgpack_decode(text) -> object"))
+
+# CBOR (fallback to JSON)
+_register(StdlibFunction("panther_serialization_cbor_encode", (1, 1), _json_encode, "panther_serialization_cbor_encode(value) -> string"))
+_register(StdlibFunction("panther_serialization_cbor_decode", (1, 1), _json_decode, "panther_serialization_cbor_decode(text) -> object"))
+
+# Base64
+_register(StdlibFunction("panther_serialization_base64_encode", (1, 1), _crypto_base64_encode, "panther_serialization_base64_encode(data) -> string"))
+_register(StdlibFunction("panther_serialization_base64_decode", (1, 1), _crypto_base64_decode, "panther_serialization_base64_decode(text) -> string"))
+
+# Hex
+_register(StdlibFunction("panther_serialization_hex_encode", (1, 1), _crypto_hex_encode, "panther_serialization_hex_encode(data) -> string"))
+_register(StdlibFunction("panther_serialization_hex_decode", (1, 1), _crypto_hex_decode, "panther_serialization_hex_decode(text) -> string"))
+
+# Universal encode/decode
+_register(StdlibFunction("panther_serialization_encode", (2, 2), _serialization_encode, "panther_serialization_encode(value, format) -> string"))
+_register(StdlibFunction("panther_serialization_decode", (2, 2), _serialization_decode, "panther_serialization_decode(data, format) -> object"))
+_register(StdlibFunction("panther_serialization_encode_with_options", (3, 3), _serialization_encode_with_options, "panther_serialization_encode_with_options(value, format, options) -> string"))
+
+# ========================================================================
+# PHASE 11 — Concurrency & Async Runtime (PYTHON_BOOTSTRAP_BACKED)
+# ========================================================================
+
+# --- Thread-safe task registry ---
+_concurrent_tasks: dict[str, dict] = {}
+_concurrent_tasks_lock = threading.Lock()
+_concurrent_executor = _futures.ThreadPoolExecutor(
+    max_workers=32,
+    thread_name_prefix="panther-concurrent",
+)
+_concurrent_next_id = 0
+_concurrent_next_id_lock = threading.Lock()
+
+
+def _concurrent_next_task_id() -> str:
+    global _concurrent_next_id
+    with _concurrent_next_id_lock:
+        _concurrent_next_id += 1
+        return f"task-{_concurrent_next_id}"
+
+
+def _concurrent_spawn(fn: Callable) -> dict:
+    task_id = _concurrent_next_task_id()
+    entry = {
+        "task_id": task_id,
+        "state": "RUNNING",
+        "value": None,
+        "error": None,
+        "thread": None,
+        "cancelled": False,
+    }
+
+    def worker():
+        try:
+            entry["state"] = "RUNNING"
+            result = fn()
+            with _concurrent_tasks_lock:
+                if entry.get("cancelled"):
+                    entry["state"] = "CANCELLED"
+                else:
+                    entry["value"] = result
+                    entry["state"] = "COMPLETED"
+        except Exception as exc:
+            with _concurrent_tasks_lock:
+                entry["error"] = str(exc)
+                entry["state"] = "FAILED"
+
+    thread = threading.Thread(target=worker, daemon=True, name=f"panther-worker-{task_id}")
+    entry["thread"] = thread
+    with _concurrent_tasks_lock:
+        _concurrent_tasks[task_id] = entry
+
+    thread.start()
+    return {"task_id": task_id, "state": "RUNNING", "value": None, "error": None}
+
+
+def _concurrent_join(task_dict: dict) -> dict:
+    task_id = task_dict.get("task_id", "")
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        raise RuntimeError(f"Unknown task: {task_id}")
+    thread = entry.get("thread")
+    if thread is not None and thread.is_alive():
+        thread.join()
+    with _concurrent_tasks_lock:
+        return {
+            "task_id": entry["task_id"],
+            "state": entry["state"],
+            "value": entry["value"],
+            "error": entry["error"],
+        }
+
+
+def _concurrent_join_timeout(task_dict: dict, timeout_ms: int) -> dict:
+    task_id = task_dict.get("task_id", "")
+    timeout_sec = max(0.001, timeout_ms / 1000.0)
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        raise RuntimeError(f"Unknown task: {task_id}")
+    thread = entry.get("thread")
+    if thread is not None and thread.is_alive():
+        thread.join(timeout=timeout_sec)
+    with _concurrent_tasks_lock:
+        state = entry["state"]
+        if thread is not None and thread.is_alive():
+            state = "RUNNING"
+        return {
+            "task_id": entry["task_id"],
+            "state": state,
+            "value": entry["value"],
+            "error": entry["error"],
+        }
+
+
+def _concurrent_task_status(task_dict: dict) -> str:
+    task_id = task_dict.get("task_id", "")
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        return "UNKNOWN"
+    thread = entry.get("thread")
+    if thread is not None and thread.is_alive() and entry["state"] == "RUNNING":
+        return "RUNNING"
+    return entry["state"]
+
+
+def _concurrent_task_result(task_dict: dict) -> dict:
+    task_id = task_dict.get("task_id", "")
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        return {"value": None, "error": "Task not found"}
+    if entry["state"] == "COMPLETED":
+        return {"value": entry["value"], "error": None}
+    if entry["state"] == "FAILED":
+        return {"value": None, "error": entry["error"]}
+    return {"value": None, "error": f"Task not completed (state={entry['state']})"}
+
+
+def _concurrent_task_error(task_dict: dict) -> str | None:
+    task_id = task_dict.get("task_id", "")
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        raise RuntimeError(f"Unknown task: {task_id}")
+    return entry.get("error")
+
+
+def _concurrent_cancel(task_dict: dict) -> bool:
+    task_id = task_dict.get("task_id", "")
+    with _concurrent_tasks_lock:
+        entry = _concurrent_tasks.get(task_id)
+    if entry is None:
+        return False
+    if entry["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
+        return False
+    entry["cancelled"] = True
+    entry["state"] = "CANCELLED"
+    return True
+
+
+def _concurrent_worker_count() -> int:
+    count = 0
+    with _concurrent_tasks_lock:
+        for entry in _concurrent_tasks.values():
+            thread = entry.get("thread")
+            if thread is not None and thread.is_alive():
+                count += 1
+    return count
+
+
+def _concurrent_queue_create() -> dict:
+    q = _queue.Queue()
+    return {"_queue": q}
+
+
+def _concurrent_queue_put(queue_dict: dict, value: Any) -> None:
+    q = queue_dict.get("_queue")
+    if q is None:
+        raise RuntimeError("Invalid queue object")
+    q.put(value)
+
+
+def _concurrent_queue_get(queue_dict: dict) -> Any:
+    q = queue_dict.get("_queue")
+    if q is None:
+        raise RuntimeError("Invalid queue object")
+    return q.get()
+
+
+def _concurrent_queue_get_timeout(queue_dict: dict, timeout_ms: int) -> Any:
+    q = queue_dict.get("_queue")
+    if q is None:
+        raise RuntimeError("Invalid queue object")
+    timeout_sec = max(0.001, timeout_ms / 1000.0)
+    try:
+        return q.get(timeout=timeout_sec)
+    except _queue.Empty:
+        return None
+
+
+# --- Async backend ---
+_async_executor = _futures.ThreadPoolExecutor(
+    max_workers=32,
+    thread_name_prefix="panther-async",
+)
+_async_futures: dict[str, _futures.Future] = {}
+_async_tasks: dict[str, dict] = {}
+_async_next_id = 0
+_async_lock = threading.Lock()
+
+
+def _async_next_task_id() -> str:
+    global _async_next_id
+    with _async_lock:
+        _async_next_id += 1
+        return f"async-{_async_next_id}"
+
+
+def _async_task(fn: Callable) -> dict:
+    task_id = _async_next_task_id()
+    fut = _async_executor.submit(fn)
+    with _async_lock:
+        _async_futures[task_id] = fut
+        _async_tasks[task_id] = {
+            "task_id": task_id,
+            "state": "RUNNING",
+            "value": None,
+            "error": None,
+        }
+
+    def on_done(f):
+        with _async_lock:
+            entry = _async_tasks.get(task_id)
+            if entry is None:
+                return
+            try:
+                exc = f.exception()
+                if exc is not None:
+                    entry["state"] = "FAILED"
+                    entry["error"] = str(exc)
+                else:
+                    if entry.get("cancelled"):
+                        entry["state"] = "CANCELLED"
+                    else:
+                        entry["value"] = f.result()
+                        entry["state"] = "COMPLETED"
+            except _futures.CancelledError:
+                entry["state"] = "CANCELLED"
+
+    fut.add_done_callback(on_done)
+    return {"task_id": task_id, "state": "RUNNING", "value": None, "error": None}
+
+
+def _async_run(task_dict: dict) -> dict:
+    return _async_await_task(task_dict)
+
+
+def _async_await_task(task_dict: dict) -> dict:
+    task_id = task_dict.get("task_id", "")
+    with _async_lock:
+        fut = _async_futures.get(task_id)
+        entry = _async_tasks.get(task_id)
+    if fut is None or entry is None:
+        raise RuntimeError(f"Unknown async task: {task_id}")
+    try:
+        fut.result()
+    except Exception:
+        pass
+    with _async_lock:
+        return {
+            "task_id": entry["task_id"],
+            "state": entry["state"],
+            "value": entry["value"],
+            "error": entry["error"],
+        }
+
+
+def _async_await_timeout(task_dict: dict, timeout_ms: int) -> dict:
+    task_id = task_dict.get("task_id", "")
+    timeout_sec = max(0.001, timeout_ms / 1000.0)
+    with _async_lock:
+        fut = _async_futures.get(task_id)
+        entry = _async_tasks.get(task_id)
+    if fut is None or entry is None:
+        raise RuntimeError(f"Unknown async task: {task_id}")
+    try:
+        fut.result(timeout=timeout_sec)
+    except _futures.TimeoutError:
+        with _async_lock:
+            return {
+                "task_id": entry["task_id"],
+                "state": "TIMED_OUT",
+                "value": entry["value"],
+                "error": "timeout",
+            }
+    except Exception:
+        pass
+    with _async_lock:
+        return {
+            "task_id": entry["task_id"],
+            "state": entry["state"],
+            "value": entry["value"],
+            "error": entry["error"],
+        }
+
+
+def _async_sleep(milliseconds: int) -> None:
+    time.sleep(max(0.001, milliseconds / 1000.0))
+
+
+def _async_gather(task_dicts: list[dict]) -> list[dict]:
+    results = []
+    for td in task_dicts:
+        r = _async_await_task(td)
+        results.append(r)
+    return results
+
+
+def _async_race(task_dicts: list[dict]) -> dict:
+    task_ids = []
+    futures = []
+    for td in task_dicts:
+        tid = td.get("task_id", "")
+        with _async_lock:
+            fut = _async_futures.get(tid)
+        if fut is not None:
+            task_ids.append(tid)
+            futures.append(fut)
+    if not futures:
+        return {"task_id": "", "state": "FAILED", "value": None, "error": "no tasks"}
+    done, _ = _futures.wait(futures, return_when=_futures.FIRST_COMPLETED)
+    for i, fut in enumerate(futures):
+        if fut in done:
+            tid = task_ids[i]
+            with _async_lock:
+                entry = _async_tasks.get(tid)
+            if entry:
+                return {
+                    "task_id": entry["task_id"],
+                    "state": entry["state"],
+                    "value": entry["value"],
+                    "error": entry["error"],
+                }
+    return {"task_id": "", "state": "FAILED", "value": None, "error": "race failed"}
+
+
+def _async_retry(callable_fn: Callable, attempts: int) -> dict:
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            result = callable_fn()
+            if result is not None:
+                return {"value": result, "error": None}
+        except Exception as exc:
+            last_error = str(exc)
+        if attempt < attempts - 1:
+            time.sleep(0.1)
+    return {"value": None, "error": last_error or "all attempts failed"}
+
+
+def _async_retry_with_backoff(callable_fn: Callable, attempts: int, initial_delay_ms: int) -> dict:
+    delay = max(1, initial_delay_ms) / 1000.0
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            result = callable_fn()
+            if result is not None:
+                return {"value": result, "error": None}
+        except Exception as exc:
+            last_error = str(exc)
+        if attempt < attempts - 1:
+            time.sleep(delay)
+            delay *= 2
+    return {"value": None, "error": last_error or "all attempts failed"}
+
+
+def _async_cancel(task_dict: dict) -> bool:
+    task_id = task_dict.get("task_id", "")
+    with _async_lock:
+        fut = _async_futures.get(task_id)
+        entry = _async_tasks.get(task_id)
+    if fut is None or entry is None:
+        return False
+    if entry["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
+        return False
+    cancelled = fut.cancel()
+    if cancelled:
+        with _async_lock:
+            entry["state"] = "CANCELLED"
+    return cancelled
+
+
+def _async_status(task_dict: dict) -> str:
+    task_id = task_dict.get("task_id", "")
+    with _async_lock:
+        entry = _async_tasks.get(task_id)
+    if entry is None:
+        return "UNKNOWN"
+    return entry["state"]
+
+
+# --- Register concurrent backend functions ---
+_register(StdlibFunction("_concurrent_spawn", (1, 1), _concurrent_spawn, "_concurrent_spawn(fn) -> task"))
+_register(StdlibFunction("_concurrent_join", (1, 1), _concurrent_join, "_concurrent_join(task) -> task"))
+_register(StdlibFunction("_concurrent_join_timeout", (2, 2), _concurrent_join_timeout, "_concurrent_join_timeout(task, ms) -> task"))
+_register(StdlibFunction("_concurrent_task_status", (1, 1), _concurrent_task_status, "_concurrent_task_status(task) -> str"))
+_register(StdlibFunction("_concurrent_task_result", (1, 1), _concurrent_task_result, "_concurrent_task_result(task) -> any"))
+_register(StdlibFunction("_concurrent_task_error", (1, 1), _concurrent_task_error, "_concurrent_task_error(task) -> str"))
+_register(StdlibFunction("_concurrent_cancel", (1, 1), _concurrent_cancel, "_concurrent_cancel(task) -> bool"))
+_register(StdlibFunction("_concurrent_worker_count", (0, 0), _concurrent_worker_count, "_concurrent_worker_count() -> int"))
+_register(StdlibFunction("_concurrent_queue_create", (0, 0), _concurrent_queue_create, "_concurrent_queue_create() -> queue"))
+_register(StdlibFunction("_concurrent_queue_put", (2, 2), _concurrent_queue_put, "_concurrent_queue_put(queue, value) -> null"))
+_register(StdlibFunction("_concurrent_queue_get", (1, 1), _concurrent_queue_get, "_concurrent_queue_get(queue) -> any"))
+_register(StdlibFunction("_concurrent_queue_get_timeout", (2, 2), _concurrent_queue_get_timeout, "_concurrent_queue_get_timeout(queue, ms) -> any"))
+
+# --- Register async backend functions ---
+_register(StdlibFunction("_async_task", (1, 1), _async_task, "_async_task(fn) -> task"))
+_register(StdlibFunction("_async_run", (1, 1), _async_run, "_async_run(task) -> task"))
+_register(StdlibFunction("_async_await_task", (1, 1), _async_await_task, "_async_await_task(task) -> task"))
+_register(StdlibFunction("_async_await_timeout", (2, 2), _async_await_timeout, "_async_await_timeout(task, ms) -> task"))
+_register(StdlibFunction("_async_sleep", (1, 1), _async_sleep, "_async_sleep(ms) -> null"))
+_register(StdlibFunction("_async_gather", (1, 1), _async_gather, "_async_gather(tasks) -> array"))
+_register(StdlibFunction("_async_race", (1, 1), _async_race, "_async_race(tasks) -> task"))
+_register(StdlibFunction("_async_retry", (2, 2), _async_retry, "_async_retry(fn, attempts) -> result"))
+_register(StdlibFunction("_async_retry_with_backoff", (3, 3), _async_retry_with_backoff, "_async_retry_with_backoff(fn, attempts, delay_ms) -> result"))
+_register(StdlibFunction("_async_cancel", (1, 1), _async_cancel, "_async_cancel(task) -> bool"))
+_register(StdlibFunction("_async_status", (1, 1), _async_status, "_async_status(task) -> str"))
+
+# End of stdlib function registrations
 

@@ -13,6 +13,7 @@ from compiler.ast import (
     ExpressionStatement,
     ForStatement,
     FunctionDeclaration,
+    FunctionLiteral,
     IdentifierExpression,
     IfStatement,
     ImportStatement,
@@ -177,14 +178,18 @@ class SemanticAnalyzer:
             self.symbols.declare(stmt.name, SymbolKind.TYPE, _loc(stmt))
         elif isinstance(stmt, ImportStatement):
             name = stmt.alias if stmt.alias is not None else stmt.module_name.split(".")[-1]
-            try:
-                self.symbols.declare(name, SymbolKind.MODULE, _loc(stmt))
-            except Exception as exc:
+            existing = self.symbols.lookup_local(name)
+            if existing is not None and existing.kind != SymbolKind.FUNCTION:
                 self.diagnostics.append(SemanticError(
-                    message=str(exc),
+                    message=f"Duplicate symbol '{name}'",
                     code="E006",
                     location=_loc(stmt),
                 ))
+            try:
+                # Register import alias at global scope so it persists beyond block scope
+                self.symbols.declare_global(name, SymbolKind.MODULE, _loc(stmt))
+            except Exception:
+                pass
 
     def _visit_statement_body(self, stmt: Statement) -> None:
         """Visit the body/initializer of a statement after all declarations are registered."""
@@ -238,7 +243,9 @@ class SemanticAnalyzer:
                 ))
         elif isinstance(stmt, BlockNode):
             self._visit_block(stmt)
-        elif isinstance(stmt, (StructDeclaration, EnumDeclaration, TraitDeclaration, ImportStatement)):
+        elif isinstance(stmt, ImportStatement):
+            self._visit_import(stmt)
+        elif isinstance(stmt, (StructDeclaration, EnumDeclaration, TraitDeclaration)):
             pass
         else:
             self._visit_statement(stmt)
@@ -312,14 +319,26 @@ class SemanticAnalyzer:
 
     def _visit_import(self, stmt: ImportStatement) -> None:
         name = stmt.alias if stmt.alias is not None else stmt.module_name.split(".")[-1]
+        # Alias already declared in Pass 1; just register package functions
         try:
-            self.symbols.declare(name, SymbolKind.MODULE, _loc(stmt))
-        except Exception as exc:
-            self.diagnostics.append(SemanticError(
-                message=str(exc),
-                code="E006",
-                location=_loc(stmt),
-            ))
+            from compiler.stdlib.package_loader import resolve_package
+            pkg = resolve_package(stmt.module_name)
+            if pkg is not None:
+                for fn_name in pkg.functions:
+                    try:
+                        self.symbols.declare(fn_name, SymbolKind.FUNCTION, None)
+                    except Exception:
+                        pass
+                    # Also register short name (without panther_<pkg>_ prefix)
+                    prefix = f"panther_{pkg.name}_"
+                    if fn_name.startswith(prefix):
+                        short_name = fn_name[len(prefix):]
+                        try:
+                            self.symbols.declare(short_name, SymbolKind.FUNCTION, None)
+                        except Exception:
+                            pass
+        except Exception:
+            pass
 
     def _visit_assignment(self, stmt: AssignmentStatement) -> None:
         if isinstance(stmt.target, IdentifierExpression):
@@ -385,11 +404,33 @@ class SemanticAnalyzer:
             self._visit_expression(expr.callee)
             for arg in expr.arguments:
                 self._visit_expression(arg)
+        elif isinstance(expr, CallExpression):
+            self._visit_expression(expr.callee)
+            for arg in expr.arguments:
+                self._visit_expression(arg)
         elif isinstance(expr, MemberExpression):
             self._visit_expression(expr.object)
+            # If object is a known module import, validate the property exists
+            if isinstance(expr.object, IdentifierExpression):
+                module_name = expr.object.name
+                # Check if it's a registered module
+                symbol = self.symbols.lookup(module_name)
+                if symbol is not None and symbol.kind == SymbolKind.MODULE:
+                    # Module is known, we could validate the property exists
+                    # For now, just trust the module is valid - runtime will catch errors
+                    pass
         elif isinstance(expr, IndexExpression):
             self._visit_expression(expr.object)
             self._visit_expression(expr.index)
+        elif isinstance(expr, FunctionLiteral):
+            # Enter function scope
+            self.symbols.enter_scope()
+            for param in expr.params:
+                self.symbols.declare(param, SymbolKind.PARAMETER, _loc(expr))
+            # Visit function body
+            for stmt in (expr.body or BlockNode()).statements:
+                self._visit_statement(stmt)
+            self.symbols.exit_scope()
         elif isinstance(expr, ArrayLiteral):
             for item in expr.items:
                 self._visit_expression(item)

@@ -271,6 +271,36 @@ def test_break_outside_loop_errors():
     assert result.error is not None
 
 
+def test_error_in_if_body_propagates():
+    """Verify errors inside if body propagate (regression for silent swallow)."""
+    result = execute_source('''
+panther main {
+    if true {
+        let x = 1 / 0;
+    }
+}
+''')
+    assert result.error is not None
+    assert "Division by zero" in result.error
+
+
+def test_error_in_while_body_propagates():
+    """Verify errors inside while body propagate (regression for silent swallow)."""
+    result = execute_source('''
+panther main {
+    let i = 0;
+    while i < 3 {
+        if i == 1 {
+            let x = 1 / 0;
+        }
+        i = i + 1;
+    }
+}
+''')
+    assert result.error is not None
+    assert "Division by zero" in result.error
+
+
 def test_continue_outside_loop_errors():
     source = 'panther main { continue; }'
     result = execute_source(source)

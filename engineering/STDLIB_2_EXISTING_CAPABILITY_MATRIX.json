@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "project": "PantherLang",
+    "version": "1.1.7",
+    "phase": "phase0_forensic_audit",
+    "date": "2026-07-10",
+    "description": "Complete inventory of all existing standard library capabilities"
+  },
+  "domains": {
+    "core": {
+      "description": "Core language support - type conversion, equality, validation",
+      "functions": [
+        {"name": "type_of", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "to_int", "arity": [1,1], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "to_float", "arity": [1,1], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "to_number", "arity": [1,1], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "to_bool", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "to_string", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "int", "arity": [1,1], "return": "int", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "float", "arity": [1,1], "return": "float", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "string", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "println", "arity": [0,null], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "printf", "arity": [1,null], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "input", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "readline", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": true}
+      ]
+    },
+    "text": {
+      "description": "String manipulation functions",
+      "functions": [
+        {"name": "len", "arity": [1,1], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "substring", "arity": [2,3], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "contains", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "starts_with", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ends_with", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "upper", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "lower", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "trim", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "replace", "arity": [3,3], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "split", "arity": [1,2], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "join", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "math": {
+      "description": "Mathematical functions",
+      "functions": [
+        {"name": "abs", "arity": [1,1], "return": "number", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "max", "arity": [2,null], "return": "any", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "min", "arity": [2,null], "return": "any", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "pow", "arity": [2,2], "return": "number", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqrt", "arity": [1,1], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "floor", "arity": [1,1], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ceil", "arity": [1,1], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "round", "arity": [1,2], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "random", "arity": [0,0], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "randint", "arity": [2,2], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "random_float", "arity": [0,0], "return": "float", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "random_int", "arity": [2,2], "return": "int", "classification": "PYTHON_BACKED", "legacy": true}
+      ]
+    },
+    "json": {
+      "description": "JSON parsing and serialization",
+      "functions": [
+        {"name": "json_encode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "json_decode", "arity": [1,1], "return": "any", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "json_parse", "arity": [1,1], "return": "any", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "json_stringify", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "json_pretty", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "json_valid", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "time": {
+      "description": "Time and date functions",
+      "functions": [
+        {"name": "time", "arity": [0,0], "return": "float", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "sleep", "arity": [1,1], "return": "null", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "time_now", "arity": [0,0], "return": "float", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": true},
+        {"name": "time_sleep", "arity": [1,1], "return": "null", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": true},
+        {"name": "datetime_now", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "datetime_format", "arity": [1,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "datetime_parse", "arity": [1,1], "return": "float", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "crypto": {
+      "description": "Cryptographic and security functions",
+      "functions": [
+        {"name": "sha256", "arity": [1,1], "return": "string", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "hmac_sha256", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "secure_token", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "secure_compare", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sanitize_path", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sanitize_html", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_sha256", "arity": [1,1], "return": "string", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": true},
+        {"name": "crypto_sha512", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_md5", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_hmac_sha256", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "crypto_uuid", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_random_bytes", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_secure_random_int", "arity": [2,2], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_base64_encode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_base64_decode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_hex_encode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "crypto_hex_decode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "files": {
+      "description": "Filesystem operations",
+      "functions": [
+        {"name": "read_file", "arity": [1,1], "return": "string", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "write_file", "arity": [2,2], "return": "null", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "file_exists", "arity": [1,1], "return": "bool", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "mkdir", "arity": [1,1], "return": "null", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "list_dir", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "remove_file", "arity": [1,1], "return": "null", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_read", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "fs_write", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "fs_append", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_exists", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "fs_mkdir", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "fs_copy", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_move", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_remove", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_rename", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_listdir", "arity": [0,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_cwd", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_absolute", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_is_file", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_is_dir", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_basename", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_dirname", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_extension", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_join", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_tempdir", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_tempfile", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_stat", "arity": [1,1], "return": "object", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "fs_walk", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "system": {
+      "description": "System information and environment access",
+      "functions": [
+        {"name": "system_hostname", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_os", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_arch", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_username", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_env", "arity": [1,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_cpu_count", "arity": [0,0], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_memory", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_disk", "arity": [0,1], "return": "object", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_uptime", "arity": [0,0], "return": "float", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_cwd", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "system_pid", "arity": [0,0], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_command_line", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_home", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_temp", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_ppid", "arity": [0,0], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "system_exit", "arity": [0,1], "return": "null", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "net": {
+      "description": "Network primitives and discovery",
+      "functions": [
+        {"name": "net_local_ip", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_primary_ip", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_gateway", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "platforms": ["linux"], "legacy": false},
+        {"name": "net_dns", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "platforms": ["linux"], "legacy": false},
+        {"name": "net_dns_servers", "arity": [0,0], "return": "string", "classification": "PYTHON_BACKED", "platforms": ["linux"], "legacy": true},
+        {"name": "net_interfaces", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_mac_address", "arity": [0,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_resolve", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_reverse_resolve", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_port_check", "arity": [2,3], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_ping", "arity": [1,1], "return": "bool", "classification": "EXTERNAL_TOOL_BACKED", "platforms": ["linux"], "legacy": false},
+        {"name": "net_scan_lan", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "platforms": ["linux"], "legacy": false},
+        {"name": "net_local_ips", "arity": [0,0], "return": "array", "classification": "EXTERNAL_TOOL_BACKED", "platforms": ["linux"], "legacy": false},
+        {"name": "net_is_private_ip", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_neighbors", "arity": [0,0], "return": "array", "classification": "EXTERNAL_TOOL_BACKED", "platforms": ["linux"], "legacy": true},
+        {"name": "tcp_connect", "arity": [2,3], "return": "string", "classification": "NATIVE_BACKED", "native_fallback": "PYTHON_BACKED", "legacy": false},
+        {"name": "tcp_banner", "arity": [2,3], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_tcp_send", "arity": [3,4], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_tcp_serve_start", "arity": [1,3], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_tcp_serve_stop", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_tcp_serve_wait", "arity": [1,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "net_udp_send", "arity": [3,4], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "http": {
+      "description": "HTTP client functions",
+      "functions": [
+        {"name": "http_get", "arity": [1,1], "return": "string|null", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "http_post", "arity": [1,2], "return": "string|null", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "http_request", "arity": [2,4], "return": "object", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "http_put", "arity": [1,2], "return": "string|null", "classification": "PYTHON_BACKED", "legacy": true},
+        {"name": "http_delete", "arity": [1,1], "return": "string|null", "classification": "PYTHON_BACKED", "legacy": true}
+      ]
+    },
+    "database": {
+      "description": "SQLite database operations",
+      "functions": [
+        {"name": "sqlite_open", "arity": [1,1], "return": "connection", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_close", "arity": [1,1], "return": "null", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_execute", "arity": [2,3], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_query", "arity": [2,3], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_begin", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_commit", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "sqlite_rollback", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "regex": {
+      "description": "Regular expression functions",
+      "functions": [
+        {"name": "regex_match", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "regex_replace", "arity": [3,3], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "regex_split", "arity": [2,2], "return": "array", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "collections": {
+      "description": "Array/collection operations",
+      "functions": [
+        {"name": "array_push", "arity": [2,2], "return": "int", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "array_pop", "arity": [1,1], "return": "any", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "array_sort", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "array_reverse", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "storage": {
+      "description": "Local file-backed key-value storage",
+      "functions": [
+        {"name": "storage_open", "arity": [1,1], "return": "store", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "storage_put", "arity": [3,3], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "storage_get", "arity": [2,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "storage_exists", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "storage_delete", "arity": [2,2], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "storage_list", "arity": [1,2], "return": "array", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "logging": {
+      "description": "Structured logging",
+      "functions": [
+        {"name": "log_set_level", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "log_debug", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "log_info", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "log_warn", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "log_error", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "ai": {
+      "description": "AI provider abstractions",
+      "functions": [
+        {"name": "ai_supported_providers", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ai_provider_available", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ai_mock_chat", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ai_available_providers", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "ai_chat", "arity": [1,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "data_serialization": {
+      "description": "CSV and URL encoding/decoding",
+      "functions": [
+        {"name": "csv_parse", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "csv_stringify", "arity": [1,2], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "csv_parse_objects", "arity": [1,1], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "url_encode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "url_decode", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    },
+    "host_abi": {
+      "description": "Host ABI introspection",
+      "functions": [
+        {"name": "host_capability_available", "arity": [1,1], "return": "bool", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "host_list_capabilities", "arity": [0,0], "return": "array", "classification": "PYTHON_BACKED", "legacy": false},
+        {"name": "host_error_message", "arity": [1,1], "return": "string", "classification": "PYTHON_BACKED", "legacy": false}
+      ]
+    }
+  },
+  "summary": {
+    "total_functions": 146,
+    "by_classification": {
+      "PYTHON_BACKED": 125,
+      "NATIVE_BACKED": 5,
+      "EXTERNAL_TOOL_BACKED": 3,
+      "NATIVE_BACKED_with_PYTHON_FALLBACK": 13
+    },
+    "by_domain": {
+      "core": 13,
+      "text": 11,
+      "math": 12,
+      "json": 6,
+      "time": 7,
+      "crypto": 17,
+      "files": 28,
+      "system": 16,
+      "net": 22,
+      "http": 5,
+      "database": 7,
+      "regex": 3,
+      "collections": 4,
+      "storage": 6,
+      "logging": 5,
+      "ai": 5,
+      "data_serialization": 5,
+      "host_abi": 3
+    },
+    "legacy_aliases": {
+      "total": 19,
+      "domains": ["core", "math", "json", "time", "crypto", "files", "system", "net", "http"]
+    }
+  },
+  "selfhosted_modules": {
+    "total": 13,
+    "files": [
+      "address.pan", "core_crypto.pan", "core_filesystem.pan", "core_json.pan",
+      "core_math.pan", "core_network.pan", "core_time.pan", "core_type.pan",
+      "discovery.pan", "discovery_engine.pan", "network.pan", "policy.pan", "services.pan"
+    ],
+    "total_functions": 85,
+    "classification": "PANTHER_IMPLEMENTED"
+  },
+  "host_abi_backends": {
+    "total": 4,
+    "backends": [
+      {"name": "native_time", "library": "libc", "functions": ["time", "sleep", "monotonic"], "platform": "linux"},
+      {"name": "native_filesystem", "library": "libc", "functions": ["read", "write", "exists", "mkdir", "remove"], "platform": "linux"},
+      {"name": "native_crypto", "library": "libcrypto", "functions": ["sha256"], "platform": "linux"},
+      {"name": "native_socket", "library": "libc", "functions": ["tcp_connect", "tcp_banner"], "platform": "linux"}
+    ]
+  },
+  "gaps": {
+    "missing_packages": [
+      "panther.core", "panther.collections", "panther.math", "panther.text",
+      "panther.time", "panther.json", "panther.files", "panther.system",
+      "panther.process", "panther.logging", "panther.cli", "panther.net",
+      "panther.http", "panther.web", "panther.database", "panther.storage",
+      "panther.crypto", "panther.security", "panther.testing",
+      "panther.concurrent", "panther.async", "panther.ai", "panther.cloud",
+      "panther.container"
+    ],
+    "missing_features": [
+      "Package/module loading system",
+      "Namespaced API as panther.* functions",
+      "Structured error contract (Result-like patterns)",
+      "Formal implementation classifications in manifest",
+      "Per-function parameter type info",
+      "Documentation/test paths in manifest",
+      "LSP completion for namespaced APIs",
+      "Process management",
+      "CLI framework",
+      "Testing framework",
+      "Concurrency/async primitives",
+      "Cloud provider integration",
+      "Container metadata helpers"
+    ]
+  }
+}

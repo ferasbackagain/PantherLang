@@ -1,6 +1,6 @@
 {
   "name": "pantherlang-official",
-  "displayName": "PantherLang",
+  "displayName": "PantherLang Official",
   "description": "Official PantherLang language support, project wizard, run/build/debug tooling, and AI agent knowledge pack for Visual Studio Code.",
   "version": "1.1.7",
   "publisher": "PantherLang",

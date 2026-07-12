@@ -4,6 +4,11 @@ from dataclasses import dataclass
 
 from .base import ASTNode
 
+# Import BlockNode lazily to avoid circular import
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from .statements import BlockNode
+
 
 NORMALIZE_MAP: dict[str, str] = {}
 OPERATOR_PRECEDENCE: dict[str, int] = {}
@@ -182,3 +187,13 @@ class ArrayLiteral(Expression):
 
     def children(self) -> tuple[Expression, ...]:
         return tuple(self.items)
+
+
+@dataclass(frozen=True, kw_only=True)
+class FunctionLiteral(Expression):
+    params: tuple[str, ...]
+    body: 'BlockNode'  # Forward reference
+    param_types: tuple[str | None, ...] = ()
+
+    def children(self) -> tuple[Expression, ...]:
+        return (self.body,) if self.body is not None else ()

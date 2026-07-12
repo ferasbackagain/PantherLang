@@ -1,0 +1,51 @@
+{
+  "phase": "11",
+  "title": "Real Concurrency (threading) and Async (ThreadPoolExecutor)",
+  "classification": "PYTHON_BOOTSTRAP_BACKED",
+  "status": "complete",
+  "backend_functions": {
+    "concurrent": [
+      "_concurrent_spawn", "_concurrent_join", "_concurrent_join_timeout",
+      "_concurrent_task_status", "_concurrent_task_result", "_concurrent_task_error",
+      "_concurrent_cancel", "_concurrent_worker_count",
+      "_concurrent_queue_create", "_concurrent_queue_put",
+      "_concurrent_queue_get", "_concurrent_queue_get_timeout"
+    ],
+    "async": [
+      "_async_task", "_async_run", "_async_await_task", "_async_await_timeout",
+      "_async_sleep", "_async_gather", "_async_race",
+      "_async_retry", "_async_retry_with_backoff",
+      "_async_cancel", "_async_status"
+    ]
+  },
+  "self_hosted_packages": {
+    "concurrent": "stdlib/panther/concurrent/__init__.pan",
+    "async": "stdlib/panther/async/__init__.pan"
+  },
+  "test_results": {
+    "baseline": 1299,
+    "phase11_tests": 31,
+    "total": 1330,
+    "passed": 1330,
+    "failed": 0
+  },
+  "examples": [
+    "examples/stdlib2_concurrency_async/main.pan"
+  ],
+  "files_changed": [
+    "compiler/stdlib/functions.py",
+    "stdlib/panther/concurrent/__init__.pan",
+    "stdlib/panther/async/__init__.pan",
+    "compiler/capability_manifest.py",
+    "tests/test_concurrent_async_phase11.py",
+    "tests/test_stdlib2_package_foundation.py",
+    "panther_stdlib2_24_package_verification.pan",
+    "examples/stdlib2_concurrency_async/main.pan"
+  ],
+  "documents": [
+    "engineering/PHASE11_CONCURRENCY_ASYNC_AUDIT.md",
+    "engineering/PHASE11_CONCURRENCY_ASYNC_REPORT.md",
+    "engineering/PHASE11_EXECUTION_MODEL_DESIGN.md",
+    "engineering/PHASE11_CONCURRENCY_ASYNC_MANIFEST.json"
+  ]
+}

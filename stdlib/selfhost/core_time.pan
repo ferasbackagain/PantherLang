@@ -1,13 +1,13 @@
 panther main {
-    fn now() {
+    fn core_time_now() {
         return time_now();
     }
 
-    fn wait(secs) {
+    fn core_time_wait(secs) {
         time_sleep(secs);
     }
 
-    fn timestamp() {
+    fn core_time_timestamp() {
         return time_now();
     }
 }

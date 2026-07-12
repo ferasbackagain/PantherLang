@@ -229,14 +229,45 @@ class StatementParser(ParserBase):
 
     def parse_import_statement(self) -> ImportStatement:
         start = self.consume(TokenKind.IMPORT, "Expected 'import'")
-        parts = [self.consume(TokenKind.IDENTIFIER, "Expected module name after 'import'").lexeme]
+        # Accept IDENTIFIER and keywords as module name parts (for panther.*, web.*, api.*, ai.*, test.* imports)
+        def consume_module_part():
+            if self.check(TokenKind.IDENTIFIER):
+                return self.consume(TokenKind.IDENTIFIER, "Expected module name").lexeme
+            elif self.check(TokenKind.PANTHER):
+                return self.consume(TokenKind.PANTHER).lexeme
+            elif self.check(TokenKind.WEB):
+                return self.consume(TokenKind.WEB).lexeme
+            elif self.check(TokenKind.API):
+                return self.consume(TokenKind.API).lexeme
+            elif self.check(TokenKind.AI):
+                return self.consume(TokenKind.AI).lexeme
+            elif self.check(TokenKind.TEST):
+                return self.consume(TokenKind.TEST).lexeme
+            else:
+                raise self.error("Expected module name")
+        
+        parts = [consume_module_part()]
         while self.match(TokenKind.DOT):
-            parts.append(self.consume(TokenKind.IDENTIFIER, "Expected module name after '.'").lexeme)
+            parts.append(consume_module_part())
         module_name = ".".join(parts)
         alias = None
-        if self.check(TokenKind.IDENTIFIER) and self.peek().lexeme == "as":
+        if (self.check(TokenKind.IDENTIFIER) or self.check(TokenKind.PANTHER) or self.check(TokenKind.WEB) or self.check(TokenKind.API) or self.check(TokenKind.AI) or self.check(TokenKind.TEST)) and self.peek().lexeme == "as":
             self.advance()
-            alias_token = self.consume(TokenKind.IDENTIFIER, "Expected alias name after 'as'")
+            # Accept keywords as alias too
+            if self.check(TokenKind.IDENTIFIER):
+                alias_token = self.consume(TokenKind.IDENTIFIER, "Expected alias name after 'as'")
+            elif self.check(TokenKind.PANTHER):
+                alias_token = self.consume(TokenKind.PANTHER)
+            elif self.check(TokenKind.WEB):
+                alias_token = self.consume(TokenKind.WEB)
+            elif self.check(TokenKind.API):
+                alias_token = self.consume(TokenKind.API)
+            elif self.check(TokenKind.AI):
+                alias_token = self.consume(TokenKind.AI)
+            elif self.check(TokenKind.TEST):
+                alias_token = self.consume(TokenKind.TEST)
+            else:
+                raise self.error("Expected alias name after 'as'")
             alias = alias_token.lexeme
         self.consume(TokenKind.SEMICOLON, "Expected ';' after import statement")
         return ImportStatement(

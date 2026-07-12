@@ -67,6 +67,7 @@ include = [
     "panther_core*",
     "package_manager*",
     "tools*",
+    "stdlib*",
 ]
 exclude = [
     "tests*",
@@ -83,6 +84,7 @@ compiler = ["py.typed"]
 cli = ["py.typed"]
 panther_core = ["py.typed"]
 package_manager = ["py.typed"]
+stdlib = ["panther/**/*.pan"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -133,6 +133,7 @@ from compiler.ast import (
     BooleanLiteral,
     CallExpression,
     Expression,
+    FunctionLiteral,
     GroupingExpression,
     IdentifierExpression,
     IndexExpression,
@@ -208,6 +209,8 @@ class ExpressionEvaluator:
             return {key: self.evaluate(val) for key, val in expression.entries}
         if isinstance(expression, IndexExpression):
             return self._eval_index(expression)
+        if isinstance(expression, FunctionLiteral):
+            return self._eval_function_literal(expression)
         raise EvaluationError(f"Unsupported expression: {type(expression).__name__}")
 
     def _eval_unary(self, expr: UnaryExpression) -> Any:
@@ -221,21 +224,34 @@ class ExpressionEvaluator:
             raise EvaluationError(f"Type error in unary expression: {exc}") from exc
 
     def _eval_call(self, expr: CallExpression) -> Any:
-        callee_name = None
         if isinstance(expr.callee, IdentifierExpression):
             callee_name = expr.callee.name
-        else:
-            raise EvaluationError("Only named function calls are supported")
-        if self._env.has_type(callee_name):
-            struct_def = self._env.lookup_type(callee_name)
+            if self._env.has_type(callee_name):
+                struct_def = self._env.lookup_type(callee_name)
+                args = [self.evaluate(arg) for arg in expr.arguments]
+                field_names = [f.name for f in struct_def.fields]
+                instance = dict(zip(field_names, args))
+                instance["__type"] = callee_name
+                return instance
+            # First try to look up as a function
+            try:
+                func = self._env.lookup_function(callee_name)
+            except:
+                # If not found as a function, try to look up as a variable that holds a callable
+                func = self._env.lookup(callee_name)
+                if not callable(func):
+                    raise EvaluationError(f"'{callee_name}' is not a function")
             args = [self.evaluate(arg) for arg in expr.arguments]
-            field_names = [f.name for f in struct_def.fields]
-            instance = dict(zip(field_names, args))
-            instance["__type"] = callee_name
-            return instance
-        func = self._env.lookup_function(callee_name)
-        args = [self.evaluate(arg) for arg in expr.arguments]
-        return func(*args)
+            return func(*args)
+        elif isinstance(expr.callee, MemberExpression):
+            # Support module.function() calls like panther_math_abs(-42) via import
+            func = self.evaluate(expr.callee)
+            if not callable(func):
+                raise EvaluationError(f"Cannot call non-function: {func}")
+            args = [self.evaluate(arg) for arg in expr.arguments]
+            return func(*args)
+        else:
+            raise EvaluationError("Only named function calls and member calls are supported")
 
     def _eval_member(self, expr: MemberExpression) -> Any:
         obj = self.evaluate(expr.object)
@@ -264,6 +280,19 @@ class ExpressionEvaluator:
         raise EvaluationError(f"Cannot index into {type(obj).__name__}")
 
     def _eval_binary(self, expr: BinaryExpression) -> Any:
+        # Short-circuit evaluation for logical operators
+        if expr.operator == "&&":
+            left = self.evaluate(expr.left)
+            if not left:
+                return left
+            return self.evaluate(expr.right)
+
+        if expr.operator == "||":
+            left = self.evaluate(expr.left)
+            if left:
+                return left
+            return self.evaluate(expr.right)
+
         left = self.evaluate(expr.left)
         right = self.evaluate(expr.right)
 
@@ -317,3 +346,109 @@ class ExpressionEvaluator:
                 f"{type(left).__name__} and {type(right).__name__}. "
                 "Use explicit conversion when needed."
             ) from exc
+
+    def _eval_function_literal(self, expr: FunctionLiteral) -> Any:
+        """Evaluate a function literal, creating a callable that captures the current environment."""
+        env = self._env
+        
+        def func(*args):
+            # Create a new environment for the function call
+            func_env = env._new_child()
+            
+            # Bind parameters
+            for i, param in enumerate(expr.params):
+                value = args[i] if i < len(args) else None
+                func_env.define(param, value)
+            
+            # Evaluate function body
+            result = None
+            if expr.body:
+                for stmt in expr.body.statements:
+                    result = self._evaluate_statement(stmt, func_env)
+                    if isinstance(result, tuple) and result[0] == 'return':
+                        return result[1]
+            return None
+        
+        return func
+
+    def _evaluate_statement(self, stmt, env):
+        """Evaluate a statement within a function body environment."""
+        if stmt is None:
+            return None
+        
+        # Handle return statements
+        from compiler.ast import ReturnStatement
+        if isinstance(stmt, ReturnStatement):
+            value = self.evaluate(stmt.expression) if stmt.expression else None
+            return ('return', value)
+        
+        # Handle variable declarations
+        from compiler.ast import VariableDeclaration
+        if isinstance(stmt, VariableDeclaration):
+            value = self.evaluate(stmt.initializer) if stmt.initializer else None
+            env.define(stmt.name, value)
+            return None
+        
+        # Handle expression statements
+        from compiler.ast import ExpressionStatement
+        if isinstance(stmt, ExpressionStatement):
+            self.evaluate(stmt.expression)
+            return None
+        
+        # Handle if statements
+        from compiler.ast import IfStatement
+        if isinstance(stmt, IfStatement):
+            condition = self.evaluate(stmt.condition)
+            if condition:
+                if stmt.then_block:
+                    for stmt_ in stmt.then_block.statements:
+                        result = self._evaluate_statement(stmt_, env)
+                        if isinstance(result, tuple) and result[0] == 'return':
+                            return result
+            elif stmt.else_block:
+                for stmt_ in stmt.else_block.statements:
+                    result = self._evaluate_statement(stmt_, env)
+                    if isinstance(result, tuple) and result[0] == 'return':
+                        return result
+            return None
+        
+        # Handle while loops
+        from compiler.ast import WhileStatement
+        if isinstance(stmt, WhileStatement):
+            while self.evaluate(stmt.condition):
+                if stmt.body:
+                    for stmt_ in stmt.body.statements:
+                        result = self._evaluate_statement(stmt_, env)
+                        if isinstance(result, tuple) and result[0] == 'return':
+                            return result
+            return None
+        
+        # Handle for loops
+        from compiler.ast import ForStatement
+        if isinstance(stmt, ForStatement):
+            self.evaluate(stmt.start)
+            while self.evaluate(stmt.end):
+                env.enter_scope()
+                env.define(stmt.var, self.evaluate(stmt.start))
+                if stmt.body:
+                    for stmt_ in stmt.body.statements:
+                        result = self._evaluate_statement(stmt_, env)
+                        if isinstance(result, tuple) and result[0] == 'return':
+                            return result
+                env.exit_scope()
+            return None
+        
+        # Handle block statements
+        from compiler.ast import BlockNode
+        if isinstance(stmt, BlockNode):
+            env.enter_scope()
+            result = None
+            for stmt_ in stmt.statements:
+                result = self._evaluate_statement(stmt_, env)
+                if isinstance(result, tuple) and result[0] == 'return':
+                    return result
+            env.exit_scope()
+            return None
+        
+        # For other statements, just evaluate the expression if it has one
+        return None

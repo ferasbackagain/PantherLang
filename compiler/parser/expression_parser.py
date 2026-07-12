@@ -119,9 +119,15 @@ class ExpressionParser:
 
             if self.check(TokenKind.DOT):
                 token = self.advance()
+                # Accept IDENTIFIER and keywords as property names (for methods like http.get, http.post, testing.test, etc.)
                 prop_token = self.advance()
                 if prop_token.kind != TokenKind.IDENTIFIER:
-                    raise ValueError("Expected property name after '.'")
+                    # Check if it's a keyword that can be used as a property name
+                    keyword_kinds = {
+                        TokenKind.GET, TokenKind.POST, TokenKind.TEST,
+                    }
+                    if prop_token.kind not in keyword_kinds:
+                        raise ValueError("Expected property name after '.'")
                 left = MemberExpression(
                     location=self.ast_location(token),
                     object=left,
@@ -184,10 +190,116 @@ class ExpressionParser:
         literal = parse_literal_token(token)
         if literal is not None:
             return literal.expression
-        if token.kind == TokenKind.IDENTIFIER:
+        if token.kind in (TokenKind.IDENTIFIER, TokenKind.AI, TokenKind.WEB, TokenKind.API, TokenKind.TEST):
             return IdentifierExpression(location=self.ast_location(token), name=token.lexeme)
+        if token.kind == TokenKind.FN:
+            return self._parse_function_literal(token)
 
         raise ValueError(f"Expected expression, got {token.lexeme!r}")
+
+    def _parse_function_literal(self, token: Token) -> Expression:
+        """Parse a function literal: fn(params) { body }"""
+        # Consume '(' after 'fn'
+        if self.is_at_end() or self.peek().kind != TokenKind.LEFT_PAREN:
+            raise ValueError("Expected '(' after 'fn'")
+        self.advance()  # consume '('
+        
+        params = []
+        param_types = []
+        if not self.check(TokenKind.RIGHT_PAREN):
+            while True:
+                if self.is_at_end():
+                    raise ValueError("Expected parameter name")
+                param_token = self.advance()
+                if param_token.kind != TokenKind.IDENTIFIER:
+                    raise ValueError("Expected parameter name")
+                params.append(param_token.lexeme)
+                # Optional type annotation
+                p_type = None
+                if self.check(TokenKind.COLON):
+                    self.advance()  # consume ':'
+                    type_token = self.advance()
+                    if type_token.kind != TokenKind.IDENTIFIER:
+                        raise ValueError("Expected type name")
+                    p_type = type_token.lexeme
+                param_types.append(p_type)
+                if self.check(TokenKind.COMMA):
+                    self.advance()
+                else:
+                    break
+        if self.is_at_end() or self.peek().kind != TokenKind.RIGHT_PAREN:
+            raise ValueError("Expected ')' after parameters")
+        self.advance()  # consume ')'
+        
+        # Parse body (should be a block)
+        if self.is_at_end() or self.peek().kind != TokenKind.LEFT_BRACE:
+            raise ValueError("Expected '{' after function parameters")
+        brace_token = self.peek()
+        body = self._parse_block(brace_token)
+        
+        from compiler.ast import FunctionLiteral
+        return FunctionLiteral(
+            location=self.ast_location(token),
+            params=tuple(params),
+            param_types=tuple(param_types),
+            body=body,
+        )
+
+    def _parse_block(self, brace_token: Token):
+        """Parse a block statement { ... } and return BlockNode."""
+        from compiler.ast import BlockNode, Statement
+        # brace_token is the '{' token
+        self.advance()  # consume '{'
+        statements = []
+        while not self.check(TokenKind.RIGHT_BRACE) and not self.is_at_end():
+            # Parse statement (simplified - just expression statements for now)
+            if self.check(TokenKind.LET):
+                # Variable declaration
+                self.advance()
+                name_token = self.advance()
+                var_type = None
+                if self.check(TokenKind.COLON):
+                    self.advance()
+                    type_token = self.advance()
+                    var_type = type_token.lexeme
+                if self.check(TokenKind.EQUAL):
+                    self.advance()
+                    initializer = self.parse_precedence(0)
+                else:
+                    initializer = None
+                if self.is_at_end() or self.peek().kind != TokenKind.SEMICOLON:
+                    raise ValueError("Expected ';' after variable declaration")
+                self.advance()
+                from compiler.ast import VariableDeclaration
+                statements.append(VariableDeclaration(
+                    location=self.ast_location(name_token),
+                    name=name_token.lexeme,
+                    var_type=var_type,
+                    initializer=initializer,
+                ))
+            elif self.check(TokenKind.RETURN):
+                # Return statement
+                self.advance()
+                expr = None
+                if not self.check(TokenKind.SEMICOLON):
+                    expr = self.parse_precedence(0)
+                if self.is_at_end() or not self.check(TokenKind.SEMICOLON):
+                    raise ValueError("Expected ';' after return")
+                self.advance()  # consume ';'
+                from compiler.ast import ReturnStatement
+                statements.append(ReturnStatement(location=self.ast_location(expr) if expr else self.ast_location(self.peek()), expression=expr))
+            else:
+                # Expression statement
+                expr = self.parse_precedence(0)
+                if self.is_at_end() or self.peek().kind != TokenKind.SEMICOLON:
+                    raise ValueError("Expected ';' after expression")
+                self.advance()
+                from compiler.ast import ExpressionStatement
+                statements.append(ExpressionStatement(location=self.ast_location(expr), expression=expr))
+        if self.is_at_end() or self.peek().kind != TokenKind.RIGHT_BRACE:
+            raise ValueError("Expected '}' after block")
+        self.advance()
+        return BlockNode(location=self.ast_location(brace_token), statements=tuple(statements))
 
     def _parse_array_literal(self, token: Token) -> ArrayLiteral:
         items: list[Expression] = []

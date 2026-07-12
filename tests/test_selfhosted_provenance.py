@@ -99,7 +99,28 @@ def test_selfhosted_module_discovery():
     expected_modules = {
         "core_math", "core_crypto", "core_filesystem", "core_json",
         "core_type", "core_time", "core_network", "network",
-        "discovery", "discovery_engine", "address", "policy", "services"
+        "discovery", "discovery_engine", "address", "policy", "services",
+        # Phase 1 SL 2.0 packages
+        "panther.core", "panther.math", "panther.text", "panther.time",
+        "panther.json", "panther.files", "panther.collections",
+        # Phase 3 packages
+        "panther.system", "panther.process", "panther.logging", "panther.cli",
+        # Phase 4 packages
+        "panther.net", "panther.http",
+        # Phase 5 packages
+        "panther.web",
+        # Phase 6 packages
+        "panther.database", "panther.storage",
+        # Phase 7 packages
+        "panther.crypto", "panther.security",
+        # Phase 8 packages
+        "panther.async", "panther.concurrent", "panther.testing",
+        # Phase 9 packages
+        "panther.ai",
+        # Phase 10 packages
+        "panther.cloud", "panther.container",
+        # Phase 11 packages
+        "panther.serialization"
     }
     
     assert set(modules.keys()) == expected_modules, f"Missing modules: {expected_modules - set(modules.keys())}"

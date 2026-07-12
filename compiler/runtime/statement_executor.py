@@ -113,6 +113,7 @@ from compiler.ast import (
     IdentifierExpression,
     IfStatement,
     ImportStatement,
+    IndexExpression,
     LoopStatement,
     PrintStatement,
     ReturnStatement,
@@ -205,19 +206,19 @@ class StatementExecutor:
                 self._execute_block(stmt)
             elif isinstance(stmt, IfStatement):
                 result = self._execute_if(stmt)
-                if result.return_value is not None:
+                if result.return_value is not None or result.error is not None:
                     return result
             elif isinstance(stmt, LoopStatement):
                 result = self._execute_loop(stmt)
-                if result.return_value is not None:
+                if result.return_value is not None or result.error is not None:
                     return result
             elif isinstance(stmt, WhileStatement):
                 result = self._execute_while(stmt)
-                if result.return_value is not None:
+                if result.return_value is not None or result.error is not None:
                     return result
             elif isinstance(stmt, ForStatement):
                 result = self._execute_for(stmt)
-                if result.return_value is not None:
+                if result.return_value is not None or result.error is not None:
                     return result
             elif isinstance(stmt, RouteStatement):
                 self._execute_route(stmt)
@@ -265,11 +266,44 @@ class StatementExecutor:
 
     def _execute_import(self, stmt: ImportStatement) -> None:
         var_name = stmt.alias if stmt.alias else stmt.module_name.split(".")[0]
+        
+        # Check if this is a panther.* package import
         module_obj = {"__module": stmt.module_name}
+        
+        if stmt.module_name.startswith("panther."):
+            pkg_name = stmt.module_name.split(".")[1]
+            try:
+                from compiler.stdlib.package_loader import get_package_loader
+                loader = get_package_loader()
+                loader.discover_packages()
+                pkg = loader._packages.get(pkg_name)
+                if pkg is not None:
+                    # Populate module object with package functions using short names
+                    for fn_name, pf in pkg.functions.items():
+                        # Extract short name (remove panther_<pkg>_ prefix)
+                        short_name = fn_name
+                        prefix = f"panther_{pkg_name}_"
+                        if fn_name.startswith(prefix):
+                            short_name = fn_name[len(prefix):]
+                        # Create a wrapper that calls the global function
+                        module_obj[short_name] = self._make_package_function(fn_name)
+            except Exception:
+                pass
+        
         try:
             self._env.define(var_name, module_obj)
         except Exception:
             pass
+
+    def _make_package_function(self, fn_name: str):
+        """Create a callable that invokes a package function."""
+        def package_fn(*args, **kwargs):
+            env = self._env
+            if env.has_function(fn_name):
+                func = env.lookup_function(fn_name)
+                return func(*args, **kwargs)
+            raise RuntimeError(f"Package function {fn_name} not found")
+        return package_fn
 
     def _execute_struct_declaration(self, stmt: StructDeclaration) -> None:
         self._env.define_type(stmt.name, stmt)
@@ -302,6 +336,15 @@ class StatementExecutor:
                     value = current % value
         if isinstance(stmt.target, IdentifierExpression):
             self._env.assign(stmt.target.name, value)
+        elif isinstance(stmt.target, IndexExpression):
+            obj = self._evaluator.evaluate(stmt.target.object)
+            key = self._evaluator.evaluate(stmt.target.index)
+            if isinstance(obj, dict):
+                obj[key] = value
+            elif isinstance(obj, list) and isinstance(key, int):
+                obj[key] = value
+            else:
+                raise RuntimeError(f"Cannot index into {type(obj).__name__}")
         else:
             self._evaluator.evaluate(stmt.target)
             raise RuntimeError("Complex assignment targets not supported")

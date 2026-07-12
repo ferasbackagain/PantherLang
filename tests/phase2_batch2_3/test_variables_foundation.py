@@ -25,6 +25,7 @@ from compiler.runtime import (
     StatementExecutor,
     UndefinedVariableError,
     VariableEnvironment,
+    execute_source,
 )
 
 
@@ -184,6 +185,93 @@ def test_expression_evaluator_binary_logical_and():
         right=BooleanLiteral(value=False),
     )
     assert ev.evaluate(expr) is False
+
+
+def test_short_circuit_and_skips_right_when_left_false():
+    """Verify && short-circuits: right side not evaluated when left is falsy."""
+    result = execute_source('''
+panther main {
+    let arr = [1];
+    // Left side false, right side would crash if evaluated (index out of bounds)
+    if false && arr[5] == 0 {
+        print("should not reach");
+    }
+    print("ok");
+}
+''')
+    assert result.error is None
+    assert "ok" in " ".join(result.captured_output)
+
+
+def test_short_circuit_or_skips_right_when_left_true():
+    """Verify || short-circuits: right side not evaluated when left is truthy."""
+    result = execute_source('''
+panther main {
+    let arr = [1];
+    // Left side true, right side would crash if evaluated (index out of bounds)
+    if true || arr[5] == 0 {
+        print("ok");
+    }
+}
+''')
+    assert result.error is None
+    assert "ok" in " ".join(result.captured_output)
+
+
+def test_error_propagation_in_if_body():
+    """Verify errors inside if body propagate up."""
+    result = execute_source('''
+panther main {
+    if true {
+        let x = 1 / 0;
+    }
+}
+''')
+    assert result.error is not None
+    assert "Division by zero" in result.error
+
+
+def test_error_propagation_in_while_body():
+    """Verify errors inside while body propagate up (not swallowed)."""
+    result = execute_source('''
+panther main {
+    let i = 0;
+    while i < 3 {
+        if i == 1 {
+            let x = 1 / 0;
+        }
+        i = i + 1;
+    }
+}
+''')
+    assert result.error is not None
+    assert "Division by zero" in result.error
+
+
+def test_index_expression_assignment():
+    """Verify obj[key] = value assignment works."""
+    result = execute_source('''
+panther main {
+    let a = [1, 2, 3];
+    a[0] = 99;
+    print(a[0]);
+}
+''')
+    assert result.error is None
+    assert "99" in " ".join(result.captured_output)
+
+
+def test_index_expression_assignment_dict():
+    """Verify dict[key] = value assignment works."""
+    result = execute_source('''
+panther main {
+    let d = {x: 1};
+    d["y"] = 2;
+    print(d["y"]);
+}
+''')
+    assert result.error is None
+    assert "2" in " ".join(result.captured_output)
 
 
 def test_expression_evaluator_grouping():

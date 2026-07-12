@@ -28,6 +28,11 @@ class SymbolTable:
     ) -> None:
         self._current.declare(name, kind, location)
 
+    def declare_global(
+        self, name: str, kind: SymbolKind, location: Any = None
+    ) -> None:
+        self.global_scope.declare(name, kind, location)
+
     def lookup(self, name: str) -> Any:
         return self._current.lookup(name)
 
