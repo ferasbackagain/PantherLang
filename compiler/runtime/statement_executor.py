@@ -461,14 +461,39 @@ class StatementExecutor:
         self._env.define_function(route_name, lambda **kwargs: self._execute_route_handler(stmt, kwargs))
 
     def _execute_route_handler(self, stmt: RouteStatement, kwargs: dict) -> Any:
+        from compiler.web.server import _request_context
         child_env = self._env._new_child()
-        for key, value in kwargs.items():
-            child_env._variables[key] = value
+        ctx = _request_context
+        route_param_names: tuple[str, ...] = getattr(ctx, "_route_param_names", ())
+        route_params: dict[str, str] = getattr(ctx, "_route_params", {})
+        query_params: dict[str, str] = {}
+        raw_body: Any = None
+        for k, v in kwargs.items():
+            if k == "body":
+                raw_body = v
+            elif k in route_param_names:
+                route_params[k] = str(v)
+            else:
+                query_params[k] = v
+            child_env._variables[k] = v
+        body_str = ""
+        if raw_body is not None:
+            if isinstance(raw_body, bytes):
+                body_str = raw_body.decode("utf-8", errors="replace")
+            else:
+                body_str = str(raw_body)
+        req = {
+            "method": getattr(ctx, "method", "GET"),
+            "path": getattr(ctx, "path", "/"),
+            "headers": getattr(ctx, "headers", {}),
+            "query": query_params,
+            "body": body_str,
+            "params": route_params,
+        }
+        child_env._variables["req"] = req
         child_exec = StatementExecutor(child_env)
         result = child_exec._execute_block_and_return(stmt.body)
-        # Propagate output to parent executor
         self._output.extend(child_exec._output)
-        # Return default success response if no explicit return
         if result.return_value is not None:
             return result.return_value
         return {"ok": True}

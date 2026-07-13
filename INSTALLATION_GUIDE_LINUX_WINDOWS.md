@@ -1,6 +1,6 @@
-# PantherLang v1.1.5 Installation Guide — Linux & Windows
+# PantherLang v1.1.9 Installation Guide — Linux & Windows
 
-**Version:** 1.1.5
+**Version:** 1.1.9
 **Date:** 2026-07-04
 **Python Requirement:** 3.10+
 
@@ -169,7 +169,7 @@ panther run hello\src\main.panther
 cd vscode-extension
 npm install
 npm run package
-code --install-extension pantherlang-1.1.5.vsix
+code --install-extension pantherlang-1.1.9.vsix
 ```
 
 ```powershell
@@ -177,7 +177,7 @@ code --install-extension pantherlang-1.1.5.vsix
 cd vscode-extension
 npm install
 npm run package
-code --install-extension pantherlang-1.1.5.vsix
+code --install-extension pantherlang-1.1.9.vsix
 ```
 
 ### VS Code Features

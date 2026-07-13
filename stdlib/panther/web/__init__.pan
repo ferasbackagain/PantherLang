@@ -1,60 +1,83 @@
 panther main {
-    // Server creation
+    // =====================================================
+    // Request/Response data model
+    // =====================================================
+    struct Request {
+        method: string,
+        path: string,
+        headers: object,
+        query: object,
+        body: any,
+        params: object
+    }
+
+    struct Response {
+        status: int,
+        headers: object,
+        body: any
+    }
+
+    // Server creation - creates a real HTTP server via Python backend
     fn panther_web_server_create(host, port) {
-        return {host: host, port: port, routes: [], middleware: []};
+        return _web_server_create(host, port);
     }
 
     // Route registration
     fn panther_web_get(server, path, handler) {
-        return server;
+        return _web_route_get(server, path, handler);
     }
 
     fn panther_web_post(server, path, handler) {
-        return server;
+        return _web_route_post(server, path, handler);
     }
 
     fn panther_web_put(server, path, handler) {
-        return server;
+        return _web_route_put(server, path, handler);
     }
 
     fn panther_web_delete(server, path, handler) {
-        return server;
+        return _web_route_delete(server, path, handler);
     }
 
     fn panther_web_route(server, method, path, handler) {
-        return server;
+        return _web_route_add(server, method, path, handler);
     }
 
-    // Middleware
-    fn panther_web_use(server, middleware) {
-        return server;
-    }
-
-    // Static files
-    fn panther_web_static(server, path, root) {
-        return server;
-    }
-
-    // Server start/stop
+    // Server start/stop - real operations
     fn panther_web_start(server) {
-        return true;
+        return _web_server_start(server);
     }
 
     fn panther_web_stop(server) {
-        return true;
+        return _web_server_stop(server);
+    }
+
+    fn panther_web_server_running(server) {
+        return _web_server_running(server);
+    }
+
+    fn panther_web_server_port(server) {
+        return _web_server_port(server);
     }
 
     // Response helpers
     fn panther_web_response_json(data) {
-        return json_stringify(data);
+        return _web_response_json(data);
     }
 
     fn panther_web_response_html(html) {
-        return html;
+        return _web_response_html(html);
     }
 
     fn panther_web_response_text(text) {
-        return text;
+        return _web_response_text(text);
+    }
+
+    fn panther_web_response(data, status) {
+        if status == null {
+            return _web_response(data);
+        }
+        return _web_response_status(data, status);
     }
 
     fn panther_web_response_error(status, message) {
@@ -65,13 +88,32 @@ panther main {
         return {redirect: url};
     }
 
-    // Request helpers - use null check instead of 'in' operator
+    fn panther_web_response_status(data, status) {
+        return _web_response_status(data, status);
+    }
+
+    fn panther_web_response_object(data, status, headers) {
+        if status == null {
+            status = 200;
+        }
+        if headers == null {
+            headers = {};
+        }
+        let resp = _web_response_status(data, status);
+        resp["headers"] = headers;
+        return resp;
+    }
+
+    // Request helpers
     fn panther_web_request_param(req, name, default) {
         let val = req.params[name];
         if val != null {
             return val;
         }
-        return default;
+        if default != null {
+            return default;
+        }
+        return null;
     }
 
     fn panther_web_request_query(req, name, default) {
@@ -79,28 +121,42 @@ panther main {
         if val != null {
             return val;
         }
-        return default;
+        if default != null {
+            return default;
+        }
+        return null;
     }
 
     fn panther_web_request_body(req) {
-        return req.body;
+        let body = req["body"];
+        if body != null {
+            return body;
+        }
+        return "";
     }
 
     fn panther_web_request_header(req, name) {
-        return req.headers[name];
+        let headers = req["headers"];
+        if headers != null {
+            let val = headers[name];
+            if val != null {
+                return val;
+            }
+        }
+        return null;
     }
 
     fn panther_web_request_method(req) {
-        return req.method;
+        return req["method"];
     }
 
     fn panther_web_request_path(req) {
-        return req.path;
+        return req["path"];
     }
 
     // Error handling
     fn panther_web_error_handler(server, status, handler) {
-        return server;
+        return _web_error_handler(server, status, handler);
     }
 
     // CORS
@@ -116,10 +172,9 @@ panther main {
     // Server info
     fn panther_web_server_info(server) {
         return {
-            host: server.host,
-            port: server.port,
-            route_count: len(server.routes),
-            uptime: time() - server.start_time
+            host: server._host,
+            port: _web_server_port(server),
+            running: _web_server_running(server)
         };
     }
 }

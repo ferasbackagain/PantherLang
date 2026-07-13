@@ -264,7 +264,7 @@ def _populate_packages() -> None:
                     text = init_file.read_text(encoding="utf-8")
                     fn_names = tuple(re.findall(r"fn\s+(\w+)\s*\(", text))
                     classification = PANTHER_IMPLEMENTED
-                    if pkg_path.name in ("concurrent", "async"):
+                    if pkg_path.name in ("concurrent", "async", "web"):
                         classification = PYTHON_BOOTSTRAP_BACKED
                     _PACKAGES[pkg_path.name] = PackageCapability(
                         name=pkg_path.name,

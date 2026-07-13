@@ -104,7 +104,7 @@ stdlib/
 | Database | SQLite engine, ORM, migrations | ✅ Verified |
 | Package Manager | Dependency resolution, lock files, security | ✅ Verified |
 | CLI | 6 commands (run, build, check, fmt, new, doctor) | ✅ Verified |
-| VS Code | Extension v1.1.5 (syntax, debug, wizard) | ✅ Verified |
+| VS Code | Extension v1.1.9 (syntax, debug, wizard) | ✅ Verified |
 | Cross-Platform | Linux, macOS, Windows | ✅ Verified |
 
 ### Compliance Matrix

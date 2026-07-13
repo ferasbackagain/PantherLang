@@ -2469,5 +2469,264 @@ _register(StdlibFunction("_async_retry_with_backoff", (3, 3), _async_retry_with_
 _register(StdlibFunction("_async_cancel", (1, 1), _async_cancel, "_async_cancel(task) -> bool"))
 _register(StdlibFunction("_async_status", (1, 1), _async_status, "_async_status(task) -> str"))
 
+# ========================================================================
+# PHASE 11b — Web Engine Backend (panther.web) — REAL HTTP SERVER
+# ========================================================================
+
+_web_servers: dict[str, Any] = {}
+_web_server_lock = threading.Lock()
+
+
+def _web_server_create(host: str, port: int) -> dict:
+    from compiler.web import HttpServer
+    server_id = f"web-{id(_web_servers)}-{len(_web_servers)}"
+    server = HttpServer(host=str(host), port=int(port))
+    handle = {"_server_id": server_id, "_server": server, "_host": str(host), "_port": int(port)}
+    with _web_server_lock:
+        _web_servers[server_id] = handle
+    return handle
+
+
+def _web_server_start(server_dict: dict) -> bool:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return False
+    server = handle["_server"]
+    thread = threading.Thread(target=server.start, daemon=True, name=f"panther-web-{sid}")
+    thread.start()
+    handle["_thread"] = thread
+    server._started.wait(timeout=5.0)
+    return True
+
+
+def _web_server_stop(server_dict: dict) -> bool:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return False
+    server = handle["_server"]
+    try:
+        server.stop()
+        return True
+    except Exception:
+        return False
+
+
+def _web_server_running(server_dict: dict) -> bool:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return False
+    server = handle["_server"]
+    return server._server is not None
+
+
+def _web_server_port(server_dict: dict) -> int:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return 0
+    return handle["_server"].port
+
+
+def _web_route_add(server_dict: dict, method: str, path: str, handler_fn: Callable) -> bool:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return False
+    server = handle["_server"]
+
+    def wrapper(**kwargs: Any) -> Any:
+        from compiler.web.server import _request_context
+        ctx = _request_context
+        route_param_names: tuple[str, ...] = getattr(ctx, "_route_param_names", ())
+        query_params: dict[str, Any] = {}
+        route_params: dict[str, str] = {}
+        raw_body: Any = None
+        for k, v in kwargs.items():
+            if k == "body":
+                raw_body = v
+            elif k in route_param_names:
+                route_params[k] = str(v)
+            else:
+                query_params[k] = v
+        req_method = getattr(ctx, "method", method)
+        req_path = getattr(ctx, "path", path)
+        req_headers = getattr(ctx, "headers", {})
+        body_str = ""
+        if raw_body is not None:
+            if isinstance(raw_body, bytes):
+                body_str = raw_body.decode("utf-8", errors="replace")
+            else:
+                body_str = str(raw_body)
+        req: dict[str, Any] = {
+            "_method": req_method,
+            "_path": req_path,
+            "_headers": req_headers,
+            "method": req_method,
+            "path": req_path,
+            "headers": req_headers,
+            "query": query_params,
+            "body": body_str,
+            "params": route_params,
+        }
+        # Backward compat: expose route and query params at top level too
+        for k, v in route_params.items():
+            req[k] = v
+        for k, v in query_params.items():
+            req[k] = v
+        return handler_fn(req)
+
+    server.router.add_route(str(method).upper(), str(path), wrapper)
+    return True
+
+
+def _web_route_get(server_dict: dict, path: str, handler_fn: Callable) -> bool:
+    return _web_route_add(server_dict, "GET", path, handler_fn)
+
+
+def _web_route_post(server_dict: dict, path: str, handler_fn: Callable) -> bool:
+    return _web_route_add(server_dict, "POST", path, handler_fn)
+
+
+def _web_route_put(server_dict: dict, path: str, handler_fn: Callable) -> bool:
+    return _web_route_add(server_dict, "PUT", path, handler_fn)
+
+
+def _web_route_delete(server_dict: dict, path: str, handler_fn: Callable) -> bool:
+    return _web_route_add(server_dict, "DELETE", path, handler_fn)
+
+
+def _web_error_handler(server_dict: dict, status: int, handler_fn: Callable) -> bool:
+    sid = server_dict.get("_server_id", "")
+    with _web_server_lock:
+        handle = _web_servers.get(sid)
+    if handle is None:
+        return False
+    server = handle["_server"]
+    server.set_error_handler(int(status), handler_fn)
+    return True
+
+
+def _web_response_text(text: str) -> str:
+    return str(text)
+
+
+def _web_response_json(data: Any) -> str:
+    return json.dumps(_convert(data))
+
+
+def _web_response_html(html: str) -> str:
+    return str(html)
+
+
+def _web_response(data: Any, status: int = 200) -> dict:
+    body = data
+    if not isinstance(data, str):
+        body = json.dumps(_convert(data))
+    return {
+        "_type": "Response",
+        "status": int(status),
+        "headers": {"Content-Type": "text/plain; charset=utf-8"},
+        "body": body,
+    }
+
+
+def _web_response_status(data: Any, status: int, content_type: str = "application/json; charset=utf-8") -> dict:
+    body = data
+    if not isinstance(data, str):
+        body = json.dumps(_convert(data))
+    return {
+        "_type": "Response",
+        "status": int(status),
+        "headers": {"Content-Type": content_type},
+        "body": body,
+    }
+
+
+def _web_response_redirect(url: str, status: int = 302) -> dict:
+    return {
+        "_type": "Response",
+        "status": int(status),
+        "headers": {"Location": str(url)},
+        "body": "",
+    }
+
+
+def _web_request_method(req: dict) -> str:
+    return str(req.get("_method", req.get("method", "GET")))
+
+
+def _web_request_path(req: dict) -> str:
+    return str(req.get("_path", req.get("path", "")))
+
+
+def _web_request_query(req: dict, name: str, default: str = "") -> str:
+    qp = req.get("query", {})
+    val = qp.get(name)
+    if val is None:
+        val = req.get(name)
+    return str(val) if val is not None else default
+
+
+def _web_request_header(req: dict, name: str) -> str:
+    headers = req.get("_headers", req.get("headers", {}))
+    if isinstance(headers, dict):
+        return str(headers.get(name, ""))
+    return ""
+
+
+def _web_request_body(req: dict) -> str:
+    body = req.get("body", req.get("body_obj", ""))
+    if body is not None:
+        if isinstance(body, bytes):
+            return body.decode("utf-8", errors="replace")
+        return str(body)
+    return ""
+
+
+_register(StdlibFunction("_web_server_create", (2, 2), _web_server_create, "_web_server_create(host, port) -> server"))
+_register(StdlibFunction("_web_server_start", (1, 1), _web_server_start, "_web_server_start(server) -> bool"))
+_register(StdlibFunction("_web_server_stop", (1, 1), _web_server_stop, "_web_server_stop(server) -> bool"))
+_register(StdlibFunction("_web_server_running", (1, 1), _web_server_running, "_web_server_running(server) -> bool"))
+_register(StdlibFunction("_web_server_port", (1, 1), _web_server_port, "_web_server_port(server) -> int"))
+_register(StdlibFunction("_web_route_add", (4, 4), _web_route_add, "_web_route_add(server, method, path, handler) -> bool"))
+_register(StdlibFunction("_web_route_get", (3, 3), _web_route_get, "_web_route_get(server, path, handler) -> bool"))
+_register(StdlibFunction("_web_route_post", (3, 3), _web_route_post, "_web_route_post(server, path, handler) -> bool"))
+_register(StdlibFunction("_web_route_put", (3, 3), _web_route_put, "_web_route_put(server, path, handler) -> bool"))
+_register(StdlibFunction("_web_route_delete", (3, 3), _web_route_delete, "_web_route_delete(server, path, handler) -> bool"))
+_register(StdlibFunction("_web_error_handler", (3, 3), _web_error_handler, "_web_error_handler(server, status, handler) -> bool"))
+_register(StdlibFunction("_web_response_text", (1, 1), _web_response_text, "_web_response_text(text) -> string"))
+_register(StdlibFunction("_web_response_json", (1, 1), _web_response_json, "_web_response_json(data) -> string"))
+_register(StdlibFunction("_web_response_html", (1, 1), _web_response_html, "_web_response_html(html) -> string"))
+_register(StdlibFunction("_web_response", (1, 2), _web_response, "_web_response(data[, status]) -> Response"))
+_register(StdlibFunction("_web_response_status", (2, 3), _web_response_status, "_web_response_status(data, status[, content_type]) -> Response"))
+_register(StdlibFunction("_web_response_redirect", (1, 2), _web_response_redirect, "_web_response_redirect(url[, status]) -> Response"))
+_register(StdlibFunction("_web_request_query", (2, 3), _web_request_query, "_web_request_query(req, name[, default]) -> string"))
+_register(StdlibFunction("_web_request_body", (1, 1), _web_request_body, "_web_request_body(req) -> string"))
+
+
+# ========================================================================
+# Phase 4 — Browser Launch (system.open_url)
+# ========================================================================
+
+def _system_open_url(url: str) -> bool:
+    """Open a URL in the default browser."""
+    import webbrowser
+    try:
+        webbrowser.open(str(url))
+        return True
+    except Exception:
+        return False
+
+
+_register(StdlibFunction("_system_open_url", (1, 1), _system_open_url, "_system_open_url(url) -> bool; open URL in default browser"))
+
 # End of stdlib function registrations
 

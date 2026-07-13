@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantherLang Web Engine</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐆 PantherLang Web Engine</h1>
+        <p class="subtitle">Built with PantherLang v1.1.9</p>
+
+        <div class="card">
+            <h2>Server Status</h2>
+            <pre id="status">Loading...</pre>
+        </div>
+
+        <div class="card">
+            <h2>API Endpoints</h2>
+            <ul>
+                <li><a href="/health">GET /health</a></li>
+                <li><a href="/api/version">GET /api/version</a></li>
+                <li><a href="/api/system">GET /api/system</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Test Echo</h2>
+            <form id="echoForm">
+                <input type="text" id="echoInput" placeholder="Enter message" value="Hello Panther">
+                <button type="submit">Send POST</button>
+            </form>
+            <pre id="echoResult"></pre>
+        </div>
+
+        <footer>
+            <p>PantherLang — Web Engine Demo</p>
+        </footer>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>

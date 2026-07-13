@@ -1,5 +1,30 @@
 # PantherLang Changelog
 
+## 1.1.9 (2026-07-12) — Real Web Engine and Request/Response Model
+
+### Added
+- Real HTTP server backed by Python `http.server.HTTPServer` via `panther.web` functional API
+- 19 Python backend functions (`_web_server_*`, `_web_route_*`, `_web_response_*`, `_web_request_*`) in stdlib
+- `panther.web` package now PYTHON_BOOTSTRAP_BACKED (was API_SHAPE_ONLY)
+- `Request` and `Response` struct definitions for structured request/response model
+- `req.params`, `req.query`, `req.method`, `req.path`, `req.headers`, `req.body` structured access
+- Response object support at Python level (`_type: "Response"` with status/headers/body)
+- `_web_response()`, `_web_response_status()`, `_web_response_redirect()` with status code support
+- Thread-local request context (`_request_context`) for route handlers
+- Browser launch via `_system_open_url()` using default browser
+- Full web server examples: `examples/full_engine_web_server/`, `examples/full_engine_browser_demo/`
+- 9 new functional tests: `test_web_stdlib_functional.py`, `test_web_panther_source.py`, `test_web_request_response.py`
+
+### Changed
+- `panther.web` route handlers receive structured Request dict with `params`, `query`, `headers`, `body` keys
+- `panther.web` responses support Response objects with custom status codes and headers
+- Version bumped from 1.1.8 → 1.1.9 across all components
+
+### Fixed
+- `_web_request_method()`, `_web_request_path()`, `_web_request_header()` now return correct values
+- Router dispatch separates route params from query params for .pan handlers
+- `_send_response` handles Response object format and custom headers
+
 ## 1.1.8 (2026-07-12) — Standard Library 2.0 and Package Architecture
 
 ### Added

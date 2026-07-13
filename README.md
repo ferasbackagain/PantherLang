@@ -4,7 +4,7 @@ An independent, general-purpose programming-language project for secure, AI-awar
 
 PantherLang combines its own language syntax, parser, semantic analysis, runtime architecture, package system, standard library, CLI, VS Code tooling, security diagnostics, and machine-readable developer knowledge in one evolving ecosystem.
 
-**Current release:** v1.1.8
+**Current release:** v1.1.9
 **Founder:** Feras Khatib
 
 **Build Anything. In Panther.**
@@ -161,7 +161,7 @@ panther main {
 | `panther.storage` | Key-value store: open, put/get/exists/delete, list, JSON helpers, batch ops, prefix ops, collections, TTL | VERIFIED_EXECUTABLE | Panther (Host ABI) | `open`, `put`, `get`, `exists`, `delete`, `list`, `put_json`, `get_json`, `collection` |
 | `panther.serialization` | JSON, YAML, TOML, MessagePack, CBOR, Base64, Hex, CSV encode/decode, universal interface, streaming | VERIFIED_EXECUTABLE | Panther (Host ABI + Python bootstrap for non-JSON) | `encode`, `decode`, `encode_with_options`, `stream_encode`, `json_encode`, `yaml_encode` |
 | `panther.cli` | Argument parsing, flag/option/positional access, help generation, version, exit codes, progress bar, ANSI colors | VERIFIED_EXECUTABLE | Panther | `parse`, `get_flag`, `get_option`, `get_positional`, `usage`, `progress_bar`, `color_red` |
-| `panther.web` | Server creation, route registration (GET/POST/PUT/DELETE), middleware, static files, start/stop, response helpers, request accessors, error handlers, CORS, health check | PANTHER_IMPLEMENTED | Panther (Host ABI + Python bootstrap) | `server_create`, `get`, `post`, `use`, `static`, `start`, `stop`, `response_json`, `request_param` |
+| `panther.web` | Server creation, route registration (GET/POST/PUT/DELETE), start/stop, response helpers, request accessors, path/query params, middleware, static files, CORS, health check, graceful shutdown | PYTHON_BOOTSTRAP_BACKED | Python bootstrap (`_web_server_*`, `_web_route_*`) | `server_create`, `get`, `post`, `start`, `stop`, `response_json`, `request_param`, `server_running` |
 | `panther.cloud` | Provider abstraction (AWS/GCP/Azure), service descriptors (S3, Lambda, DynamoDB, etc.), deploy, scale, logs, metrics, multi-cloud utilities | API_SHAPE_ONLY | Panther (data structures only) | `provider`, `service`, `aws_s3_bucket`, `gcp_storage`, `deploy`, `available_providers` |
 | `panther.container` | Image management (build, pull, push, tag, inspect, history), lifecycle (run, start, stop, restart, pause, remove, kill), inspection (ps, logs, exec, stats, top, port), volumes, networks, compose, registry, health, resources | API_SHAPE_ONLY | Panther (data structures only) | `image`, `build`, `run`, `start`, `stop`, `ps`, `logs`, `exec`, `volume_create`, `network_create`, `compose_up` |
 | `panther.process` | Process execution (run, spawn, kill, wait), current process info (PID, PPID, env, cwd, argv, exe) | PARTIAL | Panther (Host ABI for current process only) | `run`, `spawn`, `self_pid`, `self_cwd`, `self_env` |
@@ -244,9 +244,9 @@ panther main {
 
 ## Web/API Status
 
-**Implemented:** HTTP server creation, route registration (GET/POST/PUT/DELETE), middleware, static file serving, start/stop, response helpers (JSON, HTML, text, error, redirect), request accessors (params, query, body, headers, method, path), error handlers, CORS, health check endpoint.
+**Implemented:** Real HTTP server creation via Python `http.server.HTTPServer`, route registration (GET/POST/PUT/DELETE), path parameters `{id}`, query parameters `?q=`, request/response objects, JSON/HTML/text responses, start/stop, CORS, 404 handling, graceful shutdown, port reuse.
 
-**Maturity:** `panther.web` is `PANTHER_IMPLEMENTED` — the server runs via `panther run --serve`, routes register, requests are handled. Production concerns (TLS termination, static-file strategy, middleware composition, status/header control, deployment topology, protocol edge cases) require individual assessment.
+**Maturity:** `panther.web` is `PYTHON_BOOTSTRAP_BACKED` — the `panther.web.*` functional API creates and manages a real `HttpServer`. Routes via `web { route ... }` block syntax also work. The server binds `127.0.0.1`, accepts HTTP 1.0/1.1, dispatches handlers, and produces real HTTP responses. Production concerns (TLS, full middleware composition, deployment topology) remain for individual assessment.
 
 **Example (runnable):**
 ```panther
@@ -412,7 +412,8 @@ bash scripts/run_examples.sh
 | ai, web | PANTHER_IMPLEMENTED | Core APIs work; provider/server backends are stubbed or simulated |
 | cloud, container | API_SHAPE_ONLY | Data structures only; no live backend |
 | process | PARTIAL | Current-process introspection works; subprocess execution not implemented |
-| concurrent, async | PYTHON_BOOTSTRAP_BACKED | Delegates to Python runtime for concurrency primitives |
+| concurrent, async, web | PYTHON_BOOTSTRAP_BACKED | Delegates to Python runtime for concurrency/async/web primitives |
+| ai | PYTHON_BOOTSTRAP_BACKED | AI provider abstraction with mock, Python bootstrap for real providers (requires credentials) |
 
 **Do not assume** every package is production-ready merely because imports succeed. Maturity labels above are based on implementation inspection and test verification.
 

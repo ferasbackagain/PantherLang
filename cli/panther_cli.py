@@ -2,12 +2,20 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
 from typing import Iterable
 
 from compiler.stdlib.selfhost import apply_selfhosted_stdlib
+
+# Ensure the workspace root is on sys.path so the dev version of compiler/
+# takes precedence over any installed site-packages version. Must happen
+# before any compiler/ imports.
+_workspace = os.getcwd()
+if _workspace not in sys.path:
+    sys.path.insert(0, _workspace)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,7 +37,7 @@ def _get_version() -> str:
         info = get_release_info()
         return f"{info['version']} ({info['release_name']})"
     except Exception:
-        return "1.1.8"
+        return "1.1.9"
 
 
 def _print_help() -> int:
@@ -163,8 +171,13 @@ def _run(args: list[str]) -> int:
         from compiler.runtime.execution_pipeline import serve_source
         result = serve_source(source_text)
     else:
-        from compiler.runtime import execute_source
-        result = execute_source(source_text)
+        # Auto-detect web blocks — use run_source for web/api sources
+        if "web {" in source_text or "api {" in source_text or "route " in source_text:
+            from compiler.runtime.execution_pipeline import run_source
+            result = run_source(source_text)
+        else:
+            from compiler.runtime import execute_source
+            result = execute_source(source_text)
     if result.error:
         print(f"Error: {result.error}", file=sys.stderr)
         return 1

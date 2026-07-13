@@ -3,7 +3,7 @@
 ## Quick Facts
 
 - **Language**: PantherLang (`.panther`, `.pan`)
-- **Version**: 1.1.5
+- **Version**: 1.1.9
 - **Package**: `pip install pantherlang`
 - **CLI**: `panther run/build/check/new/doctor`
 - **Tests**: `python -m pytest` (1039+ tests)
@@ -31,7 +31,7 @@ pantherlang/
 ├── package_manager/   # Dependency resolution, lock files, security
 ├── project_templates/ # Scaffolds: console, web, api, ai
 ├── tests/             # Full test suite (48 subdirs, 1006+ tests)
-├── vscode-extension/  # VS Code extension v1.1.5 (syntax, debug, wizard)
+├── vscode-extension/  # VS Code extension v1.1.9 (syntax, debug, wizard)
 ├── docs/              # Architecture, CLI, security, dev guides, language ref
 │   └── specification/ # 8-spec formal language reference
 ├── examples/          # 6 runnable examples + 68 phase demo files
