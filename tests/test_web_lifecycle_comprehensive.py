@@ -2,6 +2,7 @@
 
 import json
 import os
+import signal
 import socket
 import subprocess
 import sys
@@ -14,6 +15,8 @@ import warnings
 
 def _start_server(source: str, timeout_sec: int = 15) -> tuple[subprocess.Popen, str]:
     """Start a PantherLang server in a subprocess, wait for readiness, return (proc, tmp_path)."""
+    # Ensure the port is free first
+    _ensure_port_8080_free_for_test()
     with tempfile.NamedTemporaryFile(mode="w", suffix=".pan", delete=False) as f:
         f.write(source)
         tmp_path = f.name
@@ -26,25 +29,67 @@ def _start_server(source: str, timeout_sec: int = 15) -> tuple[subprocess.Popen,
 
     deadline = time.time() + timeout_sec
     while time.time() < deadline:
+        if proc.poll() is not None:
+            # Process exited before becoming ready
+            proc.wait(timeout=1)
+            os.unlink(tmp_path)
+            raise RuntimeError("Server process exited before becoming ready")
         try:
-            with socket.create_connection(("127.0.0.1", 8080), timeout=1):
+            with socket.create_connection(("127.0.0.1", 8080), timeout=0.5):
                 return proc, tmp_path
         except (ConnectionRefusedError, OSError):
             time.sleep(0.3)
 
-    proc.terminate()
-    proc.wait(timeout=3)
+    _stop_server(proc)
     os.unlink(tmp_path)
-    raise RuntimeError("Server did not become ready")
+    raise RuntimeError("Server did not become ready in time")
+
+
+def _ensure_port_8080_free_for_test() -> None:
+    """Ensure port 8080 is not occupied before starting a server."""
+    import subprocess as _sp
+    deadline = time.time() + 8
+    while time.time() < deadline:
+        try:
+            with socket.create_connection(("127.0.0.1", 8080), timeout=0.3):
+                pass
+        except (ConnectionRefusedError, OSError):
+            return
+        # Port occupied — try to clear it
+        try:
+            result = _sp.run(
+                ["lsof", "-ti", ":8080"],
+                capture_output=True, text=True, timeout=3,
+            )
+            if result.returncode == 0 and result.stdout.strip():
+                for pid_str in result.stdout.strip().split():
+                    try:
+                        pid = int(pid_str.strip())
+                        os.kill(pid, signal.SIGKILL)
+                    except (ValueError, ProcessLookupError, PermissionError):
+                        pass
+        except Exception:
+            pass
+        time.sleep(0.5)
+    raise RuntimeError("Could not free port 8080")
 
 
 def _stop_server(proc: subprocess.Popen) -> None:
+    """Stop the server and wait for port 8080 to be released."""
     proc.terminate()
     try:
         proc.wait(timeout=5)
     except subprocess.TimeoutExpired:
         proc.kill()
         proc.wait()
+    # Wait for port to be released
+    deadline = time.time() + 5
+    while time.time() < deadline:
+        try:
+            with socket.create_connection(("127.0.0.1", 8080), timeout=0.3):
+                time.sleep(0.3)
+        except (ConnectionRefusedError, OSError):
+            return
 
 
 def test_405_method_not_allowed():

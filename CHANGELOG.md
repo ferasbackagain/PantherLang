@@ -1,5 +1,29 @@
 # PantherLang Changelog
 
+## 2.0.0 (2026-07-17) — Multi-Engine Capability Center and Platform Release
+
+### Added
+- PantherLang Capability Center: Professional dashboard with glass-morphism UI, dark theme, responsive layout
+- Landing page with hero section, platform readiness score, and quick-stats overview
+- Dashboard page at `/dashboard` with full engine status, summary cards, progress bars, and live refresh
+- Package Explorer at `/packages` with search, filter by classification, donut chart breakdown, and package detail cards
+- Capability Score API at `/api/capability-score` with platform readiness scoring (12 dimensions, 87% overall)
+- 8 new HTML/CSS/JS components: donut charts, progress bars, search bars, filter buttons, expandable sections, tooltips, sort indicators, hero stats
+- 7-engine architecture documented in capability dashboard
+
+### Changed
+- All version references updated from 1.1.9 → 2.0.0 (pyproject.toml, version.py, CLI, VS Code extension, examples)
+- Content-Type detection improved to recognize any HTML-leading string (fixes `<style>`-starting output)
+- Secret redaction test updated with realistic `sk-...` and `xoxb-...` pattern vectors
+- README version reference updated to v2.0.0
+- Navigation bar now links to Dashboard and Package Explorer pages
+
+### Fixed
+- Content-Type header now correctly set to `text/html; charset=utf-8` for HTML responses (was `text/plain`)
+- Secret Redaction test now correctly matches pattern and checks for `[REDACTED]` (was unmatched `***`)
+- Three runtime engine bugs: params binding, function lookup fallback, web process lifecycle
+- Three PantherLang app bugs: `to_str()` type safety, missing object key placeholders, `== true` comparisons
+
 ## 1.1.9 (2026-07-12) — Real Web Engine and Request/Response Model
 
 ### Added

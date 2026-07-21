@@ -145,7 +145,7 @@ from compiler.ast import (
     UnaryExpression,
 )
 
-from .variable_environment import VariableEnvironment
+from .variable_environment import UndefinedVariableError, VariableEnvironment
 
 
 class EvaluationError(Exception):
@@ -192,7 +192,16 @@ class ExpressionEvaluator:
         if isinstance(expression, NullLiteral):
             return None
         if isinstance(expression, IdentifierExpression):
-            return self._env.lookup(expression.name)
+            try:
+                return self._env.lookup(expression.name)
+            except UndefinedVariableError:
+                pass
+            # Fall back to function
+            try:
+                return self._env.lookup_function(expression.name)
+            except UndefinedVariableError:
+                pass
+            raise UndefinedVariableError(expression.name)
         if isinstance(expression, UnaryExpression):
             return self._eval_unary(expression)
         if isinstance(expression, BinaryExpression):

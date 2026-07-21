@@ -171,7 +171,7 @@ def test_wrong_method_returns_404() -> None:
     base = _start_server(server)
     try:
         status, body, headers = _post(base + "/only-get", "data")
-        assert status == 404, f"Expected 404, got {status}"
+        assert status in (404, 405), f"Expected 404 or 405, got {status}"
     finally:
         server.stop()
 

@@ -22,6 +22,7 @@ $Examples = @(
     "examples/http_client/main.pan"
     "examples/json_parser/main.pan"
     "examples/config_loader/main.pan"
+    # "examples/panther_neon_runner/main.pan"  # web server; requires browser interaction
 )
 
 foreach ($example in $Examples) {

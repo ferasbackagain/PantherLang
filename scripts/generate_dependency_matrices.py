@@ -123,7 +123,7 @@ def main():
     matrices = generate_dependency_matrices()
     
     output = {
-        "version": "1.1.9",
+        "version": "2.0.0",
         "generated_by": "dependency_matrix_generator.py",
         "matrices": matrices,
         "summary": {

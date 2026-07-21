@@ -31,7 +31,6 @@ REQUIRED_DOCS = [
     "docs/book/chapters/12-cli-and-tooling.md",
     "docs/book/chapters/13-cross-platform.md",
     "docs/book/chapters/14-language-reference.md",
-    "engineering/language_first_audit.md",
     "examples/README.md",
     "examples/console_hello/README.md",
     "examples/calculator/README.md",

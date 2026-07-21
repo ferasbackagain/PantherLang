@@ -147,6 +147,34 @@ def _randint(lo: int, hi: int) -> int:
     return random.randint(lo, hi)
 
 
+def _cos(x: float) -> float:
+    return math.cos(x)
+
+
+def _sin(x: float) -> float:
+    return math.sin(x)
+
+
+def _atan2(y: float, x: float) -> float:
+    return math.atan2(y, x)
+
+
+def _sign(x: float | int) -> int:
+    if x > 0:
+        return 1
+    if x < 0:
+        return -1
+    return 0
+
+
+def _tan(x: float) -> float:
+    return math.tan(x)
+
+
+def _clamp(v: float | int, lo: float | int, hi: float | int) -> float | int:
+    return max(lo, min(hi, v))
+
+
 _register(StdlibFunction("abs", (1, 1), _abs, "abs(x) -> number"))
 _register(StdlibFunction("max", (2, None), _max_, "max(a, b, ...) -> number"))
 _register(StdlibFunction("min", (2, None), _min_, "min(a, b, ...) -> number"))
@@ -155,6 +183,12 @@ _register(StdlibFunction("sqrt", (1, 1), _sqrt, "sqrt(x) -> float"))
 _register(StdlibFunction("floor", (1, 1), _floor, "floor(x) -> int"))
 _register(StdlibFunction("ceil", (1, 1), _ceil, "ceil(x) -> int"))
 _register(StdlibFunction("round", (1, 2), _round_, "round(x[, ndigits]) -> float"))
+_register(StdlibFunction("cos", (1, 1), _cos, "cos(x) -> float"))
+_register(StdlibFunction("sin", (1, 1), _sin, "sin(x) -> float"))
+_register(StdlibFunction("atan2", (2, 2), _atan2, "atan2(y, x) -> float"))
+_register(StdlibFunction("sign", (1, 1), _sign, "sign(x) -> int"))
+_register(StdlibFunction("tan", (1, 1), _tan, "tan(x) -> float"))
+_register(StdlibFunction("clamp", (3, 3), _clamp, "clamp(v, lo, hi) -> number"))
 _register(StdlibFunction("random", (0, 0), _random, "random() -> float"))
 _register(StdlibFunction("randint", (2, 2), _randint, "randint(lo, hi) -> int"))
 

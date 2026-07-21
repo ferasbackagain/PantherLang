@@ -125,7 +125,7 @@ def test_h44_d6_complete_vscode_debug_integration_chain():
 
 def test_h44_d6_package_artifact_is_present_and_contains_runtime_files():
     dist = EXT_DIR / "dist"
-    artifacts = sorted(dist.glob("*.vsix.zip"))
+    artifacts = sorted(dist.glob("*.vsix*"))
 
     assert artifacts, "No VSIX-like package artifact found"
 
@@ -135,11 +135,12 @@ def test_h44_d6_package_artifact_is_present_and_contains_runtime_files():
     with zipfile.ZipFile(artifact, "r") as archive:
         names = set(archive.namelist())
 
-    assert "package.json" in names
-    assert "out/extension.js" in names
-    assert "out/debugFlow.js" in names
-    assert "src/extension.ts" in names
-    assert "src/debugFlow.ts" in names
+    has_entry = lambda p: p in names or f"extension/{p}" in names
+    assert has_entry("package.json"), f"package.json not found in {sorted(names)[:20]}"
+    assert has_entry("out/extension.js")
+    assert has_entry("out/debugFlow.js")
+    assert has_entry("src/extension.ts")
+    assert has_entry("src/debugFlow.ts")
 
 
 def test_h44_d6_status_chain_complete():

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.0
+
+- Updated to PantherLang 2.0.0
+- Professional Capability Center: Landing page, Dashboard, Package Explorer, Platform Readiness scoring
+- Multi-Engine Architecture: 7 engines displayed with progress bars, charts, and live refresh
+- New routes: /dashboard, /packages, /api/capability-score
+- Glass-morphism UI: dark theme, responsive layout, navigation bar
+- Package Explorer: search, filter by classification, donut chart distribution
+- Search/filter/sort JavaScript for interactive package browsing
+
 ## 1.1.9
 
 - Updated to PantherLang 1.1.9

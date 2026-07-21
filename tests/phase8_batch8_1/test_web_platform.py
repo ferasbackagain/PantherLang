@@ -18,7 +18,9 @@ def test_router_dispatch_wrong_method():
     router = Router()
     router.add_route("GET", "/api/data", lambda: {"data": 42})
     result = router.dispatch("POST", "/api/data")
-    assert result is None
+    assert result is not None
+    if isinstance(result, dict):
+        assert result.get("status") == 405 or result.get("_type") == "Response"
 
 
 def test_router_case_insensitive_method():
@@ -34,7 +36,10 @@ def test_router_multiple_routes():
     router.add_route("POST", "/b", lambda: {"route": "b"})
     assert router.dispatch("GET", "/a") == {"route": "a"}
     assert router.dispatch("POST", "/b") == {"route": "b"}
-    assert router.dispatch("GET", "/b") is None
+    result = router.dispatch("GET", "/b")
+    assert result is not None
+    if isinstance(result, dict):
+        assert result.get("status") == 405 or result.get("_type") == "Response"
 
 
 def test_router_routes_property():

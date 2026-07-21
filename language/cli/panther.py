@@ -4,7 +4,7 @@ from pathlib import Path
 
 def cmd_version(args):
     print("PantherLang Developer Edition CLI")
-    print("Version: 1.1.9")
+    print("Version: 2.0.0")
 
 def cmd_doctor(args):
     print("PantherLang Doctor")

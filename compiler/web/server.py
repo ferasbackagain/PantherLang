@@ -209,7 +209,7 @@ class PantherHTTPRequestHandler(BaseHTTPRequestHandler):
                 content_type = "application/json; charset=utf-8"
         elif isinstance(result, str):
             lowered = result.lstrip().lower()
-            if lowered.startswith("<html") or "<body" in lowered or lowered.startswith("<!doctype"):
+            if lowered.startswith("<html") or "<body" in lowered or lowered.startswith("<!doctype") or lowered.startswith("<") or lowered.startswith("<!") or lowered.startswith("<style"):
                 content_type = "text/html; charset=utf-8"
             else:
                 content_type = "text/plain; charset=utf-8"

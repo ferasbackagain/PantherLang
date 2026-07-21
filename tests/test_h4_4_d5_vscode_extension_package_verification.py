@@ -4,7 +4,7 @@ from pathlib import Path
 
 PACKAGE_JSON = Path("./vscode-extension/package.json")
 EXT_DIR = PACKAGE_JSON.parent
-PACKAGE_ARTIFACT = Path("./vscode-extension/dist/pantherlang-0.8.8.vsix.zip")
+PACKAGE_ARTIFACT = Path("./vscode-extension/dist/pantherlang-official-2.0.0.vsix")
 
 
 def _package():
@@ -63,11 +63,12 @@ def test_h44_d5_package_artifact_exists_and_is_zip():
     with zipfile.ZipFile(PACKAGE_ARTIFACT, "r") as archive:
         names = set(archive.namelist())
 
-    assert "package.json" in names
-    assert "out/extension.js" in names
-    assert "out/debugFlow.js" in names
-    assert "src/extension.ts" in names
-    assert "src/debugFlow.ts" in names
+    has_entry = lambda p: p in names or f"extension/{p}" in names
+    assert has_entry("package.json"), f"package.json not found in {sorted(names)}"
+    assert has_entry("out/extension.js")
+    assert has_entry("out/debugFlow.js")
+    assert has_entry("src/extension.ts")
+    assert has_entry("src/debugFlow.ts")
 
 
 def test_h44_d5_no_missing_core_debug_adapter_dependency():

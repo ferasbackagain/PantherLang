@@ -37,7 +37,7 @@ def _get_version() -> str:
         info = get_release_info()
         return f"{info['version']} ({info['release_name']})"
     except Exception:
-        return "1.1.9"
+        return "2.0.0"
 
 
 def _print_help() -> int:
@@ -172,7 +172,7 @@ def _run(args: list[str]) -> int:
         result = serve_source(source_text)
     else:
         # Auto-detect web blocks — use run_source for web/api sources
-        if "web {" in source_text or "api {" in source_text or "route " in source_text:
+        if "web {" in source_text or "api {" in source_text or "route " in source_text or "panther.web" in source_text:
             from compiler.runtime.execution_pipeline import run_source
             result = run_source(source_text)
         else:

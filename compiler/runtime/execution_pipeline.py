@@ -81,7 +81,13 @@ def _open_browser(url: str) -> None:
             try:
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore", ResourceWarning)
-                    subprocess.Popen([exe, url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    subprocess.Popen(
+                        [exe, url],
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                        stdin=subprocess.DEVNULL,
+                        close_fds=True,
+                    )
                 return
             except Exception:
                 continue
@@ -98,15 +104,17 @@ def run_source(source: str) -> ExecutionResult:
     if base_result.error is not None:
         return base_result
 
+    if base_result.captured_output:
+        for line in base_result.captured_output:
+            print(line, flush=True)
+
+    # Prefer the server created by execute_source (web/api blocks)
     server = _last_web_server
     if server is not None:
-        if base_result.captured_output:
-            for line in base_result.captured_output:
-                print(line)
         url = f"http://127.0.0.1:{server.port}"
-        print(f"Panther web server starting on {url}")
+        print(f"Panther web server starting on {url}", flush=True)
         route_count = len(server.router.routes)
-        print(f"Registered routes: {route_count}")
+        print(f"Registered routes: {route_count}", flush=True)
 
         def _stop_server(signum: object, frame: object) -> None:
             if server._server is not None:
@@ -125,10 +133,10 @@ def run_source(source: str) -> ExecutionResult:
             return ExecutionResult(error=str(server._fatal_error))
 
         if server.is_ready(timeout_ms=5000):
-            print("Server ready — opening browser...")
+            print("Server ready — opening browser...", flush=True)
             _open_browser(url)
         else:
-            print("Warning: server not ready after 5s, still starting...")
+            print("Warning: server not ready after 5s, still starting...", flush=True)
 
         try:
             server.wait()
@@ -143,9 +151,20 @@ def run_source(source: str) -> ExecutionResult:
         _last_web_server = None
         return ExecutionResult()
 
-    if base_result.captured_output:
-        for line in base_result.captured_output:
-            print(line)
+    # If source uses panther.web import (self-hosted web module), wait for Ctrl+C
+    if "panther.web" in source:
+        print("  === Press Ctrl+C to stop ===", flush=True)
+        try:
+            import signal as _signal
+            try:
+                _signal.pause()
+            except AttributeError:
+                import time
+                while True:
+                    time.sleep(3600)
+        except KeyboardInterrupt:
+            pass
+
     return base_result
 
 
@@ -194,8 +213,8 @@ def serve_source(source: str, host: str = "0.0.0.0", port: int = 8080) -> Execut
         server.router.add_route("GET", "/health", lambda **kwargs: {"status": "ok", "service": "panther"})
 
     route_count = len(server.router.routes)
-    print(f"Panther web server starting on http://{host}:{port}")
-    print(f"Registered routes: {route_count}")
+    print(f"Panther web server starting on http://{host}:{port}", flush=True)
+    print(f"Registered routes: {route_count}", flush=True)
     try:
         server.start()
     except KeyboardInterrupt:

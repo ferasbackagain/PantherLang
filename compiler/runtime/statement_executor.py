@@ -167,8 +167,11 @@ class StatementExecutor:
         def _fn(*args: Any) -> Any:
             child_env = self._env._new_child()
             child_env._functions = dict(self._env._functions)
-            for param, arg in zip(decl.params, args):
-                child_env._variables[param] = arg
+            for i, param in enumerate(decl.params):
+                if i < len(args):
+                    child_env._variables[param] = args[i]
+                else:
+                    child_env._variables[param] = None
             child_exec = StatementExecutor(child_env)
             for s in decl.body.statements:
                 before = len(child_exec._output)

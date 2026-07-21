@@ -4,7 +4,7 @@ An independent, general-purpose programming-language project for secure, AI-awar
 
 PantherLang combines its own language syntax, parser, semantic analysis, runtime architecture, package system, standard library, CLI, VS Code tooling, security diagnostics, and machine-readable developer knowledge in one evolving ecosystem.
 
-**Current release:** v1.1.9
+**Current release:** v2.0.0
 **Founder:** Feras Khatib
 
 **Build Anything. In Panther.**

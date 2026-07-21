@@ -9,7 +9,7 @@
   },
   {
     "step": "workspace.tasks.loaded",
-    "taskCount": 5
+    "taskCount": 4
   },
   {
     "step": "debugger.contribution.verified",
@@ -112,7 +112,6 @@
   {
     "step": "tasks.verified",
     "labels": [
-      "Panther: Run Current File",
       "PantherLang: Check",
       "PantherLang: Check Current File",
       "PantherLang: Check Example",

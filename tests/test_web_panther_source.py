@@ -65,7 +65,7 @@ def test_web_package_serve_requests():
 
     @server.get("/health")
     def health(**kwargs):
-        return {"status": "ok", "version": "1.1.9"}
+        return {"status": "ok", "version": "2.0.0"}
 
     @server.get("/users/{uid}")
     def user(**kwargs):
@@ -90,7 +90,7 @@ def test_web_package_serve_requests():
             assert resp.status == 200
             data = json.loads(resp.read().decode())
             assert data["status"] == "ok"
-            assert data["version"] == "1.1.9"
+            assert data["version"] == "2.0.0"
 
         with urllib.request.urlopen(f"http://127.0.0.1:{port}/users/99") as resp:
             assert resp.status == 200

@@ -120,7 +120,9 @@ def test_selfhosted_module_discovery():
         # Phase 10 packages
         "panther.cloud", "panther.container",
         # Phase 11 packages
-        "panther.serialization"
+        "panther.serialization",
+        # Phase 12 packages
+        "panther.game"
     }
     
     assert set(modules.keys()) == expected_modules, f"Missing modules: {expected_modules - set(modules.keys())}"

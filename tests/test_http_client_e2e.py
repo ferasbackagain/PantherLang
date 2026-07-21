@@ -17,7 +17,7 @@ def _start_server():
 
     @server.get("/health")
     def health(**kwargs):
-        return {"status": "ok", "version": "1.1.9"}
+        return {"status": "ok", "version": "2.0.0"}
 
     @server.get("/users/{uid}")
     def user(**kwargs):

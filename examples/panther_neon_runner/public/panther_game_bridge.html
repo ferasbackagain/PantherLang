@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panther Game Bridge</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0f19; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: monospace; overflow: hidden; }
+  #game-container { position: relative; width: 800px; height: 600px; }
+  #game-canvas { display: block; width: 100%; height: 100%; background: #0a0f19; }
+  #status { position: absolute; bottom: 8px; left: 8px; color: #0af; font-size: 11px; font-family: monospace; opacity: 0.7; pointer-events: none; }
+  #fps-counter { position: absolute; top: 8px; right: 8px; color: #0af; font-size: 11px; font-family: monospace; opacity: 0.7; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="game-container">
+  <canvas id="game-canvas" width="800" height="600"></canvas>
+  <div id="status">Panther Game Bridge v1.0</div>
+  <div id="fps-counter">-- FPS</div>
+</div>
+<script>
+(function() {
+  const canvas = document.getElementById('game-canvas');
+  const ctx = canvas.getContext('2d');
+  const fpsEl = document.getElementById('fps-counter');
+
+  let lastFrameTime = performance.now();
+  let frameCount = 0;
+  let fpsTimer = 0;
+  let currentFps = 0;
+
+  // ---- Color Helpers ----
+  function colorToCSS(color) {
+    if (!color) return 'transparent';
+    const r = Math.round((color.r || 0) * 255);
+    const g = Math.round((color.g || 0) * 255);
+    const b = Math.round((color.b || 0) * 255);
+    const a = color.a !== undefined ? color.a : 1;
+    return `rgba(${r},${g},${b},${a})`;
+  }
+
+  // ---- Render Command Executor ----
+  function renderCommands(commands, w, h) {
+    if (!commands || !commands.length) return;
+
+    for (const cmd of commands) {
+      switch (cmd.type) {
+        case 'clear':
+          ctx.clearRect(0, 0, w, h);
+          ctx.fillStyle = colorToCSS(cmd);
+          ctx.fillRect(0, 0, w, h);
+          break;
+
+        case 'fill_rect':
+          ctx.fillStyle = colorToCSS(cmd.fill);
+          ctx.fillRect(cmd.x, cmd.y, cmd.w, cmd.h);
+          break;
+
+        case 'stroke_rect':
+          ctx.strokeStyle = colorToCSS(cmd.stroke);
+          ctx.lineWidth = cmd.line_width || 1;
+          ctx.strokeRect(cmd.x, cmd.y, cmd.w, cmd.h);
+          break;
+
+        case 'fill_round_rect':
+          ctx.fillStyle = colorToCSS(cmd.fill);
+          const r = cmd.radius || 0;
+          ctx.beginPath();
+          ctx.roundRect(cmd.x, cmd.y, cmd.w, cmd.h, r);
+          ctx.fill();
+          break;
+
+        case 'fill_circle':
+          ctx.fillStyle = colorToCSS(cmd.fill);
+          ctx.beginPath();
+          ctx.arc(cmd.cx, cmd.cy, cmd.r, 0, Math.PI * 2);
+          ctx.fill();
+          break;
+
+        case 'stroke_circle':
+          ctx.strokeStyle = colorToCSS(cmd.stroke);
+          ctx.lineWidth = cmd.line_width || 1;
+          ctx.beginPath();
+          ctx.arc(cmd.cx, cmd.cy, cmd.r, 0, Math.PI * 2);
+          ctx.stroke();
+          break;
+
+        case 'line':
+          ctx.strokeStyle = colorToCSS(cmd.stroke);
+          ctx.lineWidth = cmd.line_width || 1;
+          ctx.beginPath();
+          ctx.moveTo(cmd.x1, cmd.y1);
+          ctx.lineTo(cmd.x2, cmd.y2);
+          ctx.stroke();
+          break;
+
+        case 'text':
+          ctx.fillStyle = colorToCSS(cmd.fill);
+          ctx.font = `${cmd.font_size || 16}px ${cmd.font_family || 'monospace'}`;
+          ctx.textBaseline = 'top';
+          ctx.fillText(cmd.text || '', cmd.x, cmd.y);
+          break;
+
+        case 'sprite':
+          ctx.save();
+          ctx.globalAlpha = cmd.opacity !== undefined ? cmd.opacity : 1;
+          if (cmd.rotation) {
+            ctx.translate(cmd.x + cmd.w / 2, cmd.y + cmd.h / 2);
+            ctx.rotate(cmd.rotation);
+            ctx.translate(-(cmd.x + cmd.w / 2), -(cmd.y + cmd.h / 2));
+          }
+          if (cmd.flip_x || cmd.flip_y) {
+            ctx.translate(cmd.x + cmd.w / 2, cmd.y + cmd.h / 2);
+            ctx.scale(cmd.flip_x ? -1 : 1, cmd.flip_y ? -1 : 1);
+            ctx.translate(-(cmd.x + cmd.w / 2), -(cmd.y + cmd.h / 2));
+          }
+          // Fallback: draw colored rect if no image loaded
+          if (cmd.sprite_id && window.__sprites && window.__sprites[cmd.sprite_id]) {
+            ctx.drawImage(window.__sprites[cmd.sprite_id], cmd.x, cmd.y, cmd.w, cmd.h);
+          } else {
+            ctx.fillStyle = '#0af';
+            ctx.globalAlpha = 0.3;
+            ctx.fillRect(cmd.x, cmd.y, cmd.w, cmd.h);
+            ctx.globalAlpha = 1;
+            ctx.strokeStyle = '#0af';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(cmd.x, cmd.y, cmd.w, cmd.h);
+          }
+          ctx.restore();
+          break;
+      }
+    }
+  }
+
+  // ---- Frame Processing ----
+  function processFrame(frame) {
+    const w = frame.width || canvas.width;
+    const h = frame.height || canvas.height;
+    const commands = frame.commands || frame.frame || [];
+    renderCommands(commands, w, h);
+
+    // FPS counter
+    frameCount++;
+    const now = performance.now();
+    const elapsed = (now - lastFrameTime) / 1000;
+    fpsTimer += elapsed;
+    if (fpsTimer >= 1.0) {
+      currentFps = Math.round(frameCount / fpsTimer);
+      fpsEl.textContent = currentFps + ' FPS';
+      frameCount = 0;
+      fpsTimer = 0;
+    }
+    lastFrameTime = now;
+  }
+
+  // ---- Input Event Capture ----
+  function sendInput(type, data) {
+    const event = { type, ...data };
+    // Dispatch to registered handler
+    if (window.__onInput) {
+      window.__onInput(event);
+    }
+    console.log('[Input]', JSON.stringify(event));
+  }
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    sendInput('keydown', { key: e.code });
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('keyup', (e) => {
+    sendInput('keyup', { key: e.code });
+  });
+
+  // Mouse
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    sendInput('mousemove', { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY });
+  });
+  canvas.addEventListener('mousedown', (e) => {
+    sendInput('mousedown', { button: e.button });
+  });
+  canvas.addEventListener('mouseup', (e) => {
+    sendInput('mouseup', { button: e.button });
+  });
+
+  // Touch
+  canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    sendInput('touchstart', { x: (touch.clientX - rect.left) * scaleX, y: (touch.clientY - rect.top) * scaleY });
+  });
+  canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    sendInput('touchmove', { x: (touch.clientX - rect.left) * scaleX, y: (touch.clientY - rect.top) * scaleY });
+  });
+  canvas.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    sendInput('touchend', {});
+  });
+
+  // Focus loss
+  window.addEventListener('blur', () => {
+    sendInput('focus_lost', {});
+  });
+
+  // ---- Public API ----
+  window.__pantherBridge = {
+    processFrame,
+    renderCommands,
+    setInputHandler: (handler) => { window.__onInput = handler; },
+    loadSprite: (id, url) => {
+      if (!window.__sprites) window.__sprites = {};
+      const img = new Image();
+      img.onload = () => { window.__sprites[id] = img; };
+      img.src = url;
+    },
+    log: (msg) => { console.log('[Panther]', msg); },
+    alert: (msg) => { console.log('[Panther Alert]', msg); },
+  };
+
+  // ---- WebSocket Connection ----
+  function connectWebSocket(url) {
+    const ws = new WebSocket(url);
+    ws.onopen = () => {
+      console.log('[Bridge] WebSocket connected');
+      document.getElementById('status').textContent = 'Connected via WebSocket';
+      window.__ws = ws;
+    };
+    ws.onmessage = (msg) => {
+      try {
+        const frame = JSON.parse(msg.data);
+        processFrame(frame);
+      } catch (e) {
+        console.error('[Bridge] Parse error:', e);
+      }
+    };
+    ws.onclose = () => {
+      console.log('[Bridge] WebSocket disconnected');
+      document.getElementById('status').textContent = 'Disconnected';
+      window.__ws = null;
+      setTimeout(() => connectWebSocket(url), 1000);
+    };
+    ws.onerror = () => {
+      document.getElementById('status').textContent = 'Connection error';
+    };
+  }
+
+  // ---- HTTP Polling Mode ----
+  function connectHTTP(url) {
+    document.getElementById('status').textContent = 'HTTP mode';
+    async function poll() {
+      try {
+        const resp = await fetch(url);
+        const frame = await resp.json();
+        processFrame(frame);
+      } catch (e) {
+        // silent
+      }
+      if (window.__httpPolling) {
+        setTimeout(poll, 16);
+      }
+    }
+    window.__httpPolling = true;
+    poll();
+  }
+
+  // ---- Init ----
+  console.log('Panther Game Bridge v1.0 loaded');
+  console.log('Call __pantherBridge.processFrame(frame) to render a frame');
+
+  // Auto-connect based on URL params
+  const params = new URLSearchParams(window.location.search);
+  const wsUrl = params.get('ws');
+  const httpUrl = params.get('http');
+  if (wsUrl) connectWebSocket(wsUrl);
+  else if (httpUrl) connectHTTP(httpUrl);
+})();
+</script>
+</body>
+</html>

@@ -17,6 +17,7 @@ This directory contains real, executable PantherLang example projects.
 | 9 | `http_client/` | HTTP GET/POST requests | `panther run examples/http_client/main.pan` |
 | 10 | `json_parser/` | JSON encode/decode with nested data | `panther run examples/json_parser/main.pan` |
 | 11 | `config_loader/` | JSON configuration file read/parse | `panther run examples/config_loader/main.pan` |
+| 12 | `panther_neon_runner/` | Infinite runner game (web + canvas) | `panther run examples/panther_neon_runner/main.pan` |
 
 ## Running All Examples
 
